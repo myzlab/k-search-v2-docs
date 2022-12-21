@@ -12,19 +12,13 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <div className={styles.redAlert}>
-          This documentation is for version 1 of <span className="ksearch-font-family">KSearch</span>. Please visit <Link
-            to="https://ksearch.myzlab.com/">
-            ksearch.myzlab.com
-          </Link> to see documentation version 2 of <span className="ksearch-font-family">KSearch</span>.
-        </div>
         <img src="/img/ksearch-logo.png" className="header--imageLogo" style={{ marginBottom: 15 }}>
 
         </img>
         <h1 className="hero__title ksearch-font-family">{siteConfig.title}</h1>
         <p className="hero__subtitle">
           An easy and intuitive way to write dynamic SQL statements.<br/>
-          For Spring Boot + JPA
+          For Spring Boot + JPA|JDBC
         </p>
         {/* <div className={styles.buttons}>
           <Link

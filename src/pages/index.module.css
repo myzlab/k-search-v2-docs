@@ -30,12 +30,3 @@
   left: 0;
   color: white;
 }
-
-.redAlert a {
-  font-weight: 700;
-  color: white;
-}
-
-[data-theme='dark'] .redAlert a {
-  color: white;
-}

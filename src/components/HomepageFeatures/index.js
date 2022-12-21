@@ -22,20 +22,20 @@ const FeatureList = [
       </>
     ),
   },
-  // {
-  //   title: '100% SQL',
-  //   Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-  //   description: (
-  //     <>
-  //       Ksearch supports all clauses and possible queries 100% SQL to the PostgreSQL database!
-  //     </>
-  //   ),
-  // },
+  {
+    title: '100% SQL',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Ksearch supports all clauses and possible queries 100% SQL to the PostgreSQL database!
+      </>
+    ),
+  },
 ];
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--6')}>
+    <div className={clsx('col col--4')}>
       <div className="text--center">
         {/* <Svg className={styles.featureSvg} role="img" /> */}
       </div>
