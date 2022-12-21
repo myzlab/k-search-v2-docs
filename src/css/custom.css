@@ -1,0 +1,141 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --doc-sidebar-width: 280px !important;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 997px) {
+  .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Sidebar-styles-module {
+    clip-path: unset !important;
+    -webkit-box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 12%), 0px 9px 46px 8px rgb(0 0 0 / 1%);
+    -moz-box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 12%), 0px 9px 46px 8px rgb(0 0 0 / 1%);
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 12%), 0px 9px 46px 8px rgb(0 0 0 / 1%);
+    margin-right: 20px;
+    border-right: none !important;
+  }
+}
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.6rem;
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size: 1.8rem;
+}
+
+.markdown > h3 {
+  --ifm-h3-font-size: 1.4em;
+  margin-bottom: calc( var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading) );
+  margin-top: calc(var(--ifm-h3-vertical-rhythm-top) * var(--ifm-leading));
+}
+
+.markdown > p,
+.markdown > ul,
+.markdown > ol {
+  font-size: 0.95em;
+}
+
+.markdown {
+  --ifm-h2-vertical-rhythm-top: 1.8 !important;
+  --ifm-h3-vertical-rhythm-top: 1.4 !important;
+}
+
+.navbar__title,
+.ksearch-font-family {
+  font-family: 'Amita', cursive !important;
+}
+
+code,
+code * {
+  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace !important;
+}
+
+pre {
+  background: none;
+  border-radius: 0px !important;
+}
+
+pre code {
+  font-size: 1.1em !important;
+  border-radius: 0px !important;
+  /* padding: 0px !important; */
+}
+
+/* pre code > span:nth-of-type(odd) {
+  background-color:#fdfdfd !important;
+}
+      
+pre code > span:nth-of-type(even) {
+  background-color: rgba(69, 142, 209, 0.04) !important;
+} */
+
+/* .codeLineNumber_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Line-styles-module::before {
+  content: none !important;
+} */
+
+.codeBlockContainer_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Container-styles-module {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border: solid 1px var(--ifm-color-primary-light);
+  border-radius: 0px !important;
+  border-left: 10px solid var(--ifm-color-primary-light) !important;
+}
+
+.codeLineNumber_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Line-styles-module {
+  background: transparent !important;
+}
+
+/* .navbar {
+  background: #616161;
+} */
+
+/* .navbar__link {
+  color: white;
+} */
+
+/* .navbar__link:hover,
+.navbar__link--active {
+  color: #25c2a0;
+} */
+
+.header--imageLogo {
+  border-radius: 30px;
+  box-shadow: rgb(0 0 0 / 30%) 2px 2px 5px 0px;
+  width: 12rem;
+  background: white;
+  padding: 1em 2.5em;
+}
