@@ -49,15 +49,30 @@
 }
 
 .markdown h1:first-child {
-  --ifm-h1-font-size: 2.6rem;
+  --ifm-h1-font-size: 2.2rem;
+}
+
+.markdown h1:first-child {
+  position: relative;
+}
+
+.markdown h1:first-child::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,var(--ifm-menu-color-active),rgba(25,118,210,0));
+  border-radius: 3px;
 }
 
 .markdown > h2 {
-  --ifm-h2-font-size: 1.8rem;
+  --ifm-h2-font-size: 1.6rem;
 }
 
 .markdown > h3 {
-  --ifm-h3-font-size: 1.4em;
+  --ifm-h3-font-size: 1.2em;
   margin-bottom: calc( var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading) );
   margin-top: calc(var(--ifm-h3-vertical-rhythm-top) * var(--ifm-leading));
 }
@@ -65,7 +80,7 @@
 .markdown > p,
 .markdown > ul,
 .markdown > ol {
-  font-size: 0.95em;
+  font-size: 0.9em;
 }
 
 .markdown {

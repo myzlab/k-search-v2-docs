@@ -28,8 +28,8 @@ const sidebars = {
           type: "category",
           label: "Installation",
           items: [
-            "get-started/installation/glassfish-wildfly",
-            "get-started/installation/springboot"
+            "get-started/installation/springboot-jdbc",
+            "get-started/installation/springboot-jpa"
           ],
         },
         "get-started/recommendations"

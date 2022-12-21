@@ -17,8 +17,8 @@ function HomepageHeader() {
         </img>
         <h1 className="hero__title ksearch-font-family">{siteConfig.title}</h1>
         <p className="hero__subtitle">
-          An easy and intuitive way to write dynamic SQL statements.<br/>
-          For Spring Boot + JPA|JDBC
+          An easy and intuitive way to write dynamic SQL statements exclusively for Spring Boot.<br/>
+          Support JPA and JDBC connections.
         </p>
         {/* <div className={styles.buttons}>
           <Link
