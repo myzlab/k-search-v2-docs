@@ -3,7 +3,9 @@ title: USING clause
 sidebar_label: Using
 ---
 
-In this section you will learn how to implement the `USING` clause of PostgreSQL through the **_KSearch_** library.
+import K from '@site/src/components/K';
+
+In this section you will learn how to implement the `USING` clause of PostgreSQL through the <K/>.
 
 ## USING clause
 

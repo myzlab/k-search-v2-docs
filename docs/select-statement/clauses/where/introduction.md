@@ -3,9 +3,11 @@ title: PostgreSQL WHERE statement
 sidebar_label: Introduction
 ---
 
+import K from '@site/src/components/K';
+
 ## Introduction
 
-In this section you will learn the basic concepts to implement the PostgreSQL WHERE statement de through **_KSearch_** library.
+In this section you will learn the basic concepts to implement the PostgreSQL WHERE statement de through <K/>.
 
 The PostgreSQL WHERE statement allows you to perform mainly with three functionalities:
 
@@ -40,7 +42,7 @@ WHERE conditions
 
 ## Basic Concepts
 
-There are a wide variety of methods available in the **_KSearch_** library so that you can add different conditions to PostgreSQL statements. Before studying all these methods, you should learn some basic concepts that we will show below so that you can fully exploit the potential that **_KSearch_** offers you.
+There are a wide variety of methods available in the <K/> so that you can add different conditions to PostgreSQL statements. Before studying all these methods, you should learn some basic concepts that we will show below so that you can fully exploit the potential that <K/> offers you.
 
 ### 1. Null conditions are ignored
 
@@ -101,7 +103,7 @@ FROM app_user
 
 Parameters: None
 
-Note that in the second example, when the value passed to the condition is null, the SELECT statement does not stop being generated, it only results in this condition being omitted. Please use this **_KSearch_** feature with great caution.
+Note that in the second example, when the value passed to the condition is null, the SELECT statement does not stop being generated, it only results in this condition being omitted. Please use this <K/> feature with great caution.
 
 ### 2. Insurance against null conditions
 
@@ -114,7 +116,7 @@ This insurance is implemented in order to avoid execute UPDATE and DELETE statem
 
 ### 3. Conscious use of modifiers I, AND, OR y NOT
 
-The great variety of methods available in the  library to add the different conditions to PostgreSQL statements is due to their availability in the different facets I, AND, OR y NOT.
+The great variety of methods available in <K/> to add the different conditions to PostgreSQL statements is due to their availability in the different facets I, AND, OR y NOT.
 
 As a general rule we will start by defining that:
 
@@ -132,7 +134,7 @@ We will proceed to theoretically define each of these modifiers:
 - **Lower-level modifier I**: This modifier allows you to remove case sensitivity for the condition being added. This modifier must be invoked through the letter I in each of the methods that allow adding the different conditions to PostgreSQL statements. This modifier only applies to conditions that involve text or similar values.
 - **Lower-level modifier NOT**: This modifier allows you to apply the NOT operator to the condition being added. This modifier must be invoked through the Not word in each of the methods that allow adding the different conditions to PostgreSQL statements.
 
-Once the upper-level and lower-level modifiers have been defined, let's see the basic structure of the methods available in the **_KSearch_** library to add the different conditions to PostgreSQL statements.
+Once the upper-level and lower-level modifiers have been defined, let's see the basic structure of the methods available in the <K/> to add the different conditions to PostgreSQL statements.
 
 <p class="text--center">
   orWhere | where + [ Not ] + [ I ] + Method

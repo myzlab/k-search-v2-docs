@@ -3,7 +3,9 @@ title: JOIN clause
 sidebar_label: Join
 ---
 
-In this section you will learn how to implement the `JOIN` clause of PostgreSQL through the **_KSearch_** library.
+import K from '@site/src/components/K';
+
+In this section you will learn how to implement the `JOIN` clause of PostgreSQL through the <K/>.
 
 ## JOIN clause
 

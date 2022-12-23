@@ -19,7 +19,7 @@ const sidebars = {
   // But you can create a sidebar manually
 
   docsSidebar: [
-    "get-started/what-is-ksearch",
+    "what-is-ksearch",
     {
       type: 'category',
       label: "Get Started",
@@ -37,6 +37,40 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Payload Validator",
+      items: [
+        "payload/payload-validator"
+      ],
+    },
+    "sql-operations",
+    {
+      type: "category",
+      label: "Special Functions",
+      items: [
+        "special-functions/total-count",
+        "special-functions/assert-exists"
+      ],
+    },
+    {
+      type: "category",
+      label: "Data Manipulation",
+      items: [
+        "data-manipulation/introduction",
+        "data-manipulation/mapper",
+        "data-manipulation/metadata",
+        "data-manipulation/single",
+        "data-manipulation/multiple"
+      ],
+    },
+    {
+      type: "category",
+      label: "KConditions",
+      items: [
+        "conditions/eq"
+      ],
+    },
+    {
+      type: "category",
       label: "SELECT Statement",
       items: [
         "select-statement/introduction",
@@ -49,10 +83,11 @@ const sidebars = {
               type: "category",
               label: "Select",
               items: [
-                "select-statement/clauses/select/select",
+                "select-statement/clauses/select/introduction",
+                "select-statement/clauses/select/distinct-on",
                 "select-statement/clauses/select/distinct",
-                "select-statement/clauses/select/single",
-                "select-statement/clauses/select/multiple"
+                "select-statement/clauses/select/select1",
+                "select-statement/clauses/select/select"
               ],
             },
             "select-statement/clauses/from",

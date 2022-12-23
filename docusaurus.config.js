@@ -61,7 +61,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'get-started/what-is-ksearch',
+            docId: 'what-is-ksearch',
             position: 'left',
             label: 'Docs',
           },

@@ -71,7 +71,6 @@ public class K extends KBuilder {
         return JDBC_WORKSPACE;
     }
 }
-
 ```
 
 ## Ready to use!
@@ -93,7 +92,7 @@ public class ExampleDAK {
 
     public void readyToUse() {
         // highlight-next-line
-        k. //All power is here!
+        k. //All you new functionalities start here!
     }
 }
 ```

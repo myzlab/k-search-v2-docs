@@ -5,14 +5,15 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
+import K from '@site/src/components/K';
 
 # Multiple Query
 
-In this section you will learn how to build and execute queries whose objective is to search multiples records on the database through the **_KSearch_** library as well as how to manipulate the information once it has been extracted from the database.
+In this section you will learn how to build and execute queries whose objective is to search multiples records on the database through the <K/> as well as how to manipulate the information once it has been extracted from the database.
 
 ## The multiple() method and the KCollection object
 
-The way available through **_KSearch_** to build and execute queries that are in charge of searching for multiples records on the database is with the `multiple()` method.
+The way available through <K/> to build and execute queries that are in charge of searching for multiples records on the database is with the `multiple()` method.
 
 This method returns a KCollection object which serves as a Java storage for the records returned by the generated and executed SQL query.
 

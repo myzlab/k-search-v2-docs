@@ -5,8 +5,11 @@ sidebar_label: What is KSearch?
 
 import K from '@site/src/components/K';
 
-<K/> is a library that will help you build different types of SQL statements and manipulate the extracted data in a simple and intuitive way.<br/>
+<K/> is a library that will help you build different types of SQL statements and manipulate the extracted data in a simple and intuitive way.
 <br/>
+
+It is developed exclusively for [Spring Boot](https://spring.io/projects/spring-boot) and currently support only PostgreSQL database.
+
 The supported SQL statements are:
 
 ## SELECT statement

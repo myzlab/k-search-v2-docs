@@ -3,9 +3,11 @@ title: PostgreSQL DELETE statement
 sidebar_label: Introduction
 ---
 
+import K from '@site/src/components/K';
+
 ## Introduction
 
-In this section you will learn how to implement the PostgreSQL DELETE statement and PostgreSQL DELETE USING(JOIN) statement through **_KSearch_** library.
+In this section you will learn how to implement the PostgreSQL DELETE statement and PostgreSQL DELETE USING(JOIN) statement through <K/>.
 
 The Postgresql DELETE statement allows you to delete one or more rows from a table.
 
@@ -18,7 +20,7 @@ USING another_table_name
 WHERE conditions
 ```
 
-To generate this type of statement through  library you will need:
+To generate this type of statement through <K/> you will need:
 
 - Specify the name of the table from which you want to delete rows. This is done through the table() method.
 - Specify one or more tables in the [`USING`](/docs/delete-statement/clauses/using) clause through the using() method.

@@ -5,14 +5,15 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
+import K from '@site/src/components/K';
 
 # Single Query
 
-In this section you will learn how to build and execute queries whose objective is to search for a single record on the database through the **_KSearch_** library as well as how to manipulate the information once it has been extracted from the database.
+In this section you will learn how to build and execute queries whose objective is to search for a single record on the database through the <K/> as well as how to manipulate the information once it has been extracted from the database.
 
 ## The single() method and the KRow object
 
-The way available through **_KSearch_** to build and execute queries that are in charge of searching for a single record on the database is with the `single()` method.
+The way available through <K/> to build and execute queries that are in charge of searching for a single record on the database is with the `single()` method.
 
 This method returns a KRow object which serves as a Java storage for the record returned by the generated and executed SQL query.
 
