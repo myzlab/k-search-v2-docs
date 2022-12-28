@@ -1,97 +1,121 @@
 ---
-title: DISTINCT and DISTINCT ON clause
-sidebar_label: Distinct [On]
+title: Select Distinct
+sidebar_label: Select Distinct
 ---
 
-import K from '@site/src/components/K';
+## Definition
 
-In this section you will learn how to implement the `DISTINCT` and `DISTINCT ON` clause through the <K/>.
+The `selectDistinct` methods allows you to add a `SELECT` statement with the `DISTINCT` clause to the query.
 
-## DISTINCT clause
+The methods available to use this functionality are:
 
-The `DISTINCT` clause is used in the `SELECT` statement to remove duplicate rows from a result set.
+- `selectDistinctOn(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives the set of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/clauses/select/introduction#3-values), [`KCondition`](/docs/select-statement/clauses/select/introduction#4-kcondition), [`Columns with alias`](/docs/select-statement/clauses/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw), [`Case conditional expression`](/docs/select-statement/clauses/select/introduction#7-case-conditional-expression).
+- `selectDistinctOn(KQuery kQuery, String alias)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw) which will be added in the `DISTINCT ON` clause.
 
-Syntax:
+## Method hierarchy
 
-```sql showLineNumbers
-SELECT DISTINCT ...
-FROM ... 
-```
+The `select1` method can be used right after the following methods or objects:
 
-To generate this type of statement through <K/> you will need:
+- k
+- [`with`](/docs/select-statement/clauses/with)
+- [`withRecursive`](/docs/select-statement/clauses/with)
 
-- Specify the name of the table from which you want to query data. This is done through the [`table()`](/docs/select-statement/clauses/from) method.
-- Specify the use of the `DISTINCT` clause through the `distinct()` method.
-- Specify any other clauses available for the [`SELECT`](/docs/select-statement/introduction) statement.
+and the subsequent methods that can be called are:
 
-### Examples
+- [`select`](/docs/select-statement/clauses/select/)
+- [`from`](/docs/select-statement/clauses/select/)
+- [`where`](/docs/select-statement/clauses/select/)
+- [`groupBy`](/docs/select-statement/clauses/select/)
+- [`window`](/docs/select-statement/clauses/select/)
+- [`except`](/docs/select-statement/clauses/select/)
+- [`exceptAll`](/docs/select-statement/clauses/select/)
+- [`intersect`](/docs/select-statement/clauses/select/)
+- [`intersectAll`](/docs/select-statement/clauses/select/)
+- [`union`](/docs/select-statement/clauses/select/)
+- [`unionAll`](/docs/select-statement/clauses/select/)
+- [`orderBy`](/docs/select-statement/clauses/select/)
+- [`limit`](/docs/select-statement/clauses/select/)
+- [`offset`](/docs/select-statement/clauses/select/)
+- [`fetch`](/docs/select-statement/clauses/select/)
+- [`single`](/docs/select-statement/clauses/select/)
+- [`multiple`](/docs/select-statement/clauses/select/)
 
-**Example 1**: Find the names of the countries used in a store (Do not show repeated country names).
+## Example: KColumnAllowedToSelect...
 
 Java code:
 
-```java showLineNumbers
-K.
-table("store s").
-innerJoin("country co", "co.id", "s.country_id").
-select(
-    "co.name"
-).
-distinct().
-multiple();
+```java
+k
+// highlight-next-line
+.selectDistinct(
+    APP_USER.ID,
+    concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME).as("fullName"),
+    coalesce(APP_USER.LAST_NAME, APP_USER.FIRST_NAME),
+    val(7),
+    APP_USER.FIRST_NAME.isNull(),
+    raw("au.role_id"),
+    caseConditional()
+        .when(APP_USER.CREATED_AT.gt(LocalDateTime.now().minusDays(7))).then(APP_USER.EMAIL)
+        .elseResult(val("No email available"))
+        .as("email")
+)
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT DISTINCT co.name
-FROM store s
-INNER JOIN country co ON co.id = s.country_id
+SELECT DISTINCT
+    au.id,
+    CONCAT(au.first_name || ?1 || au.last_name) AS "fullName",
+    COALESCE(au.last_name, au.first_name),
+    ?2,
+    au.first_name IS NULL,
+    au.role_id,
+    CASE WHEN au.created_at > ?3 THEN au.email ELSE ?4 END AS email
+FROM app_user au
 ```
 
-Parameters: None
+Parameters:
 
-## DISTINCT ON clause
+- **?1:** " "
+- **?1:** 7
+- **?1:** 2022-12-20T20:07:35.988714
+- **?1:** "No email available"
 
-The `DISTINCT ON` clause is applied in the `SELECT` statement on a set of columns, the set of results is grouped based on the defined columns and of each group is kept the first record found.
-
-Syntax:
-
-```sql showLineNumbers
-SELECT DISTINCT ON (column1) column1, column2...
-FROM ... 
-```
-
-To generate this type of statement through <K/> you will need:
-
-- Specify the name of the table from which you want to query data. This is done through the [`table()`](/docs/select-statement/clauses/from) method.
-- Specify the use of the `DISTINCT ON` clause on the desired columns through the `distinctOn()` method.
-- Specify any other clauses available for the [`SELECT`](/docs/select-statement/introduction) statement.
-
-### Examples
-
-**Example 1**: Bearing in mind that a news item can have multiple associated images, look for the title and url of an associated image of all the news in the database.
+## Example: kQuery, alias
 
 Java code:
 
-```java showLineNumbers
-K.
-table("news n").
-innerJoin("news_file nf", "n.id", "nf.news_id").
-select(
-    "n.title",
-    "nf.url"
-).
-distinctOn("n.id").
-multiple();
+```java
+final KQuery subQuery =
+    k
+    .select(count())
+    .from(APP_USER_SPECIALTY)
+    .innerJoin(APP_USER_SPECIALTY.joinAppUser());
+
+k
+// highlight-next-line
+.selectDistinct(subQuery, "countSpecialties")
+.select(APP_USER.ID)
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT DISTINCT ON (n.id) n.title, nf.url
-FROM news n
-INNER JOIN news_file nf ON n.id = nf.news_id
+SELECT DISTINCT
+    (
+        SELECT COUNT(*)
+        FROM auth.app_user_specialty aus
+        INNER JOIN auth.app_user au ON (aus.app_user_id = au.id)
+    ) AS countSpecialties,
+    au.id
+FROM app_user au
 ```
 
-Parameters: None
+Parameters:
+
+- None

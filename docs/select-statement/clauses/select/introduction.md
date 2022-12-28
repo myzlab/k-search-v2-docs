@@ -27,13 +27,17 @@ k
     APP_USER.CREATED_AT,
     APP_USER.EMAIL
 )
-.from(APP_USER);
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT au.id, au.created_at, au.email
+SELECT
+    au.id,
+    au.created_at,
+    au.email
 FROM app_user au
 ```
 
@@ -56,13 +60,17 @@ k
     APP_USER.ID.cast(text()),
     toChar(APP_USER.CREATED_AT, "YYYY")
 )
-.from(APP_USER);
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT COALESCE(au.first_name, ?1, au.last_name), CAST(au.id AS TEXT), TO_CHAR(au.created_at, ?2)
+SELECT
+    COALESCE(au.first_name, ?1, au.last_name),
+    CAST(au.id AS TEXT),
+    TO_CHAR(au.created_at, ?2)
 FROM app_user au
 ```
 
@@ -89,7 +97,8 @@ Java code:
 
 ```java
 k
-.select(val(456), val("Name"), val(LocalDate.now()));
+.select(val(456), val("Name"), val(LocalDate.now()))
+.multiple();
 ```
 
 SQL generated:
@@ -115,7 +124,8 @@ Java code:
 ```java
 k
 .select(APP_USER.ID.gt(2000))
-.from(APP_USER);
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
@@ -148,13 +158,17 @@ k
     toChar(APP_USER.CREATED_AT, "YYYY").as("year"),
     APP_USER.CREATED_AT.as("createdAt")
 )
-.from(APP_USER);
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT COALESCE(au.first_name, ?1, au.last_name) AS "fullName", TO_CHAR(au.created_at, ?2) AS "year", au.created_at AS "createdAt"
+SELECT
+    COALESCE(au.first_name, ?1, au.last_name) AS "fullName",
+    TO_CHAR(au.created_at, ?2) AS "year",
+    au.created_at AS "createdAt"
 FROM app_user au
 ```
 
@@ -187,13 +201,16 @@ k
     raw("au.id"),
     raw("COALESCE(au.first_name, ' ', au.last_name)")
 )
-.from(APP_USER);
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT au.id, COALESCE(au.first_name, ' ', au.last_name)
+SELECT
+    au.id,
+    COALESCE(au.first_name, ' ', au.last_name)
 FROM app_user au
 ```
 
@@ -262,7 +279,8 @@ k
     .elseResult(APP_USER.UUID.cast(text()))
     .as("validIds")
 )
-.from(APP_USER);
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:

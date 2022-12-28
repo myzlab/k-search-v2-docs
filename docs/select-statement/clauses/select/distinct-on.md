@@ -1,97 +1,133 @@
 ---
-title: DISTINCT and DISTINCT ON clause
-sidebar_label: Distinct [On]
+title: Select Distinct On
+sidebar_label: Select Distinct On
 ---
 
-import K from '@site/src/components/K';
+## Definition
 
-In this section you will learn how to implement the `DISTINCT` and `DISTINCT ON` clause through the <K/>.
+The `selectDistinctOn` methods allows you to add a `SELECT` statement with the `DISTINCT ON` clause to the query.
 
-## DISTINCT clause
+The methods available to use this functionality are:
 
-The `DISTINCT` clause is used in the `SELECT` statement to remove duplicate rows from a result set.
+- `selectDistinctOn(KColumn kColumn)`: Receives either a [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn) object or a [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn) object which will be added in the `DISTINCT ON` clause.
+- `selectDistinctOn(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw) which will be added in the `DISTINCT ON` clause.
+- `selectDistinctOn(int n)`: Receives a integer value which will be added in the `DISTINCT ON` clause. This integer value will indicate the number of the column added in the `SELECT` clause that you want to use in the `DISTINCT ON` clause. The first column corresponds to the number 1, the second column corresponds to the number 2, and so on.
 
-Syntax:
+## Method hierarchy
 
-```sql showLineNumbers
-SELECT DISTINCT ...
-FROM ... 
-```
+The `selectDistinctOn` method can be used right after the following methods or objects:
 
-To generate this type of statement through <K/> you will need:
+- k
+- [`with`](/docs/select-statement/clauses/with)
+- [`withRecursive`](/docs/select-statement/clauses/with)
 
-- Specify the name of the table from which you want to query data. This is done through the [`table()`](/docs/select-statement/clauses/from) method.
-- Specify the use of the `DISTINCT` clause through the `distinct()` method.
-- Specify any other clauses available for the [`SELECT`](/docs/select-statement/introduction) statement.
+and the subsequent methods that can be called are:
 
-### Examples
+- [`select`](/docs/select-statement/clauses/select/)
 
-**Example 1**: Find the names of the countries used in a store (Do not show repeated country names).
+## Example: KTableColumn
 
 Java code:
 
-```java showLineNumbers
-K.
-table("store s").
-innerJoin("country co", "co.id", "s.country_id").
-select(
-    "co.name"
-).
-distinct().
-multiple();
+```java
+k
+// highlight-next-line
+.selectDistinctOn(APP_USER.ID)
+.select(
+    APP_USER.ID,
+    APP_USER.FIRST_NAME
+)
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT DISTINCT co.name
-FROM store s
-INNER JOIN country co ON co.id = s.country_id
+SELECT DISTINCT ON (au.id)
+    au.id,
+    au.first_name
+FROM app_user au
 ```
 
-Parameters: None
+Parameters:
 
-## DISTINCT ON clause
+- None
 
-The `DISTINCT ON` clause is applied in the `SELECT` statement on a set of columns, the set of results is grouped based on the defined columns and of each group is kept the first record found.
-
-Syntax:
-
-```sql showLineNumbers
-SELECT DISTINCT ON (column1) column1, column2...
-FROM ... 
-```
-
-To generate this type of statement through <K/> you will need:
-
-- Specify the name of the table from which you want to query data. This is done through the [`table()`](/docs/select-statement/clauses/from) method.
-- Specify the use of the `DISTINCT ON` clause on the desired columns through the `distinctOn()` method.
-- Specify any other clauses available for the [`SELECT`](/docs/select-statement/introduction) statement.
-
-### Examples
-
-**Example 1**: Bearing in mind that a news item can have multiple associated images, look for the title and url of an associated image of all the news in the database.
+## Example: KColumn
 
 Java code:
 
-```java showLineNumbers
-K.
-table("news n").
-innerJoin("news_file nf", "n.id", "nf.news_id").
-select(
-    "n.title",
-    "nf.url"
-).
-distinctOn("n.id").
-multiple();
+```java
+k
+// highlight-next-line
+.selectDistinctOn(concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME))
+.select(APP_USER.FIRST_NAME)
+.from(APP_USER)
+.multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT DISTINCT ON (n.id) n.title, nf.url
-FROM news n
-INNER JOIN news_file nf ON n.id = nf.news_id
+SELECT DISTINCT ON (CONCAT(au.first_name || ?1 || au.last_name))
+    au.first_name
+FROM app_user au
 ```
 
-Parameters: None
+Parameters:
+
+- **?1:** " "
+
+## Example: KRaw
+
+Java code:
+
+```java
+k
+// highlight-next-line
+.selectDistinctOn(raw("TO_CHAR(au.created_at, 'YYYY')"))
+.select(
+    APP_USER.ID,
+    APP_USER.CREATED_AT.as("createdAt")
+)
+.from(APP_USER)
+.multiple();
+```
+
+SQL generated:
+
+```sql showLineNumbers
+SELECT DISTINCT ON (TO_CHAR(au.created_at, 'YYYY'))
+    au.id,
+    au.created_at AS "createdAt"
+FROM app_user au
+```
+
+Parameters:
+
+- None
+
+## Example: int
+
+Java code:
+
+```java
+k
+// highlight-next-line
+.selectDistinctOn(1)
+.select(APP_USER.ROLE_ID)
+.from(APP_USER)
+.multiple();
+```
+
+SQL generated:
+
+```sql showLineNumbers
+SELECT DISTINCT ON (1) au.role_id
+FROM app_user au
+```
+
+Parameters:
+
+- None
