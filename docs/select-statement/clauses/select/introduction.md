@@ -139,7 +139,55 @@ Parameters:
 
 - **?1:** 2000
 
-## 5. Columns with alias
+## 5. Columns with over
+
+The `OVER` clause allows you to add **window functions**.
+
+The only one method available to use this functionality is:
+
+- `over(KWindowDefinitionAllowedToOver kWindowDefinitionAllowedToOver)`: Receives a [`KWindowDefinitionAllowedToOver`](/docs) which will be added in the `OVER` clause.
+
+:::caution
+
+OVER clause is not supported directly on a column.
+
+:::
+
+To fully study the **Window Functions**, visit its documentation https://www.postgresql.org/docs/15/tutorial-window.html
+
+### Example
+
+Java code:
+
+ ```java
+final KWindowDefinitionUnnamedOrdered wduo = 
+    wd()
+    .partitionBy(APP_USER.ROLE_ID)
+    .orderBy(APP_USER.ID.asc());
+
+k
+.select(
+    APP_USER.ID,
+    rowNumber().over(wduo)
+)
+.from(APP_USER)
+.multiple();
+```
+
+SQL generated:
+
+```sql showLineNumbers
+SELECT
+    au.id,
+    ROW_NUMBER() OVER(PARTITION BY au.role_id ORDER BY au.id ASC)
+FROM app_user au
+```
+
+Parameters:
+
+- None
+
+## 6. Columns with alias
 
 All of the above options support the ability to add an alias via the `as` method.
 
@@ -177,7 +225,7 @@ Parameters:
 - **?1:** " "
 - **?2:** "YYYY"
 
-## 6. `KRaw`
+## 7. `KRaw`
 
 The KRaw functionality allows adding any content to the SQL `SELECT` statement without any validation or parameterization. We can do it through the `raw` method.
 
@@ -218,7 +266,7 @@ Parameters:
 
 - None
 
-## 7. `CASE` conditional expression
+## 8. `CASE` conditional expression
 
 The SQL `CASE` expression is a generic conditional expression, similar to if/else statements in other programming languages.
 To get started with the implementation of a `CASE` conditional expression, we need to import the static functions as follows:

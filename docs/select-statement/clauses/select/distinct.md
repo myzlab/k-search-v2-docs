@@ -9,7 +9,7 @@ The `selectDistinct` methods allows you to add a `SELECT` statement with the `DI
 
 The methods available to use this functionality are:
 
-- `selectDistinctOn(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives the set of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/clauses/select/introduction#3-values), [`KCondition`](/docs/select-statement/clauses/select/introduction#4-kcondition), [`Columns with alias`](/docs/select-statement/clauses/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw), [`Case conditional expression`](/docs/select-statement/clauses/select/introduction#7-case-conditional-expression).
+- `selectDistinctOn(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives the set of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/clauses/select/introduction#3-values), [`KCondition`](/docs/select-statement/clauses/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/clauses/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/clauses/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw), [`Case conditional expression`](/docs/select-statement/clauses/select/introduction#7-case-conditional-expression).
 - `selectDistinctOn(KQuery kQuery, String alias)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw) which will be added in the `DISTINCT ON` clause.
 
 ## Method hierarchy
@@ -57,7 +57,8 @@ k
     caseConditional()
         .when(APP_USER.CREATED_AT.gt(LocalDateTime.now().minusDays(7))).then(APP_USER.EMAIL)
         .elseResult(val("No email available"))
-        .as("email")
+        .as("email"),
+    rowNumber().over(wd().orderBy(APP_USER.ID)).as("order")
 )
 .from(APP_USER)
 .multiple();
@@ -73,7 +74,8 @@ SELECT DISTINCT
     ?2,
     au.first_name IS NULL,
     au.role_id,
-    CASE WHEN au.created_at > ?3 THEN au.email ELSE ?4 END AS email
+    CASE WHEN au.created_at > ?3 THEN au.email ELSE ?4 END AS email,
+    ROW_NUMBER() OVER(ORDER BY au.id) AS "order"
 FROM app_user au
 ```
 
