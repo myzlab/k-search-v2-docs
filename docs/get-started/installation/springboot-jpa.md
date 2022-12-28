@@ -20,7 +20,7 @@ Copy the **K** dependency in your pom.xml file, then, force to your project to d
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jpa</groupId>
     <artifactId>k</artifactId>
-    <version>2.0.12</version>
+    <version>2.0.14</version>
 </dependency>
 ```
 
@@ -31,7 +31,6 @@ To do this, create a class named K that inherits from **com.myzlab.k.KBuilder**.
 Assuming that the root package of your project is **com.example**, then you must to create the package **com.example.k** and the new class would be located there.
 
 ```java showLineNumbers
-// highlight-next-line
 package com.example.k;
 
 import com.myzlab.k.KBuilder;

@@ -31,7 +31,6 @@ Java code:
 
 ```java
 k
-// highlight-next-line
 .selectDistinctOn(APP_USER.ID)
 .select(
     APP_USER.ID,
@@ -60,7 +59,6 @@ Java code:
 
 ```java
 k
-// highlight-next-line
 .selectDistinctOn(concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME))
 .select(APP_USER.FIRST_NAME)
 .from(APP_USER)
@@ -85,7 +83,6 @@ Java code:
 
 ```java
 k
-// highlight-next-line
 .selectDistinctOn(raw("TO_CHAR(au.created_at, 'YYYY')"))
 .select(
     APP_USER.ID,
@@ -114,7 +111,6 @@ Java code:
 
 ```java
 k
-// highlight-next-line
 .selectDistinctOn(1)
 .select(APP_USER.ROLE_ID)
 .from(APP_USER)

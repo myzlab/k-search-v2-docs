@@ -47,7 +47,6 @@ Java code:
 
 ```java
 k
-// highlight-next-line
 .select1()
 .from(APP_USER)
 .multiple();

@@ -9,12 +9,12 @@ The `selectDistinct` methods allows you to add a `SELECT` statement with the `DI
 
 The methods available to use this functionality are:
 
-- `selectDistinctOn(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives the set of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/clauses/select/introduction#3-values), [`KCondition`](/docs/select-statement/clauses/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/clauses/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/clauses/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw), [`Case conditional expression`](/docs/select-statement/clauses/select/introduction#7-case-conditional-expression).
-- `selectDistinctOn(KQuery kQuery, String alias)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw) which will be added in the `DISTINCT ON` clause.
+- `selectDistinct(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives the set of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/clauses/select/introduction#3-values), [`KCondition`](/docs/select-statement/clauses/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/clauses/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/clauses/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw), [`Case conditional expression`](/docs/select-statement/clauses/select/introduction#7-case-conditional-expression).
+- `selectDistinct(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the `SELECT DISTINCT` clause.
 
 ## Method hierarchy
 
-The `select1` method can be used right after the following methods or objects:
+The `selectDistinct` method can be used right after the following methods or objects:
 
 - k
 - [`with`](/docs/select-statement/clauses/with)
@@ -46,7 +46,6 @@ Java code:
 
 ```java
 k
-// highlight-next-line
 .selectDistinct(
     APP_USER.ID,
     concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME).as("fullName"),
@@ -98,7 +97,6 @@ final KQuery subQuery =
     .innerJoin(APP_USER_SPECIALTY.joinAppUser());
 
 k
-// highlight-next-line
 .selectDistinct(subQuery, "countSpecialties")
 .select(APP_USER.ID)
 .from(APP_USER)
