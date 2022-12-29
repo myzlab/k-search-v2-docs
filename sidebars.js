@@ -78,7 +78,15 @@ const sidebars = {
           type: "category",
           label: "Clauses",
           items: [
-            "select-statement/clauses/with",
+            {
+              type: "category",
+              label: "With",
+              items: [
+                "select-statement/clauses/with/introduction",
+                "select-statement/clauses/with/with",
+                "select-statement/clauses/with/with-recursive",
+              ],
+            },
             {
               type: "category",
               label: "Select",

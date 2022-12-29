@@ -25,7 +25,7 @@ SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } ONLY ]
 ```
 
-To fully study the SQL Select clause, visit its documentation [https://www.postgresql.org/docs/15/sql-select.html](https://www.postgresql.org/docs/15/sql-select.html)
+To fully study the SQL Select clause, visit its documentation [https://www.postgresql.org/docs/current/sql-select.html](https://www.postgresql.org/docs/current/sql-select.html)
 
 ## Basic Concepts
 

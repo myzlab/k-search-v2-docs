@@ -153,7 +153,7 @@ OVER clause is not supported directly on a column.
 
 :::
 
-To fully study the **Window Functions**, visit its documentation https://www.postgresql.org/docs/15/tutorial-window.html
+To fully study the **Window Functions**, visit its documentation [https://www.postgresql.org/docs/current/tutorial-window.html](https://www.postgresql.org/docs/current/tutorial-window.html)
 
 ### Example
 
@@ -227,7 +227,7 @@ Parameters:
 
 ## 7. `KRaw`
 
-The KRaw functionality allows adding any content to the SQL `SELECT` statement without any validation or parameterization. We can do it through the `raw` method.
+The KRaw functionality allows adding any content to the SQL statement without any validation or parameterization. We can do it through the `raw` method.
 
 - `raw(String content)`: Receive the content you want to add without validations and without parameterization.
 
@@ -281,10 +281,11 @@ At that point, start by calling the `caseConditional()` method, as follow:
 caseConditional()
 ```
 
-Then we proceed to add the conditions and their results through the `when()` and `then()` methods.
+Then we proceed to add the conditions and their results through the `when` and `then` methods.
 
-- `when(com.myzlab.k.KCondition)`: Receive a condition (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
-- `then(com.myzlab.k.KBaseColumnCastable)`: Receive a column or a value.
+- `when(KCondition kCondition)`: Receive a condition (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
+- `then(KBaseColumnCastable kBaseColumnCastable)`: Receive a column or a value which will be added in the `THEN` clause.
+- `then(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#7-kraw) which will be added in the `THEN` clause.
 
 These methods can be called as many conditions as you wish to add, as follow:
 

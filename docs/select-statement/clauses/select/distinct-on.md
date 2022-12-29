@@ -10,7 +10,7 @@ The `selectDistinctOn` methods allows you to add a `SELECT` statement with the `
 The methods available to use this functionality are:
 
 - `selectDistinctOn(KColumn kColumn)`: Receives either a [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn) object or a [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn) object which will be added in the `DISTINCT ON` clause.
-- `selectDistinctOn(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#6-kraw) which will be added in the `DISTINCT ON` clause.
+- `selectDistinctOn(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#7-kraw) which will be added in the `DISTINCT ON` clause.
 - `selectDistinctOn(int n)`: Receives a integer value which will be added in the `DISTINCT ON` clause. This integer value will indicate the number of the column added in the `SELECT` clause that you want to use in the `DISTINCT ON` clause. The first column corresponds to the number 1, the second column corresponds to the number 2, and so on.
 
 ## Method hierarchy
