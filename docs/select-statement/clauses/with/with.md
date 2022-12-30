@@ -44,9 +44,7 @@ final KValues userIdsValues =
 final KCommonTableExpressionFilled userIdsCte = 
     cte("user_ids_cte")
     .columns("id")
-    .as(userIdsValues);
-    
-final KCommonTableExpressionAliased userIdsCteAliased = userIdsCte.as("uic");
+    .as(userIdsValues, "uic");
 
 k
 .with(userIdsCte)
@@ -56,11 +54,11 @@ k
             k
             .select1()
             .from(APP_USER)
-            .where(APP_USER.ID.eq(userIdsCteAliased.c("id")))
+            .where(APP_USER.ID.eq(userIdsCte.c("id")))
         )
     )
 )
-.from(userIdsCteAliased)
+.from(userIdsCte)
 .single(Boolean.class);
 ```
 

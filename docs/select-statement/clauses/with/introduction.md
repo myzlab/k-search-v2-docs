@@ -10,11 +10,11 @@ The `WITH` clause provides a way to write auxiliary statements for use in a larg
 
 To fully study the `WITH` clause, visit its documentation [https://www.postgresql.org/docs/current/queries-with.html](https://www.postgresql.org/docs/current/queries-with.html)
 
-In this introduction, you learn how to build a CTE from a subquery or from a set of values.
+In this introduction, you learn how to build a CTE from a subquery and from a set of values.
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a subquery
 
-To get started building a CTE from a subquery, we need to import the static functions as follows:
+To get started building a KCommonTableExpressionFilled (CTE) from a subquery, we need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;
@@ -41,13 +41,13 @@ The next step is add columns to CTE through the `columns` method, which receives
 columns("id", "firstName", ...)
 ```
 
-And finally, we proceed to add the subquery to CTE through the `as` method, as follow:
+And finally, we proceed to add the subquery and an alias to the CTE through the `as` method, as follow:
 
 ```java
 final KQuery kQuery = ...;
 
 // highlight-next-line
-as(kQuery)
+as(kQuery, "cte_alias")
 ```
 
 ### Example
@@ -64,7 +64,7 @@ final KQuery kQueryUsers10400_10500 =
 final KCommonTableExpressionFilled cteUsers10400_10500 = 
         cte("users_10400_10500")
         .columns("id", "firstName")
-        .as(kQueryUsers10400_10500);
+        .as(kQueryUsers10400_10500, "cte_users");
 ```
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a set of values
@@ -108,13 +108,13 @@ The next step is add columns to CTE through the `columns` method, which receives
 columns("id", "firstName", ...)
 ```
 
-And finally, we proceed to add the values to CTE through the `as` method, as follow:
+And finally, we proceed to add the values and an alias to the CTE through the `as` method, as follow:
 
 ```java
 final KValues kValues = ...;
 
 // highlight-next-line
-as(kValues)
+as(kValues, "cte_alias")
 ```
 
 ### Example
@@ -142,34 +142,15 @@ final KValues userValues =
 final KCommonTableExpressionFilled cteValues = 
     cte("cteValues")
     .columns("id", "firstName", "lastName")
-    .as(userValues);
+    .as(userValues, "cte_users");
 ```
 
-## How to use a CTE and its columns in other clauses?
+## How to use a `KCommonTableExpressionFilled` and its columns in other clauses?
 
-It is very likely that you will need to use a CTE and its columns in other clauses, such as `SELECT` clause, `FROM` clause, `WHERE` clause, etc. To do this, you must convert your `KCommonTableExpressionFilled` to a `KCommonTableExpressionAliased`, which through its methods, is compatible with the other clauses.
-
-To convert your `KCommonTableExpressionFilled` to a `KCommonTableExpressionAliased`, you must invoke the `as` method, as folows:
-
-```java
-final KQuery users =
-    k
-    .select(APP_USER.ID)
-    .from(APP_USER);
-
-final KCommonTableExpressionFilled cteUsers = 
-    cte("users")
-    .columns("id")
-    .as(users);
-
-final KCommonTableExpressionAliased cteUsersAliased =
-    cteUsers
-// highlight-next-line
-    .as("users_");
-```
-
-The methods available for a `KCommonTableExpressionAliased` are:
+It is very likely that you will need to use a CTE and its columns in other clauses, such as `SELECT` clause, `FROM` clause, `WHERE` clause, etc. This can be achieved through the following available methods:
 
 - `column(String name)`: Allow you to generate a column from your CTE. Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the CTE alias.
 - `c(String name)`: This method does the same as method `column` but with a shorter name.
 - `on(KCondition kCondition)`: This method allows the CTE to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
+
+Also, a `KCommonTableExpressionFilled` can be used directly in a FROM clause because of the alias that is supplied to it.

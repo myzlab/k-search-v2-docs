@@ -145,7 +145,7 @@ The `OVER` clause allows you to add **window functions**.
 
 The only one method available to use this functionality is:
 
-- `over(KWindowDefinitionAllowedToOver kWindowDefinitionAllowedToOver)`: Receives a [`KWindowDefinitionAllowedToOver`](/docs) which will be added in the `OVER` clause.
+- `over(KWindowDefinitionAllowedToOver kWindowDefinitionAllowedToOver)`: Receives a [`KWindowDefinitionAllowedToOver`](/docs/what-is-ksearch) which will be added in the `OVER` clause.
 
 :::caution
 

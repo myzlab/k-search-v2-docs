@@ -49,18 +49,16 @@ final KQuery kQueryRecursive =
 
 final KCommonTableExpressionFilled permissionTreeCte =
     cte("permission_tree_cte")
-    .as(kQueryRecursive);
-
-final KCommonTableExpressionAliased permissionTreeCteAliased = permissionTreeCte.as("ptc");
+    .as(kQueryRecursive, "ptc");
 
 k
 .withRecursive(permissionTreeCte)
 .select(
-    permissionTreeCteAliased.c("id"),
-    permissionTreeCteAliased.c("code"),
-    permissionTreeCteAliased.c("permission_id").as("permissionId")
+    permissionTreeCte.c("id"),
+    permissionTreeCte.c("code"),
+    permissionTreeCte.c("permission_id").as("permissionId")
 )
-.from(permissionTreeCteAliased)
+.from(permissionTreeCte)
 .multiple();
 ```
 
