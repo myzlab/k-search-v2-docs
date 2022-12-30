@@ -6,7 +6,11 @@ import K from '@site/src/components/K';
 
 # Introduction
 
-In this introduction, we will show all the possible values that you can use in the `SELECT` clause to tell <K/> what information we want to query.
+The `SELECT` list specifies expressions that form the output rows of the `SELECT` statement.
+
+To fully study the `SELECT` list, visit its documentation [https://www.postgresql.org/docs/current/sql-select.html#SQL-SELECT-LIST](https://www.postgresql.org/docs/current/sql-select.html#SQL-SELECT-LIST)
+
+In this introduction, we will show all the possible values that you can use in the `SELECT` list to tell <K/> what information we want to query.
 All of these possible values can be used together at the same time.
 
 ## 1. KTableColumn
@@ -229,7 +233,7 @@ Parameters:
 
 The KRaw functionality allows adding any content to the SQL statement without any validation or parameterization. We can do it through the `raw` method.
 
-- `raw(String content)`: Receive the content you want to add without validations and without parameterization.
+- `raw(String content, Object... args)`: Receive the content you want to add without validations and without parameterization. If additional arguments are supplied by parameter (args), these will be considered within the same content through the [String.format](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html) method call, in this sense, all the rules indicated by the [String.format](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html) method must be followed.
 
 The text added each time the `raw` method is executed will be considered as a single column in the SQL statement.
 
@@ -244,9 +248,10 @@ import static com.myzlab.k.KFunction.*;
 Java code:
 
 ```java
+final String v = "aliasExample";
 k
 .select(
-    raw("au.id"),
+    raw("au.id AS %s", v),
     raw("COALESCE(au.first_name, ' ', au.last_name)")
 )
 .from(APP_USER)
@@ -257,7 +262,7 @@ SQL generated:
 
 ```sql showLineNumbers
 SELECT
-    au.id,
+    au.id AS aliasExample,
     COALESCE(au.first_name, ' ', au.last_name)
 FROM app_user au
 ```

@@ -6,7 +6,7 @@ import K from '@site/src/components/K';
 
 # Introduction
 
-The `WITH` clause provides a way to write auxiliary statements for use in a larger query. These statements, which are often referred to as Common Table Expressions or CTEs, can be thought of as defining temporary tables that exist just for one query.
+The `WITH` clause provides a way to write auxiliary statements for use in a larger query. These statements, which are often referred to as Common Table Expressions or CTEs, can be thought of as defining temporary tables that exist just for one query. In Java, we will see a CTE as the `KCommonTableExpressionFilled` object.
 
 To fully study the `WITH` clause, visit its documentation [https://www.postgresql.org/docs/current/queries-with.html](https://www.postgresql.org/docs/current/queries-with.html)
 
@@ -14,7 +14,7 @@ In this introduction, you learn how to build a CTE from a subquery and from a se
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a subquery
 
-To get started building a KCommonTableExpressionFilled (CTE) from a subquery, we need to import the static functions as follows:
+To get started building a `KCommonTableExpressionFilled` (CTE) from a subquery, we need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;

@@ -20,7 +20,7 @@ Copy the **K** dependency in your pom.xml file, then, force to your project to d
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jpa</groupId>
     <artifactId>k</artifactId>
-    <version>2.0.14</version>
+    <version>2.0.16</version>
 </dependency>
 ```
 

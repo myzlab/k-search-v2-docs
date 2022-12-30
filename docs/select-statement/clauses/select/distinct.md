@@ -23,7 +23,7 @@ The `selectDistinct` method can be used right after the following methods or obj
 and the subsequent methods that can be called are:
 
 - [`select`](/docs/select-statement/clauses/select/)
-- [`from`](/docs/select-statement/clauses/select/)
+- [`from`](/docs/select-statement/clauses/from/)
 - [`where`](/docs/select-statement/clauses/select/)
 - [`groupBy`](/docs/select-statement/clauses/select/)
 - [`window`](/docs/select-statement/clauses/select/)

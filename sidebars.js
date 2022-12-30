@@ -98,7 +98,14 @@ const sidebars = {
                 "select-statement/clauses/select/select"
               ],
             },
-            "select-statement/clauses/from",
+            {
+              type: "category",
+              label: "From",
+              items: [
+                "select-statement/clauses/from/introduction",
+                "select-statement/clauses/from/from",
+              ],
+            },
             "select-statement/clauses/join",
             {
               type: "category",
