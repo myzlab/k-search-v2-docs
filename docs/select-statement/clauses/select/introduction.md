@@ -283,7 +283,7 @@ caseConditional()
 
 Then we proceed to add the conditions and their results through the `when` and `then` methods.
 
-- `when(KCondition kCondition)`: Receive a condition (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
+- `when(KCondition kCondition)`: Receive a condition which will be added in the `WHEN` clause. (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
 - `then(KBaseColumnCastable kBaseColumnCastable)`: Receive a column or a value which will be added in the `THEN` clause.
 - `then(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#7-kraw) which will be added in the `THEN` clause.
 

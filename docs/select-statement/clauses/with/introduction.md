@@ -12,7 +12,7 @@ To fully study the `WITH` clause, visit its documentation [https://www.postgresq
 
 In this introduction, you learn how to build a CTE from a subquery or from a set of values.
 
-## 1. Build a Common Table Expression (CTE) from a subquery
+## Build a `KCommonTableExpressionFilled` (CTE) from a subquery
 
 To get started building a CTE from a subquery, we need to import the static functions as follows:
 
@@ -67,7 +67,7 @@ final KCommonTableExpressionFilled cteUsers10400_10500 =
         .as(kQueryUsers10400_10500);
 ```
 
-## 2. Build a Common Table Expression (CTE) from a set of values
+## Build a `KCommonTableExpressionFilled` (CTE) from a set of values
 
 To get started building a CTE from a set of values, we need to import the static functions as follows:
 
@@ -113,6 +113,7 @@ And finally, we proceed to add the values to CTE through the `as` method, as fol
 ```java
 final KValues kValues = ...;
 
+// highlight-next-line
 as(kValues)
 ```
 
@@ -143,3 +144,32 @@ final KCommonTableExpressionFilled cteValues =
     .columns("id", "firstName", "lastName")
     .as(userValues);
 ```
+
+## How to use a CTE and its columns in other clauses?
+
+It is very likely that you will need to use a CTE and its columns in other clauses, such as `SELECT` clause, `FROM` clause, `WHERE` clause, etc. To do this, you must convert your `KCommonTableExpressionFilled` to a `KCommonTableExpressionAliased`, which through its methods, is compatible with the other clauses.
+
+To convert your `KCommonTableExpressionFilled` to a `KCommonTableExpressionAliased`, you must invoke the `as` method, as folows:
+
+```java
+final KQuery users =
+    k
+    .select(APP_USER.ID)
+    .from(APP_USER);
+
+final KCommonTableExpressionFilled cteUsers = 
+    cte("users")
+    .columns("id")
+    .as(users);
+
+final KCommonTableExpressionAliased cteUsersAliased =
+    cteUsers
+// highlight-next-line
+    .as("users_");
+```
+
+The methods available for a `KCommonTableExpressionAliased` are:
+
+- `column(String name)`: Allow you to generate a column from your CTE. Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the CTE alias.
+- `c(String name)`: This method does the same as method `column` but with a shorter name.
+- `on(KCondition kCondition)`: This method allows the CTE to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).

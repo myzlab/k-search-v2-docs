@@ -1,5 +1,89 @@
 ---
-
+title: With Recursive
+sidebar_label: With Recursive
 ---
 
-# With Recursive
+## Definition
+
+The `withRecursive` method allows you to add a `WITH RECURSIVE` statement to the query.
+
+The only one method available to use this functionality is:
+
+- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/select-statement/clauses/with/introduction) that will be added to the `WITH RECURSIVE` clause.
+
+## Method hierarchy
+
+The `withRecursive` method can be used right after the following methods or objects:
+
+- k
+
+and the subsequent methods that can be called are:
+
+- [`selectDistinctOn`](/docs/select-statement/clauses/select/distinct-on)
+- [`selectDistinct`](/docs/select-statement/clauses/select/distinct)
+- [`select1`](/docs/select-statement/clauses/select/select1)
+- [`select`](/docs/select-statement/clauses/select/)
+- [`insertInto`](/docs/select-statement/clauses/select/)
+- [`update`](/docs/select-statement/clauses/select/)
+- [`deleteFrom`](/docs/select-statement/clauses/select/)
+
+## Example
+
+Java code:
+
+```java
+final PermissionMetadata PERMISSION_2 = PERMISSION.alias("pe2");
+        
+final KFrom kQueryUnionTree = 
+    k
+    .select(PERMISSION_2.ID, PERMISSION_2.CODE, PERMISSION_2.PERMISSION_ID)
+    .from(PERMISSION_2)
+    .innerJoin(raw(String.format("permission_tree_cte ptc2 ON ptc2.id = %s", PERMISSION_2.PERMISSION_ID)));
+
+final KQuery kQueryRecursive = 
+    k
+    .select(PERMISSION.ID, PERMISSION.CODE, PERMISSION.PERMISSION_ID)
+    .from(PERMISSION)
+    .where(PERMISSION.ID.eq(510))
+    .union(kQueryUnionTree);
+
+final KCommonTableExpressionFilled permissionTreeCte =
+    cte("permission_tree_cte")
+    .as(kQueryRecursive);
+
+final KCommonTableExpressionAliased permissionTreeCteAliased = permissionTreeCte.as("ptc");
+
+k
+.withRecursive(permissionTreeCte)
+.select(
+    permissionTreeCteAliased.c("id"),
+    permissionTreeCteAliased.c("code"),
+    permissionTreeCteAliased.c("permission_id").as("permissionId")
+)
+.from(permissionTreeCteAliased)
+.multiple();
+```
+
+SQL generated:
+
+```sql showLineNumbers
+WITH RECURSIVE permission_tree_cte AS (
+    SELECT pe.id, pe.code, pe.permission_id
+    FROM auth.permission pe 
+    WHERE pe.id = ? 
+    UNION (
+        SELECT pe2.id, pe2.code, pe2.permission_id
+        FROM auth.permission pe2
+        INNER JOIN permission_tree_cte ptc2 ON ptc2.id = pe2.permission_id
+    )
+)
+SELECT
+    ptc.id,
+    ptc.code,
+    ptc.permission_id AS "permissionId"
+FROM permission_tree_cte ptc
+```
+
+Parameters:
+
+- **?1:** 510

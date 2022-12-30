@@ -1,5 +1,86 @@
 ---
-
+title: With
+sidebar_label: With
 ---
 
-# With
+## Definition
+
+The `with` method allows you to add a `WITH` statement to the query.
+
+The only one method available to use this functionality is:
+
+- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/select-statement/clauses/with/introduction) that will be added to the `WITH` clause.
+
+## Method hierarchy
+
+The `with` method can be used right after the following methods or objects:
+
+- k
+
+and the subsequent methods that can be called are:
+
+- [`selectDistinctOn`](/docs/select-statement/clauses/select/distinct-on)
+- [`selectDistinct`](/docs/select-statement/clauses/select/distinct)
+- [`select1`](/docs/select-statement/clauses/select/select1)
+- [`select`](/docs/select-statement/clauses/select/)
+- [`insertInto`](/docs/select-statement/clauses/select/)
+- [`update`](/docs/select-statement/clauses/select/)
+- [`deleteFrom`](/docs/select-statement/clauses/select/)
+
+## Example
+
+Java code:
+
+```java
+final KValues userIdsValues =
+    values()
+    .append(new ArrayList<>() {{
+        add(2L);
+    }})
+    .append(new ArrayList<>() {{
+        add(3L);
+    }});
+        
+final KCommonTableExpressionFilled userIdsCte = 
+    cte("user_ids_cte")
+    .columns("id")
+    .as(userIdsValues);
+    
+final KCommonTableExpressionAliased userIdsCteAliased = userIdsCte.as("uic");
+
+k
+.with(userIdsCte)
+.select(
+    boolAnd(
+        exists(
+            k
+            .select1()
+            .from(APP_USER)
+            .where(APP_USER.ID.eq(userIdsCteAliased.c("id")))
+        )
+    )
+)
+.from(userIdsCteAliased)
+.single(Boolean.class);
+```
+
+SQL generated:
+
+```sql showLineNumbers
+WITH user_ids_cte (id) AS (
+    VALUES (?), (?)
+) 
+SELECT BOOL_AND (
+    EXISTS (
+        SELECT ?
+        FROM app_user au
+        WHERE au.id = uic.id
+    )
+) FROM user_ids_cte uic
+```
+
+Parameters:
+
+- **?1:** 2
+- **?2:** 3
+- **?3:** 1

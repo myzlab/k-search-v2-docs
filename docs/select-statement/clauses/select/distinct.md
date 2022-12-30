@@ -9,7 +9,7 @@ The `selectDistinct` methods allows you to add a `SELECT` statement with the `DI
 
 The methods available to use this functionality are:
 
-- `selectDistinct(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives the set of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/clauses/select/introduction#3-values), [`KCondition`](/docs/select-statement/clauses/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/clauses/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/clauses/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/clauses/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/clauses/select/introduction#7-case-conditional-expression).
+- `selectDistinct(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/clauses/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/clauses/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/clauses/select/introduction#3-values), [`KCondition`](/docs/select-statement/clauses/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/clauses/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/clauses/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/clauses/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/clauses/select/introduction#7-case-conditional-expression).
 - `selectDistinct(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the `SELECT DISTINCT` clause.
 
 ## Method hierarchy
@@ -81,9 +81,9 @@ FROM app_user au
 Parameters:
 
 - **?1:** " "
-- **?1:** 7
-- **?1:** 2022-12-20T20:07:35.988714
-- **?1:** "No email available"
+- **?2:** 7
+- **?3:** 2022-12-20T20:07:35.988714
+- **?4:** "No email available"
 
 ## Example: kQuery, alias
 
@@ -109,8 +109,8 @@ SQL generated:
 SELECT DISTINCT
     (
         SELECT COUNT(*)
-        FROM auth.app_user_specialty aus
-        INNER JOIN auth.app_user au ON (aus.app_user_id = au.id)
+        FROM app_user_specialty aus
+        INNER JOIN app_user au ON (aus.app_user_id = au.id)
     ) AS countSpecialties,
     au.id
 FROM app_user au
