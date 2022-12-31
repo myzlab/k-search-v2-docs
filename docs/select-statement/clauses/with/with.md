@@ -5,7 +5,7 @@ sidebar_label: With
 
 ## Definition
 
-The `with` method allows you to add a `WITH` statement to the query.
+The `with` method allows you to add a `WITH` clause to the query.
 
 The only one method available to use this functionality is:
 

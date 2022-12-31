@@ -152,5 +152,6 @@ It is very likely that you will need to use a CTE and its columns in other claus
 - `column(String name)`: Allow you to generate a column from your CTE. Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the CTE alias.
 - `c(String name)`: This method does the same as method `column` but with a shorter name.
 - `on(KCondition kCondition)`: This method allows the CTE to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
+- `on(KRaw kRaw)`: This method allows the CTE to be added to a join through the [`KRaw`](/docs/select-statement/clauses/select/introduction#7-kraw) that is received by parameter.
 
 Also, a `KCommonTableExpressionFilled` can be used directly in a FROM clause because of the alias that is supplied to it.

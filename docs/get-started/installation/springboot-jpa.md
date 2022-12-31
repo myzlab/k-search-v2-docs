@@ -7,6 +7,16 @@ import K from '@site/src/components/K';
 
 In this section you will learn how to install <K/> in a Spring Boot project with a JPA connection available.
 
+:::caution
+
+<K/> compatibility with JPA is for the sole purpose that you can migrate your existing project from JPA to JDBC.
+
+If you are installing <K/> in a new project, our recommendation is that for performance reasons you use JDBC.
+
+[How to install for JDBC connection?](/docs/get-started/installation/springboot-jdbc)
+
+:::
+
 ## Previous requirements
 
 - Have a Spring Boot project in which you want to install <K/>.

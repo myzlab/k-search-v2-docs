@@ -106,7 +106,18 @@ const sidebars = {
                 "select-statement/clauses/from/from",
               ],
             },
-            "select-statement/clauses/join",
+            {
+              type: "category",
+              label: "Join",
+              items: [
+                "select-statement/clauses/join/introduction",
+                "select-statement/clauses/join/inner-join",
+                "select-statement/clauses/join/left-join",
+                "select-statement/clauses/join/right-join",
+                "select-statement/clauses/join/full-join",
+                "select-statement/clauses/join/cross-join"
+              ],
+            },
             {
               type: "category",
               label: "Where",
