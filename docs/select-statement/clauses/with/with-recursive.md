@@ -68,7 +68,7 @@ SQL generated:
 WITH RECURSIVE permission_tree_cte AS (
     SELECT pe.id, pe.code, pe.permission_id
     FROM auth.permission pe 
-    WHERE pe.id = ? 
+    WHERE pe.id = ?1
     UNION (
         SELECT pe2.id, pe2.code, pe2.permission_id
         FROM auth.permission pe2

@@ -119,7 +119,7 @@ Parameters:
 
 ## 4. KCondition
 
-A condition can be seen as a boolean and can be used directly in the `SELECT` clause. To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section.
+A condition can be seen as a boolean and can be used directly in the `SELECT` list. To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section.
 
 ### Example
 

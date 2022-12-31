@@ -5,11 +5,11 @@ sidebar_label: From
 
 ## Definition
 
-The `from` methods allows you to add a `FROM` statement to the query.
+The `from` methods allows you to add a `FROM` clause to the query.
 
 The methods available to use this functionality are:
 
-- `from(KTable kTable)`: Receives a `KTable` which will be added to `FROM` clause.
+- `from(KTable kTable)`: Receives a [`KTable`](/docs/select-statement/clauses/from/introduction) which will be added to `FROM` clause.
 - `from(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/clauses/select/introduction#7-kraw) which will be added to `FROM` clause.
 - `from(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/select-statement/clauses/with/introduction) which will be added to `FROM` clause.
 
@@ -163,7 +163,7 @@ SQL generated:
 WITH new_users (id, first_name) AS (
     SELECT au.id, au.first_name
     FROM app_user au
-    WHERE au.created_at > ?
+    WHERE au.created_at > ?1
 )
 SELECT nu.id, nu.first_name
 FROM new_users nu

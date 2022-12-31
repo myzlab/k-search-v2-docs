@@ -6,7 +6,7 @@ import K from '@site/src/components/K';
 
 # Introduction
 
-The `FROM` clause specifies one or more source tables for the `SELECT` statement. In Java, we will see a table as the `KTable` object.
+The `FROM` clause specifies one or more source tables for the `SELECT` statement. In Java, we will see a table as the [`KTable`](/docs/select-statement/clauses/from/introduction) object.
 
 To fully study the `FROM` clause, visit its documentation [https://www.postgresql.org/docs/current/sql-select.html#SQL-FROM](https://www.postgresql.org/docs/current/sql-select.html#SQL-FROM)
 
@@ -17,7 +17,7 @@ There are 2 types of KTable.
 
 ## Build a `KTable` from a subquery
 
-To get started building a `KTable` from a subquery, we need to prepare a `KQuery`:
+To get started building a [`KTable`](/docs/select-statement/clauses/from/introduction) from a subquery, we need to prepare a `KQuery`:
 
 ```java
 final KQuery subquery =
@@ -26,22 +26,22 @@ final KQuery subquery =
     .from(APP_USER);
 ```
 
-and then via the `as` method we supply an alias and the `KQuery` becomes a `KTable`, as follows:
+and then via the `as` method we supply an alias and the `KQuery` becomes a [`KTable`](/docs/select-statement/clauses/from/introduction), as follows:
 
 ```java
 final KTable kTable = subquery.as("an_alias");
 ```
 
-## Methods available in a "KTable"
+## Methods available in a `KTable`
 
-A `KTable` has the following methods available:
+A [`KTable`](/docs/select-statement/clauses/from/introduction) has the following methods available:
 
-- `column(String name)`: Allow you to generate a column from your `KTable`. Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the `KTable` alias.
+- `column(String name)`: Allow you to generate a column from your [`KTable`](/docs/select-statement/clauses/from/introduction). Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the [`KTable`](/docs/select-statement/clauses/from/introduction) alias.
 - `c(String name)`: This method does the same as method `column` but with a shorter name.
-- `on(KCondition kCondition)`: This method allows the `KTable` to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
+- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/clauses/from/introduction) to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KConditions`](/docs/conditions/eq) section).
 
 :::tip
 
-The `c` and `column` methods are only really useful in `KTables` that are built from a subquery.
+The `c` and `column` methods are only really useful in those [`KTable`](/docs/select-statement/clauses/from/introduction) that are built from a subquery.
 
 :::

@@ -66,11 +66,11 @@ SQL generated:
 
 ```sql showLineNumbers
 WITH user_ids_cte (id) AS (
-    VALUES (?), (?)
+    VALUES (?1), (?2)
 ) 
 SELECT BOOL_AND (
     EXISTS (
-        SELECT ?
+        SELECT ?3
         FROM app_user au
         WHERE au.id = uic.id
     )
