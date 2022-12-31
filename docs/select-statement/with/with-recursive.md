@@ -9,7 +9,7 @@ The `withRecursive` method allows you to add a `WITH RECURSIVE` clause to the qu
 
 The only one method available to use this functionality is:
 
-- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/select-statement/clauses/with/introduction) that will be added to the `WITH RECURSIVE` clause.
+- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/select-statement/with/introduction) that will be added to the `WITH RECURSIVE` clause.
 
 ## Method hierarchy
 
@@ -19,13 +19,13 @@ The `withRecursive` method can be used right after the following methods or obje
 
 and the subsequent methods that can be called are:
 
-- [`selectDistinctOn`](/docs/select-statement/clauses/select/distinct-on)
-- [`selectDistinct`](/docs/select-statement/clauses/select/distinct)
-- [`select1`](/docs/select-statement/clauses/select/select1)
-- [`select`](/docs/select-statement/clauses/select/)
-- [`insertInto`](/docs/select-statement/clauses/select/)
-- [`update`](/docs/select-statement/clauses/select/)
-- [`deleteFrom`](/docs/select-statement/clauses/select/)
+- [`selectDistinctOn`](/docs/select-statement/select/distinct-on)
+- [`selectDistinct`](/docs/select-statement/select/distinct)
+- [`select1`](/docs/select-statement/select/select1)
+- [`select`](/docs/select-statement/select/)
+- [`insertInto`](/docs/select-statement/select/)
+- [`update`](/docs/select-statement/select/)
+- [`deleteFrom`](/docs/select-statement/select/)
 
 ## Example
 

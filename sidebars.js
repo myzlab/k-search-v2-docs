@@ -82,71 +82,71 @@ const sidebars = {
               type: "category",
               label: "With",
               items: [
-                "select-statement/clauses/with/introduction",
-                "select-statement/clauses/with/with",
-                "select-statement/clauses/with/with-recursive",
+                "select-statement/with/introduction",
+                "select-statement/with/with",
+                "select-statement/with/with-recursive",
               ],
             },
             {
               type: "category",
               label: "Select",
               items: [
-                "select-statement/clauses/select/introduction",
-                "select-statement/clauses/select/distinct-on",
-                "select-statement/clauses/select/distinct",
-                "select-statement/clauses/select/select1",
-                "select-statement/clauses/select/select"
+                "select-statement/select/introduction",
+                "select-statement/select/distinct-on",
+                "select-statement/select/distinct",
+                "select-statement/select/select1",
+                "select-statement/select/select"
               ],
             },
             {
               type: "category",
               label: "From",
               items: [
-                "select-statement/clauses/from/introduction",
-                "select-statement/clauses/from/from",
+                "select-statement/from/introduction",
+                "select-statement/from/from",
               ],
             },
             {
               type: "category",
               label: "Join",
               items: [
-                "select-statement/clauses/join/introduction",
-                "select-statement/clauses/join/inner-join",
-                "select-statement/clauses/join/left-join",
-                "select-statement/clauses/join/right-join",
-                "select-statement/clauses/join/full-join",
-                "select-statement/clauses/join/cross-join"
+                "select-statement/join/introduction",
+                "select-statement/join/inner-join",
+                "select-statement/join/left-join",
+                "select-statement/join/right-join",
+                "select-statement/join/full-join",
+                "select-statement/join/cross-join"
               ],
             },
             {
               type: "category",
               label: "Where",
               items: [
-                "select-statement/clauses/where/introduction",
-                "select-statement/clauses/where/equal",
-                "select-statement/clauses/where/like",
-                "select-statement/clauses/where/in",
-                "select-statement/clauses/where/null",
-                "select-statement/clauses/where/between",
-                "select-statement/clauses/where/boolean-conditions",
-                "select-statement/clauses/where/greater-than",
-                "select-statement/clauses/where/less-than",
-                "select-statement/clauses/where/raw",
-                "select-statement/clauses/where/date-extraction",
-                "select-statement/clauses/where/agrupation"
+                "select-statement/where/introduction",
+                "select-statement/where/equal",
+                "select-statement/where/like",
+                "select-statement/where/in",
+                "select-statement/where/null",
+                "select-statement/where/between",
+                "select-statement/where/boolean-conditions",
+                "select-statement/where/greater-than",
+                "select-statement/where/less-than",
+                "select-statement/where/raw",
+                "select-statement/where/date-extraction",
+                "select-statement/where/agrupation"
               ],
             },
-            "select-statement/clauses/group-by",
+            "select-statement/group-by",
             {
               type: "category",
               label: "Having",
               items: [
-                "select-statement/clauses/having/introduction"
+                "select-statement/having/introduction"
               ],
             },
-            "select-statement/clauses/order-by",
-            "select-statement/clauses/limit",
-            "select-statement/clauses/offset",
+            "select-statement/order-by",
+            "select-statement/limit",
+            "select-statement/offset",
           ],
         }
       ],
@@ -182,13 +182,13 @@ const sidebars = {
           type: "category",
           label: "Clauses",
           items: [
-            "delete-statement/clauses/from",
-            "delete-statement/clauses/using",
+            "delete-statement/from",
+            "delete-statement/using",
             {
               type: "category",
               label: "Where",
               items: [
-                "delete-statement/clauses/where/introduction"
+                "delete-statement/where/introduction"
               ],
             }
           ]
