@@ -35,7 +35,7 @@ and the subsequent methods that can be called are:
 - [`rightJoin`](/docs/select-statement/join/right-join)
 - [`fullJoin`](/docs/select-statement/join/full-join)
 - [`crossJoin`](/docs/select-statement/join/cross-join)
-- [`where`](/docs/select-statement/select/)
+- [`where`](/docs/select-statement/where/)
 - [`groupBy`](/docs/select-statement/select/)
 - [`window`](/docs/select-statement/select/)
 - [`except`](/docs/select-statement/select/)

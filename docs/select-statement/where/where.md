@@ -1,21 +1,24 @@
 ---
-title: Cross Join
-sidebar_label: Cross Join
+title: Where
+sidebar_label: Where
 ---
 
 ## Definition
 
-The `crossJoin` method allows you to add a `CROSS JOIN` clause to the query.
+The `where` methods allows you to add a `WHERE` clause to the query.
 
 The methods available to use this functionality are:
 
-- `crossJoin(KTable kTable)`: Receives a [`KTable`](/docs/select-statement/from/introduction) which will be added to `CROSS JOIN` clause.
-- `crossJoin(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `CROSS JOIN` clause.
+- `where(KCondition kCondition)`: Receives a `KCondition` which will be added to `WHERE` clause. (To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section).
+- `where(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `WHERE` clause.
 
 ## Method hierarchy
 
-The `crossJoin` method can be used right after the following methods or objects:
+The `where` method can be used right after the following methods:
 
+- [`selectDistinct`](/docs/select-statement/select/distinct)
+- [`select1`](/docs/select-statement/select/select1)
+- [`select`](/docs/select-statement/select/)
 - [`from`](/docs/select-statement/from/)
 - [`innerJoin`](/docs/select-statement/join/inner-join)
 - [`leftJoin`](/docs/select-statement/join/left-join)
@@ -25,13 +28,10 @@ The `crossJoin` method can be used right after the following methods or objects:
 
 and the subsequent methods that can be called are:
 
-- [`from`](/docs/select-statement/from/)
-- [`innerJoin`](/docs/select-statement/join/inner-join)
-- [`leftJoin`](/docs/select-statement/join/left-join)
-- [`rightJoin`](/docs/select-statement/join/right-join)
-- [`fullJoin`](/docs/select-statement/join/full-join)
-- [`crossJoin`](/docs/select-statement/join/cross-join)
-- [`where`](/docs/select-statement/where/)
+- [`and`](/docs/select-statement/where/and)
+- [`andNot`](/docs/select-statement/where/and-not)
+- [`or`](/docs/select-statement/where/or)
+- [`orNot`](/docs/select-statement/where/or-not)
 - [`groupBy`](/docs/select-statement/select/)
 - [`window`](/docs/select-statement/select/)
 - [`except`](/docs/select-statement/select/)
@@ -47,24 +47,24 @@ and the subsequent methods that can be called are:
 - [`single`](/docs/select-statement/select/)
 - [`multiple`](/docs/select-statement/select/)
 
-## Example: `KTable`
+## Example: `KCondition`
 
 Java code:
 
 ```java
 k
-.select(APP_USER.EMAIL, ROLE.NAME)
+.selectDistinct(APP_USER.ID)
 .from(APP_USER)
-.crossJoin(ROLE)
+.where(APP_USER.EMAIL.isNull())
 .multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT au.email, ro.name
+SELECT DISTINCT au.id
 FROM app_user au
-CROSS JOIN role ro
+WHERE au.email IS NULL
 ```
 
 Parameters:
@@ -77,18 +77,18 @@ Java code:
 
 ```java
 k
-.select(APP_USER.EMAIL, raw("ro.name"))
+.select(APP_USER.ID)
 .from(APP_USER)
-.crossJoin(raw("role ro"))
+.where(raw("au.created_at > CURRENT_DATE - 1"))
 .multiple();
 ```
 
 SQL generated:
 
 ```sql showLineNumbers
-SELECT au.email, ro.name
-FROM app_user au
-CROSS JOIN role ro
+SELECT DISTINCT au.id
+FROM app_user au 
+WHERE au.created_at > CURRENT_DATE - 1
 ```
 
 Parameters:

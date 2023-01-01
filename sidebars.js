@@ -123,17 +123,11 @@ const sidebars = {
               label: "Where",
               items: [
                 "select-statement/where/introduction",
-                "select-statement/where/equal",
-                "select-statement/where/like",
-                "select-statement/where/in",
-                "select-statement/where/null",
-                "select-statement/where/between",
-                "select-statement/where/boolean-conditions",
-                "select-statement/where/greater-than",
-                "select-statement/where/less-than",
-                "select-statement/where/raw",
-                "select-statement/where/date-extraction",
-                "select-statement/where/agrupation"
+                "select-statement/where/where",
+                "select-statement/where/and",
+                "select-statement/where/and-not",
+                "select-statement/where/or",
+                "select-statement/where/or-not"
               ],
             },
             "select-statement/group-by",
