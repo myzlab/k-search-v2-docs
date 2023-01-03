@@ -119,7 +119,7 @@ Parameters:
 
 ## 4. KCondition
 
-A condition can be seen as a boolean and can be used directly in the [`SELECT`](/docs/select-statement/select/introduction) list. To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section.
+A condition can be seen as a boolean and can be used directly in the [`SELECT`](/docs/select-statement/select/introduction) list. To learn more about the conditions, please go to the [`KCondition`](/docs/kcondition/introduction) section.
 
 ### Example
 
@@ -294,7 +294,7 @@ caseConditional()
 
 Then we proceed to add the conditions and their results through the `when` and `then` methods.
 
-- `when(KCondition kCondition)`: Receive a condition which will be added in the `WHEN` clause. (To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section).
+- `when(KCondition kCondition)`: Receive a condition which will be added in the `WHEN` clause. (To learn more about the conditions, please go to the [`KCondition`](/docs/kcondition/introduction) section).
 - `then(KBaseColumnCastable kBaseColumnCastable)`: Receive a column or a value which will be added in the `THEN` clause.
 - `then(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added in the `THEN` clause.
 

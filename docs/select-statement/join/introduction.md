@@ -18,7 +18,7 @@ A [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) 
 
 This object can only be built through the `on` method available on [`KTable`](/docs/select-statement/from/introduction) objects and [`KCommonTableExpressionFilled`](/docs/select-statement/with/introduction) objects:
 
-- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/from/introduction) or the CTE to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section).
+- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/from/introduction) or the CTE to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KCondition`](/docs/kcondition/introduction) section).
 - `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/select-statement/from/introduction) or the CTE to be added to a join through the [`KRaw`](/docs/select-statement/select/introduction#7-kraw) that is received by parameter.
 
 Additionally, those [`KTable`](/docs/select-statement/from/introduction) that are automatically generated bring with them additional predefined methods that return a [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) according to the relationships between tables that are detected in the database diagram.

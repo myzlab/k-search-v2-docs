@@ -38,7 +38,7 @@ A [`KTable`](/docs/select-statement/from/introduction) has the following methods
 
 - `column(String name)`: Allow you to generate a column from your [`KTable`](/docs/select-statement/from/introduction). Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the [`KTable`](/docs/select-statement/from/introduction) alias.
 - `c(String name)`: This method does the same as method `column` but with a shorter name.
-- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/from/introduction) to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section).
+- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/from/introduction) to be added to a join through the condition that is received by parameter. (To learn more about the conditions, please go to the [`KCondition`](/docs/kcondition/introduction) section).
 - `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/select-statement/from/introduction) to be added to a join through the [`KRaw`](/docs/select-statement/select/introduction#7-kraw) that is received by parameter.
 
 :::tip

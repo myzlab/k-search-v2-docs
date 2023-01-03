@@ -9,7 +9,7 @@ The `orNot` methods allows you to add an `OR NOT` operator to a `WHERE` clause.
 
 The methods available to use this functionality are:
 
-- `orNot(KCondition kCondition)`: Receives a `KCondition` which will be added to `WHERE` clause with an `OR NOT` operator. (To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section).
+- `orNot(KCondition kCondition)`: Receives a `KCondition` which will be added to `WHERE` clause with an `OR NOT` operator. (To learn more about the conditions, please go to the [`KCondition`](/docs/kcondition/introduction) section).
 - `orNot(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `WHERE` clause with an `OR NOT` operator.
 
 ## Method hierarchy
