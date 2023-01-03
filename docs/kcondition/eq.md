@@ -78,7 +78,7 @@ SQL generated:
 ```sql
 SELECT au.id
 FROM app_user au
-WHERE (au.first_name = ?1)
+WHERE au.first_name = ?1
 ```
 
 Parameters:
@@ -105,7 +105,7 @@ SQL generated:
 ```sql
 SELECT au.id
 FROM app_user au
-WHERE (au.first_name = ?1)
+WHERE au.first_name = ?1
 ```
 
 Parameters:
@@ -156,12 +156,6 @@ LOWER(leftOperand) = LOWER(rightOperand)
 This method takes a single parameter and the possible values are:
 
 [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
-
-:::info
-
-The **I modifier** remove case sensitivity in the [`KCondition`](/docs/conditions/eq).
-
-:::
 
 ### Example: ieq(KColumn)
 
@@ -374,12 +368,6 @@ NOT (LOWER(leftOperand) = LOWER(rightOperand))
 This method takes a single parameter and the possible values are:
 
 [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
-
-:::info
-
-The **I modifier** remove case sensitivity in the [`KCondition`](/docs/conditions/eq).
-
-:::
 
 ### Example: nieq(KColumn)
 

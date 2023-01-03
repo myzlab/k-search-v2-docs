@@ -8,11 +8,11 @@ import K from '@site/src/components/K';
 
 A condition is any expression that evaluates to a result of type boolean. When is used in `WHERE` clause, any row that does not satisfy this condition will be eliminated from the result. A row satisfies the condition if it returns true when the actual row values are substituted for any variable references.
 
-In Java, we will see a condition as the [`KCondition`](/docs/conditions/eq) object.
+In Java, we will see a condition as the /docs/kcondition/introduction object.
 
 :::tip
 
-A [`KCondition`](/docs/conditions/eq) can be used in the `WHERE` clause and in the [`SELECT`](/docs/select-statement/select/introduction) list.
+A /docs/kcondition/introduction can be used in the `WHERE` clause and in the [`SELECT`](/docs/select-statement/select/introduction) list.
 
 :::
 
@@ -22,9 +22,9 @@ There are a wide variety of methods available in the <K/> so that you can add di
 
 ## 1. How to create a `KCondition`?
 
-For any type of [`KCondition`](/docs/conditions/eq), the operand on the left side of the operator is always the one that must call the method that will create the [`KCondition`](/docs/conditions/eq). Then it must be complemented with the operand on the right hand side if required by the called method.
+For any type of /docs/kcondition/introduction, the operand on the left side of the operator is always the one that must call the method that will create the /docs/kcondition/introduction. Then it must be complemented with the operand on the right hand side if required by the called method.
 
-The operands that have the methods available to create [`KCondition`](/docs/conditions/eq) are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values).
+The operands that have the methods available to create /docs/kcondition/introduction are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values).
 
 ### Example: KTableColumn
 
