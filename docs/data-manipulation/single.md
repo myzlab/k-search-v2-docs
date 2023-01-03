@@ -78,7 +78,7 @@ We will illustrate the above with the following practical examples:
 
 Java code:
 
-```java showLineNumbers
+```java
 final Long id = 333; //The id of the user to search
 
 final KRow user =
@@ -110,7 +110,7 @@ System.out.println("Email of user: " + user.getString(1));       //john@myemail.
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT name, email
 FROM app_user
 WHERE id = ?1
@@ -126,7 +126,7 @@ Parameters:
 
 Java code:
 
-```java showLineNumbers
+```java
 import ve.zlab.k.helper.sql.SQLHelper;
 
 final KRow user =
@@ -156,7 +156,7 @@ System.out.println("Registration Date: " + user.getString(1));                  
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT id, TO_CHAR(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS.MS"Z"') AS registrationDate 
 FROM app_user
 WHERE email IS NULL
@@ -346,7 +346,7 @@ public class UserDAK {\n
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.name, au.last_name AS lastName, TO_CHAR(au.birthdate, 'YYYY-MM-DD') AS birthdate
 FROM app_user au
 WHERE au.id = ?

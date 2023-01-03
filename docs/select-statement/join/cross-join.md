@@ -61,7 +61,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.email, ro.name
 FROM app_user au
 CROSS JOIN role ro
@@ -85,7 +85,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.email, ro.name
 FROM app_user au
 CROSS JOIN role ro

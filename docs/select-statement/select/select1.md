@@ -54,7 +54,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT ?1
 FROM app_user au
 ```

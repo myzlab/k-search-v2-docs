@@ -23,7 +23,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 select(
@@ -36,7 +36,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.verified_email IS TRUE
@@ -60,7 +60,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 select(
@@ -73,7 +73,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.verified_email IS FALSE
@@ -103,7 +103,7 @@ Find the id and last name of all users (Without repeating) who have not responde
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 innerJoin("meeting_invitation mi", "mi.app_user_id", "mi.id").
@@ -118,7 +118,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT au.id, au.last_name AS lastName
 FROM app_user au
 INNER JOIN meeting_invitation mi ON mi.app_user_id = mi.id

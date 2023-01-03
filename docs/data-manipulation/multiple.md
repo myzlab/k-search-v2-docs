@@ -90,7 +90,7 @@ The types of data available are:
 
 Example of use:
 
-```java showLineNumbers
+```java
 final KCollection users =
     K.
     table("app_user").
@@ -184,7 +184,7 @@ This KRowFunction will be executed on each KRow contained in the KCollection obj
 
 Example of use:
 
-```java showLineNumbers
+```java
 final KCollection allUsers =
     K.
     table("app_user").
@@ -469,7 +469,7 @@ public class PollDAK {\n
 
 SQL generated 1:
 
-```sql showLineNumbers
+```sql
 SELECT p.id, p.name
 FROM poll p
 WHERE active IS TRUE
@@ -481,7 +481,7 @@ Parameters: None
 
 SQL generated 2:
 
-```sql showLineNumbers
+```sql
 SELECT pq.id, pq.question_name AS questionName, pq.poll_id
 FROM poll_question pq
 WHERE pq.poll_id IN ( ?, ?, ? )
@@ -773,7 +773,7 @@ public class CodeBlackBox  {\n
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT c.id, c.name, c.birthdate, c.phone, c.created_at AS createdAt
 FROM customer c
 LIMIT 10

@@ -25,7 +25,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String storeName = "Jumbo";
         
 K.
@@ -38,7 +38,7 @@ delete();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 DELETE FROM product p
 USING store s
 WHERE p.store_id = s.id
@@ -53,7 +53,7 @@ Parameters:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String countryName = "Colombia";
         
 K.
@@ -68,7 +68,7 @@ delete();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 DELETE FROM store s
 USING city ci, country co
 WHERE s.city_id = ci.id

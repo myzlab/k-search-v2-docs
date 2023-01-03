@@ -64,7 +64,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 WITH RECURSIVE permission_tree_cte AS (
     SELECT pe.id, pe.code, pe.permission_id
     FROM permission pe 

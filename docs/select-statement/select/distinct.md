@@ -65,7 +65,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT
     au.id,
     CONCAT(au.first_name || ?1 || au.last_name) AS "fullName",
@@ -105,7 +105,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT
     (
         SELECT COUNT(*)

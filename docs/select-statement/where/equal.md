@@ -21,7 +21,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String name = "John";
 
 K.
@@ -36,7 +36,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE NOT UPPER(au.name) = ?1
@@ -50,7 +50,7 @@ Parameters:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String name1 = "John";
 final String name2 = "Sara";
 
@@ -67,7 +67,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.name = ?1 OR au.name = ?2

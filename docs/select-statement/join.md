@@ -31,7 +31,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 innerJoin("doctor d", "d.app_user_id", "au.id").
@@ -46,7 +46,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT d.id, CONCAT(au.name, ' ', au.last_name) AS name, d.gender
 FROM app_user au
 INNER JOIN doctor d ON d.app_user_id = au.id
@@ -74,7 +74,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 //ProjectOwnerType:
 //public static final Long USER = 1L;
 //public static final Long TEAM = 2L;
@@ -103,7 +103,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT p.id, p.name AS projectName, (CASE WHEN p.project_owner_type_id = 1 THEN CONCAT(au.name, ' ', au.last_name) ELSE t.name END) AS ownerName
 FROM project p
 LEFT JOIN app_user au ON ( au.id = p.project_owner_id AND p.project_owner_type_id = ?1 )
@@ -134,7 +134,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 //ProjectOwnerType:
 //public static final Long USER = 1L;
 //public static final Long TEAM = 2L;
@@ -162,7 +162,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT pp.name AS projectName, CONCAT(au.name, ' ', au.last_name) AS name
 FROM app_user au
 LEFT JOIN 
@@ -196,7 +196,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 //ProjectOwnerType:
 //public static final Long USER = 1L;
 //public static final Long TEAM = 2L;
@@ -229,7 +229,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT pp.name, CONCAT(au.name, ' ', au.last_name) AS name
 FROM app_user au
 LEFT JOIN

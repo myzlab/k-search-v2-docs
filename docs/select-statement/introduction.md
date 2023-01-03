@@ -9,7 +9,7 @@ One of the most common operations, when you work with a database, is to fetch da
 
 Syntax of a `SELECT` statement:
 
-```sql showLineNumbers
+```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
     [ * | expression [ [ AS ] output_name ] [, ...] ]

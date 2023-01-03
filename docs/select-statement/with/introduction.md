@@ -147,7 +147,7 @@ final KCommonTableExpressionFilled cteValues =
 
 ## How to use a `KCommonTableExpressionFilled` and its columns in other clauses?
 
-It is very likely that you will need to use a CTE and its columns in other clauses, such as `SELECT` list, `FROM` clause, `WHERE` clause, etc. This can be achieved through the following available methods:
+It is very likely that you will need to use a CTE and its columns in other clauses, such as [`SELECT`](/docs/select-statement/select/introduction) list, `FROM` clause, `WHERE` clause, etc. This can be achieved through the following available methods:
 
 - `column(String name)`: Allow you to generate a column from your CTE. Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the CTE alias.
 - `c(String name)`: This method does the same as method `column` but with a shorter name.

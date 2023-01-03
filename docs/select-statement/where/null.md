@@ -19,7 +19,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 select(
@@ -32,7 +32,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.role_id IS NULL

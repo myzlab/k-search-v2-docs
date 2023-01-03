@@ -28,7 +28,7 @@ The creation of a new kWhere object will require the implementation of the execu
 
 Java code:
 
-```java showLineNumbers
+```java
 final String name1 = "John";
 final String name2 = "Sara";
 
@@ -50,7 +50,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.failed_attempts < ?1
@@ -290,7 +290,7 @@ public class CustomerDAK {\n
 
 SQL generated 1:
 
-```sql showLineNumbers
+```sql
 SELECT c.id, c.name, r.name AS roleName, c.phone
 FROM customer c
 LEFT JOIN app_user au ON c.app_user_id = au.id

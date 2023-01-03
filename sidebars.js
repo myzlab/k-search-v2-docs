@@ -42,7 +42,7 @@ const sidebars = {
         "payload/payload-validator"
       ],
     },
-    "sql-operations",
+    "sql-functions",
     {
       type: "category",
       label: "Special Functions",
@@ -64,9 +64,14 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "KConditions",
+      label: "KCondition",
       items: [
-        "conditions/eq"
+        "kcondition/introduction",
+        "kcondition/eq",
+        "kcondition/gt",
+        "kcondition/gte",
+        "kcondition/lt",
+        "kcondition/lte"
       ],
     },
     {
@@ -76,73 +81,67 @@ const sidebars = {
         "select-statement/introduction",
         {
           type: "category",
-          label: "Clauses",
+          label: "With",
           items: [
-            {
-              type: "category",
-              label: "With",
-              items: [
-                "select-statement/with/introduction",
-                "select-statement/with/with",
-                "select-statement/with/with-recursive",
-              ],
-            },
-            {
-              type: "category",
-              label: "Select",
-              items: [
-                "select-statement/select/introduction",
-                "select-statement/select/distinct-on",
-                "select-statement/select/distinct",
-                "select-statement/select/select1",
-                "select-statement/select/select"
-              ],
-            },
-            {
-              type: "category",
-              label: "From",
-              items: [
-                "select-statement/from/introduction",
-                "select-statement/from/from",
-              ],
-            },
-            {
-              type: "category",
-              label: "Join",
-              items: [
-                "select-statement/join/introduction",
-                "select-statement/join/inner-join",
-                "select-statement/join/left-join",
-                "select-statement/join/right-join",
-                "select-statement/join/full-join",
-                "select-statement/join/cross-join"
-              ],
-            },
-            {
-              type: "category",
-              label: "Where",
-              items: [
-                "select-statement/where/introduction",
-                "select-statement/where/where",
-                "select-statement/where/and",
-                "select-statement/where/and-not",
-                "select-statement/where/or",
-                "select-statement/where/or-not"
-              ],
-            },
-            "select-statement/group-by",
-            {
-              type: "category",
-              label: "Having",
-              items: [
-                "select-statement/having/introduction"
-              ],
-            },
-            "select-statement/order-by",
-            "select-statement/limit",
-            "select-statement/offset",
+            "select-statement/with/introduction",
+            "select-statement/with/with",
+            "select-statement/with/with-recursive",
           ],
-        }
+        },
+        {
+          type: "category",
+          label: "Select",
+          items: [
+            "select-statement/select/introduction",
+            "select-statement/select/distinct-on",
+            "select-statement/select/distinct",
+            "select-statement/select/select1",
+            "select-statement/select/select"
+          ],
+        },
+        {
+          type: "category",
+          label: "From",
+          items: [
+            "select-statement/from/introduction",
+            "select-statement/from/from",
+          ],
+        },
+        {
+          type: "category",
+          label: "Join",
+          items: [
+            "select-statement/join/introduction",
+            "select-statement/join/inner-join",
+            "select-statement/join/left-join",
+            "select-statement/join/right-join",
+            "select-statement/join/full-join",
+            "select-statement/join/cross-join"
+          ],
+        },
+        {
+          type: "category",
+          label: "Where",
+          items: [
+            "select-statement/where/introduction",
+            "select-statement/where/where",
+            "select-statement/where/and",
+            "select-statement/where/and-not",
+            "select-statement/where/or",
+            "select-statement/where/or-not"
+          ],
+        },
+        "select-statement/group-by",
+        {
+          type: "category",
+          label: "Having",
+          items: [
+            "select-statement/having/introduction"
+          ],
+        },
+        "select-statement/order-by",
+        "select-statement/limit",
+        "select-statement/offset",
       ],
     },
     {

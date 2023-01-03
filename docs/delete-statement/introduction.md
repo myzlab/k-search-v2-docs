@@ -13,7 +13,7 @@ The Postgresql DELETE statement allows you to delete one or more rows from a tab
 
 Syntax:
 
-```sql showLineNumbers
+```sql
 DELETE
 FROM table_name
 USING another_table_name

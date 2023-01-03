@@ -21,7 +21,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 final Long bottomStop = 3L;
 final Long topStop = 8L;
 
@@ -37,7 +37,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.role_id BETWEEN ?1 AND ?2

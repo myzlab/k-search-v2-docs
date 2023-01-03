@@ -66,7 +66,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.email
 FROM app_user au
 ```
@@ -98,7 +98,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT us.id, us.first_name, us.last_name
 FROM (
     SELECT au.id, au.first_name, au.last_name 
@@ -125,7 +125,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.email
 FROM app_user au
 ```
@@ -159,7 +159,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 WITH new_users (id, first_name) AS (
     SELECT au.id, au.first_name
     FROM app_user au

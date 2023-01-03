@@ -58,7 +58,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.first_name
 FROM app_user au
 WHERE au.created_at < ?1
@@ -85,7 +85,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.first_name
 FROM app_user au
 WHERE au.role_id IS NOT NULL

@@ -6,11 +6,11 @@ import K from '@site/src/components/K';
 
 # Introduction
 
-The `SELECT` list specifies expressions that form the output rows of the `SELECT` statement.
+The [`SELECT`](/docs/select-statement/select/introduction) list specifies expressions that form the output rows of the `SELECT` statement.
 
-To fully study the `SELECT` list, visit its documentation [https://www.postgresql.org/docs/current/sql-select.html#SQL-SELECT-LIST](https://www.postgresql.org/docs/current/sql-select.html#SQL-SELECT-LIST)
+To fully study the [`SELECT`](/docs/select-statement/select/introduction) list, visit its documentation [https://www.postgresql.org/docs/current/sql-select.html#SQL-SELECT-LIST](https://www.postgresql.org/docs/current/sql-select.html#SQL-SELECT-LIST)
 
-In this introduction, we will show all the possible values that you can use in the `SELECT` list to tell <K/> what information we want to query.
+In this introduction, we will show all the possible values that you can use in the [`SELECT`](/docs/select-statement/select/introduction) list to tell <K/> what information we want to query.
 All of these possible values can be used together at the same time.
 
 ## 1. KTableColumn
@@ -37,7 +37,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     au.id,
     au.created_at,
@@ -70,7 +70,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     COALESCE(au.first_name, ?1, au.last_name),
     CAST(au.id AS TEXT),
@@ -107,7 +107,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT ?1, ?2, ?3
 ```
 
@@ -119,7 +119,7 @@ Parameters:
 
 ## 4. KCondition
 
-A condition can be seen as a boolean and can be used directly in the `SELECT` list. To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section.
+A condition can be seen as a boolean and can be used directly in the [`SELECT`](/docs/select-statement/select/introduction) list. To learn more about the conditions, please go to the [`KCondition`](/docs/conditions/eq) section.
 
 ### Example
 
@@ -134,7 +134,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id > ?1
 FROM app_user au
 ```
@@ -180,7 +180,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     au.id,
     ROW_NUMBER() OVER(PARTITION BY au.role_id ORDER BY au.id ASC)
@@ -216,7 +216,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     COALESCE(au.first_name, ?1, au.last_name) AS "fullName",
     TO_CHAR(au.created_at, ?2) AS "year",
@@ -236,6 +236,12 @@ The KRaw functionality allows adding any content to the SQL statement without an
 - `raw(String content, Object... args)`: Receive the content you want to add without validations and without parameterization. If additional arguments are supplied by parameter (args), these will be considered within the same content through the [String.format](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html) method call, in this sense, all the rules indicated by the [String.format](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html) method must be followed.
 
 The text added each time the `raw` method is executed will be considered as a single column in the SQL statement.
+
+:::danger
+
+Misuse can open SQL injection vulnerabilities in your software. Please be careful.
+
+:::
 
 To use `raw` method, we need to import the static functions as follows:
 
@@ -260,7 +266,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     au.id AS aliasExample,
     COALESCE(au.first_name, ' ', au.last_name)
@@ -339,7 +345,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     CASE
     WHEN au.created_at > ?1 THEN au.email

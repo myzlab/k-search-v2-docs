@@ -65,7 +65,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.email, ro.name
 FROM app_user au
 FULL JOIN role ro ON (
@@ -91,7 +91,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.email, ro.name
 FROM app_user au
 FULL JOIN role ro ON (
@@ -117,7 +117,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.email, ro.name
 FROM app_user au
 FULL JOIN role ro ON (au.role_id = ro.id)

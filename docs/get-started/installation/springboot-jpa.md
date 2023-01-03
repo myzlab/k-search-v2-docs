@@ -40,7 +40,7 @@ To do this, create a class named K that inherits from **com.myzlab.k.KBuilder**.
 
 Assuming that the root package of your project is **com.example**, then you must to create the package **com.example.k** and the new class would be located there.
 
-```java showLineNumbers
+```java
 package com.example.k;
 
 import com.myzlab.k.KBuilder;
@@ -87,7 +87,7 @@ With these single steps, you will be able to use the `com.myzlab.k.KBuilder` obj
 
 To inject the `com.myzlab.k.KBuilder` object, simply declare this object as an final attribute and then add the **@RequiredArgsConstructor** tag to class as follows:
 
-```java showLineNumbers
+```java
 import com.myzlab.k.KBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

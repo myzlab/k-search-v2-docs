@@ -24,7 +24,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 select(
@@ -37,7 +37,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE EXTRACT( YEAR FROM au.created_at ) = ?1
@@ -64,7 +64,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 select(
@@ -77,7 +77,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE EXTRACT( MONTH FROM au.created_at ) = ?1
@@ -104,7 +104,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 K.
 table("app_user au").
 select(
@@ -117,7 +117,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE EXTRACT( DAY FROM au.created_at ) = ?1

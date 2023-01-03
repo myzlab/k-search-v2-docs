@@ -25,7 +25,7 @@ In this sense, we will tell to `ExceptionHandler` that always catch exceptions o
 
 To do this, we need to add one `ExceptionHandler` to each RestController you'll be working on. You can create a generic RestController and apply inheritance from the others RestController, so that you define the ExceptionHandler only once.
 
-```java showLineNumbers
+```java
 import java.time.LocalDateTime;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

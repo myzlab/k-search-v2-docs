@@ -11,7 +11,7 @@ The methods available to use this functionality are:
 
 - `selectDistinctOn(KColumn kColumn)`: Receives either a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) object or a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) object which will be added in the `DISTINCT ON` clause.
 - `selectDistinctOn(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added in the `DISTINCT ON` clause.
-- `selectDistinctOn(int n)`: Receives a integer value which will be added in the `DISTINCT ON` clause. This integer value will indicate the number of the column added in the `SELECT` list that you want to use in the `DISTINCT ON` clause. The first column corresponds to the number 1, the second column corresponds to the number 2, and so on.
+- `selectDistinctOn(int n)`: Receives a integer value which will be added in the `DISTINCT ON` clause. This integer value will indicate the number of the column added in the [`SELECT`](/docs/select-statement/select/introduction) list that you want to use in the `DISTINCT ON` clause. The first column corresponds to the number 1, the second column corresponds to the number 2, and so on.
 
 ## Method hierarchy
 
@@ -42,7 +42,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT ON (au.id)
     au.id,
     au.first_name
@@ -67,7 +67,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT ON (CONCAT(au.first_name || ?1 || au.last_name))
     au.first_name
 FROM app_user au
@@ -94,7 +94,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT ON (TO_CHAR(au.created_at, 'YYYY'))
     au.id,
     au.created_at AS "createdAt"
@@ -119,7 +119,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT ON (1) au.role_id
 FROM app_user au
 ```

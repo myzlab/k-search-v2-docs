@@ -61,7 +61,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT au.id
 FROM app_user au
 WHERE au.email IS NULL
@@ -85,7 +85,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT DISTINCT au.id
 FROM app_user au 
 WHERE au.created_at > CURRENT_DATE - 1

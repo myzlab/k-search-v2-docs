@@ -9,8 +9,8 @@ The `select` methods allows you to add a `SELECT` statement to the query.
 
 The methods available to use this functionality are:
 
-- `select(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the `SELECT` list. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values), [`KCondition`](/docs/select-statement/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/select/introduction#7-case-conditional-expression).
-- `select(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the `SELECT` list.
+- `select(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the [`SELECT`](/docs/select-statement/select/introduction) list. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values), [`KCondition`](/docs/select-statement/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/select/introduction#7-case-conditional-expression).
+- `select(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the [`SELECT`](/docs/select-statement/select/introduction) list.
 
 ## Method hierarchy
 
@@ -66,7 +66,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     au.id,
     CONCAT(au.first_name || ?1 || au.last_name) AS "fullName",
@@ -106,7 +106,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT
     (
         SELECT COUNT(*)

@@ -64,7 +64,7 @@ k
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 WITH user_ids_cte (id) AS (
     VALUES (?1), (?2)
 ) 

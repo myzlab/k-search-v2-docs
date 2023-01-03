@@ -25,9 +25,9 @@ Additionally, those [`KTable`](/docs/select-statement/from/introduction) that ar
 
 The syntax of these additional methods is:
 
-```java
-join + "Table name in UpperCamelCase"
-```
+<p class="text--center">
+  join + TableNameUpperCamelCase
+</p>
 
 [Learn how to generate KTable automatically.](/docs/data-manipulation/introduction)
 

@@ -24,7 +24,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String word = "oh";
 
 K.
@@ -39,7 +39,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE NOT UPPER(au.name) LIKE ?1
@@ -53,7 +53,7 @@ Parameters:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String word1 = "oh";
 final String word2 = "ar";
 
@@ -70,7 +70,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.name LIKE ?1
@@ -99,7 +99,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String word = "jh";
 
 K.
@@ -114,7 +114,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE NOT UPPER(au.name) LIKE ?1
@@ -128,7 +128,7 @@ Parameters:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String vowel1 = "a";
 final String vowel2 = "u";
 
@@ -145,7 +145,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.name LIKE ?1
@@ -174,7 +174,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String word = "jh";
 
 K.
@@ -189,7 +189,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE NOT UPPER(au.name) LIKE ?1
@@ -203,7 +203,7 @@ Parameters:
 
 Java code:
 
-```java showLineNumbers
+```java
 final String vowel1 = "a";
 final String vowel2 = "u";
 
@@ -220,7 +220,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.name LIKE ?1

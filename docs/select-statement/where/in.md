@@ -22,7 +22,7 @@ where:
 
 Java code:
 
-```java showLineNumbers
+```java
 final Long[] ids = new Long[] {
     3L, 4L, 5L
 };
@@ -39,7 +39,7 @@ multiple();
 
 SQL generated:
 
-```sql showLineNumbers
+```sql
 SELECT au.id, au.last_name AS lastName
 FROM app_user au
 WHERE au.role_id NOT IN ( ?1, ?2, ?3 )
