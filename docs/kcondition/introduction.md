@@ -65,6 +65,8 @@ The available methods for adding optional values are:
 - `optional(UUID value)`: Receives a `UUID` value and returns a `KOptionalUuid` that can be added to a condition to make it an optional condition.
 - `optional(LocalDate localDate)`: Receives a `LocalDate` value and returns a `KOptionalLocalDate` that can be added to a condition to make it an optional condition.
 - `optional(LocalDateTime localDateTime)`: Receives a `LocalDateTime` value and returns a `KOptionalLocalDateTime` that can be added to a condition to make it an optional condition.
+- `optional(Collection values, boolean omitOnEmptyCollection)`: Receives a `Collection` value and returns a `KOptionalCollection` that can be added to a condition to make it an optional condition. If the _omitOnEmptyCollection_ parameter is supplied as true, indicates that the condition must be omitted when the collection is empty. If the _omitOnEmptyCollection_ parameter is supplied as false, the condition will not be omitted when the collection is empty.
+- `optional(Object[] values, boolean omitOnEmptyArray)`: Receives a `Object[]` value and returns a `KOptionalArrayObject` that can be added to a condition to make it an optional condition. If the _omitOnEmptyArray_ parameter is supplied as true, indicates that the condition must be omitted when the array is empty. If the _omitOnEmptyArray_ parameter is supplied as false, the condition will not be omitted when the array is empty.
 
 ### Example
 

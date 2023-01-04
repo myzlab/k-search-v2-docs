@@ -76,7 +76,13 @@ const sidebars = {
         "kcondition/lka",
         "kcondition/lksw",
         "kcondition/lkew",
-        "kcondition/bt"
+        "kcondition/bt",
+        "kcondition/in",
+        "kcondition/null",
+        "kcondition/true",
+        "kcondition/false",
+        "kcondition/unknown",
+        "kcondition/exists"
       ],
     },
     {
