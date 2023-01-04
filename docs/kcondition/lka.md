@@ -1,6 +1,6 @@
 ---
 title: Like Any methods
-sidebar_label: Like Any (LIKE)
+sidebar_label: Like Any (%LIKE%)
 ---
 
 ## Definition

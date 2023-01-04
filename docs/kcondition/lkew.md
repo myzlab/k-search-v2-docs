@@ -1,6 +1,6 @@
 ---
 title: Like End With methods
-sidebar_label: Like End With (LIKE)
+sidebar_label: Like End With (%LIKE)
 ---
 
 ## Definition

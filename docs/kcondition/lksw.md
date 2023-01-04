@@ -1,6 +1,6 @@
 ---
 title: Like Start With methods
-sidebar_label: Like Start With (LIKE)
+sidebar_label: Like Start With (LIKE%)
 ---
 
 ## Definition
