@@ -1,20 +1,20 @@
 ---
-title: Like Any methods
-sidebar_label: Like Any (LIKE)
+title: Like End With methods
+sidebar_label: Like End With (LIKE)
 ---
 
 ## Definition
 
-The Like Any methods allow you to add the **__LIKE__** operator to the query. Additionally, the object or value that is received by parameter will be concatenated with the **_%_** character at the beginning and at the end.
+The Like End With methods allow you to add the **__LIKE__** operator to the query. Additionally, the object or value that is received by parameter will be concatenated with the **_%_** character at the beginning.
 
 The methods available in **_Normal method name_** and the **_Short method name_** versions are:
 
-| Normal method name   | Short method name | SQL to generate                                           |
-|----------------------|-------------------|-----------------------------------------------------------|
-| likeAny              | lka               | leftOp LIKE CONCAT('%', rightOp, '%')                     |
-| iLikeAny             | ilka              | LOWER(leftOp) LIKE LOWER(CONCAT('%', rightOp, '%'))       |
-| notLikeAny           | nlka              | NOT (leftOp LIKE CONCAT('%', rightOp, '%'))               |
-| notILikeAny          | nilka             | NOT (LOWER(leftOp) LIKE LOWER(CONCAT('%', rightOp, '%'))) |
+| Normal method name   | Short method name | SQL to generate                                       |
+|----------------------|-------------------|-------------------------------------------------------|
+| likeEndWith          | lkew               | leftOp LIKE CONCAT('%', rightOp)                     |
+| iLikeEndWith         | ilkew              | LOWER(leftOp) LIKE LOWER(CONCAT('%', rightOp))       |
+| notLikeEndWith       | nlkew              | NOT (leftOp LIKE CONCAT('%', rightOp))               |
+| notILikeEndWith      | nilkew             | NOT (LOWER(leftOp) LIKE LOWER(CONCAT('%', rightOp))) |
 
 :::info
 
@@ -22,12 +22,12 @@ For all cases, the object that calls Like Any methods will be placed as the oper
 
 :::
 
-## 1. likeAny | lka
+## 1. likeEndWith | lkew
 
 :::tip SQL to generate
 
 ```sql
-leftOperand LIKE CONCAT('%', rightOperand, '%')
+leftOperand LIKE CONCAT('%', rightOperand)
 ```
 :::
 
@@ -35,7 +35,7 @@ This method takes a single parameter and the possible values are:
 
 [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
 
-### Example: lka(KColumn)
+### Example: lkew(KColumn)
 
 Java code:
 
@@ -43,7 +43,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.lka(APP_USER.LAST_NAME))
+.where(APP_USER.FIRST_NAME.lkew(APP_USER.LAST_NAME))
 .multiple();
 ```
 
@@ -52,14 +52,14 @@ SQL generated:
 ```sql
 SELECT au.id
 FROM app_user au
-WHERE au.first_name LIKE CONCAT('%', au.last_name, '%')
+WHERE au.first_name LIKE CONCAT('%', au.last_name)
 ```
 
 Parameters:
 
 - None
 
-### Example: lka(String)
+### Example: lkew(String)
 
 Java code:
 
@@ -67,7 +67,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.lka("Jhon"))
+.where(APP_USER.FIRST_NAME.lkew("Jhon"))
 .multiple();
 ```
 
@@ -81,9 +81,9 @@ WHERE au.first_name LIKE ?1
 
 Parameters:
 
-- **?1:** "%Jhon%"
+- **?1:** "%Jhon"
 
-### Example: lka(KOptionalString)
+### Example: lkew(KOptionalString)
 
 Java code:
 
@@ -93,8 +93,8 @@ final String nullValue = null;
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.lka(optional(nullValue)))
-.and(APP_USER.FIRST_NAME.lka(optional("Jhon")))
+.where(APP_USER.FIRST_NAME.lkew(optional(nullValue)))
+.and(APP_USER.FIRST_NAME.lkew(optional("Jhon")))
 .multiple();
 ```
 
@@ -108,14 +108,14 @@ WHERE au.first_name LIKE ?1
 
 Parameters:
 
-- **?1:** "%Jhon%"
+- **?1:** "%Jhon"
 
-## 2. iLikeAny | ilka
+## 2. iLikeEndWith | ilkew
 
 :::tip SQL to generate
 
 ```sql
-LOWER(leftOperand) LIKE LOWER(CONCAT('%', rightOperand, '%'))
+LOWER(leftOperand) LIKE LOWER(CONCAT('%', rightOperand))
 ```
 :::
 
@@ -123,7 +123,7 @@ This method takes a single parameter and the possible values are:
 
 [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
 
-### Example: ilka(KColumn)
+### Example: ilkew(KColumn)
 
 Java code:
 
@@ -131,7 +131,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.ilka(APP_USER.LAST_NAME))
+.where(APP_USER.FIRST_NAME.ilkew(APP_USER.LAST_NAME))
 .multiple();
 ```
 
@@ -140,14 +140,14 @@ SQL generated:
 ```sql
 SELECT au.id
 FROM app_user au
-WHERE LOWER(au.first_name) LIKE LOWER(CONCAT('%', au.last_name, '%'))
+WHERE LOWER(au.first_name) LIKE LOWER(CONCAT('%', au.last_name))
 ```
 
 Parameters:
 
 - None
 
-### Example: ilka(String)
+### Example: ilkew(String)
 
 Java code:
 
@@ -155,7 +155,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.ilka("Jhon"))
+.where(APP_USER.FIRST_NAME.ilkew("Jhon"))
 .multiple();
 ```
 
@@ -169,9 +169,9 @@ WHERE LOWER(au.first_name) LIKE ?1
 
 Parameters:
 
-- **?1:** "%jhon%"
+- **?1:** "%jhon"
 
-### Example: ilka(KOptionalString)
+### Example: ilkew(KOptionalString)
 
 Java code:
 
@@ -181,8 +181,8 @@ final String nullValue = null;
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.ilka(optional(nullValue)))
-.and(APP_USER.FIRST_NAME.ilka(optional("Jhon")))
+.where(APP_USER.FIRST_NAME.ilkew(optional(nullValue)))
+.and(APP_USER.FIRST_NAME.ilkew(optional("Jhon")))
 .multiple();
 ```
 
@@ -196,14 +196,14 @@ WHERE LOWER(au.first_name) LIKE ?1
 
 Parameters:
 
-- **?1:** "%jhon%"
+- **?1:** "%jhon"
 
-## 3. notLikeAny | nlka
+## 3. notLikeEndWith | nlkew
 
 :::tip SQL to generate
 
 ```sql
-NOT (leftOperand LIKE CONCAT('%', rightOperand, '%'))
+NOT (leftOperand LIKE CONCAT('%', rightOperand))
 ```
 :::
 
@@ -211,7 +211,7 @@ This method takes a single parameter and the possible values are:
 
 [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
 
-### Example: nlka(KColumn)
+### Example: nlkew(KColumn)
 
 Java code:
 
@@ -219,7 +219,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.nlka(APP_USER.LAST_NAME))
+.where(APP_USER.FIRST_NAME.nlkew(APP_USER.LAST_NAME))
 .multiple();
 ```
 
@@ -228,14 +228,14 @@ SQL generated:
 ```sql
 SELECT au.id
 FROM app_user au
-WHERE NOT (au.first_name LIKE CONCAT('%', au.last_name, '%'))
+WHERE NOT (au.first_name LIKE CONCAT('%', au.last_name))
 ```
 
 Parameters:
 
 - None
 
-### Example: nlka(String)
+### Example: nlkew(String)
 
 Java code:
 
@@ -243,7 +243,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.nlka("Jhon"))
+.where(APP_USER.FIRST_NAME.nlkew("Jhon"))
 .multiple();
 ```
 
@@ -257,9 +257,9 @@ WHERE NOT (au.first_name LIKE ?1)
 
 Parameters:
 
-- **?1:** "%Jhon%"
+- **?1:** "%Jhon"
 
-### Example: nlka(KOptionalString)
+### Example: nlkew(KOptionalString)
 
 Java code:
 
@@ -269,8 +269,8 @@ final String nullValue = null;
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.nlka(optional(nullValue)))
-.and(APP_USER.FIRST_NAME.nlka(optional("Jhon")))
+.where(APP_USER.FIRST_NAME.nlkew(optional(nullValue)))
+.and(APP_USER.FIRST_NAME.nlkew(optional("Jhon")))
 .multiple();
 ```
 
@@ -284,14 +284,14 @@ WHERE NOT (au.first_name LIKE ?1)
 
 Parameters:
 
-- **?1:** "%Jhon%"
+- **?1:** "%Jhon"
 
-## 4. notILikeAny | nilka
+## 4. notILikeEndWith | nilkew
 
 :::tip SQL to generate
 
 ```sql
-NOT (LOWER(leftOperand) LIKE LOWER(CONCAT('%', rightOperand, '%')))
+NOT (LOWER(leftOperand) LIKE LOWER(CONCAT('%', rightOperand)))
 ```
 :::
 
@@ -299,7 +299,7 @@ This method takes a single parameter and the possible values are:
 
 [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
 
-### Example: nilka(KColumn)
+### Example: nilkew(KColumn)
 
 Java code:
 
@@ -307,7 +307,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.nilka(APP_USER.LAST_NAME))
+.where(APP_USER.FIRST_NAME.nilkew(APP_USER.LAST_NAME))
 .multiple();
 ```
 
@@ -316,14 +316,14 @@ SQL generated:
 ```sql
 SELECT au.id
 FROM app_user au
-WHERE NOT (LOWER(au.first_name) LIKE LOWER(CONCAT('%', au.last_name, '%')))
+WHERE NOT (LOWER(au.first_name) LIKE LOWER(CONCAT('%', au.last_name)))
 ```
 
 Parameters:
 
 - None
 
-### Example: nilka(String)
+### Example: nilkew(String)
 
 Java code:
 
@@ -331,7 +331,7 @@ Java code:
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.nilka("Jhon"))
+.where(APP_USER.FIRST_NAME.nilkew("Jhon"))
 .multiple();
 ```
 
@@ -345,9 +345,9 @@ WHERE NOT (LOWER(au.first_name) LIKE ?1)
 
 Parameters:
 
-- **?1:** "%jhon%"
+- **?1:** "%jhon"
 
-### Example: nilka(KOptionalString)
+### Example: nilkew(KOptionalString)
 
 Java code:
 
@@ -357,8 +357,8 @@ final String nullValue = null;
 k
 .select(APP_USER.ID)
 .from(APP_USER)
-.where(APP_USER.FIRST_NAME.nilka(optional(nullValue)))
-.and(APP_USER.FIRST_NAME.nilka(optional("Jhon")))
+.where(APP_USER.FIRST_NAME.nilkew(optional(nullValue)))
+.and(APP_USER.FIRST_NAME.nilkew(optional("Jhon")))
 .multiple();
 ```
 
@@ -372,4 +372,4 @@ WHERE NOT (LOWER(au.first_name) LIKE ?1)
 
 Parameters:
 
-- **?1:** "%jhon%"
+- **?1:** "%jhon"

@@ -73,7 +73,9 @@ const sidebars = {
         "kcondition/lt",
         "kcondition/lte",
         "kcondition/lk",
-        "kcondition/lka"
+        "kcondition/lka",
+        "kcondition/lksw",
+        "kcondition/lkew"
       ],
     },
     {

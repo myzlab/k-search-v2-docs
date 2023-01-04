@@ -51,7 +51,7 @@ Parameters:
 
 ## 2. KColumn
 
-These are columns that contain some kind of [`SQL operation`](/docs/sql-operations) and is not possible mapped directly into a [`Mapper`](/docs/data-manipulation/mapper) object.
+These are columns that contain some kind of [`SQL operation`](/docs/sql-functions) and is not possible mapped directly into a [`Mapper`](/docs/data-manipulation/mapper) object.
 
 ### Example
 
