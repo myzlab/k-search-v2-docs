@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'KSearch',
   tagline: '',
-  url: 'https://docs.ksearch.myzlab.com',
+  url: 'https://ksearch.myzlab.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -52,6 +52,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        apiKey: '9e56e9a0f3dcd8ceaaf02f2a56702916',
+        indexName: 'KSearch',
+        contextualSearch: true,
+        appId: 'LELKXCPHX3'
+      },
       navbar: {
         title: 'KSearch',
         logo: {
@@ -65,11 +71,11 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          // { 
-          //   to: '/changelog/1.1.37',
-          //   label: 'Changelog',
-          //   position: 'left'
-          // },
+          { 
+            to: '/docs/get-started/installation/springboot-jdbc',
+            label: 'v2.0.17',
+            position: 'right'
+          },
           // { 
           //   to: '/blog',
           //   label: 'Blog',
