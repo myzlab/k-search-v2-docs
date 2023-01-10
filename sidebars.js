@@ -42,7 +42,24 @@ const sidebars = {
         "payload/payload-validator"
       ],
     },
-    "sql-functions",
+    {
+      type: "category",
+      label: "SQL Functions",
+      items: [
+        {
+          type: "category",
+          label: "Aggregate Functions",
+          items: [
+            "sql-functions/aggregate-functions/introduction",
+            "sql-functions/aggregate-functions/avg",
+            "sql-functions/aggregate-functions/count",
+            "sql-functions/aggregate-functions/max",
+            "sql-functions/aggregate-functions/min",
+            "sql-functions/aggregate-functions/sum"
+          ],
+        },
+      ],
+    },
     {
       type: "category",
       label: "Special Functions",
@@ -142,7 +159,13 @@ const sidebars = {
             "select-statement/where/or-not"
           ],
         },
-        "select-statement/group-by",
+        {
+          type: "category",
+          label: "Group By",
+          items: [
+            "select-statement/group-by/introduction"
+          ],
+        },
         {
           type: "category",
           label: "Having",

@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL SELECT statement
+title: SELECT statement
 sidebar_label: Introduction
 ---
 
@@ -29,7 +29,7 @@ To fully study the SQL Select clause, visit its documentation [https://www.postg
 
 ## Basic Concepts
 
-Some basic concepts will be listed that will allow you to know certain things that are and are not possible through the <K/>.
+Some basic concepts will be listed that will allow you to know certain things that are and are not possible through <K/>.
 
 ### 1. Query all the columns of a table through the `SELECT *`
 

@@ -5,7 +5,7 @@ sidebar_label: Join
 
 import K from '@site/src/components/K';
 
-In this section you will learn how to implement the `JOIN` clause of PostgreSQL through the <K/>.
+In this section you will learn how to implement the `JOIN` clause of PostgreSQL through <K/>.
 
 ## JOIN clause
 

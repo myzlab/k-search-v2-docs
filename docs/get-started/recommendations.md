@@ -6,7 +6,7 @@
 
 ## DAK Layer
 
-Our first recommendation is that regardless of the current folder structure of your project or the number of packages or layers it contains, you create a new package or layer called "DAK", which will contain the objects that are only allowed to execute statements against the database.<br/>
+Our first recommendation is that regardless of the current folder structure of your project or the number of packages or layers it contains, you create a new package or layer called **__dak__**, which will contain the objects that are only allowed to execute statements against the database.<br/>
 In this sense, no other type of object (RestControllers, Services, etc.), can perform any type of operation against the database.
 
 We will illustrate what has been said with the following image:

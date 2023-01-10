@@ -1,10 +1,9 @@
 ---
-
+title: KCondition
+sidebar_label: Introduction
 ---
 
 import K from '@site/src/components/K';
-
-# Introduction
 
 A condition is any expression that evaluates to a result of type boolean. When is used in `WHERE` clause, any row that does not satisfy this condition will be eliminated from the result. A row satisfies the condition if it returns true when the actual row values are substituted for any variable references.
 
@@ -18,7 +17,7 @@ A [`Kcondition`](/docs/kcondition/introduction) can be used in the `WHERE` claus
 
 ## Basic Concepts
 
-There are a wide variety of methods available in the <K/> so that you can add different conditions to the query. Before studying all these methods, you should learn some basic concepts that we will show below so that you can fully exploit the potential that <K/> offers you.
+There are a wide variety of methods available in <K/> with which you can add different conditions to the query. Before studying all these methods, you should learn some basic concepts that we will show below so that you can fully exploit the potential that <K/> offers you.
 
 ## 1. How to create a `KCondition`?
 
@@ -124,7 +123,7 @@ We will proceed to theoretically define each of these modifiers:
 - **I modifier**: This modifier allows you to remove case sensitivity for the condition being added. This modifier must be invoked through the **_i_** letter in each of the methods that allow adding the different conditions to the query. This modifier only applies to conditions that involve text or similar values.
 - **NOT modifier**: This modifier allows you to apply the `NOT` operator to the condition being added. This modifier must be invoked through the **_not_** word (**_n_** letter for the short name of methods) in each of the methods that allow adding the different conditions to the query.
 
-Let's see the basic structure of the available methods in the <K/> to add the different conditions to the query:
+Let's see the basic structure of the available methods in <K/> to add the different conditions to the query:
 
 **Normal method name:**
 

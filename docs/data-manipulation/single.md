@@ -9,7 +9,7 @@ import K from '@site/src/components/K';
 
 # Single Query
 
-In this section you will learn how to build and execute queries whose objective is to search for a single record on the database through the <K/> as well as how to manipulate the information once it has been extracted from the database.
+In this section you will learn how to build and execute queries whose objective is to search for a single record on the database through <K/> as well as how to manipulate the information once it has been extracted from the database.
 
 ## The single() method and the KRow object
 

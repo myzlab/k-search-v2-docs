@@ -26,7 +26,7 @@ With <K/> you can:<br/><br/>
 <K/> supports all clause associated to INSERT statement.<br/>
 With <K/> you can:<br/><br/>
 
-- Inserting a single record, as well as, inserting multiple records at the same time.
+- Insert a single record, as well as insert multiple records at the same time.
 - Automatically map the columns returned into an object with defined attributes.
 - Create statements of the type `INSERT INTO` and `INSERT INTO SELECT`.
 - Know the number of records inserted.

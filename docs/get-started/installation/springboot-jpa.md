@@ -36,7 +36,7 @@ Copy the **K** dependency in your pom.xml file, then, force to your project to d
 
 ## Step 2: Tell <K/> where the EntityManager is
 
-To do this, create a class named K that inherits from **com.myzlab.k.KBuilder**. In this class you must make available all the EntityManagers and select one to be used by default.
+To do this, create a class named K that inherits from `com.myzlab.k.KBuilder`. In this class you must make available all the EntityManagers and select one to be used by default.
 
 Assuming that the root package of your project is **com.example**, then you must to create the package **com.example.k** and the new class would be located there.
 

@@ -10,7 +10,7 @@ In this section you will learn how to install <K/> in a Spring Boot project with
 ## Previous requirements
 
 - Have a Spring Boot project in which you want to install <K/>.
-- Have JPA installed via the **spring-boot-starter-jdbc** dependency.
+- Have JDBC installed via the **spring-boot-starter-jdbc** dependency.
 
 ## Step 1: Install K dependency via Maven
 
@@ -26,7 +26,7 @@ Copy the **K** dependency in your pom.xml file, then, force to your project to d
 
 ## Step 2: Tell <K/> where the JdbcTemplate is
 
-To do this, create a class named K that inherits from **com.myzlab.k.KBuilder**. In this class you must make available all the JdbcTemplates and select one to be used by default.
+To do this, create a class named K that inherits from `com.myzlab.k.KBuilder`. In this class you must make available all the JdbcTemplates and select one to be used by default.
 
 Assuming that the root package of your project is **com.example**, then you must to create the package **com.example.k** and the new class would be located there.
 

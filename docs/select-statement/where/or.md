@@ -9,7 +9,7 @@ The `or` methods allows you to add an `OR` operator to a `WHERE` clause.
 
 The methods available to use this functionality are:
 
-- `or(KCondition kCondition)`: Receives a `KCondition` which will be added to `WHERE` clause with an `OR` operator. (To learn more about the conditions, please go to the [`KCondition`](/docs/kcondition/introduction) section).
+- `or(KCondition kCondition)`: Receives a [`KCondition`](/docs/kcondition/introduction) which will be added to `WHERE` clause with an `OR` operator.
 - `or(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `WHERE` clause with an `OR` operator.
 
 ## Method hierarchy

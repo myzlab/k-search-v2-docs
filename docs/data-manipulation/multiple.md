@@ -9,7 +9,7 @@ import K from '@site/src/components/K';
 
 # Multiple Query
 
-In this section you will learn how to build and execute queries whose objective is to search multiples records on the database through the <K/> as well as how to manipulate the information once it has been extracted from the database.
+In this section you will learn how to build and execute queries whose objective is to search multiples records on the database through <K/> as well as how to manipulate the information once it has been extracted from the database.
 
 ## The multiple() method and the KCollection object
 
