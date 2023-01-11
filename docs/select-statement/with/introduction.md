@@ -13,7 +13,7 @@ In this introduction, you learn how to build a CTE from a subquery and from a se
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a subquery
 
-To get started building a `KCommonTableExpressionFilled` (CTE) from a subquery, we need to import the static functions as follows:
+To get started building a `KCommonTableExpressionFilled` (CTE) from a subquery, you need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;
@@ -68,7 +68,7 @@ final KCommonTableExpressionFilled cteUsers10400_10500 =
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a set of values
 
-To get started building a CTE from a set of values, we need to import the static functions as follows:
+To get started building a CTE from a set of values, you need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;

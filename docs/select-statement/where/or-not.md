@@ -28,7 +28,7 @@ and the subsequent methods that can be called are:
 - [`andNot`](/docs/select-statement/where/and-not)
 - [`or`](/docs/select-statement/where/or)
 - [`orNot`](/docs/select-statement/where/or-not)
-- [`groupBy`](/docs/select-statement/select/)
+- [`groupBy`](/docs/select-statement/group-by/)
 - [`window`](/docs/select-statement/select/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)

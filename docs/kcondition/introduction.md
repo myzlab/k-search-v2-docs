@@ -55,7 +55,7 @@ Through the `optional` method we can add optional values to conditions in such a
 
 The available methods for adding optional values are:
 
-- `optional(KColumn kColumn)`: Receives a `KColumn` value and returns a `KOptionalKColumn` that can be added to a condition to make it an optional condition.
+- `optional(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) value and returns a `KOptionalKColumn` that can be added to a condition to make it an optional condition.
 - `optional(KValNumberField kValNumberField)`: Receives a `KValNumberField` value and returns a `KOptionalKValNumberField` that can be added to a condition to make it an optional condition.
 - `optional(KValTextField kValTextField)`: Receives a `KValTextField` value and returns a `KOptionalKValTextField` that can be added to a condition to make it an optional condition.
 - `optional(Number number)`: Receives a `Number` value and returns a `KOptionalNumber` that can be added to a condition to make it an optional condition.

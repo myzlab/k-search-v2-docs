@@ -1,20 +1,19 @@
 ---
-title: Where
-sidebar_label: Where
+title: Group By
+sidebar_label: Group By
 ---
 
 ## Definition
 
-The `where` methods allows you to add a `WHERE` clause to the query.
+The `groupBy` method allows you to add a `GROUP BY` clause to the query.
 
-The methods available to use this functionality are:
+The only one method available to use this functionality is:
 
-- `where(KCondition kCondition)`: Receives a [`KCondition`](/docs/kcondition/introduction) which will be added to `WHERE` clause.
-- `where(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `WHERE` clause.
+- `groupBy(KColumnAllowedToGroupBy... kColumnsAllowedToGroupBy)`: Receives a variable quantity of columns that will be added to the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`KRaw`](/docs/select-statement/select/introduction#7-kraw).
 
 ## Method hierarchy
 
-The `where` method can be used right after the following methods:
+The `groupBy` method can be used right after the following methods:
 
 - [`selectDistinct`](/docs/select-statement/select/distinct)
 - [`select1`](/docs/select-statement/select/select1)
@@ -25,14 +24,10 @@ The `where` method can be used right after the following methods:
 - [`rightJoin`](/docs/select-statement/join/right-join)
 - [`fullJoin`](/docs/select-statement/join/full-join)
 - [`crossJoin`](/docs/select-statement/join/cross-join)
+- [`where`](/docs/select-statement/where/)
 
 and the subsequent methods that can be called are:
 
-- [`and`](/docs/select-statement/where/and)
-- [`andNot`](/docs/select-statement/where/and-not)
-- [`or`](/docs/select-statement/where/or)
-- [`orNot`](/docs/select-statement/where/or-not)
-- [`groupBy`](/docs/select-statement/group-by/)
 - [`window`](/docs/select-statement/select/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)
@@ -47,48 +42,24 @@ and the subsequent methods that can be called are:
 - [`single`](/docs/select-statement/select/)
 - [`multiple`](/docs/select-statement/select/)
 
-## Example: `KCondition`
+## Example
 
 Java code:
 
 ```java
 k
-.selectDistinct(APP_USER.ID)
+.select(count(), APP_USER.CREATED_AT.cast(date()))
 .from(APP_USER)
-.where(APP_USER.EMAIL.isNull())
+.groupBy(APP_USER.CREATED_AT.cast(date()))
 .multiple();
 ```
 
 SQL generated:
 
 ```sql
-SELECT DISTINCT au.id
+SELECT COUNT(*), CAST(au.created_at AS DATE)
 FROM app_user au
-WHERE au.email IS NULL
-```
-
-Parameters:
-
-- None
-
-## Example: `KRaw`
-
-Java code:
-
-```java
-k
-.select(APP_USER.ID)
-.from(APP_USER)
-.where(raw("au.created_at > CURRENT_DATE - 1"))
-.multiple();
-```
-
-SQL generated:
-
-```sql
-SELECT DISTINCT au.id
-FROM app_user au 
-WHERE au.created_at > CURRENT_DATE - 1
+GROUP BY CAST(au.created_at AS DATE)
 ```
 
 Parameters:

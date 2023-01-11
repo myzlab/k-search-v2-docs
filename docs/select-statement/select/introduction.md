@@ -242,7 +242,7 @@ Misuse can open SQL injection vulnerabilities in your software. Please be carefu
 
 :::
 
-To use `raw` method, we need to import the static functions as follows:
+To use `raw` method, you need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;
@@ -279,7 +279,7 @@ Parameters:
 ## 8. `CASE` conditional expression
 
 The SQL `CASE` expression is a generic conditional expression, similar to if/else statements in other programming languages.
-To get started with the implementation of a `CASE` conditional expression, we need to import the static functions as follows:
+To get started with the implementation of a `CASE` conditional expression, you need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;

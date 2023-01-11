@@ -16,7 +16,7 @@ The methods available are:
 
 :::info
 
-To use Exists methods, we need to import the static functions as follows:
+To use Exists methods, you need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;

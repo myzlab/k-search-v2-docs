@@ -11,7 +11,7 @@ The only one method available to use this functionality is:
 
 - `select1()`: It does not receive any parameters.
 
-The use of this method is recommended in declarations that involve the `EXISTS` operator.
+The use of this method is recommended in statements that involve the `EXISTS` operator.
 
 ## Method hierarchy
 
@@ -26,7 +26,7 @@ and the subsequent methods that can be called are:
 - [`select`](/docs/select-statement/select/)
 - [`from`](/docs/select-statement/from/)
 - [`where`](/docs/select-statement/where/)
-- [`groupBy`](/docs/select-statement/select/)
+- [`groupBy`](/docs/select-statement/group-by/)
 - [`window`](/docs/select-statement/select/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)

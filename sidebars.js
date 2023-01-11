@@ -163,7 +163,19 @@ const sidebars = {
           type: "category",
           label: "Group By",
           items: [
-            "select-statement/group-by/introduction"
+            "select-statement/group-by/introduction",
+            "select-statement/group-by/group-by",
+            {
+              type: "category",
+              label: "Grouping Sets",
+              items: [
+                "select-statement/group-by/grouping-sets/introduction",
+                "select-statement/group-by/grouping-sets/grouping",
+                "select-statement/group-by/grouping-sets/grouping-sets",
+                "select-statement/group-by/grouping-sets/cube",
+                "select-statement/group-by/grouping-sets/rollup"
+              ],
+            },
           ],
         },
         {
