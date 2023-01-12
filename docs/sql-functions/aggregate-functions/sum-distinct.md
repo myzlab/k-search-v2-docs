@@ -1,11 +1,11 @@
 ---
-title: Max
-sidebar_label: Max
+title: Sum Distinct
+sidebar_label: Sum Distinct
 ---
 
 ## Definition
 
-The `max` method allows you to add a `MAX` function to the query. The `MAX` function allows you to get the maximum value of a set.
+The `sumDistinct` method allows you to add a `SUM` function (with `DISTINCT` option) to the query. The `SUM` function (with `DISTINCT` option) allows you to calculate the sum value of a set, considering only the distinct values.
 
 The use of this method is recommended in statements that involve the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause.
 
@@ -15,7 +15,7 @@ There are 2 ways to call this method:
 
 The only one method available to use this functionality calling from a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) is:
 
-- `max()`: It does not receive any parameters. The [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be the one supplied to the `MAX` function.
+- `sumDistinct()`: It does not receive any parameters. The [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be the one supplied to the `SUM` function.
 
 ### Example
 
@@ -24,7 +24,7 @@ Java code:
 ```java
 k
 .select(
-    APP_USER.ID.max(),
+    APP_USER.ID.sumDistinct(),
     APP_USER.CREATED_AT.cast(date())
 )
 .from(APP_USER)
@@ -36,7 +36,7 @@ SQL generated:
 
 ```sql
 SELECT
-    MAX(au.id),
+    SUM(DISTINCT au.id),
     CAST(au.created_at AS DATE)
 FROM app_user au
 GROUP BY CAST(au.created_at AS DATE)
@@ -50,7 +50,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `max(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `MAX` function.
+- `sumDistinct(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `SUM` function.
 
 To use this way, you need to import the static functions as follows:
 
@@ -65,7 +65,7 @@ Java code:
 ```java
 k
 .select(
-    max(APP_USER.ID),
+    sumDistinct(APP_USER.ID),
     APP_USER.CREATED_AT.cast(date())
 )
 .from(APP_USER)
@@ -77,7 +77,7 @@ SQL generated:
 
 ```sql
 SELECT
-    MAX(au.id),
+    SUM(DISTINCT au.id),
     CAST(au.created_at AS DATE)
 FROM app_user au
 GROUP BY CAST(au.created_at AS DATE)

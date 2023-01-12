@@ -53,9 +53,12 @@ const sidebars = {
             "sql-functions/aggregate-functions/introduction",
             "sql-functions/aggregate-functions/avg",
             "sql-functions/aggregate-functions/count",
+            "sql-functions/aggregate-functions/count-kcolumn",
+            "sql-functions/aggregate-functions/count-distinct",
             "sql-functions/aggregate-functions/max",
             "sql-functions/aggregate-functions/min",
-            "sql-functions/aggregate-functions/sum"
+            "sql-functions/aggregate-functions/sum",
+            "sql-functions/aggregate-functions/sum-distinct"
           ],
         },
       ],
