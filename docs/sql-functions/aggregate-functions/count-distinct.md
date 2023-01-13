@@ -5,9 +5,7 @@ sidebar_label: Count Distinct
 
 ## Definition
 
-The `countDistinct` method allows you to add a `COUNT(DISTINCT expression)` function to the query. 
-
-The `COUNT(DISTINCT expression)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement. However, it does not consider NULL values in the expression and does not consider repeated values.
+The `countDistinct` method allows you to add a `COUNT(DISTINCT expression)` function to the query. The `COUNT(DISTINCT expression)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement. However, it does not consider NULL values in the expression and does not consider repeated values.
 
 There are 2 ways to call this method:
 

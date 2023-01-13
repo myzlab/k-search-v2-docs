@@ -5,7 +5,7 @@ sidebar_label: Jsonb Agg
 
 ## Definition
 
-The `jsonbAgg` method allows you to add a `JSONB_AGG` function to the query. The `JSONB_AGG` is a function that accepts a set of values and returns an JSON array in which each value in the set is assigned to an element of the array.
+The `jsonbAgg` method allows you to add a `JSONB_AGG` function to the query. The `JSONB_AGG` is a function that accepts a set of values and returns a JSON array in which each value in the set is assigned to an element of the JSON array.
 
 There are 2 ways to call this method:
 

@@ -5,9 +5,7 @@ sidebar_label: Count (KColumn)
 
 ## Definition
 
-The `count` method allows you to add a `COUNT(expression)` function to the query. 
-
-The `COUNT(expression)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement. However, it does not consider NULL values in the expression.
+The `count` method allows you to add a `COUNT(expression)` function to the query. The `COUNT(expression)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement. However, it does not consider NULL values in the expression.
 
 There are 2 ways to call this method:
 

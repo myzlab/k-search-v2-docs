@@ -5,7 +5,7 @@ sidebar_label: Json Agg
 
 ## Definition
 
-The `jsonAgg` method allows you to add a `JSON_AGG` function to the query. The `JSON_AGG` is a function that accepts a set of values and returns an JSON array in which each value in the set is assigned to an element of the array.
+The `jsonAgg` method allows you to add a `JSON_AGG` function to the query. The `JSON_AGG` is a function that accepts a set of values and returns a JSON array in which each value in the set is assigned to an element of the JSON array.
 
 There are 2 ways to call this method:
 

@@ -63,10 +63,13 @@ const sidebars = {
             "sql-functions/aggregate-functions/every",
             "sql-functions/aggregate-functions/json-agg",
             "sql-functions/aggregate-functions/jsonb-agg",
+            "sql-functions/aggregate-functions/json-object-agg",
             "sql-functions/aggregate-functions/max",
             "sql-functions/aggregate-functions/min",
+            "sql-functions/aggregate-functions/string-agg",
             "sql-functions/aggregate-functions/sum",
-            "sql-functions/aggregate-functions/sum-distinct"
+            "sql-functions/aggregate-functions/sum-distinct",
+            "sql-functions/aggregate-functions/xmlagg"
           ],
         },
       ],
