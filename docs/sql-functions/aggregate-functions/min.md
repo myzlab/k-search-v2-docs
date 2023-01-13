@@ -7,8 +7,6 @@ sidebar_label: Min
 
 The `min` method allows you to add a `MIN` function to the query. The `MIN` function allows you to get the minimum value of a set.
 
-The use of this method is recommended in statements that involve the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause.
-
 There are 2 ways to call this method:
 
 ## 1. Calling from a `KColumn` or a `KTableColumn`

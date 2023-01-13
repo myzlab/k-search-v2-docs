@@ -7,8 +7,6 @@ sidebar_label: Sum Distinct
 
 The `sumDistinct` method allows you to add a `SUM` function (with `DISTINCT` option) to the query. The `SUM` function (with `DISTINCT` option) allows you to calculate the sum value of a set, considering only the distinct values.
 
-The use of this method is recommended in statements that involve the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause.
-
 There are 2 ways to call this method:
 
 ## 1. Calling from a `KColumn` or a `KTableColumn`

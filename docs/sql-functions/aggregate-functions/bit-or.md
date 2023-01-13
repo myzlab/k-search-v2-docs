@@ -1,11 +1,11 @@
 ---
-title: Avg
-sidebar_label: Avg
+title: Bit Or
+sidebar_label: Bit Or
 ---
 
 ## Definition
 
-The `avg` method allows you to add a `AVG` function to the query. The `AVG` function allows you to calculate the average value of a set.
+The `bitOr` method allows you to add a `BIT_OR` function to the query. The `BIT_OR` function allows you performs a “bitwise OR” operation on all non-null input values.
 
 There are 2 ways to call this method:
 
@@ -13,7 +13,7 @@ There are 2 ways to call this method:
 
 The only one method available to use this functionality calling from a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) is:
 
-- `avg()`: It does not receive any parameters. The [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be the one supplied to the `AVG` function.
+- `bitOr()`: It does not receive any parameters. The [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be the one supplied to the `BIT_OR` function.
 
 ### Example
 
@@ -22,7 +22,7 @@ Java code:
 ```java
 k
 .select(
-    APP_USER.ID.avg(),
+    APP_USER.ID.bitOr(),
     APP_USER.CREATED_AT.cast(date())
 )
 .from(APP_USER)
@@ -34,7 +34,7 @@ SQL generated:
 
 ```sql
 SELECT
-    AVG(au.id),
+    BIT_OR(au.id),
     CAST(au.created_at AS DATE)
 FROM app_user au
 GROUP BY CAST(au.created_at AS DATE)
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `avg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `AVG` function.
+- `bitOr(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `BIT_OR` function.
 
 To use this way, you need to import the static functions as follows:
 
@@ -63,7 +63,7 @@ Java code:
 ```java
 k
 .select(
-    avg(APP_USER.ID),
+    bitOr(APP_USER.ID),
     APP_USER.CREATED_AT.cast(date())
 )
 .from(APP_USER)
@@ -75,7 +75,7 @@ SQL generated:
 
 ```sql
 SELECT
-    AVG(au.id),
+    BIT_OR(au.id),
     CAST(au.created_at AS DATE)
 FROM app_user au
 GROUP BY CAST(au.created_at AS DATE)

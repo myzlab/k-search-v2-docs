@@ -7,8 +7,6 @@ sidebar_label: Sum
 
 The `sum` method allows you to add a `SUM` function to the query. The `SUM` function allows you to calculate the sum value of a set.
 
-The use of this method is recommended in statements that involve the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause.
-
 There are 2 ways to call this method:
 
 ## 1. Calling from a `KColumn` or a `KTableColumn`

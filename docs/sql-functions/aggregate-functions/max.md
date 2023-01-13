@@ -7,8 +7,6 @@ sidebar_label: Max
 
 The `max` method allows you to add a `MAX` function to the query. The `MAX` function allows you to get the maximum value of a set.
 
-The use of this method is recommended in statements that involve the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause.
-
 There are 2 ways to call this method:
 
 ## 1. Calling from a `KColumn` or a `KTableColumn`
