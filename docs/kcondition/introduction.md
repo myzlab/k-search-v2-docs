@@ -88,7 +88,7 @@ SQL generated:
 ```sql
 SELECT au.id, au.first_name
 FROM app_user au
-WHERE au.id > ?
+WHERE au.id > ?1
 ```
 
 Parameters:

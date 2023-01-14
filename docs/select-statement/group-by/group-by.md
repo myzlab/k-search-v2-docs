@@ -65,3 +65,75 @@ GROUP BY CAST(au.created_at AS DATE)
 Parameters:
 
 - None
+
+## Parameters issue in `GROUP BY` clause
+
+There is an error in JDBC library when using the `GROUP BY` clause with parameters. We will show a first example where you will be able to appreciate the error and then another example with how we should handle the queries to avoid the error and not affect the performance of the generated SQL query.
+
+## Example with the issue
+
+Java code:
+
+```java
+k
+.select(
+    count(),
+    toChar(APP_USER.CREATED_AT, "YYYY")
+)
+.from(APP_USER)
+.groupBy(toChar(APP_USER.CREATED_AT, "YYYY"))
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT
+    COUNT(*),
+    TO_CHAR(au.created_at, ?1)
+FROM app_user au
+GROUP BY TO_CHAR(au.created_at, ?2)
+```
+
+Parameters:
+
+- **?1:** "YYYY"
+- **?2:** "YYYY"
+
+Although when executing the query directly in the database, it gives us the result that the query is correct, when doing it from Java with JDBC, it throws the following error:
+
+
+```
+org.postgresql.util.PSQLException: ERROR: column "au.created_at" must appear in the GROUP BY clause or be used in an aggregate function
+```
+
+To avoid this error and keep the same query, we need to add an alias to the expression in the `SELECT` clause and use it in the `GROUP BY` clause as follows:
+
+## Example without the issue
+
+Java code:
+
+```java
+k
+.select(
+    count(),
+    toChar(APP_USER.CREATED_AT, "YYYY").as("year")
+)
+.from(APP_USER)
+.groupBy(raw("year"))
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT
+    COUNT(*),
+    TO_CHAR(au.created_at, ?1) AS "year"
+FROM app_user au
+GROUP BY year
+```
+
+Parameters:
+
+- **?1:** "YYYY"

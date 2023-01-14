@@ -117,7 +117,7 @@ SQL generated:
 ```sql
 SELECT
     JSONB_AGG(
-        CONCAT(au.first_name || ? || au.last_name
+        CONCAT(au.first_name || ?1 || au.last_name
     ) ORDER BY au.first_name ASC, au.last_name DESC),
     CAST(au.created_at AS DATE)
 FROM app_user au

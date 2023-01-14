@@ -196,7 +196,12 @@ const sidebars = {
           type: "category",
           label: "Having",
           items: [
-            "select-statement/having/introduction"
+            "select-statement/having/introduction",
+            "select-statement/having/having",
+            "select-statement/having/and",
+            "select-statement/having/and-not",
+            "select-statement/having/or",
+            "select-statement/having/or-not"
           ],
         },
         "select-statement/order-by",
