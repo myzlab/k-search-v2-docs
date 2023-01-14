@@ -36,7 +36,7 @@ and the subsequent methods that can be called are:
 - [`intersectAll`](/docs/select-statement/select/)
 - [`union`](/docs/select-statement/select/)
 - [`unionAll`](/docs/select-statement/select/)
-- [`orderBy`](/docs/select-statement/select/)
+- [`orderBy`](/docs/select-statement/order-by/)
 - [`limit`](/docs/select-statement/select/)
 - [`offset`](/docs/select-statement/select/)
 - [`fetch`](/docs/select-statement/select/)

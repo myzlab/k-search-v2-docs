@@ -204,7 +204,14 @@ const sidebars = {
             "select-statement/having/or-not"
           ],
         },
-        "select-statement/order-by",
+        {
+          type: "category",
+          label: "Order By",
+          items: [
+            "select-statement/order-by/introduction",
+            "select-statement/order-by/order-by"
+          ],
+        },
         "select-statement/limit",
         "select-statement/offset",
       ],

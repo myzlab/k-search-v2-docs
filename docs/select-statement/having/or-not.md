@@ -16,18 +16,18 @@ The methods available to use this functionality are:
 
 The `orNot` method can be used right after the following methods:
 
-- [`having`](/docs/select-statement/where/)
-- [`and`](/docs/select-statement/where/and)
-- [`andNot`](/docs/select-statement/where/and-not)
-- [`or`](/docs/select-statement/where/or)
-- [`orNot`](/docs/select-statement/where/or-not)
+- [`having`](/docs/select-statement/having/)
+- [`and`](/docs/select-statement/having/and)
+- [`andNot`](/docs/select-statement/having/and-not)
+- [`or`](/docs/select-statement/having/or)
+- [`orNot`](/docs/select-statement/having/or-not)
 
 and the subsequent methods that can be called are:
 
-- [`and`](/docs/select-statement/where/and)
-- [`andNot`](/docs/select-statement/where/and-not)
-- [`or`](/docs/select-statement/where/or)
-- [`orNot`](/docs/select-statement/where/or-not)
+- [`and`](/docs/select-statement/having/and)
+- [`andNot`](/docs/select-statement/having/and-not)
+- [`or`](/docs/select-statement/having/or)
+- [`orNot`](/docs/select-statement/having/or-not)
 - [`window`](/docs/select-statement/select/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)
@@ -35,7 +35,7 @@ and the subsequent methods that can be called are:
 - [`intersectAll`](/docs/select-statement/select/)
 - [`union`](/docs/select-statement/select/)
 - [`unionAll`](/docs/select-statement/select/)
-- [`orderBy`](/docs/select-statement/select/)
+- [`orderBy`](/docs/select-statement/order-by/)
 - [`limit`](/docs/select-statement/select/)
 - [`offset`](/docs/select-statement/select/)
 - [`fetch`](/docs/select-statement/select/)
