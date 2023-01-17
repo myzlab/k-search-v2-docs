@@ -72,6 +72,13 @@ const sidebars = {
             "sql-functions/aggregate-functions/xmlagg"
           ],
         },
+        {
+          type: "category",
+          label: "Window Functions",
+          items: [
+            "sql-functions/window-functions/introduction"
+          ],
+        },
       ],
     },
     {
@@ -202,6 +209,15 @@ const sidebars = {
             "select-statement/having/and-not",
             "select-statement/having/or",
             "select-statement/having/or-not"
+          ],
+        },
+        {
+          type: "category",
+          label: "Window",
+          items: [
+            "select-statement/window/introduction",
+            "select-statement/window/over",
+            "select-statement/window/window"
           ],
         },
         {

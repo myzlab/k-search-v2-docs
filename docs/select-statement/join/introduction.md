@@ -9,7 +9,7 @@ Queries can access multiple tables at once, or access the same table in such a w
 
 To fully study join queries, visit its documentation [https://www.postgresql.org/docs/current/tutorial-join.html](https://www.postgresql.org/docs/current/tutorial-join.html)
 
-In this introduction, we will learn about the [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) object, which is needed to work with joins in Ksearch.
+In this introduction, you will learn about the [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) object, which is needed to work with joins in Ksearch.
 
 ## `KJoinDefinition`
 

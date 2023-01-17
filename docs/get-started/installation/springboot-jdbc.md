@@ -10,9 +10,9 @@ In this section you will learn how to install <K/> in a Spring Boot project with
 ## Previous requirements
 
 - Have a Spring Boot project in which you want to install <K/>.
-- Have JDBC installed via the **spring-boot-starter-jdbc** dependency.
+- Have JDBC installed through the **spring-boot-starter-jdbc** dependency.
 
-## Step 1: Install K dependency via Maven
+## Step 1: Install K dependency through Maven
 
 Copy the **K** dependency in your pom.xml file, then, force to your project to download dependency.
 
@@ -74,7 +74,7 @@ public class K extends KBuilder {
 
 ## Ready to use!
 
-With these single steps, you will be able to use the `com.myzlab.k.KBuilder` object via dependency injection. This object will allow you to access all the functionalities that <K/> has for you.
+With these single steps, you will be able to use the `com.myzlab.k.KBuilder` object through dependency injection. This object will allow you to access all the functionalities that <K/> has for you.
 
 To inject the `com.myzlab.k.KBuilder` object, simply declare this object as an final attribute and then add the **@RequiredArgsConstructor** tag to class as follows:
 

@@ -192,7 +192,7 @@ Parameters:
 
 ## 6. Columns with alias
 
-All of the above options support the ability to add an alias via the `as` method.
+All of the above options support the ability to add an alias through the `as` method.
 
 - `as(String alias)`: Receive the alias to add to a column or value.
 

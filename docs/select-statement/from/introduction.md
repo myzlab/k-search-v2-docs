@@ -25,7 +25,7 @@ final KQuery subquery =
     .from(APP_USER);
 ```
 
-and then via the `as` method we supply an alias and the `KQuery` becomes a [`KTable`](/docs/select-statement/from/introduction), as follows:
+and then through the `as` method we supply an alias and the `KQuery` becomes a [`KTable`](/docs/select-statement/from/introduction), as follows:
 
 ```java
 final KTable kTable = subquery.as("an_alias");

@@ -13,40 +13,16 @@ In this introduction, you learn how to build a CTE from a subquery and from a se
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a subquery
 
-To get started building a `KCommonTableExpressionFilled` (CTE) from a subquery, you need to import the static functions as follows:
+A CTE is made up of the name, one or more columns, and a KQuery. To define these values you have available the following methods which must be called one after the other in the same order that will be presented below:
+
+- `cte(String name)`: Receives the name of the CTE.
+- `columns(String... columns)`: Receives a variable quantity of `String` which will be added as CTE columns.
+- `as(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the CTE.
+
+To use `cte` method, you need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;
-```
-
-Initially, we have to prepare a KQuery:
-
-```java
-final KQuery kQuery =
-    k
-    .select(APP_USER.ID)
-    .from(APP_USER);
-```
-
-At this point, we will proceed to build the CTE. You should start by calling the `cte` method, which receives the name of CTE, as follow:
-
-```java
-cte("cte_name")
-```
-
-The next step is add columns to CTE through the `columns` method, which receives a variable quantity of `String` which will be added as CTE columns, as follow:
-
-```java
-columns("id", "firstName", ...)
-```
-
-And finally, we proceed to add the subquery and an alias to the CTE through the `as` method, as follow:
-
-```java
-final KQuery kQuery = ...;
-
-// highlight-next-line
-as(kQuery, "cte_alias")
 ```
 
 ### Example
@@ -68,13 +44,19 @@ final KCommonTableExpressionFilled cteUsers10400_10500 =
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a set of values
 
-To get started building a CTE from a set of values, you need to import the static functions as follows:
+A CTE is made up of the name, one or more columns, and a KQuery. To define these values you have available the following methods which must be called one after the other in the same order that will be presented below:
+
+- `cte(String name)`: Receives the name of the CTE.
+- `columns(String... columns)`: Receives a variable quantity of `String` which will be added as CTE columns. (Call this method is optional).
+- `as(KValues kValues, String alias)`: Receives a KValues and an alias, which will be added as values in the CTE.
+
+To use `cte` method, you need to import the static functions as follows:
 
 ```java
 import static com.myzlab.k.KFunction.*;
 ```
 
-Initially, we have to prepare the values through the `values` and `append` method:
+Additionally, we need to prepare the values that will be supplied to the `as` method through the `values` and `append` method:
 
 - `values()`: Allows you to initialize a list of values. It does not receive parameters.
 - `append(List<Object> value)`: Receives a list of objects which will correspond to one single record within the CTE. This method can be called as many records need to be added to the CTE.
@@ -93,27 +75,6 @@ final KValues userValues =
     values()
 // highlight-next-line
     append(recordValues);
-```
-
-At this point, we will proceed to build the CTE. You should start by calling the `cte` method, which receives the name of CTE, as follow:
-
-```java
-cte("cte_name")
-```
-
-The next step is add columns to CTE through the `columns` method, which receives a variable quantity of `String` which will be added as CTE columns, as follow:
-
-```java
-columns("id", "firstName", ...)
-```
-
-And finally, we proceed to add the values and an alias to the CTE through the `as` method, as follow:
-
-```java
-final KValues kValues = ...;
-
-// highlight-next-line
-as(kValues, "cte_alias")
 ```
 
 ### Example
