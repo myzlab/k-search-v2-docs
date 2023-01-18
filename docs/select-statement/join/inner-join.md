@@ -5,7 +5,7 @@ sidebar_label: Inner Join
 
 ## Definition
 
-The `innerJoin` method allows you to add a `INNER JOIN` clause to the query.
+The `innerJoin` method allows you to add the `INNER JOIN` clause to the query.
 
 The methods available to use this functionality are:
 

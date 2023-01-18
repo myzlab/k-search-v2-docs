@@ -5,7 +5,7 @@ sidebar_label: And
 
 ## Definition
 
-The `and` methods allows you to add an `AND` operator to a `HAVING` clause.
+The `and` methods allows you to add the `AND` operator to a `HAVING` clause.
 
 The methods available to use this functionality are:
 

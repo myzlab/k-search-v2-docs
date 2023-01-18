@@ -5,7 +5,7 @@ sidebar_label: Left Join
 
 ## Definition
 
-The `leftJoin` method allows you to add a `LEFT JOIN` clause to the query.
+The `leftJoin` method allows you to add the `LEFT JOIN` clause to the query.
 
 The methods available to use this functionality are:
 

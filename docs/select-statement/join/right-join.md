@@ -5,7 +5,7 @@ sidebar_label: Right Join
 
 ## Definition
 
-The `rightJoin` method allows you to add a `RIGHT JOIN` clause to the query.
+The `rightJoin` method allows you to add the `RIGHT JOIN` clause to the query.
 
 The methods available to use this functionality are:
 

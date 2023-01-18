@@ -5,7 +5,7 @@ sidebar_label: Count (KColumn)
 
 ## Definition
 
-The `count` method allows you to add a `COUNT(expression)` function to the query. The `COUNT(expression)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement. However, it does not consider NULL values in the expression.
+The `count` method allows you to add the `COUNT(expression)` function to the query. The `COUNT(expression)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement. However, it does not consider NULL values in the expression.
 
 There are 2 ways to call this method:
 
@@ -41,7 +41,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `count(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `COUNT` function.
+- `count(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `COUNT` function.
 
 To use this way, you need to import the static functions as follows:
 

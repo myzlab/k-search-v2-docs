@@ -5,7 +5,7 @@ sidebar_label: Grouping
 
 ## Definition
 
-The `grouping` method allows you to add a `GROUPING` function to the query. The `GROUPING` function returns 0 if the argument is a member of the current grouping set and 1 otherwise.
+The `grouping` method allows you to add the `GROUPING` function to the query. The `GROUPING` function returns 0 if the argument is a member of the current grouping set and 1 otherwise.
 
 The use of this method is recommended in statements that involve the [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/), [`CUBE`](/docs/select-statement/group-by/grouping-sets/cube), or [`ROLLUP`](/docs/select-statement/group-by/grouping-sets/rollup) subclauses.
 
@@ -50,7 +50,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `grouping(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `GROUPING` function.
+- `grouping(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `GROUPING` function.
 
 To use this way, you need to import the static functions as follows:
 

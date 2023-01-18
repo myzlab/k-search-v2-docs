@@ -5,7 +5,7 @@ sidebar_label: Array Agg
 
 ## Definition
 
-The `arrayAgg` method allows you to add a `ARRAY_AGG` function to the query. The `ARRAY_AGG` is a function that accepts a set of values and returns an array in which each value in the set is assigned to an element of the array.
+The `arrayAgg` method allows you to add the `ARRAY_AGG` function to the query. The `ARRAY_AGG` is a function that accepts a set of values and returns an array in which each value in the set is assigned to an element of the array.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `arrayAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `ARRAY_AGG` function.
+- `arrayAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `ARRAY_AGG` function.
 
 To use this way, you need to import the static functions as follows:
 

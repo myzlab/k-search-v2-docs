@@ -5,7 +5,7 @@ sidebar_label: String Agg
 
 ## Definition
 
-The `stringAgg` method allows you to add a `STRING_AGG` function to the query. The `STRING_AGG` is a function that concatenates a list of strings and places a separator between them. The `STRING_AGG` function does not add the separator at the end of the string.
+The `stringAgg` method allows you to add the `STRING_AGG` function to the query. The `STRING_AGG` is a function that concatenates a list of strings and places a separator between them. The `STRING_AGG` function does not add the separator at the end of the string.
 
 There are 2 ways to call this method:
 
@@ -51,7 +51,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `stringAgg(KColumn kColumn, KBaseColumnCastable kBaseColumnCastableDelimiter)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `STRING_AGG` function. Additionally, receives a delimiter which too will be supplied to the `STRING_AGG` function. Among the possible values of this delimiter are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values).
+- `stringAgg(KColumn kColumn, KBaseColumnCastable kBaseColumnCastableDelimiter)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `STRING_AGG` function. Additionally, receives a delimiter which too will be supplied to the `STRING_AGG` function. Among the possible values of this delimiter are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values).
 
 
 To use this way, you need to import the static functions as follows:

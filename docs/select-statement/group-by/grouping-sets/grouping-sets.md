@@ -5,7 +5,7 @@ sidebar_label: Grouping Sets
 
 ## Definition
 
-The `groupingSets` method together with the `groupingSet` method allows you to add a [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause to the query. The [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause allows you to define multiple grouping sets in the same query.
+The `groupingSets` method together with the `groupingSet` method allows you to add the [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause to the query. The [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause allows you to define multiple grouping sets in the same query.
 
 - `groupingSet(KColumn... kColumns)`: Receives a variable quantity of [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) and [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be considered like a single grouping set that can be used in the [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause.
 - `groupingSets(KColumn... kColumns)`: Receives a variable quantity of [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) and [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause.

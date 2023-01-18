@@ -5,7 +5,7 @@ sidebar_label: Cross Join
 
 ## Definition
 
-The `crossJoin` method allows you to add a `CROSS JOIN` clause to the query.
+The `crossJoin` method allows you to add the `CROSS JOIN` clause to the query.
 
 The methods available to use this functionality are:
 

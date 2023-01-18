@@ -5,7 +5,7 @@ sidebar_label: Group By
 
 ## Definition
 
-The `groupBy` method allows you to add a `GROUP BY` clause to the query.
+The `groupBy` method allows you to add the `GROUP BY` clause to the query.
 
 The only one method available to use this functionality is:
 

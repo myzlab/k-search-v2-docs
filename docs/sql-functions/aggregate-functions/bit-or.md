@@ -5,7 +5,7 @@ sidebar_label: Bit Or
 
 ## Definition
 
-The `bitOr` method allows you to add a `BIT_OR` function to the query. The `BIT_OR` function allows you performs a “bitwise OR” operation on all non-null input values.
+The `bitOr` method allows you to add the `BIT_OR` function to the query. The `BIT_OR` function allows you performs a “bitwise OR” operation on all non-null input values.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `bitOr(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `BIT_OR` function.
+- `bitOr(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `BIT_OR` function.
 
 To use this way, you need to import the static functions as follows:
 

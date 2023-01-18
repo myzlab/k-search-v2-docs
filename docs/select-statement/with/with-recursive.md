@@ -5,7 +5,7 @@ sidebar_label: With Recursive
 
 ## Definition
 
-The `withRecursive` method allows you to add a `WITH RECURSIVE` clause to the query.
+The `withRecursive` method allows you to add the `WITH RECURSIVE` clause to the query.
 
 The only one method available to use this functionality is:
 

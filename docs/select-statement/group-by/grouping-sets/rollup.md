@@ -5,7 +5,7 @@ sidebar_label: Rollup
 
 ## Definition
 
-The `rollup` method allows you to add a `ROLLUP` subclause to the query. The `ROLLUP` subclause is a short way to define multiple grouping sets so the following are equivalent:
+The `rollup` method allows you to add the `ROLLUP` subclause to the query. The `ROLLUP` subclause is a short way to define multiple grouping sets so the following are equivalent:
 
 ```sql
 ROLLUP(k1, k2, k3) 

@@ -5,7 +5,7 @@ sidebar_label: Where
 
 ## Definition
 
-The `where` methods allows you to add a `WHERE` clause to the query.
+The `where` methods allows you to add the `WHERE` clause to the query.
 
 The methods available to use this functionality are:
 

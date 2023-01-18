@@ -5,7 +5,7 @@ sidebar_label: Jsonb Agg
 
 ## Definition
 
-The `jsonbAgg` method allows you to add a `JSONB_AGG` function to the query. The `JSONB_AGG` is a function that accepts a set of values and returns a JSON array in which each value in the set is assigned to an element of the JSON array.
+The `jsonbAgg` method allows you to add the `JSONB_AGG` function to the query. The `JSONB_AGG` is a function that accepts a set of values and returns a JSON array in which each value in the set is assigned to an element of the JSON array.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `jsonbAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `JSONB_AGG` function.
+- `jsonbAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `JSONB_AGG` function.
 
 To use this way, you need to import the static functions as follows:
 

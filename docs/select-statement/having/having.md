@@ -5,7 +5,7 @@ sidebar_label: Having
 
 ## Definition
 
-The `having` methods allows you to add a `HAVING` clause to the query.
+The `having` methods allows you to add the `HAVING` clause to the query.
 
 The methods available to use this functionality are:
 

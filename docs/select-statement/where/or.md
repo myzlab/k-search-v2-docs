@@ -5,7 +5,7 @@ sidebar_label: Or
 
 ## Definition
 
-The `or` methods allows you to add an `OR` operator to a `WHERE` clause.
+The `or` methods allows you to add the `OR` operator to a `WHERE` clause.
 
 The methods available to use this functionality are:
 

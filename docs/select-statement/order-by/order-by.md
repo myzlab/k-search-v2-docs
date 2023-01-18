@@ -5,7 +5,7 @@ sidebar_label: Order By
 
 ## Definition
 
-The `orderBy` method allows you to add a `ORDER BY` clause to the query.
+The `orderBy` method allows you to add the `ORDER BY` clause to the query.
 
 The only one method available to use this functionality is:
 

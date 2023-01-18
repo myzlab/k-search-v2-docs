@@ -5,7 +5,7 @@ sidebar_label: Json Agg
 
 ## Definition
 
-The `jsonAgg` method allows you to add a `JSON_AGG` function to the query. The `JSON_AGG` is a function that accepts a set of values and returns a JSON array in which each value in the set is assigned to an element of the JSON array.
+The `jsonAgg` method allows you to add the `JSON_AGG` function to the query. The `JSON_AGG` is a function that accepts a set of values and returns a JSON array in which each value in the set is assigned to an element of the JSON array.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `jsonAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `JSON_AGG` function.
+- `jsonAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `JSON_AGG` function.
 
 To use this way, you need to import the static functions as follows:
 

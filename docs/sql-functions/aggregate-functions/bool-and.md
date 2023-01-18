@@ -5,7 +5,7 @@ sidebar_label: Bool And
 
 ## Definition
 
-The `boolAnd` method allows you to add a `BOOL_AND` function to the query. The `BOOL_AND` is a function that returns the “logical AND” of all specified non-null boolean input values. That is, this function returns true if all non-null input values ​​are true, and otherwise returns false.
+The `boolAnd` method allows you to add the `BOOL_AND` function to the query. The `BOOL_AND` is a function that returns the “logical AND” of all specified non-null boolean input values. That is, this function returns true if all non-null input values ​​are true, and otherwise returns false.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The methods available to use this functionality calling from the `KFunction` class are:
 
-- `boolAnd(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `BOOL_AND` function.
+- `boolAnd(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `BOOL_AND` function.
 - `boolAnd(KCondition kCondition)`: Receives a [`KCondition`](/docs/kcondition/introduction) which will be supplied to the `BOOL_AND` function.
 
 To use this way, you need to import the static functions as follows:

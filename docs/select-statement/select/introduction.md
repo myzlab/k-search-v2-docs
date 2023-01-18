@@ -293,8 +293,8 @@ caseConditional()
 
 Then we proceed to add the conditions and their results through the `when` and `then` methods.
 
-- `when(KCondition kCondition)`: Receive a [`KCondition`](/docs/kcondition/introduction) which will be added in the `WHEN` clause.
-- `then(KBaseColumnCastable kBaseColumnCastable)`: Receive a column or a value which will be added in the `THEN` clause.
+- `when(KCondition kCondition)`: Receives a [`KCondition`](/docs/kcondition/introduction) which will be added in the `WHEN` clause.
+- `then(KBaseColumnCastable kBaseColumnCastable)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`Values`](/docs/select-statement/select/introduction#3-values) which will be added in the `THEN` clause.
 - `then(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added in the `THEN` clause.
 
 These methods can be called as many conditions as you wish to add, as follow:
@@ -307,7 +307,7 @@ These methods can be called as many conditions as you wish to add, as follow:
 ```
 
 Once all the conditions are added, the following corresponds to the `ELSE` clause, which is completely optional.
-This method receive a column or a value, as follow:
+This method receives a column or a value, as follow:
 
 ```java
 .elseResult(val(0))

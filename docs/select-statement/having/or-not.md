@@ -5,7 +5,7 @@ sidebar_label: Or Not
 
 ## Definition
 
-The `orNot` methods allows you to add an `OR NOT` operator to a `HAVING` clause.
+The `orNot` methods allows you to add the `OR NOT` operator to a `HAVING` clause.
 
 The methods available to use this functionality are:
 

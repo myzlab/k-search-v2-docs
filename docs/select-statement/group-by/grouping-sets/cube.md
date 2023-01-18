@@ -5,7 +5,7 @@ sidebar_label: Cube
 
 ## Definition
 
-The `cube` method allows you to add a `CUBE` subclause to the query. The `CUBE` subclause is a short way to define multiple grouping sets so the following are equivalent:
+The `cube` method allows you to add the `CUBE` subclause to the query. The `CUBE` subclause is a short way to define multiple grouping sets so the following are equivalent:
 
 ```sql
 CUBE(k1, k2, k3) 

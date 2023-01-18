@@ -76,7 +76,18 @@ const sidebars = {
           type: "category",
           label: "Window Functions",
           items: [
-            "sql-functions/window-functions/introduction"
+            "sql-functions/window-functions/introduction",
+            "sql-functions/window-functions/cume-dist",
+            "sql-functions/window-functions/dense-rank",
+            "sql-functions/window-functions/first-value",
+            "sql-functions/window-functions/lag",
+            "sql-functions/window-functions/last-value",
+            "sql-functions/window-functions/lead",
+            "sql-functions/window-functions/nth-value",
+            "sql-functions/window-functions/ntile",
+            "sql-functions/window-functions/percent-rank",
+            "sql-functions/window-functions/rank",
+            "sql-functions/window-functions/row-number"
           ],
         },
       ],

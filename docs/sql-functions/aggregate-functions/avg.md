@@ -5,7 +5,7 @@ sidebar_label: Avg
 
 ## Definition
 
-The `avg` method allows you to add a `AVG` function to the query. The `AVG` function allows you to calculate the average value of a set.
+The `avg` method allows you to add the `AVG` function to the query. The `AVG` function allows you to calculate the average value of a set.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `avg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `AVG` function.
+- `avg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `AVG` function.
 
 To use this way, you need to import the static functions as follows:
 

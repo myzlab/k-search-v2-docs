@@ -5,7 +5,7 @@ sidebar_label: Min
 
 ## Definition
 
-The `min` method allows you to add a `MIN` function to the query. The `MIN` function allows you to get the minimum value of a set.
+The `min` method allows you to add the `MIN` function to the query. The `MIN` function allows you to get the minimum value of a set.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `min(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `MIN` function.
+- `min(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `MIN` function.
 
 To use this way, you need to import the static functions as follows:
 

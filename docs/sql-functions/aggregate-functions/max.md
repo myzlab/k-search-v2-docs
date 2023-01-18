@@ -5,7 +5,7 @@ sidebar_label: Max
 
 ## Definition
 
-The `max` method allows you to add a `MAX` function to the query. The `MAX` function allows you to get the maximum value of a set.
+The `max` method allows you to add the `MAX` function to the query. The `MAX` function allows you to get the maximum value of a set.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `max(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `MAX` function.
+- `max(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `MAX` function.
 
 To use this way, you need to import the static functions as follows:
 

@@ -5,7 +5,7 @@ sidebar_label: Select Distinct
 
 ## Definition
 
-The `selectDistinct` methods allows you to add a `SELECT` statement with the `DISTINCT` clause to the query.
+The `selectDistinct` methods allows you to add the `SELECT` statement with the `DISTINCT` clause to the query.
 
 The methods available to use this functionality are:
 

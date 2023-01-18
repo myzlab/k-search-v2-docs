@@ -5,7 +5,7 @@ sidebar_label: And Not
 
 ## Definition
 
-The `andNot` methods allows you to add an `AND NOT` operator to a `WHERE` clause.
+The `andNot` methods allows you to add the `AND NOT` operator to a `WHERE` clause.
 
 The methods available to use this functionality are:
 

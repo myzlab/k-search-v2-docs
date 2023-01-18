@@ -5,7 +5,7 @@ sidebar_label: From
 
 ## Definition
 
-The `from` methods allows you to add a `FROM` clause to the query.
+The `from` methods allows you to add the `FROM` clause to the query.
 
 The methods available to use this functionality are:
 

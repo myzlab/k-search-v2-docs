@@ -5,7 +5,7 @@ sidebar_label: Select 1
 
 ## Definition
 
-The `select1` method allows you to add a `SELECT` statement with the number 1 as value to the query.
+The `select1` method allows you to add the `SELECT` statement with the number 1 as value to the query.
 
 The only one method available to use this functionality is:
 

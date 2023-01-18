@@ -5,7 +5,7 @@ sidebar_label: Sum
 
 ## Definition
 
-The `sum` method allows you to add a `SUM` function to the query. The `SUM` function allows you to calculate the sum value of a set.
+The `sum` method allows you to add the `SUM` function to the query. The `SUM` function allows you to calculate the sum value of a set.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `sum(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `SUM` function.
+- `sum(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `SUM` function.
 
 To use this way, you need to import the static functions as follows:
 

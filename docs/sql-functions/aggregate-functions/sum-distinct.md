@@ -5,7 +5,7 @@ sidebar_label: Sum Distinct
 
 ## Definition
 
-The `sumDistinct` method allows you to add a `SUM` function (with `DISTINCT` option) to the query. The `SUM` function (with `DISTINCT` option) allows you to calculate the sum value of a set, considering only the distinct values.
+The `sumDistinct` method allows you to add the `SUM` function (with `DISTINCT` option) to the query. The `SUM` function (with `DISTINCT` option) allows you to calculate the sum value of a set, considering only the distinct values.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `sumDistinct(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `SUM` function.
+- `sumDistinct(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `SUM` function.
 
 To use this way, you need to import the static functions as follows:
 

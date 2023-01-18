@@ -5,7 +5,7 @@ sidebar_label: Xmlagg
 
 ## Definition
 
-The `xmlAgg` method allows you to add a `XML_AGG` function to the query. The `XML_AGG` is a function that concatenates a list of xmls.
+The `xmlAgg` method allows you to add the `XML_AGG` function to the query. The `XML_AGG` is a function that concatenates a list of xmls.
 
 There are 2 ways to call this method:
 
@@ -48,7 +48,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `xmlAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `XML_AGG` function.
+- `xmlAgg(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `XML_AGG` function.
 
 To use this way, you need to import the static functions as follows:
 

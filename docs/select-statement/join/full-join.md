@@ -5,7 +5,7 @@ sidebar_label: Full Join
 
 ## Definition
 
-The `fullJoin` method allows you to add a `FULL JOIN` clause to the query.
+The `fullJoin` method allows you to add the `FULL JOIN` clause to the query.
 
 The methods available to use this functionality are:
 
