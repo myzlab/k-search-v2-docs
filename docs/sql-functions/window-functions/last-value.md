@@ -1,15 +1,16 @@
 ---
-title: Count (*)
-sidebar_label: Count (*)
+title: Last Value
+sidebar_label: Last Value
 ---
 
 ## Definition
 
-The `count` method allows you to add the `COUNT(*)` function to the query. The `COUNT(*)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement, including NULL and duplicates.
+The `lastValue` method allows you to add the `LAST_VALUE` function to the query. The `LAST_VALUE` function returns the last value in an ordered partition of a result set.
 
 The only one method available to use this functionality is:
 
-- `count()`: It does not receive any parameters.
+- `lastValue(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `LAST_VALUE` function.
+.
 
 To use this way, you need to import the static functions as follows:
 
@@ -23,7 +24,14 @@ Java code:
 
 ```java
 k
-.select(count())
+.select(
+    APP_USER.FIRST_NAME,
+    lastValue(APP_USER.FIRST_NAME).over(
+        wd()
+        .partitionBy(APP_USER.ROLE_ID)
+        .orderBy(APP_USER.FIRST_NAME)
+    )
+)
 .from(APP_USER)
 .multiple();
 ```
@@ -31,7 +39,12 @@ k
 SQL generated:
 
 ```sql
-SELECT COUNT(*)
+SELECT
+    au.first_name,
+    LAST_VALUE(au.first_name) OVER(
+        PARTITION BY au.role_id
+        ORDER BY au.first_name
+    )
 FROM app_user au
 ```
 

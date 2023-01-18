@@ -1,15 +1,16 @@
 ---
-title: Count (*)
-sidebar_label: Count (*)
+title: First Value
+sidebar_label: First Value
 ---
 
 ## Definition
 
-The `count` method allows you to add the `COUNT(*)` function to the query. The `COUNT(*)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement, including NULL and duplicates.
+The `firstValue` method allows you to add the `FIRST_VALUE` function to the query. The `FIRST_VALUE` function returns a value evaluated against the first row in a sorted partition of a result set.
 
 The only one method available to use this functionality is:
 
-- `count()`: It does not receive any parameters.
+- `firstValue(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `FIRST_VALUE` function.
+.
 
 To use this way, you need to import the static functions as follows:
 
@@ -23,7 +24,12 @@ Java code:
 
 ```java
 k
-.select(count())
+.select(
+    APP_USER.FIRST_NAME,
+    firstValue(APP_USER.FIRST_NAME).over(
+        wd().partitionBy(APP_USER.ROLE_ID)
+    )
+)
 .from(APP_USER)
 .multiple();
 ```
@@ -31,7 +37,11 @@ k
 SQL generated:
 
 ```sql
-SELECT COUNT(*)
+SELECT
+    au.first_name,
+    FIRST_VALUE(au.first_name) OVER(
+        PARTITION BY au.role_id
+    )
 FROM app_user au
 ```
 

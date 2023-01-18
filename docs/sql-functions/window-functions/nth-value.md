@@ -1,15 +1,16 @@
 ---
-title: Count (*)
-sidebar_label: Count (*)
+title: Nth Value
+sidebar_label: Nth Value
 ---
 
 ## Definition
 
-The `count` method allows you to add the `COUNT(*)` function to the query. The `COUNT(*)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement, including NULL and duplicates.
+The `nthValue` method allows you to add the `NTH_VALUE` function to the query. The `NTH_VALUE` function returns a value from the nth row in an ordered partition of a result set.
 
 The only one method available to use this functionality is:
 
-- `count()`: It does not receive any parameters.
+- `nthValue(KColumn kColumn, int offset)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) and an offset which will be supplied to the `NTH_VALUE` function.
+.
 
 To use this way, you need to import the static functions as follows:
 
@@ -23,7 +24,14 @@ Java code:
 
 ```java
 k
-.select(count())
+.select(
+    APP_USER.FIRST_NAME,
+    nthValue(APP_USER.FIRST_NAME, 3).over(
+        wd()
+        .partitionBy(APP_USER.ROLE_ID)
+        .orderBy(APP_USER.FIRST_NAME)
+    )
+)
 .from(APP_USER)
 .multiple();
 ```
@@ -31,7 +39,12 @@ k
 SQL generated:
 
 ```sql
-SELECT COUNT(*)
+SELECT
+    au.first_name,
+    NTH_VALUE(au.first_name, 3) OVER(
+        PARTITION BY au.role_id
+        ORDER BY au.first_name
+    )
 FROM app_user au
 ```
 

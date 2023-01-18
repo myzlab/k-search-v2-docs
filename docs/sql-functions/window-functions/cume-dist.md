@@ -1,15 +1,15 @@
 ---
-title: Count (*)
-sidebar_label: Count (*)
+title: Cume Dist
+sidebar_label: Cume Dist
 ---
 
 ## Definition
 
-The `count` method allows you to add the `COUNT(*)` function to the query. The `COUNT(*)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement, including NULL and duplicates.
+The `cumeDist` method allows you to add the `CUME_DIST` function to the query. The `CUME_DIST` function returns the cumulative distribution of a value within a set of values. In other words, it returns the relative position of a value in a set of values.
 
 The only one method available to use this functionality is:
 
-- `count()`: It does not receive any parameters.
+- `cumeDist()`: It does not receive any parameters.
 
 To use this way, you need to import the static functions as follows:
 
@@ -23,7 +23,10 @@ Java code:
 
 ```java
 k
-.select(count())
+.select(
+    APP_USER.FIRST_NAME,
+    cumeDist().over(wd())
+)
 .from(APP_USER)
 .multiple();
 ```
@@ -31,7 +34,9 @@ k
 SQL generated:
 
 ```sql
-SELECT COUNT(*)
+SELECT
+    au.first_name,
+    CUME_DIST() OVER()
 FROM app_user au
 ```
 

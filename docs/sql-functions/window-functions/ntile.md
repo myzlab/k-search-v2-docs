@@ -1,15 +1,15 @@
 ---
-title: Count (*)
-sidebar_label: Count (*)
+title: Ntile
+sidebar_label: Ntile
 ---
 
 ## Definition
 
-The `count` method allows you to add the `COUNT(*)` function to the query. The `COUNT(*)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement, including NULL and duplicates.
+The `ntile` method allows you to add the `NTILE` function to the query. The `NTILE` function allows you to divide ordered rows in the partition into a specified number of ranked groups as equal size as possible. These ranked groups are called buckets.
 
 The only one method available to use this functionality is:
 
-- `count()`: It does not receive any parameters.
+- `ntile(int buckets)`: Receives buckets value which will be supplied to the `NTILE` function.
 
 To use this way, you need to import the static functions as follows:
 
@@ -23,7 +23,10 @@ Java code:
 
 ```java
 k
-.select(count())
+.select(
+    APP_USER.FIRST_NAME,
+    ntile(3).over(wd().orderBy(APP_USER.ID))
+)
 .from(APP_USER)
 .multiple();
 ```
@@ -31,7 +34,9 @@ k
 SQL generated:
 
 ```sql
-SELECT COUNT(*)
+SELECT
+    au.first_name,
+    NTILE(3) OVER(ORDER BY au.id)
 FROM app_user au
 ```
 

@@ -1,15 +1,15 @@
 ---
-title: Count (*)
-sidebar_label: Count (*)
+title: Dense Rank
+sidebar_label: Dense Rank
 ---
 
 ## Definition
 
-The `count` method allows you to add the `COUNT(*)` function to the query. The `COUNT(*)` function returns the number of rows returned by a [`SELECT`](/docs/select-statement/select/introduction) statement, including NULL and duplicates.
+The `denseRank` method allows you to add the `DENSE_RANK` function to the query. The `DENSE_RANK` function assigns a rank to every row in each partition of a result set.
 
 The only one method available to use this functionality is:
 
-- `count()`: It does not receive any parameters.
+- `denseRank()`: It does not receive any parameters.
 
 To use this way, you need to import the static functions as follows:
 
@@ -23,7 +23,10 @@ Java code:
 
 ```java
 k
-.select(count())
+.select(
+    APP_USER.FIRST_NAME,
+    denseRank().over(wd())
+)
 .from(APP_USER)
 .multiple();
 ```
@@ -31,7 +34,9 @@ k
 SQL generated:
 
 ```sql
-SELECT COUNT(*)
+SELECT
+    au.first_name,
+    DENSE_RANK() OVER()
 FROM app_user au
 ```
 
