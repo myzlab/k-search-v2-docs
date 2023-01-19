@@ -28,7 +28,7 @@ and the subsequent methods that can be called are:
 - [`andNot`](/docs/select-statement/having/and-not)
 - [`or`](/docs/select-statement/having/or)
 - [`orNot`](/docs/select-statement/having/or-not)
-- [`window`](/docs/select-statement/select/)
+- [`window`](/docs/select-statement/window/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)
 - [`intersect`](/docs/select-statement/select/)

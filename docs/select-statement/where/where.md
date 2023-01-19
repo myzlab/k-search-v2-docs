@@ -33,7 +33,7 @@ and the subsequent methods that can be called are:
 - [`or`](/docs/select-statement/where/or)
 - [`orNot`](/docs/select-statement/where/or-not)
 - [`groupBy`](/docs/select-statement/group-by/)
-- [`window`](/docs/select-statement/select/)
+- [`window`](/docs/select-statement/window/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)
 - [`intersect`](/docs/select-statement/select/)

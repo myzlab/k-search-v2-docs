@@ -26,7 +26,7 @@ and the subsequent methods that can be called are:
 - [`from`](/docs/select-statement/from/)
 - [`where`](/docs/select-statement/where/)
 - [`groupBy`](/docs/select-statement/group-by/)
-- [`window`](/docs/select-statement/select/)
+- [`window`](/docs/select-statement/window/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)
 - [`intersect`](/docs/select-statement/select/)

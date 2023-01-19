@@ -28,7 +28,8 @@ The `groupBy` method can be used right after the following methods:
 
 and the subsequent methods that can be called are:
 
-- [`window`](/docs/select-statement/select/)
+- [`having`](/docs/select-statement/having/)
+- [`window`](/docs/select-statement/window/)
 - [`except`](/docs/select-statement/select/)
 - [`exceptAll`](/docs/select-statement/select/)
 - [`intersect`](/docs/select-statement/select/)
