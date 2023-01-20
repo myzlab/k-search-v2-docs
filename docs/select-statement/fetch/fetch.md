@@ -38,14 +38,14 @@ The `fetch` method can be used right after the following methods:
 - [`or`](/docs/select-statement/having/or)
 - [`orNot`](/docs/select-statement/having/or-not)
 - [`window`](/docs/select-statement/window/)
-- [`except`](/docs/select-statement/select/)
-- [`exceptAll`](/docs/select-statement/select/)
-- [`intersect`](/docs/select-statement/select/)
-- [`intersectAll`](/docs/select-statement/select/)
-- [`union`](/docs/select-statement/select/)
-- [`unionAll`](/docs/select-statement/select/)
+- [`except`](/docs/select-statement/combining/except)
+- [`exceptAll`](/docs/select-statement/combining/except-all)
+- [`intersect`](/docs/select-statement/combining/intersect)
+- [`intersectAll`](/docs/select-statement/combining/intersect-all)
+- [`union`](/docs/select-statement/combining/union)
+- [`unionAll`](/docs/select-statement/combining/union-all)
 - [`orderBy`](/docs/select-statement/order-by/)
-- [`offset`](/docs/select-statement/select/)
+- [`offset`](/docs/select-statement/offset)
 
 and the subsequent methods that can be called are:
 

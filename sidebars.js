@@ -233,6 +233,19 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Combining",
+          items: [
+            "select-statement/combining/introduction",
+            "select-statement/combining/except",
+            "select-statement/combining/except-all",
+            "select-statement/combining/intersect",
+            "select-statement/combining/intersect-all",
+            "select-statement/combining/union",
+            "select-statement/combining/union-all"
+          ],
+        },
+        {
+          type: "category",
           label: "Order By",
           items: [
             "select-statement/order-by/introduction",

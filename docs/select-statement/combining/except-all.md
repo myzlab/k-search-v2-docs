@@ -1,25 +1,19 @@
 ---
-title: Order By
-sidebar_label: Order By
+title: Except All
+sidebar_label: Except All
 ---
 
 ## Definition
 
-The `orderBy` method allows you to add the `ORDER BY` clause to the query.
+The `exceptAll` method allows you to add the `EXCEPT ALL` operator to the query.
 
 The only one method available to use this functionality is:
 
-- `orderBy(KColumnAllowedToOrderBy... kColumnsAllowedToOrderBy)`: Receives a variable quantity of columns and values that will be added to the [`ORDER BY`](/docs/select-statement/order-by/introduction) clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`KRaw`](/docs/select-statement/select/introduction#7-kraw).
-
-:::tip
-
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) and [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) objects have the `asc` and `desc` methods available to add the `ASC` or `DESC` option respectively.
-
-:::
+- `exceptAll(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `EXCEPT ALL` operator.
 
 ## Method hierarchy
 
-The `orderBy` method can be used right after the following methods:
+The `exceptAll` method can be used right after the following methods:
 
 - [`selectDistinct`](/docs/select-statement/select/distinct)
 - [`select1`](/docs/select-statement/select/select1)
@@ -47,93 +41,78 @@ The `orderBy` method can be used right after the following methods:
 - [`intersect`](/docs/select-statement/combining/intersect)
 - [`intersectAll`](/docs/select-statement/combining/intersect-all)
 - [`union`](/docs/select-statement/combining/union)
-- [`unionAll`](/docs/select-statement/combining/union-all)
+- [`exceptAll`](/docs/select-statement/combining/except-all)
 
 and the subsequent methods that can be called are:
 
+- [`except`](/docs/select-statement/combining/except)
+- [`exceptAll`](/docs/select-statement/combining/except-all)
+- [`intersect`](/docs/select-statement/combining/intersect)
+- [`intersectAll`](/docs/select-statement/combining/intersect-all)
+- [`union`](/docs/select-statement/combining/union)
+- [`exceptAll`](/docs/select-statement/combining/except-all)
+- [`orderBy`](/docs/select-statement/order-by/)
 - [`limit`](/docs/select-statement/limit)
 - [`offset`](/docs/select-statement/offset)
 - [`fetch`](/docs/select-statement/fetch/)
 - [`single`](/docs/select-statement/select/)
 - [`multiple`](/docs/select-statement/select/)
 
-## Example: `KTableColumn`
+## Example
 
 Java code:
 
 ```java
+final KWhere kQuery1 =
+    k
+    .select(
+        APP_USER.LAST_NAME,
+        APP_USER.FIRST_NAME,
+        toChar(APP_USER.CREATED_AT, "MM")
+    )
+    .from(APP_USER)
+    .where(toChar(APP_USER.CREATED_AT, "MM").eq("10"))
+    .and(cast(toChar(APP_USER.CREATED_AT, "YYYY"), integer()).lt(2022));
+
 k
 .select(
+    APP_USER.LAST_NAME,
     APP_USER.FIRST_NAME,
-    APP_USER.LAST_NAME
+    toChar(APP_USER.CREATED_AT, "YYYY")
 )
 .from(APP_USER)
-.orderBy(APP_USER.ID.desc())
+.where(toChar(APP_USER.CREATED_AT, "YYYY").eq("2022"))
+.exceptAll(kQuery1)
 .multiple();
 ```
 
 SQL generated:
 
 ```sql
-SELECT au.first_name, au.last_name
+SELECT
+    au.last_name,
+    au.first_name,
+    TO_CHAR(au.created_at, ?1)
 FROM app_user au
-ORDER BY au.id DESC
-```
-
-Parameters:
-
-- None
-
-## Example: `KColumn`
-
-Java code:
-
-```java
-k
-.select(
-    APP_USER.FIRST_NAME,
-    APP_USER.LAST_NAME
+WHERE TO_CHAR(au.created_at, ?2) = ?3
+EXCEPT ALL (
+    SELECT
+        au.last_name,
+        au.first_name,
+        TO_CHAR(au.created_at, ?4)
+    FROM app_user au
+    WHERE TO_CHAR(au.created_at, ?5) = ?6
+    AND CAST(TO_CHAR(au.created_at, ?7) AS INTEGER) < ?8
 )
-.from(APP_USER)
-.orderBy(concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME).asc())
-.multiple();
-```
-
-SQL generated:
-
-```sql
-SELECT au.first_name, au.last_name
-FROM app_user au
-ORDER BY CONCAT(au.first_name || ?1 || au.last_name) ASC
 ```
 
 Parameters:
 
-- **?1:** " "
-
-## Example: `KRaw`
-
-Java code:
-
-```java
-k
-.select(
-    APP_USER.FIRST_NAME,
-    APP_USER.LAST_NAME
-)
-.from(APP_USER)
-.orderBy(raw("au.id DESC"))
-.multiple();
-```
-
-SQL generated:
-
-```sql
-SELECT au.first_name, au.last_name
-FROM app_user au
-ORDER BY au.id DESC
-```
-
-Parameters:
-
-- None
+- **?1:** "YYYY"
+- **?2:** "YYYY"
+- **?3:** "2022"
+- **?4:** "MM"
+- **?5:** "MM"
+- **?6:** "10"
+- **?7:** "YYYY"
+- **?8:** 2022
