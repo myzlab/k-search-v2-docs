@@ -239,8 +239,30 @@ const sidebars = {
             "select-statement/order-by/order-by"
           ],
         },
-        "select-statement/limit",
-        "select-statement/offset",
+        {
+          type: "category",
+          label: "Limit",
+          items: [
+            "select-statement/limit/introduction",
+            "select-statement/limit/limit"
+          ],
+        },
+        {
+          type: "category",
+          label: "Offset",
+          items: [
+            "select-statement/offset/introduction",
+            "select-statement/offset/offset"
+          ],
+        },,
+        {
+          type: "category",
+          label: "Fetch",
+          items: [
+            "select-statement/fetch/introduction",
+            "select-statement/fetch/fetch"
+          ],
+        },
       ],
     },
     {

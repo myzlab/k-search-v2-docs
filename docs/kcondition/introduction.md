@@ -51,7 +51,7 @@ val(77).lessThan(APP_USER.ID)
 
 ## 2. Optional conditions
 
-Through the `optional` method we can add optional values to conditions in such a way that if the value passed to the condition is null, then the SQL statement is generated omitting that condition and the program does not throw any type of error or problem. If the optional value is on the right or left side of the operator, its operation is the same and the entire condition is considered optional.
+Through the `optional` method we can add optional values to conditions (and to some clauses) in such a way that if the value passed to the condition is null, then the SQL statement is generated omitting that condition and the program does not throw any type of error or problem. If the optional value is on the right or left side of the operator, its operation is the same and the entire condition is considered optional.
 
 The available methods for adding optional values are:
 
