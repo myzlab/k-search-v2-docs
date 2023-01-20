@@ -7,7 +7,7 @@ sidebar_label: Over
 
 The `over` method allows you to add the `OVER` clause to the query. The `OVER` clause allows you to specify a set of rows (through a [window definition](/docs/select-statement/window/introduction#build-a-window-definition)) on which a window function or an aggregate function will operate.
 
-The only one method available to use this functionality is in the [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) object and it is:
+The only one method available to use this functionality is in the `KWindowFunctionColumn` object and in the `KAggregateFunctionColumn` object and it is:
 
 - `over(KWindowDefinitionAllowedToOver kWindowDefinitionAllowedToOver)`: Receives a [window definition](/docs/select-statement/window/introduction#build-a-window-definition) which will be supplied to the [`OVER`](/docs/select-statement/window/over) clause.
 
