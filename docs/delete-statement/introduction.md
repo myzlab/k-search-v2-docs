@@ -1,31 +1,22 @@
 ---
-title: PostgreSQL DELETE statement
+title: DELETE statement
 sidebar_label: Introduction
 ---
 
 import K from '@site/src/components/K';
 
-## Introduction
+The `DELETE` statement allows you to delete one or more rows from a table.
 
-In this section you will learn how to implement the PostgreSQL DELETE statement and PostgreSQL DELETE USING(JOIN) statement through <K/>.
-
-The Postgresql DELETE statement allows you to delete one or more rows from a table.
+Syntax of a `DELETE` statement:
 
 Syntax:
 
 ```sql
-DELETE
-FROM table_name
-USING another_table_name
-WHERE conditions
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+DELETE FROM [ ONLY ] table_name [ [ AS ] alias ]
+    [ USING from_item [, ...] ]
+    [ WHERE condition ]
+    [ RETURNING * | output_expression [ [ AS ] output_name ] [, ...] ]
 ```
 
-To generate this type of statement through <K/> you will need:
-
-- Specify the name of the table from which you want to delete rows. This is done through the table() method.
-- Specify one or more tables in the [`USING`](/docs/delete-statement/using) clause through the using() method.
-- Use the columns of the tables that appear in the USING clause in the WHERE clause for joining data.
-- Add the necessary conditions in the [`WHERE`](/docs/delete-statement/where/introduction) clause.
-- Build and execute the statement through the delete() method.
-
-This type of statement has the insurance against null conditions implemented. What is this?
+To fully study the SQL Select clause, visit its documentation [https://www.postgresql.org/docs/current/sql-delete.html](https://www.postgresql.org/docs/current/sql-delete.html)

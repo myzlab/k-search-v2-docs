@@ -17,12 +17,9 @@ The `with` method can be used right after the following methods or objects:
 
 - k
 
-and the subsequent methods that can be called are:
+and the subsequent method that can be called is:
 
-- [`selectDistinctOn`](/docs/select-statement/select/distinct-on)
-- [`selectDistinct`](/docs/select-statement/select/distinct)
-- [`select1`](/docs/select-statement/select/select1)
-- [`select`](/docs/select-statement/select/)
+- [`deleteFrom`](/docs/select-statement/select/)
 
 ## Example
 
@@ -32,31 +29,23 @@ Java code:
 final KValues userIdsValues =
     values()
     .append(new ArrayList<>() {{
-        add(2L);
+        add(10605L);
     }})
     .append(new ArrayList<>() {{
-        add(3L);
+        add(13L);
     }});
-        
-final KCommonTableExpressionFilled userIdsCte = 
+
+final KCommonTableExpressionFilled userIdsCte =
     cte("user_ids_cte")
     .columns("id")
     .as(userIdsValues, "uic");
 
 k
 .with(userIdsCte)
-.select(
-    boolAnd(
-        exists(
-            k
-            .select1()
-            .from(APP_USER)
-            .where(APP_USER.ID.eq(userIdsCte.c("id")))
-        )
-    )
-)
-.from(userIdsCte)
-.single(Boolean.class);
+.deleteFrom(APP_USER)
+.using(userIdsCte)
+.where(userIdsCte.c("id").eq(APP_USER.ID))
+.execute();
 ```
 
 SQL generated:
@@ -65,17 +54,12 @@ SQL generated:
 WITH user_ids_cte (id) AS (
     VALUES (?1), (?2)
 ) 
-SELECT BOOL_AND (
-    EXISTS (
-        SELECT ?3
-        FROM app_user au
-        WHERE au.id = uic.id
-    )
-) FROM user_ids_cte uic
+DELETE FROM app_user au
+USING user_ids_cte uic
+WHERE uic.id = au.id
 ```
 
 Parameters:
 
-- **?1:** 2
-- **?2:** 3
-- **?3:** 1
+- **?1:** 10605
+- **?2:** 13

@@ -307,19 +307,41 @@ const sidebars = {
         "delete-statement/introduction",
         {
           type: "category",
-          label: "Clauses",
+          label: "With",
           items: [
-            "delete-statement/from",
-            "delete-statement/using",
-            {
-              type: "category",
-              label: "Where",
-              items: [
-                "delete-statement/where/introduction"
-              ],
-            }
-          ]
-        }
+            "delete-statement/with/introduction",
+            "delete-statement/with/with",
+            "delete-statement/with/with-recursive",
+          ],
+        },
+        {
+          type: "category",
+          label: "Delete From",
+          items: [
+            "delete-statement/delete-from/introduction",
+            "delete-statement/delete-from/delete-from"
+          ],
+        },
+        {
+          type: "category",
+          label: "Using",
+          items: [
+            "delete-statement/using/introduction",
+            "delete-statement/using/using"
+          ],
+        },
+        {
+          type: "category",
+          label: "Where",
+          items: [
+            "delete-statement/where/introduction",
+            "delete-statement/where/where",
+            "delete-statement/where/and",
+            "delete-statement/where/and-not",
+            "delete-statement/where/or",
+            "delete-statement/where/or-not"
+          ],
+        },
       ],
     }
   ]

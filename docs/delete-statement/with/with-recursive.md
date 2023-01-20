@@ -17,12 +17,9 @@ The `withRecursive` method can be used right after the following methods or obje
 
 - k
 
-and the subsequent methods that can be called are:
+and the subsequent method that can be called is:
 
-- [`selectDistinctOn`](/docs/select-statement/select/distinct-on)
-- [`selectDistinct`](/docs/select-statement/select/distinct)
-- [`select1`](/docs/select-statement/select/select1)
-- [`select`](/docs/select-statement/select/)
+- [`deleteFrom`](/docs/select-statement/select/)
 
 ## Example
 
@@ -33,15 +30,15 @@ final PermissionMetadata PERMISSION_2 = PERMISSION.alias("pe2");
         
 final KFrom kQueryUnionTree = 
     k
-    .select(PERMISSION_2.ID, PERMISSION_2.CODE, PERMISSION_2.PERMISSION_ID)
+    .select(PERMISSION_2.ID)
     .from(PERMISSION_2)
     .innerJoin(raw("permission_tree_cte ptc2 ON ptc2.id = %s", PERMISSION_2.PERMISSION_ID));
 
 final KQuery kQueryRecursive = 
     k
-    .select(PERMISSION.ID, PERMISSION.CODE, PERMISSION.PERMISSION_ID)
+    .select(PERMISSION.ID)
     .from(PERMISSION)
-    .where(PERMISSION.ID.eq(510))
+    .where(PERMISSION.ID.eq(14L))
     .union(kQueryUnionTree);
 
 final KCommonTableExpressionFilled permissionTreeCte =
@@ -50,35 +47,30 @@ final KCommonTableExpressionFilled permissionTreeCte =
 
 k
 .withRecursive(permissionTreeCte)
-.select(
-    permissionTreeCte.c("id"),
-    permissionTreeCte.c("code"),
-    permissionTreeCte.c("permission_id").as("permissionId")
-)
-.from(permissionTreeCte)
-.multiple();
+.deleteFrom(PERMISSION)
+.using(permissionTreeCte)
+.where(permissionTreeCte.c("id").eq(PERMISSION.ID))
+.execute();
 ```
 
 SQL generated:
 
 ```sql
 WITH RECURSIVE permission_tree_cte AS (
-    SELECT pe.id, pe.code, pe.permission_id
-    FROM permission pe 
+    SELECT pe.id
+    FROM permission pe
     WHERE pe.id = ?1
     UNION (
-        SELECT pe2.id, pe2.code, pe2.permission_id
+        SELECT pe2.id
         FROM permission pe2
         INNER JOIN permission_tree_cte ptc2 ON ptc2.id = pe2.permission_id
     )
 )
-SELECT
-    ptc.id,
-    ptc.code,
-    ptc.permission_id AS "permissionId"
-FROM permission_tree_cte ptc
+DELETE FROM permission pe
+USING permission_tree_cte ptc
+WHERE ptc.id = pe.id
 ```
 
 Parameters:
 
-- **?1:** 510
+- **?1:** 14
