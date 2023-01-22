@@ -5,7 +5,7 @@ sidebar_label: Select Distinct On
 
 ## Definition
 
-The `selectDistinctOn` methods allows you to add the `SELECT` statement with the `DISTINCT ON` clause to the query.
+The `selectDistinctOn` methods allows you to add the `SELECT DISTINCT ON` clause to the query.
 
 The methods available to use this functionality are:
 

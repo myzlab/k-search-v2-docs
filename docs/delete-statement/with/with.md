@@ -19,7 +19,7 @@ The `with` method can be used right after the following methods or objects:
 
 and the subsequent method that can be called is:
 
-- [`deleteFrom`](/docs/select-statement/select/)
+- [`deleteFrom`](/docs/delete-statement/delete-from/)
 
 ## Example
 

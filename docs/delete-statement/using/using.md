@@ -1,122 +1,156 @@
 ---
-title: Select
-sidebar_label: Select
+title: Using
+sidebar_label: Using
 ---
 
 ## Definition
 
-The `select` methods allows you to add the `SELECT` statement to the query.
+The `using` methods allows you to add the `USING` clause to the query.
 
 The methods available to use this functionality are:
 
-- `select(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the [`SELECT`](/docs/select-statement/select/introduction) list. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values), [`KCondition`](/docs/select-statement/select/introduction#4-kcondition), [`Columns with over`](/docs/select-statement/select/introduction#5-columns-with-over), [`Columns with alias`](/docs/select-statement/select/introduction#5-columns-with-alias), [`KRaw`](/docs/select-statement/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/select/introduction#7-case-conditional-expression).
-- `select(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the [`SELECT`](/docs/select-statement/select/introduction) list.
+- `using(KTable kTable)`: Receives a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) which will be added to `USING` clause.
+- `using(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `USING` clause.
+- `using(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/delete-statement/with/introduction) which will be added to `USING` clause.
 
 ## Method hierarchy
 
-The `select` method can be used right after the following methods or objects:
+The `using` method can be used right after the following methods:
 
-- k
-- [`with`](/docs/select-statement/with)
-- [`withRecursive`](/docs/select-statement/with)
-- [`select`](/docs/select-statement/select/)
+- [`deleteFrom`](/docs/delete-statement/delete-from/)
+- [`using`](/docs/delete-statement/using/)
 
 and the subsequent methods that can be called are:
 
-- [`select`](/docs/select-statement/select/)
-- [`from`](/docs/select-statement/from/)
-- [`where`](/docs/select-statement/where/)
-- [`groupBy`](/docs/select-statement/group-by/)
-- [`window`](/docs/select-statement/window/)
-- [`except`](/docs/select-statement/combining/except)
-- [`exceptAll`](/docs/select-statement/combining/except-all)
-- [`intersect`](/docs/select-statement/combining/intersect)
-- [`intersectAll`](/docs/select-statement/combining/intersect-all)
-- [`union`](/docs/select-statement/combining/union)
-- [`unionAll`](/docs/select-statement/combining/union-all)
-- [`orderBy`](/docs/select-statement/order-by/)
-- [`limit`](/docs/select-statement/limit)
-- [`offset`](/docs/select-statement/offset)
-- [`fetch`](/docs/select-statement/fetch/)
-- [`single`](/docs/select-statement/select/)
-- [`multiple`](/docs/select-statement/select/)
+- [`using`](/docs/delete-statement/using/)
+- [`where`](/docs/delete-statement/where/)
+- [`returning`](/docs/select-statement/select/)
+- [`execute`](/docs/select-statement/select/)
 
-## Example: KColumnAllowedToSelect...
+## Example: `KTable` (_generated.metadata_)
 
 Java code:
 
 ```java
 k
-.select(
-    APP_USER.ID,
-    concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME).as("fullName"),
-    coalesce(APP_USER.LAST_NAME, APP_USER.FIRST_NAME),
-    val(7),
-    APP_USER.FIRST_NAME.isNull(),
-    raw("au.role_id"),
-    caseConditional()
-        .when(APP_USER.CREATED_AT.gt(LocalDateTime.now().minusDays(7))).then(APP_USER.EMAIL)
-        .elseResult(val("No email available"))
-        .as("email"),
-    rowNumber().over(wd().orderBy(APP_USER.ID)).as("order")
-)
-.from(APP_USER)
-.multiple();
+.deleteFrom(APP_USER)
+.using(ROLE)
+.where(APP_USER.ROLE_ID.eq(ROLE.ID))
+.and(ROLE.ID.gt(7))
+.execute();
 ```
 
 SQL generated:
 
 ```sql
-SELECT
-    au.id,
-    CONCAT(au.first_name || ?1 || au.last_name) AS "fullName",
-    COALESCE(au.last_name, au.first_name),
-    ?2,
-    au.first_name IS NULL,
-    au.role_id,
-    CASE WHEN au.created_at > ?3 THEN au.email ELSE ?4 END AS email,
-    ROW_NUMBER() OVER(ORDER BY au.id) AS "order"
-FROM app_user au
+DELETE FROM app_user au
+USING role ro
+WHERE au.role_id = ro.id
+AND ro.id > ?1
 ```
 
 Parameters:
 
-- **?1:** " "
 - **?1:** 7
-- **?1:** 2022-12-20T20:07:35.988714
-- **?1:** "No email available"
 
-## Example: kQuery, alias
+## Example: `KTable` (from subquery)
 
 Java code:
 
 ```java
-final KQuery subQuery =
+final KTable subquery =
     k
-    .select(count())
-    .from(APP_USER_SPECIALTY)
-    .innerJoin(APP_USER_SPECIALTY.joinAppUser());
+    .select(ROLE.ID)
+    .from(ROLE)
+    .where(ROLE.ID.gt(7))
+    .as("r");
 
 k
-.select(subQuery, "countSpecialties")
-.select(APP_USER.ID)
-.from(APP_USER)
-.multiple();
+.deleteFrom(APP_USER)
+.using(subquery)
+.where(APP_USER.ROLE_ID.eq(subquery2.c("id")))
+.execute();
 ```
 
 SQL generated:
 
 ```sql
-SELECT
-    (
-        SELECT COUNT(*)
-        FROM app_user_specialty aus
-        INNER JOIN app_user au ON (aus.app_user_id = au.id)
-    ) AS countSpecialties,
-    au.id
-FROM app_user au
+DELETE FROM app_user au
+USING (
+    SELECT ro.id
+    FROM role ro
+    WHERE ro.id > ?
+) r
+WHERE au.role_id = r.id
+```
+
+Parameters:
+
+- **?1:** 7
+
+## Example: `KRaw`
+
+Java code:
+
+```java
+k
+.deleteFrom(APP_USER)
+.using(raw("role ro"))
+.where(raw("au.role_id = ro.id"))
+.execute();
+```
+
+SQL generated:
+
+```sql
+DELETE FROM app_user au
+USING role ro
+WHERE au.role_id = ro.id
 ```
 
 Parameters:
 
 - None
+
+## Example: `KCommonTableExpressionFilled`
+
+Java code:
+
+```java
+final KValues userIdsValues =
+    values()
+    .append(new ArrayList<>() {{
+        add(10605L);
+    }})
+    .append(new ArrayList<>() {{
+        add(13L);
+    }});
+
+final KCommonTableExpressionFilled userIdsCte =
+    cte("user_ids_cte")
+    .columns("id")
+    .as(userIdsValues, "uic");
+
+k
+.with(userIdsCte)
+.deleteFrom(APP_USER)
+.using(userIdsCte)
+.where(userIdsCte.c("id").eq(APP_USER.ID))
+.execute();
+```
+
+SQL generated:
+
+```sql
+WITH user_ids_cte (id) AS (
+    VALUES (?1), (?2)
+) 
+DELETE FROM app_user au
+USING user_ids_cte uic
+WHERE uic.id = au.id
+```
+
+Parameters:
+
+- **?1:** 10605
+- **?2:** 13

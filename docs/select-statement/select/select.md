@@ -5,7 +5,7 @@ sidebar_label: Select
 
 ## Definition
 
-The `select` methods allows you to add the `SELECT` statement to the query.
+The `select` methods allows you to add the `SELECT` clause to the query.
 
 The methods available to use this functionality are:
 

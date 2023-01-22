@@ -108,7 +108,10 @@ const sidebars = {
         "data-manipulation/mapper",
         "data-manipulation/metadata",
         "data-manipulation/single",
-        "data-manipulation/multiple"
+        "data-manipulation/multiple",
+        "data-manipulation/execute-insert",
+        "data-manipulation/execute-update",
+        "data-manipulation/execute-delete"
       ],
     },
     {
@@ -340,6 +343,14 @@ const sidebars = {
             "delete-statement/where/and-not",
             "delete-statement/where/or",
             "delete-statement/where/or-not"
+          ],
+        },
+        {
+          type: "category",
+          label: "Returning",
+          items: [
+            "delete-statement/returning/introduction",
+            "delete-statement/returning/returning"
           ],
         },
       ],
