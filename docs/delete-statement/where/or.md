@@ -28,7 +28,7 @@ and the subsequent methods that can be called are:
 - [`andNot`](/docs/delete-statement/where/and-not)
 - [`or`](/docs/delete-statement/where/or)
 - [`orNot`](/docs/delete-statement/where/or-not)
-- [`returning`](/docs/select-statement/select/)
+- [`returning`](/docs/delete-statement/returning)
 - [`execute`](/docs/select-statement/select/)
 
 ## Example: `KCondition`

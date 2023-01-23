@@ -23,7 +23,7 @@ and the subsequent methods that can be called are:
 
 - [`using`](/docs/delete-statement/using/)
 - [`where`](/docs/delete-statement/where/)
-- [`returning`](/docs/select-statement/select/)
+- [`returning`](/docs/delete-statement/returning)
 - [`execute`](/docs/select-statement/select/)
 
 ## Example
