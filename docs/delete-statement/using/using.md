@@ -68,7 +68,7 @@ final KTable subquery =
 k
 .deleteFrom(APP_USER)
 .using(subquery)
-.where(APP_USER.ROLE_ID.eq(subquery2.c("id")))
+.where(APP_USER.ROLE_ID.eq(subquery.c("id")))
 .execute();
 ```
 
@@ -79,7 +79,7 @@ DELETE FROM app_user au
 USING (
     SELECT ro.id
     FROM role ro
-    WHERE ro.id > ?
+    WHERE ro.id > ?1
 ) r
 WHERE au.role_id = r.id
 ```

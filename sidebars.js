@@ -290,17 +290,62 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "UPDATE Query",
+      label: "UPDATE Statement",
       items: [
-        "update-query/set",
-        "update-query/from",
+        "update-statement/introduction",
+        {
+          type: "category",
+          label: "With",
+          items: [
+            "update-statement/with/introduction",
+            "update-statement/with/with",
+            "update-statement/with/with-recursive",
+          ],
+        },
+        {
+          type: "category",
+          label: "Update",
+          items: [
+            "update-statement/update/introduction",
+            "update-statement/update/update"
+          ],
+        },
+        {
+          type: "category",
+          label: "Set",
+          items: [
+            "update-statement/set/introduction",
+            "update-statement/set/set"
+          ],
+        },
+        {
+          type: "category",
+          label: "From",
+          items: [
+            "update-statement/from/introduction",
+            "update-statement/from/from"
+          ],
+        },
         {
           type: "category",
           label: "Where",
           items: [
-            "update-query/where/introduction"
+            "update-statement/where/introduction",
+            "update-statement/where/where",
+            "update-statement/where/and",
+            "update-statement/where/and-not",
+            "update-statement/where/or",
+            "update-statement/where/or-not"
           ],
-        }
+        },
+        {
+          type: "category",
+          label: "Returning",
+          items: [
+            "update-statement/returning/introduction",
+            "update-statement/returning/returning"
+          ],
+        },
       ],
     },
     {
