@@ -97,7 +97,8 @@ const sidebars = {
       label: "Special Functions",
       items: [
         "special-functions/total-count",
-        "special-functions/assert-exists"
+        "special-functions/assert-exists",
+        "special-functions/update-multiple"
       ],
     },
     {
@@ -283,9 +284,18 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "INSERT Query",
+      label: "INSERT Statement",
       items: [
-        "insert-query/insert"
+        "insert-statement/introduction",
+        {
+          type: "category",
+          label: "With",
+          items: [
+            "insert-statement/with/introduction",
+            "insert-statement/with/with",
+            "insert-statement/with/with-recursive",
+          ],
+        },
       ],
     },
     {
