@@ -11,7 +11,7 @@ To fully study the `FROM` clause, visit its documentation [https://www.postgresq
 
 ## `KTable` types
 
-There are 2 types of [`KTable`](/docs/select-statement/from/introduction#ktable-types):
+This clause accepts 2 types of [`KTable`](/docs/select-statement/from/introduction#ktable-types):
 
 - Those that are generated automatically and found in the _generated.metadata_ package, which refer directly to a table in the database. [Learn how to generate KTable automatically.](/docs/data-manipulation/introduction)
 - Those that are built from a subquery. These do not reference a table in the database.

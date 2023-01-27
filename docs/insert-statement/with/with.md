@@ -19,7 +19,7 @@ The `with` method can be used right after the following methods or objects:
 
 and the subsequent method that can be called is:
 
-- [`insertInto`](/docs/select-statement/select/)
+- [`insertInto`](/docs/insert-statement/insert-into/)
 
 ## Example
 

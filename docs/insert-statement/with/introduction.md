@@ -71,9 +71,7 @@ final List<Object> recordValues = new ArrayList<>() {{
 }};
 
 final KValues userValues =
-// highlight-next-line
     values()
-// highlight-next-line
     append(recordValues);
 ```
 
@@ -114,4 +112,4 @@ It is very likely that you will need to use a CTE and its columns in other claus
 - `on(KCondition kCondition)`: This method allows the CTE to be added to a join through the [`KCondition`](/docs/kcondition/introduction) that is received by parameter.
 - `on(KRaw kRaw)`: This method allows the CTE to be added to a join through the [`KRaw`](/docs/select-statement/select/introduction#7-kraw) that is received by parameter.
 
-Also, a `KCommonTableExpressionFilled` can be used directly in a `USING` clause because of the alias that is supplied to it.
+Also, a `KCommonTableExpressionFilled` can be used directly in a `FROM` clause because of the alias that is supplied to it.

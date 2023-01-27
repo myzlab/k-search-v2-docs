@@ -71,9 +71,7 @@ final List<Object> recordValues = new ArrayList<>() {{
 }};
 
 final KValues userValues =
-// highlight-next-line
     values()
-// highlight-next-line
     append(recordValues);
 ```
 

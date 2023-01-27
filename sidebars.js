@@ -296,6 +296,22 @@ const sidebars = {
             "insert-statement/with/with-recursive",
           ],
         },
+        {
+          type: "category",
+          label: "Insert Into",
+          items: [
+            "insert-statement/insert-into/introduction",
+            "insert-statement/insert-into/insert-into"
+          ],
+        },
+        {
+          type: "category",
+          label: "Columns",
+          items: [
+            "insert-statement/columns/introduction",
+            "insert-statement/columns/columns"
+          ],
+        }
       ],
     },
     {
