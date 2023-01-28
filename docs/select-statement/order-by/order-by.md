@@ -68,7 +68,7 @@ k
     APP_USER.LAST_NAME
 )
 .from(APP_USER)
-.orderBy(APP_USER.ID.desc())
+.orderBy(APP_USER.ID.desc().nullsFirst())
 .multiple();
 ```
 
@@ -77,7 +77,7 @@ SQL generated:
 ```sql
 SELECT au.first_name, au.last_name
 FROM app_user au
-ORDER BY au.id DESC
+ORDER BY au.id DESC NULLS FIRST
 ```
 
 Parameters:
@@ -95,7 +95,7 @@ k
     APP_USER.LAST_NAME
 )
 .from(APP_USER)
-.orderBy(concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME).asc())
+.orderBy(concat(APP_USER.FIRST_NAME, val(" "), APP_USER.LAST_NAME).asc().nullsLast())
 .multiple();
 ```
 
@@ -104,7 +104,7 @@ SQL generated:
 ```sql
 SELECT au.first_name, au.last_name
 FROM app_user au
-ORDER BY CONCAT(au.first_name || ?1 || au.last_name) ASC
+ORDER BY CONCAT(au.first_name || ?1 || au.last_name) ASC NULLS LAST
 ```
 
 Parameters:
