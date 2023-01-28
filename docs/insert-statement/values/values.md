@@ -1,27 +1,27 @@
 ---
-title: Insert Into
-sidebar_label: Insert Into
+title: Values
+sidebar_label: Values
 ---
 
 ## Definition
 
-The `insertInto` methods allows you to add the `INSERT INTO` clause to the query.
+The `values` methods allows you to add the `VALUES` clause to the query.
 
 The only one method available to use this functionality is:
 
-- `insertInto(KTable kTable)`: Receives a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) which will be supplied to the `INSERT INTO` clause.
+- `values(KValues kValues)`: Receives a [`KValues`](/docs/insert-statement/values/introduction#build-a-kvalues) which will be supplied to the `VALUES` clause.
 
 ## Method hierarchy
 
-The `insertInto` method can be used right after the following methods or objects:
+The `values` method can be used right after the following methods or objects:
 
-- k
-- [`with`](/docs/insert-statement/with)
-- [`withRecursive`](/docs/insert-statement/with)
+- [`columns`](/docs/insert-statement/columns/)
 
 and the subsequent methods that can be called are:
 
-- [`columns`](/docs/insert-statement/columns/)
+- [`onConflict`](/docs/select-statement/select/)
+- [`returning`](/docs/insert-statement/returning/)
+- [`execute`](/docs/select-statement/select/)
 
 ## Example
 

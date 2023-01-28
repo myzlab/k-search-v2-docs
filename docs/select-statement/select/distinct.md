@@ -73,7 +73,7 @@ SELECT DISTINCT
     ?2,
     au.first_name IS NULL,
     au.role_id,
-    CASE WHEN au.created_at > ?3 THEN au.email ELSE ?4 END AS email,
+    CASE WHEN au.created_at > ?3 THEN au.email ELSE ?4 END AS "email",
     ROW_NUMBER() OVER(ORDER BY au.id) AS "order"
 FROM app_user au
 ```

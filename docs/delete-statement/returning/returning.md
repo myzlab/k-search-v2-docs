@@ -53,7 +53,7 @@ RETURNING
     CONCAT(au.first_name || ?1 || au.last_name) AS "fullName",
     COALESCE(au.last_name, au.first_name),
     au.role_id,
-    CASE WHEN au.created_at > ?2 THEN au.email ELSE ?3 END AS email
+    CASE WHEN au.created_at > ?2 THEN au.email ELSE ?3 END AS "email"
 FROM app_user au
 ```
 

@@ -19,8 +19,8 @@ The `columns` method can be used right after the following methods or objects:
 
 and the subsequent methods that can be called are:
 
-- [`select`](/docs/select-statement/select/)
-- [`values`](/docs/select-statement/select/)
+- [`select`](/docs/insert-statement/select/)
+- [`values`](/docs/insert-statement/values/)
 
 ## Example
 
@@ -34,7 +34,8 @@ final KValues languages = values()
 k
 .insertInto(LANGUAGE)
 .columns(LANGUAGE.NAME, LANGUAGE.FILE, LANGUAGE.PLATFORM_CODE)
-.values(languages).execute();
+.values(languages)
+.execute();
 ```
 
 SQL generated:

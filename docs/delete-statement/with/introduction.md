@@ -59,7 +59,7 @@ import static com.myzlab.k.KFunction.*;
 Additionally, we need to prepare the values that will be supplied to the `as` method through the `values` and `append` method:
 
 - `values()`: Allows you to initialize a list of values. It does not receive parameters.
-- `append(List<Object> value)`: Receives a list of objects which will correspond to one single record within the CTE. This method can be called as many records need to be added to the CTE.
+- `append(List<Object> value)`: Receives a list of objects which will correspond to one single record within the CTE. This method can be called as many times as records you need to add to the CTE.
 
 These methods are called as follows:
 

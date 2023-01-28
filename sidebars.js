@@ -311,7 +311,39 @@ const sidebars = {
             "insert-statement/columns/introduction",
             "insert-statement/columns/columns"
           ],
-        }
+        },
+        {
+          type: "category",
+          label: "Values",
+          items: [
+            "insert-statement/values/introduction",
+            "insert-statement/values/values"
+          ],
+        },
+        {
+          type: "category",
+          label: "Select",
+          items: [
+            "insert-statement/select/introduction",
+            "insert-statement/select/select"
+          ],
+        },
+        {
+          type: "category",
+          label: "On Conflict",
+          items: [
+            "insert-statement/on-conflict/introduction",
+            "insert-statement/on-conflict/on-conflict"
+          ],
+        },
+        {
+          type: "category",
+          label: "Returning",
+          items: [
+            "insert-statement/returning/introduction",
+            "insert-statement/returning/returning"
+          ],
+        },
       ],
     },
     {

@@ -9,9 +9,9 @@ The `set` methods allows you to add the `USING` clause to the query.
 
 The methods available to use this functionality are:
 
-- `set(KColumn kColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values), [`KCondition`](/docs/select-statement/select/introduction#4-kcondition), [`KRaw`](/docs/select-statement/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/select/introduction#8-case-conditional-expression).
-- `set(KColumn kColumn, KQuery kQuery)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
-- `set(KColumn kColumn, Object object)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) which is the column to modify and receives any object which will be assigned to the column.
+- `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values), [`KCondition`](/docs/select-statement/select/introduction#4-kcondition), [`KRaw`](/docs/select-statement/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/select/introduction#8-case-conditional-expression).
+- `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
+- `set(KTableColumn kTableColumn, Object object)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives any object which will be assigned to the column.
 
 ## Method hierarchy
 
