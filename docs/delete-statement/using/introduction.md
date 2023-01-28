@@ -19,19 +19,14 @@ This clause accepts 2 types of [`KTable`](/docs/delete-statement/delete-from/int
 
 ## Build a `KTable` from a subquery
 
-To get started building a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) from a subquery, we need to prepare a `KQuery`:
+To get started building a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) from a subquery, you need to prepare a new `KQuery` and then through the `as` method you supply an alias and so the `KQuery` becomes a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types), as follows:
 
 ```java
-final KQuery subquery =
+final KTable kTable =
     k
     .select(APP_USER.ID)
-    .from(APP_USER);
-```
-
-and then through the `as` method we supply an alias and the `KQuery` becomes a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types), as follows:
-
-```java
-final KTable kTable = subquery.as("an_alias");
+    .from(APP_USER)
+    .as("an_alias");
 ```
 
 ## Methods available in a `KTable`

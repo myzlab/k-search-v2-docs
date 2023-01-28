@@ -37,7 +37,7 @@ final KFrom kQueryUnionTree =
     .from(PERMISSION_2)
     .innerJoin(raw("permission_tree_cte ptc2 ON ptc2.id = %s", PERMISSION_2.PERMISSION_ID));
 
-final KQuery kQueryRecursive = 
+final KGenericQuery kQueryRecursive = 
     k
     .select(PERMISSION.ID, PERMISSION.CODE, PERMISSION.PERMISSION_ID)
     .from(PERMISSION)

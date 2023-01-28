@@ -52,12 +52,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      algolia: {
-        apiKey: '9e56e9a0f3dcd8ceaaf02f2a56702916',
-        indexName: 'KSearch',
-        contextualSearch: true,
-        appId: 'LELKXCPHX3'
-      },
+      // algolia: {
+      //   apiKey: '9e56e9a0f3dcd8ceaaf02f2a56702916',
+      //   indexName: 'KSearch',
+      //   contextualSearch: true,
+      //   appId: 'LELKXCPHX3'
+      // },
       navbar: {
         title: 'KSearch',
         logo: {
@@ -73,7 +73,7 @@ const config = {
           },
           { 
             to: '/docs/get-started/installation/springboot-jdbc',
-            label: 'v2.0.18',
+            label: 'v2.0.19',
             position: 'right'
           },
           // { 
