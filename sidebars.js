@@ -138,14 +138,7 @@ const sidebars = {
             "select-statement/select/distinct-on"
           ],
         },
-        {
-          type: "category",
-          label: "From",
-          items: [
-            "select-statement/from/introduction",
-            "select-statement/from/from",
-          ],
-        },
+        "select-statement/from/from",
         {
           type: "category",
           label: "Join",
@@ -458,7 +451,8 @@ const sidebars = {
           ],
         },
         "misc/cte",
-        "misc/select-list-values"
+        "misc/select-list-values",
+        "misc/ktable"
       ],
     }
   ]

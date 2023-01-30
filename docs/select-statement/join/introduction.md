@@ -15,12 +15,12 @@ In this introduction, you will learn about the [`KJoinDefinition`](/docs/select-
 
 A [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) object contain all necessary information to join two tables in a query.
 
-This object can only be built through the `on` method available on [`KTable`](/docs/select-statement/from/introduction#ktable-types) objects and [`KCommonTableExpressionFilled`](/docs/misc/cte) objects:
+This object can only be built through the `on` method available on [`KTable`](/docs/misc/ktable) objects and [`KCommonTableExpressionFilled`](/docs/misc/cte) objects:
 
-- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/from/introduction#ktable-types) or the CTE to be added to a join through the [`KCondition`](/docs/misc/kcondition/introduction) that is received by parameter.
-- `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/select-statement/from/introduction#ktable-types) or the CTE to be added to a join through the [`KRaw`](/docs/misc/select-list-values#7-kraw) that is received by parameter.
+- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/misc/ktable) or the CTE to be added to a join through the [`KCondition`](/docs/misc/kcondition/introduction) that is received by parameter.
+- `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/misc/ktable) or the CTE to be added to a join through the [`KRaw`](/docs/misc/select-list-values#7-kraw) that is received by parameter.
 
-Additionally, those [`KTable`](/docs/select-statement/from/introduction#ktable-types) that are automatically generated bring with them additional predefined methods that return a [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) according to the relationships between tables that are detected in the database diagram.
+Additionally, those [`KTable`](/docs/misc/ktable) that are automatically generated bring with them additional predefined methods that return a [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) according to the relationships between tables that are detected in the database diagram.
 
 The syntax of these additional methods is:
 
@@ -32,7 +32,7 @@ The syntax of these additional methods is:
 
 :::tip
 
-The [`KTable`](/docs/select-statement/from/introduction#ktable-types) that calls the `on` method will be the one that will be introduced in the join.
+The [`KTable`](/docs/misc/ktable) that calls the `on` method will be the one that will be introduced in the join.
 
 :::
 
