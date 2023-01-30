@@ -9,7 +9,7 @@ The `fullJoin` method allows you to add the `FULL JOIN` clause to the query.
 
 The methods available to use this functionality are:
 
-- `fullJoin(KJoinDefinition kJoinDefinition)`: Receives a [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) which will be added to `FULL JOIN` clause.
+- `fullJoin(KJoinDefinition kJoinDefinition)`: Receives a [`KJoinDefinition`](/docs/misc/kjoindefinition) which will be added to `FULL JOIN` clause.
 - `fullJoin(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `FULL JOIN` clause.
 
 ## Method hierarchy

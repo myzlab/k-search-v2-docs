@@ -143,7 +143,6 @@ const sidebars = {
           type: "category",
           label: "Join",
           items: [
-            "select-statement/join/introduction",
             "select-statement/join/inner-join",
             "select-statement/join/left-join",
             "select-statement/join/right-join",
@@ -155,7 +154,6 @@ const sidebars = {
           type: "category",
           label: "Where",
           items: [
-            "select-statement/where/introduction",
             "select-statement/where/where",
             "select-statement/where/and",
             "select-statement/where/and-not",
@@ -452,7 +450,8 @@ const sidebars = {
         },
         "misc/cte",
         "misc/select-list-values",
-        "misc/ktable"
+        "misc/ktable",
+        "misc/kjoindefinition"
       ],
     }
   ]
