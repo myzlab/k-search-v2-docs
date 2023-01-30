@@ -193,7 +193,6 @@ const sidebars = {
           type: "category",
           label: "Window",
           items: [
-            "select-statement/window/introduction",
             "select-statement/window/over",
             "select-statement/window/window"
           ],
@@ -202,7 +201,6 @@ const sidebars = {
           type: "category",
           label: "Combining",
           items: [
-            "select-statement/combining/introduction",
             "select-statement/combining/except",
             "select-statement/combining/except-all",
             "select-statement/combining/intersect",
@@ -211,38 +209,10 @@ const sidebars = {
             "select-statement/combining/union-all"
           ],
         },
-        {
-          type: "category",
-          label: "Order By",
-          items: [
-            "select-statement/order-by/introduction",
-            "select-statement/order-by/order-by"
-          ],
-        },
-        {
-          type: "category",
-          label: "Limit",
-          items: [
-            "select-statement/limit/introduction",
-            "select-statement/limit/limit"
-          ],
-        },
-        {
-          type: "category",
-          label: "Offset",
-          items: [
-            "select-statement/offset/introduction",
-            "select-statement/offset/offset"
-          ],
-        }, ,
-        {
-          type: "category",
-          label: "Fetch",
-          items: [
-            "select-statement/fetch/introduction",
-            "select-statement/fetch/fetch"
-          ],
-        },
+        "select-statement/order-by/order-by",
+        "select-statement/limit/limit",
+        "select-statement/offset/offset",
+        "select-statement/fetch/fetch"
       ],
     },
     {
@@ -448,7 +418,8 @@ const sidebars = {
         "misc/cte",
         "misc/select-list-values",
         "misc/ktable",
-        "misc/kjoindefinition"
+        "misc/kjoindefinition",
+        "misc/window-definition"
       ],
     }
   ]
