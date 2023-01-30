@@ -9,7 +9,7 @@ The `firstValue` method allows you to add the `FIRST_VALUE` function to the quer
 
 The only one method available to use this functionality is:
 
-- `firstValue(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `FIRST_VALUE` function.
+- `firstValue(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `FIRST_VALUE` function.
 .
 
 To use this way, you need to import the static functions as follows:

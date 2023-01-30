@@ -9,7 +9,7 @@ The `columns` methods allows you to add the [`COLUMNS`](/docs/insert-statement/c
 
 The only one method available to use this functionality is:
 
-- `columns(KTableColumn... kTableColumns)`: Receives a variable quantity of [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the [`COLUMNS`](/docs/insert-statement/columns/introduction) section.
+- `columns(KTableColumn... kTableColumns)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the [`COLUMNS`](/docs/insert-statement/columns/introduction) section.
 
 ## Method hierarchy
 

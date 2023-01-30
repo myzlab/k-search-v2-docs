@@ -9,7 +9,7 @@ The `nthValue` method allows you to add the `NTH_VALUE` function to the query. T
 
 The only one method available to use this functionality is:
 
-- `nthValue(KColumn kColumn, int offset)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) and an offset which will be supplied to the `NTH_VALUE` function.
+- `nthValue(KColumn kColumn, int offset)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an offset which will be supplied to the `NTH_VALUE` function.
 .
 
 To use this way, you need to import the static functions as follows:

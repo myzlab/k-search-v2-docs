@@ -10,7 +10,7 @@ The `update` methods allows you to add the `UPDATE` clause to the query.
 The methods available to use this functionality are:
 
 - `update(KTable kTable)`: Receives a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) which will be supplied to the `UPDATE` clause.
-- `update(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `UPDATE` clause.
+- `update(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `UPDATE` clause.
 
 ## Method hierarchy
 

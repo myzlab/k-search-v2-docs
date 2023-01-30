@@ -132,11 +132,10 @@ const sidebars = {
           type: "category",
           label: "Select",
           items: [
-            "select-statement/select/introduction",
-            "select-statement/select/distinct-on",
-            "select-statement/select/distinct",
+            "select-statement/select/select",
             "select-statement/select/select1",
-            "select-statement/select/select"
+            "select-statement/select/distinct",
+            "select-statement/select/distinct-on"
           ],
         },
         {
@@ -458,7 +457,8 @@ const sidebars = {
             "misc/kcondition/exists"
           ],
         },
-        "misc/cte"
+        "misc/cte",
+        "misc/select-list-values"
       ],
     }
   ]

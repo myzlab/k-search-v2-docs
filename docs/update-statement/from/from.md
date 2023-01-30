@@ -10,7 +10,7 @@ The `from` methods allows you to add the `USING` clause to the query.
 The methods available to use this functionality are:
 
 - `from(KTable kTable)`: Receives a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) which will be added to `USING` clause.
-- `from(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `USING` clause.
+- `from(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `USING` clause.
 - `from(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/misc/cte) which will be added to `USING` clause.
 
 ## Method hierarchy

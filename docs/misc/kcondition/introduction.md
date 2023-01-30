@@ -11,7 +11,7 @@ In Java, we will see a condition as the [`KCondition`](/docs/misc/kcondition/int
 
 :::tip
 
-A [`KCondition`](/docs/misc/kcondition/introduction) can be used in the `WHERE` clause and in the [`SELECT`](/docs/select-statement/select/introduction) list.
+A [`KCondition`](/docs/misc/kcondition/introduction) can be used in the `WHERE` clause and in the `SELECT` list.
 
 :::
 
@@ -23,7 +23,7 @@ There are a wide variety of methods available in <K/> with which you can add dif
 
 For any type of [`KCondition`](/docs/misc/kcondition/introduction), the operand on the left side of the operator is always the one that must call the method that will create the [`KCondition`](/docs/misc/kcondition/introduction). Then it must be complemented with the operand on the right hand side if required by the called method.
 
-The operands that have the methods available to create [`KCondition`](/docs/misc/kcondition/introduction) are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values).
+The operands that have the methods available to create [`KCondition`](/docs/misc/kcondition/introduction) are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values).
 
 ### Example: KTableColumn
 
@@ -55,7 +55,7 @@ Through the `optional` method we can add optional values to conditions (and to s
 
 The available methods for adding optional values are:
 
-- `optional(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) value and returns a `KOptionalKColumn` that can be added to a condition to make it an optional condition.
+- `optional(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) value and returns a `KOptionalKColumn` that can be added to a condition to make it an optional condition.
 - `optional(KValNumberField kValNumberField)`: Receives a `KValNumberField` value and returns a `KOptionalKValNumberField` that can be added to a condition to make it an optional condition.
 - `optional(KValTextField kValTextField)`: Receives a `KValTextField` value and returns a `KOptionalKValTextField` that can be added to a condition to make it an optional condition.
 - `optional(Number number)`: Receives a `Number` value and returns a `KOptionalNumber` that can be added to a condition to make it an optional condition.

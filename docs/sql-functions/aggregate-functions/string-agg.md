@@ -11,9 +11,9 @@ There are 2 ways to call this method:
 
 ## 1. Calling from a `KColumn` or a `KTableColumn`
 
-The only one method available to use this functionality calling from a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) is:
+The only one method available to use this functionality calling from a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) is:
 
-- `stringAgg(KBaseColumnCastable kBaseColumnCastableDelimiter)`: The [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be the one supplied to the `STRING_AGG` function. Additionally, receives a delimiter which too will be supplied to the `STRING_AGG` function. Among the possible values of this delimiter are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values).
+- `stringAgg(KBaseColumnCastable kBaseColumnCastableDelimiter)`: The [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be the one supplied to the `STRING_AGG` function. Additionally, receives a delimiter which too will be supplied to the `STRING_AGG` function. Among the possible values of this delimiter are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values).
 
 ### Example
 
@@ -51,7 +51,7 @@ Parameters:
 
 The only one method available to use this functionality calling from the `KFunction` class is:
 
-- `stringAgg(KColumn kColumn, KBaseColumnCastable kBaseColumnCastableDelimiter)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `STRING_AGG` function. Additionally, receives a delimiter which too will be supplied to the `STRING_AGG` function. Among the possible values of this delimiter are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values).
+- `stringAgg(KColumn kColumn, KBaseColumnCastable kBaseColumnCastableDelimiter)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `STRING_AGG` function. Additionally, receives a delimiter which too will be supplied to the `STRING_AGG` function. Among the possible values of this delimiter are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values).
 
 
 To use this way, you need to import the static functions as follows:
@@ -100,7 +100,7 @@ The `STRING_AGG` function supports being used with an `ORDER BY` clause.
 
 The only one method available to use this functionality is:
 
-- `orderBy(KColumnAllowedToOrderBy... kColumnsAllowedToOrderBy)`: Receives a variable quantity of columns that will be added to the [`ORDER BY`](/docs/select-statement/select/) clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`KRaw`](/docs/select-statement/select/introduction#7-kraw).
+- `orderBy(KColumnAllowedToOrderBy... kColumnsAllowedToOrderBy)`: Receives a variable quantity of columns that will be added to the [`ORDER BY`](/docs/select-statement/select/) clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KRaw`](/docs/misc/select-list-values#7-kraw).
 
 This method is only available after calling the `stringAgg` method and is completely optional.
 

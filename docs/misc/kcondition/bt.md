@@ -33,7 +33,7 @@ leftOp BETWEEN rightOp1 AND rightOp2
 
 This method takes two parameters and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values).
 
 :::note
 
@@ -101,7 +101,7 @@ LOWER(leftOp) BETWEEN LOWER(rightOp1) AND LOWER(rightOp2)
 
 This method takes two parameters and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values).
 
 :::note
 
@@ -169,7 +169,7 @@ NOT (leftOp BETWEEN rightOp1 AND rightOp2)
 
 This method takes two parameters and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values).
 
 :::note
 
@@ -237,7 +237,7 @@ NOT (LOWER(leftOp) BETWEEN LOWER(rightOp1) AND LOWER(rightOp2))
 
 This method takes two parameters and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values).
 
 :::note
 

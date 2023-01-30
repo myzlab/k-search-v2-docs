@@ -10,7 +10,7 @@ The `where` methods allows you to add the `WHERE` clause to the query.
 The methods available to use this functionality are:
 
 - `where(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `WHERE` clause.
-- `where(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `WHERE` clause.
+- `where(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `WHERE` clause.
 
 ## Method hierarchy
 

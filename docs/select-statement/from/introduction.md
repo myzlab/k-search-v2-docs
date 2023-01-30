@@ -35,7 +35,7 @@ A [`KTable`](/docs/select-statement/from/introduction#ktable-types) has the foll
 - `column(String name)`: Allow you to generate a column from your [`KTable`](/docs/select-statement/from/introduction#ktable-types). Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the [`KTable`](/docs/select-statement/from/introduction#ktable-types) alias.
 - `c(String name)`: This method does the same as method `column` but with a shorter name.
 - `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/from/introduction#ktable-types) to be added to a join through the [`KCondition`](/docs/misc/kcondition/introduction) that is received by parameter.
-- `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/select-statement/from/introduction#ktable-types) to be added to a join through the [`KRaw`](/docs/select-statement/select/introduction#7-kraw) that is received by parameter.
+- `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/select-statement/from/introduction#ktable-types) to be added to a join through the [`KRaw`](/docs/misc/select-list-values#7-kraw) that is received by parameter.
 
 :::tip
 

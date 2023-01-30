@@ -10,7 +10,7 @@ The `orNot` methods allows you to add the `OR NOT` operator to a `HAVING` clause
 The methods available to use this functionality are:
 
 - `orNot(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `HAVING` clause with an `OR NOT` operator.
-- `orNot(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `HAVING` clause with an `OR NOT` operator.
+- `orNot(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `HAVING` clause with an `OR NOT` operator.
 
 ## Method hierarchy
 

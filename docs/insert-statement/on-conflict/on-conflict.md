@@ -79,7 +79,7 @@ Parameters:
 
 To take this action you have available the `targetColumn` and `doNothing` method:
 
-- `targetColumn(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `ON CONFLICT` clause.
+- `targetColumn(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ON CONFLICT` clause.
 - `doNothing()`: It does not receive parameters.
 
 ### Example
@@ -171,11 +171,11 @@ Parameters:
 
 To take this action you have available the `targetColumn`, `doUpdate` and `set` method:
 
-- `targetColumn(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `ON CONFLICT` clause.
+- `targetColumn(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ON CONFLICT` clause.
 - `doUpdate()`: It does not receive parameters.
-- `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values), [`KCondition`](/docs/select-statement/select/introduction#4-kcondition), [`KRaw`](/docs/select-statement/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/select/introduction#8-case-conditional-expression).
-- `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
-- `set(KTableColumn kTableColumn, Object object)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives any object which will be assigned to the column.
+- `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
+- `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
+- `set(KTableColumn kTableColumn, Object object)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives any object which will be assigned to the column.
 
 When you are resolving a conflict, if you need to pass a column as the new value in the set clause, the current record column can be referenced throug the `tableNameAlias` method or the excluded record column throug the `excluded` method.
 
@@ -183,13 +183,13 @@ There are 2 ways to call these methods:
 
 ### 4.1. Calling from a `KTableColumn`
 
-- `excluded()`: It does not receive any parameters. The [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be the affected.
-- `tableNameAlias()`: It does not receive any parameters. The [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be affected.
+- `excluded()`: It does not receive any parameters. The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be the affected.
+- `tableNameAlias()`: It does not receive any parameters. The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be affected.
 
 ### 4.2. Calling from the `KFunction` class
 
-- `excluded(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be the affected.
-- `tableNameAlias(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be the affected.
+- `excluded(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be the affected.
+- `tableNameAlias(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be the affected.
 
 To use this way, you need to import the static functions as follows:
 
@@ -246,9 +246,9 @@ To take this action you have available the `targetConstraint`, `doUpdate` and `s
 
 - `targetConstraint(String constraint)`: Receives a constraint name which will be supplied to the `ON CONFLICT` clause.
 - `doUpdate()`: It does not receive parameters.
-- `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`Values`](/docs/select-statement/select/introduction#3-values), [`KCondition`](/docs/select-statement/select/introduction#4-kcondition), [`KRaw`](/docs/select-statement/select/introduction#7-kraw), [`Case conditional expression`](/docs/select-statement/select/introduction#8-case-conditional-expression).
-- `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
-- `set(KTableColumn kTableColumn, Object object)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which is the column to modify and receives any object which will be assigned to the column.
+- `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
+- `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
+- `set(KTableColumn kTableColumn, Object object)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives any object which will be assigned to the column.
 
 When you are resolving a conflict, if you need to pass a column as the new value in the set clause, the current record column can be referenced throug the `tableNameAlias` method or the excluded record column throug the `excluded` method.
 
@@ -256,13 +256,13 @@ There are 2 ways to call these methods:
 
 ### 4.1. Calling from a `KTableColumn`
 
-- `excluded()`: It does not receive any parameters. The [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be the affected.
-- `tableNameAlias()`: It does not receive any parameters. The [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) that invokes the method will be affected.
+- `excluded()`: It does not receive any parameters. The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be the affected.
+- `tableNameAlias()`: It does not receive any parameters. The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be affected.
 
 ### 4.2. Calling from the `KFunction` class
 
-- `excluded(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be the affected.
-- `tableNameAlias(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be the affected.
+- `excluded(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be the affected.
+- `tableNameAlias(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be the affected.
 
 To use this way, you need to import the static functions as follows:
 

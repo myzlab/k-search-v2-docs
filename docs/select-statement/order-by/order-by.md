@@ -9,11 +9,11 @@ The `orderBy` method allows you to add the `ORDER BY` clause to the query.
 
 The only one method available to use this functionality is:
 
-- `orderBy(KColumnAllowedToOrderBy... kColumnsAllowedToOrderBy)`: Receives a variable quantity of columns and values that will be added to the [`ORDER BY`](/docs/select-statement/order-by/introduction) clause. Among the possible values are: [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), [`KRaw`](/docs/select-statement/select/introduction#7-kraw).
+- `orderBy(KColumnAllowedToOrderBy... kColumnsAllowedToOrderBy)`: Receives a variable quantity of columns and values that will be added to the [`ORDER BY`](/docs/select-statement/order-by/introduction) clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KRaw`](/docs/misc/select-list-values#7-kraw).
 
 :::tip
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) and [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) objects have the `asc` and `desc` methods available to add the `ASC` or `DESC` option respectively.
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and [`KColumn`](/docs/misc/select-list-values#2-kcolumn) objects have the `asc` and `desc` methods available to add the `ASC` or `DESC` option respectively.
 
 :::
 

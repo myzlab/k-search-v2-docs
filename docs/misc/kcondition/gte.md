@@ -33,7 +33,7 @@ leftOperand >= rightOperand
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values), `KQuery`, [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalNumber`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDate`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDateTime`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValNumberField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLong`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values), `KQuery`, [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalNumber`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDate`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDateTime`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValNumberField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLong`](/docs/kcondition/introduction#2-optional-conditions).
 
 If the object received by parameter is a `KQuery`, it will be treated as a subquery and you must ensure that it returns only one column comparable to the operand on the left side of the condition.
 
@@ -155,7 +155,7 @@ LOWER(leftOperand) >= LOWER(rightOperand)
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
 
 ### Example: igte(KColumn)
 
@@ -243,7 +243,7 @@ NOT (leftOperand >= rightOperand)
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values), `KQuery`, [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalNumber`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDate`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDateTime`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValNumberField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLong`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, [`KValNumberField`](/docs/select-statement/select/introduction#3-values), [`KValTextField`](/docs/select-statement/select/introduction#3-values), `KQuery`, [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalNumber`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDate`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDateTime`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValNumberField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalLong`](/docs/kcondition/introduction#2-optional-conditions).
 
 If the object received by parameter is a `KQuery`, it will be treated as a subquery and you must ensure that it returns only one column comparable to the operand on the left side of the condition.
 
@@ -367,7 +367,7 @@ NOT (LOWER(leftOperand) >= LOWER(rightOperand))
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn), [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
 
 ### Example: nigte(KColumn)
 

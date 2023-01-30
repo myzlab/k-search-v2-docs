@@ -9,7 +9,7 @@ The `jsonObjectAgg` method allows you to add the `JSON_OBJECT_AGG` function to t
 
 The only one method available to use this functionality is:
 
-- `jsonObjectAgg(KColumn kColumnName, KColumn kColumnValue)`: Receives two [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `JSON_OBJECT_AGG` function.
+- `jsonObjectAgg(KColumn kColumnName, KColumn kColumnValue)`: Receives two [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `JSON_OBJECT_AGG` function.
 
 To use this way, you need to import the static functions as follows:
 

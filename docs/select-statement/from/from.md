@@ -10,7 +10,7 @@ The `from` methods allows you to add the `FROM` clause to the query.
 The methods available to use this functionality are:
 
 - `from(KTable kTable)`: Receives a [`KTable`](/docs/select-statement/from/introduction#ktable-types) which will be added to `FROM` clause.
-- `from(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `FROM` clause.
+- `from(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `FROM` clause.
 - `from(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/misc/cte) which will be added to `FROM` clause.
 
 ## Method hierarchy
