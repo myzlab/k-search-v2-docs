@@ -15,7 +15,7 @@ In this introduction, you will learn about the [`KJoinDefinition`](/docs/select-
 
 A [`KJoinDefinition`](/docs/select-statement/join/introduction#kjoindefinition) object contain all necessary information to join two tables in a query.
 
-This object can only be built through the `on` method available on [`KTable`](/docs/select-statement/from/introduction#ktable-types) objects and [`KCommonTableExpressionFilled`](/docs/select-statement/with/introduction) objects:
+This object can only be built through the `on` method available on [`KTable`](/docs/select-statement/from/introduction#ktable-types) objects and [`KCommonTableExpressionFilled`](/docs/misc/cte) objects:
 
 - `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/select-statement/from/introduction#ktable-types) or the CTE to be added to a join through the [`KCondition`](/docs/misc/kcondition/introduction) that is received by parameter.
 - `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/select-statement/from/introduction#ktable-types) or the CTE to be added to a join through the [`KRaw`](/docs/select-statement/select/introduction#7-kraw) that is received by parameter.

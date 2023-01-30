@@ -9,7 +9,7 @@ The `with` method allows you to add the `WITH` clause to the query.
 
 The only one method available to use this functionality is:
 
-- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/select-statement/with/introduction) that will be added to the `WITH` clause.
+- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/misc/cte) that will be added to the `WITH` clause.
 
 ## Method hierarchy
 

@@ -9,7 +9,7 @@ The `withRecursive` method allows you to add the `WITH RECURSIVE` clause to the 
 
 The only one method available to use this functionality is:
 
-- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/select-statement/with/introduction) that will be added to the `WITH RECURSIVE` clause.
+- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/misc/cte) that will be added to the `WITH RECURSIVE` clause.
 
 ## Method hierarchy
 
@@ -34,7 +34,7 @@ final KFrom kQueryUnionTree =
     .from(PERMISSION_2)
     .innerJoin(raw("permission_tree_cte ptc2 ON ptc2.id = %s", PERMISSION_2.PERMISSION_ID));
 
-final `KGenericQuery` kQueryRecursive = 
+final KGenericQuery kQueryRecursive = 
     k
     .select(PERMISSION.ID, PERMISSION.CODE, PERMISSION.PERMISSION_ID)
     .from(PERMISSION)

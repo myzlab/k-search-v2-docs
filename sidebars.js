@@ -124,7 +124,6 @@ const sidebars = {
           type: "category",
           label: "With",
           items: [
-            "select-statement/with/introduction",
             "select-statement/with/with",
             "select-statement/with/with-recursive",
           ],
@@ -268,7 +267,6 @@ const sidebars = {
           type: "category",
           label: "With",
           items: [
-            "insert-statement/with/introduction",
             "insert-statement/with/with",
             "insert-statement/with/with-recursive",
           ],
@@ -332,7 +330,6 @@ const sidebars = {
           type: "category",
           label: "With",
           items: [
-            "update-statement/with/introduction",
             "update-statement/with/with",
             "update-statement/with/with-recursive",
           ],
@@ -392,7 +389,6 @@ const sidebars = {
           type: "category",
           label: "With",
           items: [
-            "delete-statement/with/introduction",
             "delete-statement/with/with",
             "delete-statement/with/with-recursive",
           ],
@@ -438,29 +434,32 @@ const sidebars = {
     {
       type: "category",
       label: "Misc",
-      items: [{
-        type: "category",
-        label: "KCondition",
-        items: [
-          "misc/kcondition/introduction",
-          "misc/kcondition/eq",
-          "misc/kcondition/gt",
-          "misc/kcondition/gte",
-          "misc/kcondition/lt",
-          "misc/kcondition/lte",
-          "misc/kcondition/lk",
-          "misc/kcondition/lka",
-          "misc/kcondition/lksw",
-          "misc/kcondition/lkew",
-          "misc/kcondition/bt",
-          "misc/kcondition/in",
-          "misc/kcondition/null",
-          "misc/kcondition/true",
-          "misc/kcondition/false",
-          "misc/kcondition/unknown",
-          "misc/kcondition/exists"
-        ],
-      }],
+      items: [
+        {
+          type: "category",
+          label: "KCondition",
+          items: [
+            "misc/kcondition/introduction",
+            "misc/kcondition/eq",
+            "misc/kcondition/gt",
+            "misc/kcondition/gte",
+            "misc/kcondition/lt",
+            "misc/kcondition/lte",
+            "misc/kcondition/lk",
+            "misc/kcondition/lka",
+            "misc/kcondition/lksw",
+            "misc/kcondition/lkew",
+            "misc/kcondition/bt",
+            "misc/kcondition/in",
+            "misc/kcondition/null",
+            "misc/kcondition/true",
+            "misc/kcondition/false",
+            "misc/kcondition/unknown",
+            "misc/kcondition/exists"
+          ],
+        },
+        "misc/cte"
+      ],
     }
   ]
 };

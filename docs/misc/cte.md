@@ -1,15 +1,15 @@
 ---
-title: WITH clause
-sidebar_label: Introduction
+title: Common Table Expressions
+sidebar_label: Common Table Expressions
 ---
 
 import K from '@site/src/components/K';
 
-The `WITH` clause provides a way to write auxiliary statements for use in a larger query. These statements, which are often referred to as Common Table Expressions or CTEs, can be thought of as defining temporary tables that exist just for one query. In Java, we will see a CTE as the `KCommonTableExpressionFilled` object.
+## Definition
 
-To fully study the `WITH` clause, visit its documentation [https://www.postgresql.org/docs/current/queries-with.html](https://www.postgresql.org/docs/current/queries-with.html)
+A common table expression (CTE) is a temporary result set which you can reference within another SQL statement including `SELECT`, `INSERT`, `UPDATE` or `DELETE`. In Java, we will see a CTE as the `KCommonTableExpressionFilled` object.
 
-In this introduction, you learn how to build a CTE from a subquery and from a set of values.
+We will explain below how to build a `KCommonTableExpressionFilled` object from a subquery and from a set of values.
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a subquery
 
@@ -17,7 +17,7 @@ A CTE is made up of the name, one or more columns, and a `KGenericQuery`. To def
 
 - `cte(String name)`: Receives the name of the CTE.
 - `columns(String... columns)`: Receives a variable quantity of `String` which will be added as CTE columns.
-- `as(`KGenericQuery` `KGenericQuery`, String alias)`: Receives a `KGenericQuery` and an alias, which will be added as a subquery in the CTE.
+- `as(KGenericQuery kGenericQuery, String alias)`: Receives a `KGenericQuery` and an alias, which will be added as a subquery in the CTE.
 
 To use `cte` method, you need to import the static functions as follows:
 
@@ -30,7 +30,7 @@ import static com.myzlab.k.KFunction.*;
 Java code:
 
 ```java
-final `KGenericQuery` kQueryUsers10400_10500 =
+final KGenericQuery kQueryUsers10400_10500 =
     k
     .select(APP_USER.ID, APP_USER.FIRST_NAME)
     .from(APP_USER)
@@ -105,11 +105,11 @@ final KCommonTableExpressionFilled cteValues =
 
 ## How to use a `KCommonTableExpressionFilled` and its columns in other clauses?
 
-It is very likely that you will need to use a CTE and its columns in other clauses, such as [`SELECT`](/docs/select-statement/select/introduction) list, `FROM` clause, `WHERE` clause, `USING`, etc. This can be achieved through the following available methods:
+It is very likely that you will need to use a CTE and its columns in other clauses, such as [`SELECT`](/docs/select-statement/select/introduction) list, `FROM` clause, `WHERE` clause, etc. This can be achieved through the following available methods:
 
 - `column(String name)`: Allow you to generate a column from your CTE. Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the CTE alias.
 - `c(String name)`: This method does the same as method `column` but with a shorter name.
 - `on(KCondition kCondition)`: This method allows the CTE to be added to a join through the [`KCondition`](/docs/misc/kcondition/introduction) that is received by parameter.
 - `on(KRaw kRaw)`: This method allows the CTE to be added to a join through the [`KRaw`](/docs/select-statement/select/introduction#7-kraw) that is received by parameter.
 
-Also, a `KCommonTableExpressionFilled` can be used directly in a `USING` clause because of the alias that is supplied to it.
+Also, a `KCommonTableExpressionFilled` can be used directly in the `FROM` clause and `USING` clause due of the alias that is supplied to it.

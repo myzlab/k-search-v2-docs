@@ -11,7 +11,7 @@ The methods available to use this functionality are:
 
 - `using(KTable kTable)`: Receives a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) which will be added to `USING` clause.
 - `using(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `USING` clause.
-- `using(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/delete-statement/with/introduction) which will be added to `USING` clause.
+- `using(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/misc/cte) which will be added to `USING` clause.
 
 ## Method hierarchy
 
