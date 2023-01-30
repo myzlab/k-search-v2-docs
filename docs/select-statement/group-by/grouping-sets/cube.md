@@ -26,7 +26,7 @@ The only one method available to use this functionality is:
 
 - `cube(KColumn... kColumns)`: Receives a variable quantity of [`KColumn`](/docs/misc/select-list-values#2-kcolumn) and [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `CUBE` subclause.
 
-The use of this method is recommended in statements that involve the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause.
+The use of this method is recommended in statements that involve the `GROUP BY` clause.
 
 To use this method, you need to import the static functions as follows:
 

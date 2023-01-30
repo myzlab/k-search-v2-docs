@@ -12,7 +12,7 @@ The methods available to use this functionality are:
 - `groupingSet(KColumn... kColumns)`: Receives a variable quantity of [`KColumn`](/docs/misc/select-list-values#2-kcolumn) and [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be considered like a single grouping set that can be used in the [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause.
 - `groupingSets(KColumn... kColumns)`: Receives a variable quantity of [`KColumn`](/docs/misc/select-list-values#2-kcolumn) and [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the [`GROUPING SETS`](/docs/select-statement/group-by/grouping-sets/) subclause.
 
-The use of these methods is recommended in statements that involve the [`GROUP BY`](/docs/select-statement/group-by/introduction) clause.
+The use of these methods is recommended in statements that involve the `GROUP BY` clause.
 
 To use these methods, you need to import the static functions as follows:
 
