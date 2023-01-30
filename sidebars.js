@@ -279,27 +279,12 @@ const sidebars = {
             "delete-statement/with/with-recursive",
           ],
         },
-        {
-          type: "category",
-          label: "Delete From",
-          items: [
-            "delete-statement/delete-from/introduction",
-            "delete-statement/delete-from/delete-from"
-          ],
-        },
-        {
-          type: "category",
-          label: "Using",
-          items: [
-            "delete-statement/using/introduction",
-            "delete-statement/using/using"
-          ],
-        },
+        "delete-statement/delete-from/delete-from",
+        "delete-statement/using/using",
         {
           type: "category",
           label: "Where",
           items: [
-            "delete-statement/where/introduction",
             "delete-statement/where/where",
             "delete-statement/where/and",
             "delete-statement/where/and-not",
@@ -307,14 +292,7 @@ const sidebars = {
             "delete-statement/where/or-not"
           ],
         },
-        {
-          type: "category",
-          label: "Returning",
-          items: [
-            "delete-statement/returning/introduction",
-            "delete-statement/returning/returning"
-          ],
-        },
+        "delete-statement/returning/returning",
       ],
     },
     {

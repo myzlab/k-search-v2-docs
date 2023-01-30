@@ -5,11 +5,11 @@ sidebar_label: Columns
 
 ## Definition
 
-The `columns` methods allows you to add the [`COLUMNS`](/docs/insert-statement/columns/introduction) section to the query.
+The `columns` methods allows you to add the `COLUMNS` section to the query.
 
 The only one method available to use this functionality is:
 
-- `columns(KTableColumn... kTableColumns)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the [`COLUMNS`](/docs/insert-statement/columns/introduction) section.
+- `columns(KTableColumn... kTableColumns)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `COLUMNS` section.
 
 ## Method hierarchy
 
