@@ -9,7 +9,7 @@ The `values` methods allows you to add the `VALUES` clause to the query.
 
 The only one method available to use this functionality is:
 
-- `values(KValues kValues)`: Receives a [`KValues`](/docs/insert-statement/values/introduction#build-a-kvalues) which will be supplied to the `VALUES` clause.
+- `values(KValues kValues)`: Receives a [`KValues`](/docs/misc/kvalues) which will be supplied to the `VALUES` clause.
 
 ## Method hierarchy
 

@@ -24,7 +24,7 @@ If a window definition has a name, it is required to be used in both the `SELECT
 - `name(String name)`: Allows you to assign a name to an unnamed window definition. (Call this method is optional).
 - `partitionBy(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `PARTITION BY` clause. (Call this method is optional).
 - `orderBy(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ORDER BY` clause. (Call this method is optional).
-- `orderBy(KColumnOrdered kColumnOrdered)`: Receives a [`KColumnOrdered`](/docs/select-statement/select/introduction#2-kcolumn) which will be supplied to the `ORDER BY` clause. (Call this method is optional).
+- `orderBy(KColumnOrdered kColumnOrdered)`: Receives a [`KColumnOrdered`](/docs/misc/select-list-values#2-kcolumn) which will be supplied to the `ORDER BY` clause. (Call this method is optional).
 
 Up to this point, we have defined the name, the `PARTITION BY` clause, and the `ORDER BY` clause. The next step is defined the frame clause (It is optional).
 

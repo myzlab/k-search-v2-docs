@@ -11,7 +11,7 @@ The methods available to use this functionality are:
 
 - `offset(int count)`: Receives an int value which will be added to `OFFSET` clause.
 - `offset(long count)`: Receives a long value which will be added to `OFFSET` clause.
-- `offset(KOptionalLong kOptionalLong)`: Receives a [`KOptionalLong`](/docs/kcondition/introduction#2-optional-conditions) which will be added to `OFFSET` clause.
+- `offset(KOptionalLong kOptionalLong)`: Receives a [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditionss) which will be added to `OFFSET` clause.
 
 ## Method hierarchy
 

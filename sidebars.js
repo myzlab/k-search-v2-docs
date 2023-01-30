@@ -228,30 +228,9 @@ const sidebars = {
             "insert-statement/with/with-recursive",
           ],
         },
-        {
-          type: "category",
-          label: "Insert Into",
-          items: [
-            "insert-statement/insert-into/introduction",
-            "insert-statement/insert-into/insert-into"
-          ],
-        },
-        {
-          type: "category",
-          label: "Columns",
-          items: [
-            "insert-statement/columns/introduction",
-            "insert-statement/columns/columns"
-          ],
-        },
-        {
-          type: "category",
-          label: "Values",
-          items: [
-            "insert-statement/values/introduction",
-            "insert-statement/values/values"
-          ],
-        },
+        "insert-statement/insert-into/insert-into",
+        "insert-statement/columns/columns",
+        "insert-statement/values/values",
         {
           type: "category",
           label: "Select",
@@ -419,7 +398,8 @@ const sidebars = {
         "misc/select-list-values",
         "misc/ktable",
         "misc/kjoindefinition",
-        "misc/window-definition"
+        "misc/window-definition",
+        "misc/kvalues",
       ],
     }
   ]

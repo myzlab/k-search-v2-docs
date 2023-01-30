@@ -31,7 +31,7 @@ leftOperand IN (rightOperand1, rightOperand2, ...)
 
 This method takes a single parameter and the possible values are:
 
-`Collection`, `Object[]`, [`KOptionalCollection`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/kcondition/introduction#2-optional-conditions).
+`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditionss).
 
 ### Example: in(Collection)
 
@@ -141,7 +141,7 @@ leftOperand NOT IN (rightOperand1, rightOperand2, ...)
 
 This method takes a single parameter and the possible values are:
 
-`Collection`, `Object[]`, [`KOptionalCollection`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/kcondition/introduction#2-optional-conditions).
+`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditionss).
 
 ### Example: notIn(Collection)
 

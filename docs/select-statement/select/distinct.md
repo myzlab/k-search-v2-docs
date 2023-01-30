@@ -9,7 +9,7 @@ The `selectDistinct` methods allows you to add the `SELECT DISTINCT` clause to t
 
 The methods available to use this functionality are:
 
-- `selectDistinct(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`Columns with over`](/docs/misc/select-list-values#5-columns-with-over), [`Columns with alias`](/docs/select-statement/select/introduction#6-columns-with-alias), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
+- `selectDistinct(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`Columns with over`](/docs/misc/select-list-values#5-columns-with-over), [`Columns with alias`](/docs/misc/select-list-values#6-columns-with-alias), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
 - `selectDistinct(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the `SELECT DISTINCT` clause.
 
 ## Method hierarchy

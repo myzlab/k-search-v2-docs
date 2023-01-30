@@ -33,7 +33,7 @@ leftOperand LIKE CONCAT('%', rightOperand, '%')
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
 
 ### Example: lka(KColumn)
 
@@ -121,7 +121,7 @@ LOWER(leftOperand) LIKE LOWER(CONCAT('%', rightOperand, '%'))
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
 
 ### Example: ilka(KColumn)
 
@@ -209,7 +209,7 @@ NOT (leftOperand LIKE CONCAT('%', rightOperand, '%'))
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
 
 ### Example: nlka(KColumn)
 
@@ -297,7 +297,7 @@ NOT (LOWER(leftOperand) LIKE LOWER(CONCAT('%', rightOperand, '%')))
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/select-statement/select/introduction#3-values), [`KOptionalKColumn`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/kcondition/introduction#2-optional-conditions).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
 
 ### Example: nilka(KColumn)
 
