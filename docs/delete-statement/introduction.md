@@ -5,9 +5,11 @@ sidebar_label: Introduction
 
 import K from '@site/src/components/K';
 
-The `DELETE` statement allows you to delete one or more rows from a table.
+## Definition
 
-Syntax of a `DELETE` statement:
+The `DELETE` statement allows you to delete rows of a table.
+
+## SQL Syntax
 
 Syntax:
 

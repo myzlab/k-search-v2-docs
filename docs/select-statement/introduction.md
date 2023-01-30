@@ -5,9 +5,11 @@ sidebar_label: Introduction
 
 import K from '@site/src/components/K';
 
-One of the most common operations, when you work with a database, is to fetch data from tables by using the `SELECT` statement.
+## Definition
 
-Syntax of a `SELECT` statement:
+The `SELECT` statement allows you to retrieve rows from a table or view.
+
+## SQL Syntax
 
 ```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]

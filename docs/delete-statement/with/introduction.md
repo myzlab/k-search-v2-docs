@@ -13,11 +13,11 @@ In this introduction, you learn how to build a CTE from a subquery and from a se
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a subquery
 
-A CTE is made up of the name, one or more columns, and a KGenericQuery. To define these values you have available the following methods which must be called one after the other in the same order that will be presented below:
+A CTE is made up of the name, one or more columns, and a `KGenericQuery`. To define these values you have available the following methods which must be called one after the other in the same order that will be presented below:
 
 - `cte(String name)`: Receives the name of the CTE.
 - `columns(String... columns)`: Receives a variable quantity of `String` which will be added as CTE columns.
-- `as(KGenericQuery kGenericQuery, String alias)`: Receives a `KGenericQuery` and an alias, which will be added as a subquery in the CTE.
+- `as(`KGenericQuery` `KGenericQuery`, String alias)`: Receives a `KGenericQuery` and an alias, which will be added as a subquery in the CTE.
 
 To use `cte` method, you need to import the static functions as follows:
 
@@ -30,7 +30,7 @@ import static com.myzlab.k.KFunction.*;
 Java code:
 
 ```java
-final KGenericQuery kQueryUsers10400_10500 =
+final `KGenericQuery` kQueryUsers10400_10500 =
     k
     .select(APP_USER.ID, APP_USER.FIRST_NAME)
     .from(APP_USER)
@@ -44,7 +44,7 @@ final KCommonTableExpressionFilled cteUsers10400_10500 =
 
 ## Build a `KCommonTableExpressionFilled` (CTE) from a set of values
 
-A CTE is made up of the name, one or more columns, and a KGenericQuery. To define these values you have available the following methods which must be called one after the other in the same order that will be presented below:
+A CTE is made up of the name, one or more columns, and a `KGenericQuery`. To define these values you have available the following methods which must be called one after the other in the same order that will be presented below:
 
 - `cte(String name)`: Receives the name of the CTE.
 - `columns(String... columns)`: Receives a variable quantity of `String` which will be added as CTE columns. (Call this method is optional).

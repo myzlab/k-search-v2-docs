@@ -139,7 +139,7 @@ Parameters:
 Java code:
 
 ```java
-final KGenericQuery kQueryNewUsers =
+final `KGenericQuery` kQueryNewUsers =
     k
     .select(APP_USER.ID, APP_USER.FIRST_NAME)
     .from(APP_USER)

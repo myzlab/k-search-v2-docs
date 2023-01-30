@@ -5,11 +5,11 @@ sidebar_label: Introduction
 
 import K from '@site/src/components/K';
 
-The `UPDATE` statement allows you to modify data in a table.
+## Definition
 
-Syntax of a `UPDATE` statement:
+The `UPDATE` statement allows you to update rows of a table.
 
-Syntax:
+## SQL Syntax
 
 ```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]

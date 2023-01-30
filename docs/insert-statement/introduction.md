@@ -5,11 +5,11 @@ sidebar_label: Introduction
 
 import K from '@site/src/components/K';
 
-The `INSERT` statement allows you to insert a new row into a table.
+## Definition
 
-Syntax of a `INSERT` statement:
+The `INSERT` statement allows you to create new rows in a table.
 
-Syntax:
+## SQL Syntax
 
 ```sql
 [ WITH [ RECURSIVE ] with_query [, ...] ]
