@@ -231,30 +231,9 @@ const sidebars = {
         "insert-statement/insert-into/insert-into",
         "insert-statement/columns/columns",
         "insert-statement/values/values",
-        {
-          type: "category",
-          label: "Select",
-          items: [
-            "insert-statement/select/introduction",
-            "insert-statement/select/select"
-          ],
-        },
-        {
-          type: "category",
-          label: "On Conflict",
-          items: [
-            "insert-statement/on-conflict/introduction",
-            "insert-statement/on-conflict/on-conflict"
-          ],
-        },
-        {
-          type: "category",
-          label: "Returning",
-          items: [
-            "insert-statement/returning/introduction",
-            "insert-statement/returning/returning"
-          ],
-        },
+        "insert-statement/select/select",
+        "insert-statement/on-conflict/on-conflict",
+        "insert-statement/returning/returning",
       ],
     },
     {
@@ -270,35 +249,13 @@ const sidebars = {
             "update-statement/with/with-recursive",
           ],
         },
-        {
-          type: "category",
-          label: "Update",
-          items: [
-            "update-statement/update/introduction",
-            "update-statement/update/update"
-          ],
-        },
-        {
-          type: "category",
-          label: "Set",
-          items: [
-            "update-statement/set/introduction",
-            "update-statement/set/set"
-          ],
-        },
-        {
-          type: "category",
-          label: "From",
-          items: [
-            "update-statement/from/introduction",
-            "update-statement/from/from"
-          ],
-        },
+        "update-statement/update/update",
+        "update-statement/set/set",
+        "update-statement/from/from",
         {
           type: "category",
           label: "Where",
           items: [
-            "update-statement/where/introduction",
             "update-statement/where/where",
             "update-statement/where/and",
             "update-statement/where/and-not",
@@ -306,14 +263,7 @@ const sidebars = {
             "update-statement/where/or-not"
           ],
         },
-        {
-          type: "category",
-          label: "Returning",
-          items: [
-            "update-statement/returning/introduction",
-            "update-statement/returning/returning"
-          ],
-        },
+        "update-statement/returning/returning",
       ],
     },
     {
