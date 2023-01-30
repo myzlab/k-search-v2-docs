@@ -9,7 +9,7 @@ The `insertInto` methods allows you to add the `INSERT INTO` clause to the query
 
 The only one method available to use this functionality is:
 
-- `insertInto(KTable kTable)`: Receives a [`KTable`](/docs/delete-statement/delete-from/introduction#ktable-types) which will be supplied to the `INSERT INTO` clause. This clause just accepts the type of [`KTable`](/docs/misc/ktable) __Generated__.
+- `insertInto(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be supplied to the `INSERT INTO` clause. This clause just accepts the type of [`KTable`](/docs/misc/ktable) __Generated__.
 
 ## Method hierarchy
 
