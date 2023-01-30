@@ -117,29 +117,6 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "KCondition",
-      items: [
-        "kcondition/introduction",
-        "kcondition/eq",
-        "kcondition/gt",
-        "kcondition/gte",
-        "kcondition/lt",
-        "kcondition/lte",
-        "kcondition/lk",
-        "kcondition/lka",
-        "kcondition/lksw",
-        "kcondition/lkew",
-        "kcondition/bt",
-        "kcondition/in",
-        "kcondition/null",
-        "kcondition/true",
-        "kcondition/false",
-        "kcondition/unknown",
-        "kcondition/exists"
-      ],
-    },
-    {
-      type: "category",
       label: "SELECT Statement",
       items: [
         "select-statement/introduction",
@@ -271,7 +248,7 @@ const sidebars = {
             "select-statement/offset/introduction",
             "select-statement/offset/offset"
           ],
-        },,
+        }, ,
         {
           type: "category",
           label: "Fetch",
@@ -457,6 +434,33 @@ const sidebars = {
           ],
         },
       ],
+    },
+    {
+      type: "category",
+      label: "Misc",
+      items: [{
+        type: "category",
+        label: "KCondition",
+        items: [
+          "misc/kcondition/introduction",
+          "misc/kcondition/eq",
+          "misc/kcondition/gt",
+          "misc/kcondition/gte",
+          "misc/kcondition/lt",
+          "misc/kcondition/lte",
+          "misc/kcondition/lk",
+          "misc/kcondition/lka",
+          "misc/kcondition/lksw",
+          "misc/kcondition/lkew",
+          "misc/kcondition/bt",
+          "misc/kcondition/in",
+          "misc/kcondition/null",
+          "misc/kcondition/true",
+          "misc/kcondition/false",
+          "misc/kcondition/unknown",
+          "misc/kcondition/exists"
+        ],
+      }],
     }
   ]
 };

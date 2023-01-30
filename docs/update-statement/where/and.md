@@ -9,7 +9,7 @@ The `and` methods allows you to add the `AND` operator to a `WHERE` clause.
 
 The methods available to use this functionality are:
 
-- `and(KCondition kCondition)`: Receives a [`KCondition`](/docs/kcondition/introduction) which will be added to `WHERE` clause with an `AND` operator.
+- `and(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `WHERE` clause with an `AND` operator.
 - `and(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `WHERE` clause with an `AND` operator.
 
 ## Method hierarchy

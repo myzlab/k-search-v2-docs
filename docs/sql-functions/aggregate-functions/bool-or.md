@@ -49,7 +49,7 @@ Parameters:
 The methods available to use this functionality calling from the `KFunction` class are:
 
 - `boolOr(KColumn kColumn)`: Receives a [`KColumn`](/docs/select-statement/select/introduction#2-kcolumn) or a [`KTableColumn`](/docs/select-statement/select/introduction#1-ktablecolumn) which will be supplied to the `BOOL_OR` function.
-- `boolOr(KCondition kCondition)`: Receives a [`KCondition`](/docs/kcondition/introduction) which will be supplied to the `BOOL_OR` function.
+- `boolOr(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be supplied to the `BOOL_OR` function.
 
 To use this way, you need to import the static functions as follows:
 

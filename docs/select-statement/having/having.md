@@ -9,7 +9,7 @@ The `having` methods allows you to add the `HAVING` clause to the query.
 
 The methods available to use this functionality are:
 
-- `having(KCondition kCondition)`: Receives a [`KCondition`](/docs/kcondition/introduction) which will be added to `HAVING` clause.
+- `having(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `HAVING` clause.
 - `having(KRaw kRaw)`: Receives a [`KRaw`](/docs/select-statement/select/introduction#7-kraw) which will be added to `HAVING` clause.
 
 ## Method hierarchy
