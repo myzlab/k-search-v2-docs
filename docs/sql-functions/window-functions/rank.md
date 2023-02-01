@@ -17,7 +17,7 @@ To use this way, you need to import the static functions as follows:
 import static com.myzlab.k.KFunction.*;
 ```
 
-### Example
+## Example
 
 Java code:
 

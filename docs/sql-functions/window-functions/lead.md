@@ -19,7 +19,7 @@ To use this way, you need to import the static functions as follows:
 import static com.myzlab.k.KFunction.*;
 ```
 
-### Example: lead(KColumn)
+## Example: lead(KColumn)
 
 Java code:
 
@@ -46,7 +46,7 @@ Parameters:
 
 - None
 
-### Example: lead(KColumn, int)
+## Example: lead(KColumn, int)
 
 Java code:
 
@@ -73,7 +73,7 @@ Parameters:
 
 - None
 
-### Example: lead(KColumn, int, KBaseColumnCastable)
+## Example: lead(KColumn, int, KBaseColumnCastable)
 
 Java code:
 

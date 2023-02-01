@@ -19,7 +19,7 @@ To use this way, you need to import the static functions as follows:
 import static com.myzlab.k.KFunction.*;
 ```
 
-### Example: lag(KColumn)
+## Example: lag(KColumn)
 
 Java code:
 
@@ -46,7 +46,7 @@ Parameters:
 
 - None
 
-### Example: lag(KColumn, int)
+## Example: lag(KColumn, int)
 
 Java code:
 
@@ -73,7 +73,7 @@ Parameters:
 
 - None
 
-### Example: lag(KColumn, int, KBaseColumnCastable)
+## Example: lag(KColumn, int, KBaseColumnCastable)
 
 Java code:
 

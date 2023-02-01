@@ -90,6 +90,30 @@ const sidebars = {
             "sql-functions/window-functions/row-number"
           ],
         },
+        {
+          type: "category",
+          label: "Array Functions",
+          items: [
+            "sql-functions/array-functions/introduction",
+            "sql-functions/array-functions/array-append",
+            "sql-functions/array-functions/array-cat",
+            "sql-functions/array-functions/array-dims",
+            "sql-functions/array-functions/array-fill",
+            "sql-functions/array-functions/array-length",
+            "sql-functions/array-functions/array-lower",
+            "sql-functions/array-functions/array-ndims",
+            "sql-functions/array-functions/array-position",
+            "sql-functions/array-functions/array-positions",
+            "sql-functions/array-functions/array-prepend",
+            "sql-functions/array-functions/array-remove",
+            "sql-functions/array-functions/array-replace",
+            "sql-functions/array-functions/array-to-string",
+            "sql-functions/array-functions/array-upper",
+            "sql-functions/array-functions/cardinality",
+            "sql-functions/array-functions/string-to-array",
+            "sql-functions/array-functions/unnest"
+          ],
+        }
       ],
     },
     {
