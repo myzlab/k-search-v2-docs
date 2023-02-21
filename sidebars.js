@@ -113,6 +113,29 @@ const sidebars = {
             "sql-functions/array-functions/string-to-array",
             "sql-functions/array-functions/unnest"
           ],
+        },
+        {
+          type: "category",
+          label: "Mathematical Functions",
+          items: [
+            "sql-functions/mathematical-functions/introduction"
+          ],
+        },
+        {
+          type: "category",
+          label: "String Functions",
+          items: [
+            "sql-functions/string-functions/introduction",
+            "sql-functions/string-functions/ascii",
+            "sql-functions/string-functions/bit-length",
+            "sql-functions/string-functions/char-length",
+            "sql-functions/string-functions/character-length",
+            "sql-functions/string-functions/chr",
+            "sql-functions/string-functions/initcap",
+            "sql-functions/string-functions/length",
+            "sql-functions/string-functions/lower",
+            "sql-functions/string-functions/upper"
+          ],
         }
       ],
     },

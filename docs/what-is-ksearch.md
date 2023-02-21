@@ -8,7 +8,7 @@ import K from '@site/src/components/K';
 <K/> is a library that will help you build different types of SQL statements and manipulate the extracted data in a simple and intuitive way.
 <br/>
 
-It is developed exclusively for [Spring Boot](https://spring.io/projects/spring-boot) and currently support only PostgreSQL database.
+It is developed exclusively for [Spring Boot](https://spring.io/projects/spring-boot) and currently support only [PostgreSQL](https://www.postgresql.org/) database.
 
 The supported SQL statements are:
 
