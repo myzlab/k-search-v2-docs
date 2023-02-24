@@ -134,6 +134,12 @@ const sidebars = {
             "sql-functions/string-functions/initcap",
             "sql-functions/string-functions/length",
             "sql-functions/string-functions/lower",
+            "sql-functions/string-functions/md5",
+            "sql-functions/string-functions/quote_ident",
+            "sql-functions/string-functions/quote_literal",
+            "sql-functions/string-functions/quote_nullable",
+            "sql-functions/string-functions/reverse",
+            "sql-functions/string-functions/to_hex",
             "sql-functions/string-functions/upper"
           ],
         }
@@ -374,7 +380,8 @@ const sidebars = {
         "misc/ktable",
         "misc/kjoindefinition",
         "misc/window-definition",
-        "misc/kvalues",
+        "misc/kvalues",,
+        "misc/kencoding",
       ],
     }
   ]
