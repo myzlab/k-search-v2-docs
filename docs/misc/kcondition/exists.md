@@ -61,8 +61,8 @@ SQL generated:
 SELECT au.id
 FROM app_user au
 WHERE EXISTS (
-    SELECT ?
-    FROM auth.app_user_specialty aus
+    SELECT ?1
+    FROM app_user_specialty aus
     WHERE au.id = aus.app_user_id
 )
 ```
@@ -108,8 +108,8 @@ SQL generated:
 SELECT au.id
 FROM app_user au
 WHERE NOT EXISTS (
-    SELECT ?
-    FROM auth.app_user_specialty aus
+    SELECT ?1
+    FROM app_user_specialty aus
     WHERE au.id = aus.app_user_id
 )
 ```

@@ -38,7 +38,7 @@ SELECT
         CONCAT(au.first_name || ?1 || au.last_name), ?2
     ),
     CAST(au.created_at AS DATE)
-FROM auth.app_user au
+FROM app_user au
 GROUP BY CAST(au.created_at AS DATE)
 ```
 
@@ -130,7 +130,7 @@ SELECT
         ORDER BY au.first_name ASC, au.last_name DESC
     ),
     CAST(au.created_at AS DATE)
-FROM auth.app_user au
+FROM app_user au
 GROUP BY CAST(au.created_at AS DATE)
 ```
 

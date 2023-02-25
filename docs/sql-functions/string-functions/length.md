@@ -165,16 +165,13 @@ k
 .select(
     length(val("a short text").cast(bytea()), utf8())
 )
-.from(APP_USER)
-.multiple();
+.single();
 ```
 
 SQL generated:
 
 ```sql
-SELECT
-    LENGTH(CAST(?1 AS BYTEA), 'UTF8')
-FROM app_user au
+SELECT LENGTH(CAST(?1 AS BYTEA), 'UTF8')
 ```
 
 Parameters:

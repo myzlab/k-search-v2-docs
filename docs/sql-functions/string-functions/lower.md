@@ -87,16 +87,13 @@ k
 .select(
     lower(val("A short text"))
 )
-.from(APP_USER)
-.multiple();
+.single();
 ```
 
 SQL generated:
 
 ```sql
-SELECT
-    LOWER(?1)
-FROM app_user au
+SELECT LOWER(?1)
 ```
 
 Parameters:

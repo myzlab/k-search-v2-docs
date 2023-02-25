@@ -87,16 +87,13 @@ k
 .select(
     reverse(val("A short text"))
 )
-.from(APP_USER)
-.multiple();
+.single();
 ```
 
 SQL generated:
 
 ```sql
-SELECT
-    REVERSE(?1)
-FROM app_user au
+SELECT REVERSE(?1)
 ```
 
 Parameters:

@@ -87,16 +87,13 @@ k
 .select(
     upper(val("A short text"))
 )
-.from(APP_USER)
-.multiple();
+.single();
 ```
 
 SQL generated:
 
 ```sql
-SELECT
-    UPPER(?1)
-FROM app_user au
+SELECT UPPER(?1)
 ```
 
 Parameters:
