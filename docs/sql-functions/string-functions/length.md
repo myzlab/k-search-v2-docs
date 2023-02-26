@@ -115,16 +115,13 @@ k
 .select(
     length(val("A short text"))
 )
-.from(APP_USER)
-.multiple();
+.single();
 ```
 
 SQL generated:
 
 ```sql
-SELECT
-    LENGTH(?1)
-FROM app_user au
+SELECT LENGTH(?1)
 ```
 
 Parameters:

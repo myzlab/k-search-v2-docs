@@ -144,6 +144,7 @@ const sidebars = {
             "sql-functions/string-functions/reverse",
             "sql-functions/string-functions/substring",
             "sql-functions/string-functions/to_hex",
+            "sql-functions/string-functions/trim",
             "sql-functions/string-functions/upper"
           ],
         }
