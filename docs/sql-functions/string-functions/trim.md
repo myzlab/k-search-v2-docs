@@ -5,7 +5,7 @@ sidebar_label: Trim
 
 ## Definition
 
-The `trim` method allows you to add the `TRIM` function to the query. The `TRIM` function removes the longest string of specified characters from the start or/and end of the specified string.
+The `trim` method allows you to add the `TRIM` function to the query. The `TRIM` function removes the longest string containing only characters specified by the argument (whitespace by default) from the start and end of a string.
 
 There are 2 ways to call this method:
 
