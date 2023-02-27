@@ -5,7 +5,7 @@ sidebar_label: Concat Ws
 
 ## Definition
 
-The `concatWs` method allows you to add the `CONCAT_WS` function to the query. The `CONCAT_WS` function concatWsenates the arguments as a string using a delimiter and return the result.
+The `concatWs` method allows you to add the `CONCAT_WS` function to the query. The `CONCAT_WS` function concatenate the arguments as a string using a delimiter and return the result.
 
 The only one method available to use this functionality is:
 

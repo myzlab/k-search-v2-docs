@@ -137,7 +137,11 @@ const sidebars = {
             "sql-functions/string-functions/convert",
             "sql-functions/string-functions/convert-from",
             "sql-functions/string-functions/convert-to",
+            "sql-functions/string-functions/decode",
+            "sql-functions/string-functions/encode",
+            "sql-functions/string-functions/format",
             "sql-functions/string-functions/initcap",
+            "sql-functions/string-functions/left",
             "sql-functions/string-functions/length",
             "sql-functions/string-functions/lower",
             "sql-functions/string-functions/ltrim",
@@ -150,6 +154,7 @@ const sidebars = {
             "sql-functions/string-functions/quote_nullable",
             "sql-functions/string-functions/reverse",
             "sql-functions/string-functions/rtrim",
+            "sql-functions/string-functions/right",
             "sql-functions/string-functions/substring",
             "sql-functions/string-functions/to_hex",
             "sql-functions/string-functions/trim",
@@ -395,6 +400,7 @@ const sidebars = {
         "misc/window-definition",
         "misc/kvalues",,
         "misc/kencoding",
+        "misc/kformat",
       ],
     }
   ]
