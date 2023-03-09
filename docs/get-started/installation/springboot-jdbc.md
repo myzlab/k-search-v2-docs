@@ -5,28 +5,125 @@ sidebar_label: Spring Boot (JDBC)
 
 import K from '@site/src/components/K';
 
-In this section you will learn how to install <K/> in a Spring Boot project with a JDBC connection available.
+In this section you will learn how to install <K/> in a Spring Boot project with a JDBC connection.
 
-## Previous requirements
+:::info
 
-- Have a Spring Boot project in which you want to install <K/>.
-- Have JDBC installed through the **spring-boot-starter-jdbc** dependency.
+If you already have a JDBC connection set up, feel free to skip any of the first 3 steps.
 
-## Step 1: Install K dependency through Maven
+:::
 
-Copy the **K** dependency in your pom.xml file, then, force to your project to download dependency.
+## Step 1: Install JDBC dependency through Maven
+
+Add **spring-boot-starter-jdbc** dependency in your pom.xml file and then force to your project to download dependency.
+
+```xml showLineNumbers
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+```
+
+## Step 2: Add connection properties
+
+Add the _jdbcUrl_, _username_ and _password_ properties for each connection you want to configure in the _application.properties_ file:
+
+```
+datasource.master.jdbcUrl=jdbc:postgresql://${POSTGRES_HOST:10.0.0.1}:${POSTGRES_PORT:5432}/${POSTGRES_DB:database_name_1}
+datasource.master.username=${POSTGRES_USER:database_user_1}
+datasource.master.password=${POSTGRES_PASSWORD:database_password_1}
+
+datasource.slave.jdbcUrl=jdbc:postgresql://${POSTGRES_HOST:10.0.0.2}:${POSTGRES_PORT:5432}/${POSTGRES_DB:database_name_2}
+datasource.slave.username=${POSTGRES_USER:database_user_2}
+datasource.slave.password=${POSTGRES_PASSWORD:database_password_2}
+```
+
+:::info
+
+Don't forget that _datasource.master_ and _datasource.slave_ are the names of your connections and will be used in the following step.
+
+:::
+
+## Step 3: Configure datasources and enable transaction management
+
+To achieve this, you need to create a new class with the configuration of all your datasources (It can be in any package), as follows:
+
+```java
+package com.example.demo;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.TransactionManagementConfigurer;
+
+@Configuration
+@EnableTransactionManagement
+public class DatasourceConfig implements TransactionManagementConfigurer {
+
+    @Bean(name = "ds-master")
+    @ConfigurationProperties(prefix = "datasource.master")//Name configured in previous step
+    public DataSource dataSourceMaster() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean(name = "jdbc-master")
+    public JdbcTemplate jdbcTemplateMaster(@Qualifier("ds-master") DataSource ds) {
+        return new JdbcTemplate(ds);
+    }
+
+    @Bean(name = "ds-slave")
+    @ConfigurationProperties(prefix = "datasource.slave")//Name configured in previous step
+    public DataSource dataSourceSlave() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean(name = "jdbc-slave")
+    public JdbcTemplate jdbcTemplateSlave(@Qualifier("ds-slave") DataSource ds) {
+        return new JdbcTemplate(ds);
+    }
+    
+    //The next code configure and enable transaction management
+    @Override
+    public PlatformTransactionManager annotationDrivenTransactionManager() {
+        return new DataSourceTransactionManager(dataSourceMaster());
+    }
+
+    @Bean(name = "txManagerSlave")
+    public PlatformTransactionManager annotationDrivenTransactionManagerDataSource2() {
+        return new DataSourceTransactionManager(dataSourceSlave());
+    }
+}
+```
+
+:::info
+
+The _jdbc-master_ and _jdbc-slave_ bean will be used in the following step.
+
+:::
+
+## Step 4: Install K dependency through Maven
+
+Add **K** dependency in your pom.xml file and then force to your project to download dependency.
 
 ```xml showLineNumbers
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jbdc</groupId>
     <artifactId>k</artifactId>
-    <version>2.0.19</version>
+    <version>2.0.24</version>
 </dependency>
 ```
 
-## Step 2: Tell <K/> where the JdbcTemplate is
+## Step 5: Tell <K/> where the JdbcTemplate is
 
-To do this, create a class named K that inherits from `com.myzlab.k.KBuilder`. In this class you must make available all the JdbcTemplates and select one to be used by default.
+To do this, create a class named `K` that inherits from `com.myzlab.k.KBuilder`. In this class you must make available all the JdbcTemplates and select one to be used by default.
 
 Assuming that the root package of your project is **com.example**, then you must to create the package **com.example.k** and the new class would be located there.
 
@@ -41,35 +138,36 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-@Component//Don't forget it!
+@Component
 public class K extends KBuilder {
     
-    public static String JDBC_WORKSPACE = "JDBC_WORKSPACE";
-    public static String JDBC_CUSTOMER = "JDBC_CUSTOMER";
+    public static String JDBC_MASTER = "JDBC_MASTER";
+    public static String JDBC_SLAVE = "JDBC_SLAVE";
 
     @Autowired
-    @Qualifier("jdbcTemplateWorkspace")
-    private JdbcTemplate jdbcTemplateWorkspace;
+    @Qualifier("jdbc-master")//Name configured in previous step
+    private JdbcTemplate master;
     
     @Autowired
-    @Qualifier("jdbcTemplateCustomer")
-    private JdbcTemplate jdbcTemplateCustomer;
+    @Qualifier("jdbc-slave")//Name configured in previous step
+    private JdbcTemplate slave;
 
     @Override
     public Map<String, JdbcTemplate> getJdbcTemplates() {
         final Map<String, JdbcTemplate> jdbcTemplates = new HashMap<>();
         
-        jdbcTemplates.put(JDBC_WORKSPACE, jdbcTemplateWorkspace);
-        jdbcTemplates.put(JDBC_CUSTOMER, jdbcTemplateCustomer);
+        jdbcTemplates.put(JDBC_MASTER, master);
+        jdbcTemplates.put(JDBC_SLAVE, slave);
         
         return jdbcTemplates;
     }
 
     @Override
-    public String getJdbcTemplateDefaultName() {//This JdbcTemplate will be used always by default!
-        return JDBC_WORKSPACE;
+    public String getJdbcTemplateDefaultName() {
+        return JDBC_MASTER;
     }
 }
+
 ```
 
 ## Ready to use!
@@ -82,6 +180,7 @@ To inject the `com.myzlab.k.KBuilder` object, simply declare this object as an f
 import com.myzlab.k.KBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+// import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @RequiredArgsConstructor
@@ -89,6 +188,8 @@ public class ExampleDAK {
     
     private final KBuilder k;
 
+//    @Transactional
+//    @Transactional("txManagerSlave")
     public void readyToUse() {
         // highlight-next-line
         k. //All you new functionalities start here!

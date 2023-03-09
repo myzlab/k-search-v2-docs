@@ -24,19 +24,19 @@ If you are installing <K/> in a new project, our recommendation is that for perf
 
 ## Step 1: Install K dependency through Maven
 
-Copy the **K** dependency in your pom.xml file, then, force to your project to download dependency.
+Add **K** dependency in your pom.xml file and then force to your project to download dependency.
 
 ```xml showLineNumbers
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jpa</groupId>
     <artifactId>k</artifactId>
-    <version>2.0.19</version>
+    <version>2.0.24</version>
 </dependency>
 ```
 
 ## Step 2: Tell <K/> where the EntityManager is
 
-To do this, create a class named K that inherits from `com.myzlab.k.KBuilder`. In this class you must make available all the EntityManagers and select one to be used by default.
+To do this, create a class named `K` that inherits from `com.myzlab.k.KBuilder`. In this class you must make available all the EntityManagers and select one to be used by default.
 
 Assuming that the root package of your project is **com.example**, then you must to create the package **com.example.k** and the new class would be located there.
 
@@ -91,6 +91,7 @@ To inject the `com.myzlab.k.KBuilder` object, simply declare this object as an f
 import com.myzlab.k.KBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+// import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @RequiredArgsConstructor
@@ -98,6 +99,7 @@ public class ExampleDAK {
     
     private final KBuilder k;
 
+//    @Transactional
     public void readyToUse() {
         // highlight-next-line
         k. //All you new functionalities start here!

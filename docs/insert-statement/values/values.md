@@ -23,7 +23,7 @@ and the subsequent methods that can be called are:
 - [`returning`](/docs/insert-statement/returning/)
 - [`execute`](/docs/select-statement/select/)
 
-## Example
+## Example: Fixed records
 
 Java code:
 
@@ -53,3 +53,40 @@ Parameters:
 - **?3:** "Language 2"
 - **?4:** "File 2"
 
+## Example: Dynamic records
+
+Java code:
+
+```java
+final List<Language> languages = ...;
+
+final KValues values = values().append(languages,
+    (KValuesFunction<Language>) (final Language l) -> new ArrayList() {{
+        add(l.getName());
+        add(l.getFile());
+    }}
+);
+
+k
+.insertInto(LANGUAGE)
+.columns(
+    LANGUAGE.NAME,
+    LANGUAGE.FILE
+)
+.values(values)
+.execute();
+```
+
+SQL generated:
+
+```sql
+INSERT INTO language (name, file)
+VALUES (?1, ?2), (?3, ?4)
+```
+
+Parameters:
+
+- **?1:** "Language 1"
+- **?2:** "File 1"
+- **?3:** "Language 2"
+- **?4:** "File 2"
