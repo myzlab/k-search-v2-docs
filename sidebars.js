@@ -144,6 +144,7 @@ const sidebars = {
             "sql-functions/string-functions/left",
             "sql-functions/string-functions/length",
             "sql-functions/string-functions/lower",
+            "sql-functions/string-functions/lpad",
             "sql-functions/string-functions/ltrim",
             "sql-functions/string-functions/md5",
             "sql-functions/string-functions/octet_length",
@@ -153,8 +154,9 @@ const sidebars = {
             "sql-functions/string-functions/quote_literal",
             "sql-functions/string-functions/quote_nullable",
             "sql-functions/string-functions/reverse",
-            "sql-functions/string-functions/rtrim",
             "sql-functions/string-functions/right",
+            "sql-functions/string-functions/rpad",
+            "sql-functions/string-functions/rtrim",
             "sql-functions/string-functions/substring",
             "sql-functions/string-functions/to_hex",
             "sql-functions/string-functions/trim",
@@ -398,9 +400,10 @@ const sidebars = {
         "misc/ktable",
         "misc/kjoindefinition",
         "misc/window-definition",
-        "misc/kvalues",,
+        "misc/kvalues",
         "misc/kencoding",
         "misc/kformat",
+        "misc/tuple"
       ],
     }
   ]

@@ -31,7 +31,7 @@ leftOperand IN (rightOperand1, rightOperand2, ...)
 
 This method takes a single parameter and the possible values are:
 
-`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KColumn (tuple)`](/docs/misc/tuple).
 
 ### Example: in(Collection)
 
@@ -130,6 +130,93 @@ Parameters:
 - **?1:** "contacto@myzlab.com"
 - **?2:** "hi@myzlab.com"
 
+### Example: in(KColumn (tuple)) [Fixed values]
+
+Java code:
+
+```java
+k
+.select(APP_USER.ID)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .in(
+            tuple(
+                tuple(val("Jesus"), val("jesus@yopmail.com")),
+                tuple(val("kecon"), val("contacto@myzlab.com"))
+            )
+        )
+)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM auth.app_user au
+WHERE (au.first_name, au.email) IN ((?1, ?2), (?3, ?4))
+```
+
+Parameters:
+
+- **?1:** "Jesus"
+- **?2:** "jesus@yopmail.com"
+- **?3:** "kecon"
+- **?4:** "contacto@myzlab.com"
+
+### Example: in(KColumn (tuple)) [Variable values]
+
+Java code:
+
+```java
+final List<Map<String, Object>> list = new ArrayList<>() {{
+    add(
+        new HashMap<>() {{
+            put("firstName", "Jesus");
+            put("email", "jesus@yopmail.com");
+        }}
+    );
+    add(
+        new HashMap<>() {{  
+            put("firstName", "kecon");
+            put("email", "contacto@myzlab.com"); 
+        }}
+    );
+}};
+
+k
+.select(APP_USER.ID)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .in(
+            tuple(list,
+                (KTupleFunction<Map>) (final Map m) -> new ArrayList() {{
+                    add(m.get("firstName"));
+                    add(m.get("email"));
+                }}
+            )
+        )
+)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM auth.app_user au
+WHERE (au.first_name, au.email) IN ((?1, ?2), (?3, ?4))
+```
+
+Parameters:
+
+- **?1:** "Jesus"
+- **?2:** "jesus@yopmail.com"
+- **?3:** "kecon"
+- **?4:** "contacto@myzlab.com"
+
 ## 2. notIn
 
 :::tip SQL to generate
@@ -141,7 +228,7 @@ leftOperand NOT IN (rightOperand1, rightOperand2, ...)
 
 This method takes a single parameter and the possible values are:
 
-`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KColumn (tuple)`](/docs/misc/tuple).
 
 ### Example: notIn(Collection)
 
@@ -239,3 +326,90 @@ Parameters:
 
 - **?1:** "contacto@myzlab.com"
 - **?2:** "hi@myzlab.com"
+
+### Example: notIn(KColumn (tuple)) [Fixed values]
+
+Java code:
+
+```java
+k
+.select(APP_USER.ID)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .notIn(
+            tuple(
+                tuple(val("Jesus"), val("jesus@yopmail.com")),
+                tuple(val("kecon"), val("contacto@myzlab.com"))
+            )
+        )
+)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM auth.app_user au
+WHERE (au.first_name, au.email) NOT IN ((?1, ?2), (?3, ?4))
+```
+
+Parameters:
+
+- **?1:** "Jesus"
+- **?2:** "jesus@yopmail.com"
+- **?3:** "kecon"
+- **?4:** "contacto@myzlab.com"
+
+### Example: notIn(KColumn (tuple)) [Variable values]
+
+Java code:
+
+```java
+final List<Map<String, Object>> list = new ArrayList<>() {{
+    add(
+        new HashMap<>() {{
+            put("firstName", "Jesus");
+            put("email", "jesus@yopmail.com");
+        }}
+    );
+    add(
+        new HashMap<>() {{  
+            put("firstName", "kecon");
+            put("email", "contacto@myzlab.com"); 
+        }}
+    );
+}};
+
+k
+.select(APP_USER.ID)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .notIn(
+            tuple(list,
+                (KTupleFunction<Map>) (final Map m) -> new ArrayList() {{
+                    add(m.get("firstName"));
+                    add(m.get("email"));
+                }}
+            )
+        )
+)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM auth.app_user au
+WHERE (au.first_name, au.email) NOT IN ((?1, ?2), (?3, ?4))
+```
+
+Parameters:
+
+- **?1:** "Jesus"
+- **?2:** "jesus@yopmail.com"
+- **?3:** "kecon"
+- **?4:** "contacto@myzlab.com"

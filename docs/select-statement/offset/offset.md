@@ -11,7 +11,7 @@ The methods available to use this functionality are:
 
 - `offset(int count)`: Receives an int value which will be added to `OFFSET` clause.
 - `offset(long count)`: Receives a long value which will be added to `OFFSET` clause.
-- `offset(KOptionalLong kOptionalLong)`: Receives a [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditionss) which will be added to `OFFSET` clause.
+- `offset(KOptionalLong kOptionalLong)`: Receives a [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions) which will be added to `OFFSET` clause.
 
 ## Method hierarchy
 
@@ -128,6 +128,43 @@ SQL generated:
 SELECT au.first_name
 FROM app_user au
 OFFSET 10
+```
+
+Parameters:
+
+- None
+
+## Example: `long` [calculateOffset]
+
+:::tip
+
+The first page is always number 1.
+
+:::
+
+Java code:
+
+```java
+final Long page = 1L;
+final Long limit = 50L;
+
+k
+.select(
+    APP_USER.FIRST_NAME
+)
+.from(APP_USER)
+.limit(limit)
+.offset(calculateOffset(page, limit))
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.first_name
+FROM auth.app_user au
+LIMIT 50
+OFFSET 0
 ```
 
 Parameters:

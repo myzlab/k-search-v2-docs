@@ -20,7 +20,7 @@ To use `values` method, you need to import the static functions as follows:
 import static com.myzlab.k.KFunction.*;
 ```
 
-### Example
+### Example [Fixed values]
 
 Java code:
 
@@ -30,4 +30,19 @@ final KValues values = values()
     .append("Value 2", "R2", 8)
     .append("Value 3", "R3", 15)
     .append("Value 4", "R4", 12);
+```
+
+### Example [Variable values]
+
+Java code:
+
+```java
+final List<AppUser> list = ...
+
+final KValues appUserValues = values().append(list,
+    (KValuesFunction<AppUser>) (final AppUser appUser) -> new ArrayList() {{
+        add(appUser.getId());
+        add(appUser.getFirstName());
+    }}
+);
 ```

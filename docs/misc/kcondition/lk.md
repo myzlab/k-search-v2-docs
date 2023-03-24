@@ -33,7 +33,7 @@ leftOperand LIKE rightOperand
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 ### Example: lk(KColumn)
 
@@ -121,7 +121,7 @@ LOWER(leftOperand) LIKE LOWER(rightOperand)
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 ### Example: ilk(KColumn)
 
@@ -209,7 +209,7 @@ NOT (leftOperand LIKE rightOperand)
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 ### Example: nlk(KColumn)
 
@@ -297,7 +297,7 @@ NOT (LOWER(leftOperand) LIKE LOWER(rightOperand))
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 ### Example: nilk(KColumn)
 

@@ -33,7 +33,7 @@ leftOperand = rightOperand
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`, [`KValNumberField`](/docs/misc/select-list-values#3-values), [`KValTextField`](/docs/misc/select-list-values#3-values), `KQuery`, [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalNumber`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalLocalDate`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalLocalDateTime`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalUuid`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValNumberField`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`, [`KValNumberField`](/docs/misc/select-list-values#3-values), [`KValTextField`](/docs/misc/select-list-values#3-values), `KQuery`, [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalNumber`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDate`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDateTime`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalUuid`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValNumberField`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 If the object received by parameter is a `KQuery`, it will be treated as a subquery and you must ensure that it returns only one column comparable to the operand on the left side of the condition.
 
@@ -144,6 +144,36 @@ Parameters:
 
 - None
 
+### Example: eq(KColumn (tuple))
+
+Java code:
+
+```java
+k
+.select(APP_USER.ID)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .eq(
+            tuple(val("kecon"), val("contacto@myzlab.com"))
+        )
+)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM auth.app_user au
+WHERE (au.first_name, au.email) = (?1, ?2)
+```
+
+Parameters:
+
+- **?1:** "kecon"
+- **?2:** "contacto@myzlab.com"
+
 ## 2. iEqual | ieq
 
 :::tip SQL to generate
@@ -155,7 +185,7 @@ LOWER(leftOperand) = LOWER(rightOperand)
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 ### Example: ieq(KColumn)
 
@@ -243,7 +273,7 @@ NOT (leftOperand = rightOperand)
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`, [`KValNumberField`](/docs/misc/select-list-values#3-values), [`KValTextField`](/docs/misc/select-list-values#3-values), `KQuery`, [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalNumber`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalLocalDate`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalLocalDateTime`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalUuid`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValNumberField`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`, [`KValNumberField`](/docs/misc/select-list-values#3-values), [`KValTextField`](/docs/misc/select-list-values#3-values), `KQuery`, [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalNumber`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDate`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalLocalDateTime`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalUuid`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValNumberField`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 If the object received by parameter is a `KQuery`, it will be treated as a subquery and you must ensure that it returns only one column comparable to the operand on the left side of the condition.
 
@@ -356,6 +386,36 @@ Parameters:
 
 - None
 
+### Example: neq(KColumn (tuple))
+
+Java code:
+
+```java
+k
+.select(APP_USER.ID)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .neq(
+            tuple(val("kecon"), val("contacto@myzlab.com"))
+        )
+)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM auth.app_user au
+WHERE NOT ((au.first_name, au.email) = (?1, ?2))
+```
+
+Parameters:
+
+- **?1:** "kecon"
+- **?2:** "contacto@myzlab.com"
+
 ## 4. notIEqual | nieq
 
 :::tip SQL to generate
@@ -367,7 +427,7 @@ NOT (LOWER(leftOperand) = LOWER(rightOperand))
 
 This method takes a single parameter and the possible values are:
 
-[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditionss), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditionss).
+[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), `String`, [`KValTextField`](/docs/misc/select-list-values#3-values), [`KOptionalKColumn`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalString`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalKValTextField`](/docs/misc/kcondition/introduction#2-optional-conditions).
 
 ### Example: nieq(KColumn)
 
