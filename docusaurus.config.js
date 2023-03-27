@@ -6,18 +6,23 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'KSearch',
-  tagline: '',
-  url: 'https://ksearch.myzlab.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-  
+
+  // Set the production url of your site here
+  url: 'https://your-docusaurus-test-site.com',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Myzlab', // Usually your GitHub org/user name.
-  projectName: 'KSearch Docs', // Usually your repo name.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
+
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -36,11 +41,15 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.,
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -48,129 +57,81 @@ const config = {
       }),
     ],
   ],
-  themes: ['docusaurus-theme-search-typesense'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // algolia: {
-      //   apiKey: '9e56e9a0f3dcd8ceaaf02f2a56702916',
-      //   indexName: 'KSearch',
-      //   contextualSearch: true,
-      //   appId: 'LELKXCPHX3'
-      // },
-      typesense: {
-        // Replace this with the name of your index/collection.
-        // It should match the "index_name" entry in the scraper's "config.json" file.
-        typesenseCollectionName: 'KSearch',
-  
-        typesenseServerConfig: {
-          nodes: [
-            {
-              host: 'typesense.ksearch.myzlab.com',
-              port: 443,
-              protocol: 'https',
-            }
-          ],
-          apiKey: 'xyz',
-        },
-  
-        // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
-        typesenseSearchParameters: {},
-  
-        // Optional
-        contextualSearch: true,
-      },
+      // Replace with your project's social card
+      image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'KSearch',
+        title: 'My Site',
         logo: {
-          alt: 'Ksearch',
-          src: 'img/ksearch-logo.png',
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'what-is-ksearch',
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Docs',
+            label: 'Tutorial',
           },
-          { 
-            to: '/docs/get-started/installation/springboot-jdbc',
-            label: 'v2.0.30',
-            position: 'right'
+          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            href: 'https://github.com/facebook/docusaurus',
+            label: 'GitHub',
+            position: 'right',
           },
-          // { 
-          //   to: '/blog',
-          //   label: 'Blog',
-          //   position: 'left'
-          // }
-          // {
-          //   href: 'https://github.com/myzlab/ksearch-springboot-jdbc',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
         ],
       },
       footer: {
         style: 'dark',
         links: [
-          // {
-          //   title: 'Docs',
-          //   items: [
-          //     {
-          //       label: 'Select Statement',
-          //       to: '/docs/intro',
-          //     },
-          //     {
-          //       label: 'Insert Statement',
-          //       to: '/docs/intro',
-          //     },
-          //     {
-          //       label: 'Update Statement',
-          //       to: '/docs/intro',
-          //     },
-          //     {
-          //       label: 'Delete Statement',
-          //       to: '/docs/intro',
-          //     }
-          //   ],
-          // },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Stack Overflow',
-          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-          //     },
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'Twitter',
-          //       href: 'https://twitter.com/docusaurus',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'More',
-          //   items: [
-          //     {
-          //       label: 'Blog',
-          //       to: '/blog',
-          //     },
-          //     {
-          //       label: 'GitHub',
-          //       href: 'https://github.com/facebook/docusaurus',
-          //     },
-          //   ],
-          // },
+          {
+            title: 'Docs',
+            items: [
+              {
+                label: 'Tutorial',
+                to: '/docs/intro',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              },
+              {
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/facebook/docusaurus',
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} KSearch. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["java"],
       },
     }),
 };
