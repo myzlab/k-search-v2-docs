@@ -31,7 +31,7 @@ leftOperand IN (rightOperand1, rightOperand2, ...)
 
 This method takes a single parameter and the possible values are:
 
-`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KColumn (tuple)`](/docs/misc/tuple).
+`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KTuple`](/docs/misc/ktuple).
 
 ### Example: in(Collection)
 
@@ -130,7 +130,7 @@ Parameters:
 - **?1:** "contacto@myzlab.com"
 - **?2:** "hi@myzlab.com"
 
-### Example: in(KColumn (tuple)) [Fixed values]
+### Example: in(KTuple) [Fixed values]
 
 Java code:
 
@@ -165,7 +165,7 @@ Parameters:
 - **?3:** "kecon"
 - **?4:** "contacto@myzlab.com"
 
-### Example: in(KColumn (tuple)) [Variable values]
+### Example: in(KTuple) [Variable values]
 
 Java code:
 
@@ -228,7 +228,7 @@ leftOperand NOT IN (rightOperand1, rightOperand2, ...)
 
 This method takes a single parameter and the possible values are:
 
-`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KColumn (tuple)`](/docs/misc/tuple).
+`Collection`, `Object[]`, [`KOptionalCollection`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KOptionalArrayObject`](/docs/misc/kcondition/introduction#2-optional-conditions), [`KTuple`](/docs/misc/ktuple).
 
 ### Example: notIn(Collection)
 
@@ -327,7 +327,7 @@ Parameters:
 - **?1:** "contacto@myzlab.com"
 - **?2:** "hi@myzlab.com"
 
-### Example: notIn(KColumn (tuple)) [Fixed values]
+### Example: notIn(KTuple) [Fixed values]
 
 Java code:
 
@@ -362,7 +362,7 @@ Parameters:
 - **?3:** "kecon"
 - **?4:** "contacto@myzlab.com"
 
-### Example: notIn(KColumn (tuple)) [Variable values]
+### Example: notIn(KTuple) [Variable values]
 
 Java code:
 

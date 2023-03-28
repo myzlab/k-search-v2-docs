@@ -403,7 +403,7 @@ const sidebars = {
         "misc/kvalues",
         "misc/kencoding",
         "misc/kformat",
-        "misc/tuple"
+        "misc/ktuple"
       ],
     }
   ]

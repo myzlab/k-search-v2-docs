@@ -53,7 +53,7 @@ Parameters:
 - **?3:** "Language 2"
 - **?4:** "File 2"
 
-## Example: Dynamic records
+## Example: Variable records
 
 Java code:
 

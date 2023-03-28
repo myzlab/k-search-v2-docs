@@ -144,7 +144,7 @@ Parameters:
 
 - None
 
-### Example: eq(KColumn (tuple))
+### Example: eq([`KTuple`](/docs/misc/ktuple))
 
 Java code:
 
