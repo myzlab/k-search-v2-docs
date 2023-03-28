@@ -110,6 +110,41 @@ Parameters:
 
 - None
 
+## Example: `KTable` (from subquery with custom aliases in a tuple)
+
+Java code:
+
+```java
+final KTable kTableUsers =
+    k
+    .select(APP_USER.ID, APP_USER.FIRST_NAME, APP_USER.LAST_NAME)
+    .from(APP_USER)
+    .as("us", "a", "b", "c");
+
+k
+.select(
+    kTableUsers.c("a"),
+    kTableUsers.c("b"),
+    kTableUsers.c("c")
+)
+.from(kTableUsers)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT us.a, us.b, us.c
+FROM (
+    SELECT au.id, au.first_name, au.last_name 
+    FROM app_user au
+) us (a, b, c)
+```
+
+Parameters:
+
+- None
+
 ## Example: `KRaw`
 
 Java code:

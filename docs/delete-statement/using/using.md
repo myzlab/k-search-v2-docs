@@ -88,6 +88,43 @@ Parameters:
 
 - **?1:** 7
 
+## Example: `KTable` (from subquery with custom aliases in a tuple)
+
+Java code:
+
+```java
+final KTable subquery =
+    k
+    .select(ROLE.ID, ROLE.CREATED_AT)
+    .from(ROLE)
+    .where(ROLE.ID.gt(7))
+    .as("r", "a", "b");
+
+k
+.deleteFrom(APP_USER)
+.using(subquery)
+.where(APP_USER.ROLE_ID.eq(subquery.c("a")))
+.and(APP_USER.CREATED_AT.gt(subquery.c("b")))
+.execute();
+```
+
+SQL generated:
+
+```sql
+DELETE FROM app_user au
+USING (
+    SELECT ro.id, ro.created_at
+    FROM role ro
+    WHERE ro.id > ?1
+) r (a, b)
+WHERE au.role_id = r.a
+AND au.created_at > r.b
+```
+
+Parameters:
+
+- **?1:** 7
+
 ## Example: `KRaw`
 
 Java code:

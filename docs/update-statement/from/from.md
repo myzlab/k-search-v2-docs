@@ -92,6 +92,43 @@ Parameters:
 
 - **?1:** 7
 
+## Example: `KTable` (from subquery with custom aliases in a tuple)
+
+Java code:
+
+```java
+final KTable subquery =
+    k
+    .select(ROLE.ID, ROLE.NAME)
+    .from(ROLE)
+    .where(ROLE.ID.eq(7L))
+    .as("r", "a", "b");
+
+k
+.update(APP_USER)
+.set(APP_USER.FIRST_NAME, subquery.c("b"))
+.from(subquery)
+.where(APP_USER.ROLE_ID.eq(subquery.c("a")))
+.execute();
+```
+
+SQL generated:
+
+```sql
+UPDATE app_user au
+SET first_name = r.b
+FROM (
+    SELECT ro.id
+    FROM role ro
+    WHERE ro.id = ?1
+) r (a, b)
+WHERE au.role_id = r.a
+```
+
+Parameters:
+
+- **?1:** 7
+
 ## Example: `KRaw`
 
 Java code:
