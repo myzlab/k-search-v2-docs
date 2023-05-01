@@ -315,11 +315,13 @@ This method receives a column or a value, as follow:
 .elseResult(APP_USER.UUID.cast(text()))
 ```
 
-And finally, the alias must be added through the `as` method, as follows:
+And finally, close the `case` expression through the `end` method, as follows:
 
 ```java
-.as("validIds")
+.end()
 ```
+
+At this time, `case` expression becomes a [`KColumn`](/docs/misc/select-list-values#2-kcolumn), being able to use all its associated methods.
 
 ### Example
 
@@ -334,6 +336,7 @@ k
     .when(APP_USER.CREATED_AT.gt(LocalDateTime.now().minusMonths(1)))
     .then(val("No id available"))
     .elseResult(APP_USER.UUID.cast(text()))
+    .end()
     .as("validIds")
 )
 .from(APP_USER)
