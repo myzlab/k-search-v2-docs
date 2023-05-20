@@ -179,7 +179,9 @@ const sidebars = {
       label: "Repository",
       items: [
         "repository/introduction",
+        "repository/exists-by-id",
         "repository/delete-all",
+        "repository/delete-by-id",
         "repository/find-all",
         "repository/find-by-id",
         // "repository/assert-exists",
