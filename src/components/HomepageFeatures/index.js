@@ -53,7 +53,7 @@ const FeatureListBottom = [
     ),
   },
   {
-    title: 'Support multiple databases',
+    title: 'Supports multiple datasources simultaneously',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>

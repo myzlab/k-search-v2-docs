@@ -176,6 +176,18 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Repository",
+      items: [
+        "repository/introduction",
+        "repository/delete-all",
+        "repository/find-all",
+        "repository/find-by-id",
+        // "repository/assert-exists",
+        // "repository/update-multiple"
+      ],
+    },
+    {
+      type: "category",
       label: "Data Manipulation",
       items: [
         "data-manipulation/introduction",
