@@ -1,6 +1,6 @@
 ---
 title: Like methods
-sidebar_label: Like (LIKE)
+sidebar_label: Like (Value)
 ---
 
 ## Definition

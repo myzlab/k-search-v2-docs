@@ -1,6 +1,6 @@
 ---
 title: ILike Any methods
-sidebar_label: ILike Any (%LIKE%)
+sidebar_label: ILike Any (%Value%)
 ---
 
 ## Definition

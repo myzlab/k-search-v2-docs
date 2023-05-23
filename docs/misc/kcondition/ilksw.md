@@ -1,6 +1,6 @@
 ---
 title: ILike Start With methods
-sidebar_label: ILike Start With (LIKE%)
+sidebar_label: ILike Start With (Value%)
 ---
 
 ## Definition

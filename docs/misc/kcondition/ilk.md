@@ -1,6 +1,6 @@
 ---
 title: ILike methods
-sidebar_label: ILike (LIKE)
+sidebar_label: ILike (Value)
 ---
 
 ## Definition

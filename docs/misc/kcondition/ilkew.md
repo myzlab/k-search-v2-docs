@@ -1,6 +1,6 @@
 ---
 title: ILike End With methods
-sidebar_label: ILike End With (%LIKE)
+sidebar_label: ILike End With (%Value)
 ---
 
 ## Definition
