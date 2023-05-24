@@ -47,7 +47,7 @@ Java code:
 
 ```java
 languageRepository.assertNotExistsById(
-    K.JDBC_SUBSCRIPTION,
+    K.JDBC_LEGACY,
     151L,
     HttpStatus.BAD_REQUEST,
     "Language already registered!"

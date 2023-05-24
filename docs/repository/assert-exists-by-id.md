@@ -45,7 +45,7 @@ Java code:
 
 ```java
 languageRepository.assertExistsById(
-    K.JDBC_SUBSCRIPTION,
+    K.JDBC_LEGACY,
     151L,
     HttpStatus.NOT_FOUND,
     "Language not found!"
