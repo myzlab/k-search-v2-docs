@@ -1,32 +1,22 @@
 import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import IntuitiveFeature from '@site/src/components/IntuitiveFeature';
+import OnlyYouNeedFeature from '@site/src/components/OnlyYouNeedFeature';
+import SQL100Feature from '@site/src/components/SQL100Feature';
 
-import styles from './index.module.css';
+import styles from './index.module.scss';
 
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx(styles.heroBanner, styles.bgDark)}>
       <div className="container">
-        <img src="/img/ksearch-logo.png" className="header--imageLogo" style={{ marginBottom: 15 }}>
-
-        </img>
-        <h1 className="hero__title ksearch-font-family">{siteConfig.title}</h1>
+        <h1 className="hero__title ksearch-font-family">KSearch</h1>
         <p className="hero__subtitle">
-          An easy and intuitive way to write dynamic SQL statements exclusively for Spring Boot.<br/>
-          Support JPA and JDBC connections.
+          A new way to write dynamic SQL statements<br/>
+          Exclusively for Spring Boot
         </p>
-        {/* <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div> */}
       </div>
     </header>
   );
@@ -40,7 +30,9 @@ export default function Home() {
       description={siteConfig.tagline}>
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <IntuitiveFeature />
+        <OnlyYouNeedFeature />
+        <SQL100Feature />
       </main>
     </Layout>
   );

@@ -155,3 +155,30 @@ pre code > span:nth-of-type(even) {
   background: white;
   padding: 1em 2.5em;
 }
+
+.navbar {
+  background-color: #1c3144;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,.1), 0 0 0 1px rgba(0,0,0,.16);
+}
+
+.hero__title {
+  font-size: 9em;
+  font-weight: 200;
+  background-image: linear-gradient(110deg, #ED6E46 0%, #6746ED 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__subtitle {
+  color: rgba(224,219,255,0.7) !important;
+  font-size: 1.125em;
+}
+
+.navbar__title, .navbar__link, .hero__title, .hero__subtitle {
+  color: #ffffff;
+}
+
+.navbar__title:hover, .navbar__link:hover {
+  color: #ECB84A;
+}

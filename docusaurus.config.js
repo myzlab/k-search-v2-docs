@@ -26,7 +26,9 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  plugins: [
+    'docusaurus-plugin-sass'
+  ],
   presets: [
     [
       'classic',
@@ -69,6 +71,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       // algolia: {
       //   apiKey: '9e56e9a0f3dcd8ceaaf02f2a56702916',
       //   indexName: 'KSearch',
@@ -77,10 +84,10 @@ const config = {
       // },
       navbar: {
         title: 'KSearch',
-        logo: {
-          alt: 'Ksearch',
-          src: 'img/ksearch-logo.png',
-        },
+        // logo: {
+        //   alt: 'Ksearch',
+        //   src: 'img/ksearch-logo.png',
+        // },
         items: [
           {
             type: 'doc',

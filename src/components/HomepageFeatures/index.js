@@ -8,7 +8,13 @@ const FeatureListTop = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Ksearch is designed of an intuitive way following the same order as an SQL query.
+        Ksearch ha sido diseñada con la comodidad del desarrollador en mente.
+        Con funciones orientadas a seguir la misma secuencia que una query SQL,
+        te sorprenderás de lo rápido que podrás dominar esta herramienta.
+
+        {/* Desde la instalación hasta la configuración,
+        cada paso ha sido realizado para que pueda utilizarlo sin dificultades.
+        No necesitas ser un experto en tecnología para sacar el máximo provecho de KSearch. */}
       </>
     ),
   },
@@ -17,8 +23,8 @@ const FeatureListTop = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Ksearch allows you to indicate exactly which columns and which tables you want to consult.
-        Not one byte too many!
+        Ksearch esta desarrollado pensando en la precision de las operaciones que desees realizar sobre la base de datos.
+        Ejecutando siempre exactamente lo que tu indiques, sin queries, columnas o tablas adicionales.
       </>
     ),
   },
@@ -27,7 +33,12 @@ const FeatureListTop = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Ksearch supports all clauses and possible queries 100% SQL to the PostgreSQL database!
+        Ksearch se ha diseñado específicamente para generar queries 100% SQL.
+
+        Olvídate de escribir manualmente cada consulta y de lidiar con posibles errores.
+
+        Simplifica tu trabajo y ahorra tiempo al dejar que nuestra herramienta se encargue de generar las queries SQL
+        necesarias para tus operaciones de base de datos.
       </>
     ),
   },
@@ -57,7 +68,9 @@ const FeatureListBottom = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        KSearch is developed to support connections to multiple PostgreSQL databases at the same time.
+        KSearch actualmente solo soporta el motor de base de datos PostgreSQL
+        (Estamos trabajando para soportar otros motores de base de datos)
+        Sin embargo, puedes conectar multiples PostgreSQL databases at the same time.
       </>
     ),
   }
