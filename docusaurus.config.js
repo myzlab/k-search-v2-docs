@@ -112,9 +112,9 @@ const config = {
           // },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
+      // footer: {
+      //   style: 'dark',
+      //   links: [
           // {
           //   title: 'Docs',
           //   items: [
@@ -166,9 +166,9 @@ const config = {
           //     },
           //   ],
           // },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} KSearch. Built with Docusaurus.`,
-      },
+        // ],
+        // copyright: `Copyright © ${new Date().getFullYear()} KSearch`,
+      // },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,

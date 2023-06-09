@@ -3,7 +3,7 @@ import styles from './../../pages/index.module.scss';
 import clsx from 'clsx';
 import K from '@site/src/components/K';
 
-export default function OnlyYouNeedFeature() {
+export default function MultipleDatasources() {
   return (
     <div className={styles.bgDark}>
       <div className={clsx(styles.featureInverse, styles.feature)}>
@@ -11,12 +11,12 @@ export default function OnlyYouNeedFeature() {
           <img src="https://777b136e9f812c76.demo.carrd.co/assets/images/image03.jpg?v=843ba104" className={styles.codeImage} />
         </div>
         <div className={styles.col2R}>
-          <h2>Query only what you need</h2>
+          <h2>Supports multiple datasources simultaneously</h2>
           <p>
-            <K/> is developed prioritizing the precision of the operations you want to perform on the database.
+            <K/> currently only supports the PostgreSQL database system (We are working to support other database systems).
             <br/>
             <br/>
-            This means that exactly what you specify will always be executed, without additional queries, columns, or tables.
+            However, you can connect <strong>multiple PostgreSQL databases</strong> at the same time.
           </p>
         </div>
       </div>

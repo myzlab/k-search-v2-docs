@@ -19,9 +19,7 @@ export default function IntuitiveFeature() {
           </p>
         </div>
         <div className={styles.col2L}>
-          <div className={styles.architectureWrapper}>
-            <img src="/img/1kc1.gif" className={styles.codeImage} />
-          </div>
+          <img src="https://777b136e9f812c76.demo.carrd.co/assets/images/image03.jpg?v=843ba104" className={styles.codeImage} />
         </div>
       </div>
     </div>
