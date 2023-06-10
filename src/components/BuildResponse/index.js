@@ -8,12 +8,12 @@ export default function BuildResponse() {
     <div className={styles.bgDark}>
       <div className={clsx(styles.featureInverse, styles.feature)}>
         <div className={styles.col1R}>
-          <img src="https://777b136e9f812c76.demo.carrd.co/assets/images/image03.jpg?v=843ba104" className={styles.codeImage} />
+          <img src="img/buildresponse.png" className={styles.codeImage} />
         </div>
         <div className={styles.col2R}>
           <h2>Build response object effortlessly</h2>
           <p>
-            Just call a method and your ResponseEntity will be <strong>automatically</strong> created from the executed query.
+            Just call a method and your <strong>ResponseEntity</strong> will be <strong>automatically</strong> created from the executed query.
           </p>
         </div>
       </div>
