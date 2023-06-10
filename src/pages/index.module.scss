@@ -83,6 +83,7 @@ $small-screen: 576px;
   object-fit: cover;
   object-position: center;
   width: 100% !important;
+  background-color: black;
 }
 
 .heroBanner {
@@ -123,7 +124,7 @@ $small-screen: 576px;
     }
   }
 
-  @media (max-width: $medium-screen) {
+  @media (max-width: $large-screen) {
     flex-direction: column-reverse;
     margin: 3rem 0 3rem 0;
 
@@ -189,7 +190,7 @@ $small-screen: 576px;
     border-bottom-left-radius: 1.25rem;
   }
 
-  @media (max-width: $medium-screen) {
+  @media (max-width: $large-screen) {
     flex-direction: column;
 
     img {
