@@ -23,7 +23,7 @@ export default function SQL100Feature() {
           </p>
         </div>
         <div className={styles.col2L}>
-          <img src="img/100sql.jpg" className={styles.codeImage} />
+          <img src="img/100sql.png" className={styles.codeImage} />
         </div>
       </div>
     </div>
