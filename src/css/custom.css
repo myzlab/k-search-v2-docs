@@ -14,28 +14,30 @@
 }
 
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #ECB84A;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-light: #ECB84A;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --doc-sidebar-width: 280px !important;
+  --ifm-link-color: #ECB84A;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #ECB84A;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-light: #ECB84A;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-link-color: #ECB84A;
 }
 
 @media (min-width: 997px) {
@@ -64,7 +66,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg,var(--ifm-menu-color-active),rgba(25,118,210,0));
+  background: linear-gradient(90deg,#ECB84A,rgba(25,118,210,0));
   border-radius: 3px;
 }
 
@@ -166,6 +168,34 @@ pre code > span:nth-of-type(even) {
   color: #ffffff;
 }
 
-.navbar__title:hover, .navbar__link:hover {
+.breadcrumbs__item .breadcrumbs__link {
+  color: #FFFFFF;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background-color: #ffffff0d;
   color: #ECB84A;
+  margin-left: 10px;
+}
+
+.breadcrumbs__item:not(:last-child):after {
+  background: none;
+  border: 1px solid white;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 0px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.main-wrapper {
+  background-image: url(data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220.140625%200%200%200%200%200%200.14453125%200%200%200%200%200%200.25%200%200%200%200%200%200.4375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E), radial-gradient(75% 100% at 50% 50%, #1c3144 0%, #121219 100%);
+}
+
+.markdown {
+  color: white;
+}
+
+.markdown code {
+  background-color: rgba(255, 255, 255, 0.15);
 }
