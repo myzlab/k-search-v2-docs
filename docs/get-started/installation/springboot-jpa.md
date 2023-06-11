@@ -26,7 +26,7 @@ If you are installing <K/> in a new project, our recommendation is that for perf
 
 Add **K** dependency in your pom.xml file and then force to your project to download dependency.
 
-```xml showLineNumbers
+```xml
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jpa</groupId>
     <artifactId>k</artifactId>

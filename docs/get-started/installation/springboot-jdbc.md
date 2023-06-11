@@ -17,7 +17,7 @@ If you already have a JDBC connection set up, feel free to skip any of the first
 
 Add **spring-boot-starter-jdbc** dependency in your pom.xml file and then force to your project to download dependency.
 
-```xml showLineNumbers
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -113,7 +113,7 @@ The _jdbc-master_ and _jdbc-slave_ bean will be used in the following step.
 
 Add **K** dependency in your pom.xml file and then force to your project to download dependency.
 
-```xml showLineNumbers
+```xml
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jbdc</groupId>
     <artifactId>k</artifactId>

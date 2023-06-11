@@ -179,7 +179,7 @@ Java code:
     <TabItem value="G" label='Glassfish / JBoss - Wildfly' default>
         <Tabs>
             <TabItem value="GC" label='UserController.java' default>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.services.UserService;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -209,7 +209,7 @@ public class UserController {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="GS" label='UserService.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.dak.UserDAK;
 import javax.ws.rs.core.Response;
 import ve.zlab.k.KException;
@@ -231,7 +231,7 @@ public class UserService {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="GD" label='UserDAK.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import javax.ws.rs.core.Response;
 import ve.zlab.k.KException;
 import ve.zlab.k.KExecutor;
@@ -263,7 +263,7 @@ public class UserDAK {\n
     <TabItem value="S" label='Spring'>
         <Tabs>
             <TabItem value="SC" label='UserController.java' default>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -291,7 +291,7 @@ public class UserController {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="SS" label='UserService.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.dak.UserDAK;
 import org.springframework.http.ResponseEntity;
 import ve.zlab.k.KException;
@@ -313,7 +313,7 @@ public class UserService {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="SD" label='UserDAK.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import org.springframework.http.HttpStatus;
 import ve.zlab.k.KException;
 import ve.zlab.k.KExecutor;
@@ -358,7 +358,7 @@ Parameters:
 
 JSON generated:
 
-```js showLineNumbers
+```js
 {
     "name": "John",
     "birthdate": "1991-05-01"

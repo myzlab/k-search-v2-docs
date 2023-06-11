@@ -280,7 +280,7 @@ Java code:
     <TabItem value="G" label='Glassfish / JBoss - Wildfly' default>
         <Tabs>
             <TabItem value="GC" label='PollController.java' default>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.services.PollService;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -311,7 +311,7 @@ public class PollController {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="GS" label='PollService.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.dak.PollDAK;
 import javax.ws.rs.core.Response;
 import ve.zlab.k.KCollection;
@@ -331,7 +331,7 @@ public class PollService {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="GD" label='PollDAK.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import java.util.List;
 import ve.zlab.k.KCollection;
 import ve.zlab.k.KException;
@@ -376,7 +376,7 @@ public class PollDAK {\n
     <TabItem value="S" label='Spring'>
         <Tabs>
             <TabItem value="SC" label='PollController.java' default>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.services.PollService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -403,7 +403,7 @@ public class PollController {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="SS" label='PollService.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.dak.PollDAK;
 import javax.ws.rs.core.Response;
 import ve.zlab.k.KCollection;
@@ -423,7 +423,7 @@ public class PollService {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="SD" label='PollDAK.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import java.util.List;
 import ve.zlab.k.KCollection;
 import ve.zlab.k.KException;
@@ -495,7 +495,7 @@ Parameters:
 
 JSON generated:
 
-```js showLineNumbers
+```js
 {
     "items": [
         {
@@ -546,7 +546,7 @@ Java code:
     <TabItem value="G" label='Glassfish / JBoss - Wildfly' default>
         <Tabs>
             <TabItem value="GC" label='CustomerController.java' default>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.services.CustomerService;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -577,7 +577,7 @@ public class CustomerController {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="GS" label='CustomerService.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.dak.CustomerDAK;
 import com.example.utils.CodeBlackBox;
 import javax.ws.rs.core.Response;
@@ -605,7 +605,7 @@ public class CustomerService {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="GD" label='CustomerDAK.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import ve.zlab.k.KCollection;
 import ve.zlab.k.KException;
 import ve.zlab.k.KExecutor;\n
@@ -642,7 +642,7 @@ public class CustomerDAK {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="GBB" label='CodeBlackBox.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import java.sql.Timestamp;
 import java.util.Date;\n
 public class CodeBlackBox  {\n
@@ -661,7 +661,7 @@ public class CodeBlackBox  {\n
     <TabItem value="S" label='Spring'>
         <Tabs>
             <TabItem value="SC" label='CustomerController.java' default>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.services.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -688,7 +688,7 @@ public class CustomerController {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="SS" label='CustomerService.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import com.example.dak.CustomerDAK;
 import com.example.utils.CodeBlackBox;
 import org.springframework.http.ResponseEntity;
@@ -716,7 +716,7 @@ public class CustomerService {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="SD" label='CustomerDAK.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import ve.zlab.k.KCollection;
 import ve.zlab.k.KException;
 import ve.zlab.k.KExecutor;\n
@@ -753,7 +753,7 @@ public class CustomerDAK {\n
                 </CodeBlock>
             </TabItem>
             <TabItem value="SBB" label='CodeBlackBox.java'>
-                <CodeBlock language="java" showLineNumbers>
+                <CodeBlock language="java">
 {`import java.sql.Timestamp;
 import java.util.Date;\n
 public class CodeBlackBox  {\n
@@ -784,7 +784,7 @@ Parameters: None
 
 JSON generated:
 
-```js showLineNumbers
+```js
 {
     "items": [
         {
