@@ -32,7 +32,7 @@ const sidebars = {
             "get-started/installation/springboot-jpa"
           ],
         },
-        "get-started/recommendations"
+        "get-started/conventions"
       ],
     },
     {
