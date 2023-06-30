@@ -105,7 +105,7 @@ public class DatasourceConfig implements TransactionManagementConfigurer {
 
 :::info
 
-The _jdbc-master_ and _jdbc-slave_ bean will be used in the following step.
+The _jdbc-master_ and _jdbc-slave_ beans will be used in the following step.
 
 :::
 
@@ -117,7 +117,7 @@ Add **K** dependency in your pom.xml file and then force to your project to down
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jbdc</groupId>
     <artifactId>k</artifactId>
-    <version>2.3.0-alpha</version>
+    <version>2.4.1-alpha</version>
 </dependency>
 ```
 
