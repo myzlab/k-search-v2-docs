@@ -19,8 +19,7 @@ The `columns` method can be used right after the following methods or objects:
 
 and the subsequent methods that can be called are:
 
-- [`select`](/docs/insert-statement/select/)
-- [`values`](/docs/insert-statement/values/)
+- [`select`](/docs/insert-statement/select/), [`values`](/docs/insert-statement/values/)
 
 ## Example
 

@@ -17,9 +17,7 @@ The methods available to use this functionality are:
 
 The `selectDistinctOn` method can be used right after the following methods or objects:
 
-- k
-- [`with`](/docs/select-statement/with)
-- [`withRecursive`](/docs/select-statement/with)
+- k, [`with`](/docs/select-statement/with), [`withRecursive`](/docs/select-statement/with)
 
 and the subsequent methods that can be called are:
 

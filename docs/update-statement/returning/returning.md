@@ -15,8 +15,7 @@ The only one method available to use this functionality is:
 
 The `returning` method can be used right after the following methods or objects:
 
-- [`set`](/docs/update-statement/set/)
-- [`where`](/docs/update-statement/where/)
+- [`set`](/docs/update-statement/set/), [`where`](/docs/update-statement/where/)
 
 and the subsequent methods that can be called are:
 

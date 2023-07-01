@@ -15,9 +15,7 @@ The only one method available to use this functionality is:
 
 The `returning` method can be used right after the following methods or objects:
 
-- [`deleteFrom`](/docs/delete-statement/delete-from/)
-- [`using`](/docs/delete-statement/using/)
-- [`where`](/docs/delete-statement/where/)
+- [`deleteFrom`](/docs/delete-statement/delete-from/), [`using`](/docs/delete-statement/using/), [`where`](/docs/delete-statement/where/)
 
 and the subsequent methods that can be called are:
 

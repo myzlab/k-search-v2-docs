@@ -15,19 +15,15 @@ The only one method available to use this functionality is:
 
 The `values` method can be used right after the following methods or objects:
 
-- [`select`](/docs/insert-statement/select/)
-- [`values`](/docs/insert-statement/values/)
+- [`select`](/docs/insert-statement/select/), [`values`](/docs/insert-statement/values/)
 
 and the subsequent methods that can be called are:
 
-- [`doNothing`](/docs/insert-statement/on-conflict/#1-do-nothing)
-- [`targetColumn`](/docs/select-statement/select/)
-- [`targetConstraint`](/docs/select-statement/select/)
+- [`doNothing`](/docs/insert-statement/on-conflict/#1-do-nothing), [`targetColumn`](/docs/select-statement/select/), [`targetConstraint`](/docs/select-statement/select/)
 
 and once the action for the conflict is defined, the next available methods that can be called are:
 
-- [`returning`](/docs/insert-statement/returning/)
-- [`execute`](/docs/select-statement/select/)
+- [`returning`](/docs/insert-statement/returning/), [`execute`](/docs/select-statement/select/)
 
 There are 5 possible actions to take when the `ON CONFLICT` clause is invoked.
 

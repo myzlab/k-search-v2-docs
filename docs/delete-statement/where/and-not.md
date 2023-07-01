@@ -16,20 +16,11 @@ The methods available to use this functionality are:
 
 The `andNot` method can be used right after the following methods:
 
-- [`where`](/docs/delete-statement/where/)
-- [`and`](/docs/delete-statement/where/and)
-- [`andNot`](/docs/delete-statement/where/and-not)
-- [`or`](/docs/delete-statement/where/or)
-- [`orNot`](/docs/delete-statement/where/or-not)
+- [`where`](/docs/delete-statement/where/), [`and`](/docs/delete-statement/where/and), [`andNot`](/docs/delete-statement/where/and-not), [`or`](/docs/delete-statement/where/or), [`orNot`](/docs/delete-statement/where/or-not)
 
 and the subsequent methods that can be called are:
 
-- [`and`](/docs/delete-statement/where/and)
-- [`andNot`](/docs/delete-statement/where/and-not)
-- [`or`](/docs/delete-statement/where/or)
-- [`orNot`](/docs/delete-statement/where/or-not)
-- [`returning`](/docs/delete-statement/returning)
-- [`execute`](/docs/select-statement/select/)
+- [`and`](/docs/delete-statement/where/and), [`andNot`](/docs/delete-statement/where/and-not), [`or`](/docs/delete-statement/where/or), [`orNot`](/docs/delete-statement/where/or-not), [`returning`](/docs/delete-statement/returning), [`execute`](/docs/select-statement/select/)
 
 ## Example: `KCondition`
 

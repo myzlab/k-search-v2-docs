@@ -16,17 +16,11 @@ The methods available to use this functionality are:
 
 The `update` method can be used right after the following methods or objects:
 
-- k
-- [`with`](/docs/update-statement/with)
-- [`withRecursive`](/docs/update-statement/with)
+- k, [`with`](/docs/update-statement/with), [`withRecursive`](/docs/update-statement/with)
 
 and the subsequent methods that can be called are:
 
-- [`set`](/docs/update-statement/set/)
-- [`from`](/docs/update-statement/from/)
-- [`where`](/docs/update-statement/where/)
-- [`returning`](/docs/update-statement/returning)
-- [`execute`](/docs/select-statement/select/)
+- [`set`](/docs/update-statement/set/), [`from`](/docs/update-statement/from/), [`where`](/docs/update-statement/where/), [`returning`](/docs/update-statement/returning), [`execute`](/docs/select-statement/select/)
 
 ## Example: `KTable`
 

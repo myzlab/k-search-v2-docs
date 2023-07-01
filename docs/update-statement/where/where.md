@@ -16,17 +16,11 @@ The methods available to use this functionality are:
 
 The `where` method can be used right after the following methods:
 
-- [`set`](/docs/update-statement/set/)
-- [`from`](/docs/update-statement/from/)
+- [`set`](/docs/update-statement/set/), [`from`](/docs/update-statement/from/)
 
 and the subsequent methods that can be called are:
 
-- [`and`](/docs/update-statement/where/and)
-- [`andNot`](/docs/update-statement/where/and-not)
-- [`or`](/docs/update-statement/where/or)
-- [`orNot`](/docs/update-statement/where/or-not)
-- [`returning`](/docs/update-statement/returning)
-- [`execute`](/docs/select-statement/select/)
+- [`and`](/docs/update-statement/where/and), [`andNot`](/docs/update-statement/where/and-not), [`or`](/docs/update-statement/where/or), [`orNot`](/docs/update-statement/where/or-not), [`returning`](/docs/update-statement/returning), [`execute`](/docs/select-statement/select/)
 
 ## Example: `KCondition`
 

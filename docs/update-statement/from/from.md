@@ -17,15 +17,11 @@ The methods available to use this functionality are:
 
 The `from` method can be used right after the following methods:
 
-- [`set`](/docs/update-statement/set/)
-- [`from`](/docs/update-statement/from/)
+- [`set`](/docs/update-statement/set/), [`from`](/docs/update-statement/from/)
 
 and the subsequent methods that can be called are:
 
-- [`from`](/docs/update-statement/from/)
-- [`where`](/docs/update-statement/where/)
-- [`returning`](/docs/update-statement/returning)
-- [`execute`](/docs/select-statement/select/)
+- [`from`](/docs/update-statement/from/), [`where`](/docs/update-statement/where/), [`returning`](/docs/update-statement/returning), [`execute`](/docs/select-statement/select/)
 
 ## Example: `KTable` (_generated.metadata_)
 

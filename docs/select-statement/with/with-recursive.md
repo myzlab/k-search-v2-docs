@@ -19,10 +19,7 @@ The `withRecursive` method can be used right after the following methods or obje
 
 and the subsequent methods that can be called are:
 
-- [`selectDistinctOn`](/docs/select-statement/select/distinct-on)
-- [`selectDistinct`](/docs/select-statement/select/distinct)
-- [`select1`](/docs/select-statement/select/select1)
-- [`select`](/docs/select-statement/select/)
+- [`selectDistinctOn`](/docs/select-statement/select/distinct-on), [`selectDistinct`](/docs/select-statement/select/distinct), [`select1`](/docs/select-statement/select/select1), [`select`](/docs/select-statement/select/)
 
 ## Example
 

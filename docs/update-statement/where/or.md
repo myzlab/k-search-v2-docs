@@ -16,20 +16,11 @@ The methods available to use this functionality are:
 
 The `or` method can be used right after the following methods:
 
-- [`where`](/docs/update-statement/where/)
-- [`and`](/docs/update-statement/where/and)
-- [`andNot`](/docs/update-statement/where/and-not)
-- [`or`](/docs/update-statement/where/or)
-- [`orNot`](/docs/update-statement/where/or-not)
+- [`where`](/docs/update-statement/where/), [`and`](/docs/update-statement/where/and), [`andNot`](/docs/update-statement/where/and-not), [`or`](/docs/update-statement/where/or), [`orNot`](/docs/update-statement/where/or-not)
 
 and the subsequent methods that can be called are:
 
-- [`and`](/docs/update-statement/where/and)
-- [`andNot`](/docs/update-statement/where/and-not)
-- [`or`](/docs/update-statement/where/or)
-- [`orNot`](/docs/update-statement/where/or-not)
-- [`returning`](/docs/update-statement/returning)
-- [`execute`](/docs/select-statement/select/)
+- [`and`](/docs/update-statement/where/and), [`andNot`](/docs/update-statement/where/and-not), [`or`](/docs/update-statement/where/or), [`orNot`](/docs/update-statement/where/or-not), [`returning`](/docs/update-statement/returning), [`execute`](/docs/select-statement/select/)
 
 ## Example: `KCondition`
 

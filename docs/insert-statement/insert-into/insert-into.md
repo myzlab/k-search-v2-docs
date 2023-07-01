@@ -15,9 +15,7 @@ The only one method available to use this functionality is:
 
 The `insertInto` method can be used right after the following methods or objects:
 
-- k
-- [`with`](/docs/insert-statement/with)
-- [`withRecursive`](/docs/insert-statement/with)
+- k, [`with`](/docs/insert-statement/with), [`withRecursive`](/docs/insert-statement/with)
 
 and the subsequent methods that can be called are:
 

@@ -17,16 +17,11 @@ The methods available to use this functionality are:
 
 The `set` method can be used right after the following methods:
 
-- [`update`](/docs/update-statement/update/)
-- [`set`](/docs/update-statement/set/)
+- [`update`](/docs/update-statement/update/), [`set`](/docs/update-statement/set/)
 
 and the subsequent methods that can be called are:
 
-- [`set`](/docs/update-statement/set/)
-- [`from`](/docs/update-statement/from/)
-- [`where`](/docs/update-statement/where/)
-- [`returning`](/docs/update-statement/returning)
-- [`execute`](/docs/select-statement/select/)
+- [`set`](/docs/update-statement/set/), [`from`](/docs/update-statement/from/), [`where`](/docs/update-statement/where/), [`returning`](/docs/update-statement/returning), [`execute`](/docs/select-statement/select/)
 
 ## Example
 

@@ -16,16 +16,10 @@ The methods available to use this functionality are:
 
 The `deleteFrom` method can be used right after the following methods or objects:
 
-- k
-- [`with`](/docs/delete-statement/with)
-- [`withRecursive`](/docs/delete-statement/with)
+- k, [`with`](/docs/delete-statement/with), [`withRecursive`](/docs/delete-statement/with)
 
 and the subsequent methods that can be called are:
-
-- [`using`](/docs/delete-statement/using/)
-- [`where`](/docs/delete-statement/where/)
-- [`returning`](/docs/delete-statement/returning)
-- [`execute`](/docs/select-statement/select/)
+- [`using`](/docs/delete-statement/using/), [`where`](/docs/delete-statement/where/), [`returning`](/docs/delete-statement/returning), [`execute`](/docs/select-statement/select/)
 
 ## Example: `KTable`
 

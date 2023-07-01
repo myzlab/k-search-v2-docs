@@ -15,10 +15,7 @@ The only one method available to use this functionality is:
 
 The `returning` method can be used right after the following methods or objects:
 
-- [`select`](/docs/insert-statement/select/)
-- [`values`](/docs/insert-statement/values/)
-- [`doNothing`](/docs/insert-statement/on-conflict/#1-do-nothing)
-- [`set`](/docs/insert-statement/on-conflict/#4-target-columns---do-update)
+- [`select`](/docs/insert-statement/select/), [`values`](/docs/insert-statement/values/), [`doNothing`](/docs/insert-statement/on-conflict/#1-do-nothing), [`set`](/docs/insert-statement/on-conflict/#4-target-columns---do-update)
 
 and the subsequent methods that can be called are:
 

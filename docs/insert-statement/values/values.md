@@ -19,9 +19,7 @@ The `values` method can be used right after the following methods or objects:
 
 and the subsequent methods that can be called are:
 
-- [`onConflict`](/docs/select-statement/select/)
-- [`returning`](/docs/insert-statement/returning/)
-- [`execute`](/docs/select-statement/select/)
+- [`onConflict`](/docs/select-statement/select/), [`returning`](/docs/insert-statement/returning/), [`execute`](/docs/select-statement/select/)
 
 ## Example: Fixed records
 
