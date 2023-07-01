@@ -7,15 +7,23 @@ sidebar_label: With
 
 The `with` method allows you to add the `WITH` clause to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
-- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/misc/cte) that will be added to the `WITH` clause.
+### 1. `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`
+
+- **kCommonTableExpressionsFilled:** are all _Common Table Expressions_ or _CTEs_ that will be added to the `WITH` clause.
+
+:::info
+
+For more information about `KCommonTableExpressionFilled`, we recommend that you consult the next [`page`](/docs/misc/cte).
+
+:::
 
 ## Method hierarchy
 
 The `with` method can be used right after the following methods or objects:
 
-- k
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use)
 
 and the subsequent methods that can be called are:
 
@@ -41,6 +49,7 @@ final KCommonTableExpressionFilled userIdsCte =
     .as(userIdsValues, "uic");
 
 k
+// highlight-next-line
 .with(userIdsCte)
 .select(
     boolAnd(
