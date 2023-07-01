@@ -7,16 +7,23 @@ sidebar_label: Select
 
 The `select` methods allows you to add the `SELECT` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
-- `select(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the `SELECT` list. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`Columns with over`](/docs/misc/select-list-values#5-columns-with-over), [`Columns with alias`](/docs/misc/select-list-values#6-columns-with-alias), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
-- `select(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the `SELECT` list.
+### 1. `select(KColumnAllowedToSelect... kColumnsAllowedToSelect)`
+
+- **kColumnsAllowedToSelect:** are all the expresions that will be added to the `SELECT` list.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`Columns with over`](/docs/misc/select-list-values#5-columns-with-over), [`Columns with alias`](/docs/misc/select-list-values#6-columns-with-alias), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
+
+### 2. `select(KQuery kQuery, String alias)`
+
+- **kQuery:** is a subquery which will be added to the `SELECT` list and treated as a column.  
+- **alias:** It is the alias of the previously mentioned column.
 
 ## Method hierarchy
 
 The `select` method can be used right after the following methods or objects:
 
-- k, [`with`](/docs/select-statement/with), [`withRecursive`](/docs/select-statement/with), [`select`](/docs/select-statement/select/)
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use), [`with`](/docs/select-statement/with), [`withRecursive`](/docs/select-statement/with), [`select`](/docs/select-statement/select/)
 
 and the subsequent methods that can be called are:
 

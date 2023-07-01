@@ -7,16 +7,23 @@ sidebar_label: Select Distinct
 
 The `selectDistinct` methods allows you to add the `SELECT DISTINCT` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
-- `selectDistinct(KColumnAllowedToSelect... kColumnsAllowedToSelect)`: Receives a variable quantity of columns and values that will be added to the `SELECT DISTINCT` clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`Columns with over`](/docs/misc/select-list-values#5-columns-with-over), [`Columns with alias`](/docs/misc/select-list-values#6-columns-with-alias), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
-- `selectDistinct(KQuery kQuery, String alias)`: Receives a KQuery and an alias, which will be added as a subquery in the `SELECT DISTINCT` clause.
+### 1. `selectDistinct(KColumnAllowedToSelect... kColumnsAllowedToSelect)`
+
+- **kColumnsAllowedToSelect:** are all the expresions that will be added to the `SELECT DISTINCT` clause.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`Columns with over`](/docs/misc/select-list-values#5-columns-with-over), [`Columns with alias`](/docs/misc/select-list-values#6-columns-with-alias), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
+
+### 2. `selectDistinct(KQuery kQuery, String alias)`
+
+- **kQuery:** is a subquery which will be added to the `SELECT DISTINCT` list and treated as a column.  
+- **alias:** It is the alias of the previously mentioned column.
 
 ## Method hierarchy
 
 The `selectDistinct` method can be used right after the following methods or objects:
 
-- k, [`with`](/docs/select-statement/with), [`withRecursive`](/docs/select-statement/with)
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use), [`with`](/docs/select-statement/with), [`withRecursive`](/docs/select-statement/with)
 
 and the subsequent methods that can be called are:
 

@@ -7,17 +7,17 @@ sidebar_label: Select 1
 
 The `select1` method allows you to add the `SELECT` clause with the number 1 as value to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
-- `select1()`: It does not receive any parameters.
+### 1. `select1()`
 
-The use of this method is recommended in statements that involve the `EXISTS` operator.
+- It does not receive any parameters.
 
 ## Method hierarchy
 
 The `select1` method can be used right after the following methods or objects:
 
-- k, [`with`](/docs/select-statement/with), [`withRecursive`](/docs/select-statement/with)
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use), [`with`](/docs/select-statement/with), [`withRecursive`](/docs/select-statement/with)
 
 and the subsequent methods that can be called are:
 
