@@ -7,7 +7,7 @@ sidebar_label: And Not
 
 The `andNot` methods allows you to add the `AND NOT` operator to a `HAVING` clause.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `andNot(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `HAVING` clause with an `AND NOT` operator.
 - `andNot(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `HAVING` clause with an `AND NOT` operator.

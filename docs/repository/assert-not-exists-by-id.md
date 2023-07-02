@@ -7,7 +7,7 @@ sidebar_label: Assert Not Exists By Id
 
 The `assertNotExistsById` method allows you to confirm that a record not exists in a table, filtered by its primary key. If it does exist, this method throws a KException.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `assertNotExistsById(Y id, HttpStatus httpStatus, String message)`: Receives a primary key value and the HttpStatus and message to throw.
 - `assertNotExistsById(String jdbc, Y id, HttpStatus httpStatus, String message)`: Receives the name of datasource connection to which you need to connect, a primary key value and the HttpStatus and message to throw.

@@ -7,10 +7,15 @@ sidebar_label: Inner Join
 
 The `innerJoin` method allows you to add the `INNER JOIN` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
-- `innerJoin(KJoinDefinition kJoinDefinition)`: Receives a [`KJoinDefinition`](/docs/misc/kjoindefinition) which will be added to `INNER JOIN` clause.
-- `innerJoin(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `INNER JOIN` clause.
+### 1. `innerJoin(`[`KJoinDefinition`](/docs/misc/kjoindefinition) `kJoinDefinition)`
+
+- **kJoinDefinition:** which contains all necessary information to the `INNER JOIN` clause.
+
+### 2. `innerJoin(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `INNER JOIN` clause.
 
 ## Method hierarchy
 

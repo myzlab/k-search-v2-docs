@@ -7,7 +7,7 @@ sidebar_label: Decode
 
 The `decode` method allows you to add the `DECODE` function to the query. The `DECODE` function decode binary data from textual representation in string.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `decode(KColumn kColumn, KFormat kFormat)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a [`KFormat`](/docs/misc/kformat) which will be supplied to the `DECODE` function.
 - `decode(KValTextField kValTextField, KFormat kFormat)`: Receives a [`KValTextField`](/docs/misc/select-list-values#3-values) and a [`KFormat`](/docs/misc/kformat) which will be supplied to the `DECODE` function.

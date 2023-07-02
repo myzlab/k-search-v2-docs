@@ -7,7 +7,7 @@ sidebar_label: Lag
 
 The `lag` method allows you to add the `LAG` function to the query. The `LAG` function provides access to a row that comes before the current row at a specified physical offset. In other words, from the current row the `LAG` function can access data of the previous row, or the row before the previous row, and so on.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `lag(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `LAG` function.
 - `lag(KColumn kColumn, int offset)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an offset which will be supplied to the `LAG` function.

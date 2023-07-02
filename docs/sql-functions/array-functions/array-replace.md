@@ -7,7 +7,7 @@ sidebar_label: Array Replace
 
 The `arrayReplace` method allows you to add the `ARRAY_REPLACE` function to the query. The `ARRAY_REPLACE` function is used to replace each array element equal to the given value with a new value.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `arrayReplace(KColumn kColumnArray, KColumn kColumnPreviousValue, Object newValue)`: Receives two [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an `Object` value which will be supplied to the `ARRAY_REPLACE` function.
 - `arrayReplace(KColumn kColumnArray, Object previousValue, Object newValue)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and two `Object` values which will be supplied to the `ARRAY_REPLACE` function.

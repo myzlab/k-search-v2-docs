@@ -7,10 +7,15 @@ sidebar_label: Left Join
 
 The `leftJoin` method allows you to add the `LEFT JOIN` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
-- `leftJoin(KJoinDefinition kJoinDefinition)`: Receives a [`KJoinDefinition`](/docs/misc/kjoindefinition) which will be added to `LEFT JOIN` clause.
-- `leftJoin(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `LEFT JOIN` clause.
+### 1. `leftJoin(`[`KJoinDefinition`](/docs/misc/kjoindefinition) `kJoinDefinition)`
+
+- **kJoinDefinition:** which contains all necessary information to the `LEFT JOIN` clause.
+
+### 2. `leftJoin(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `LEFT JOIN` clause.
 
 ## Method hierarchy
 

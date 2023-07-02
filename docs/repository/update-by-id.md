@@ -7,7 +7,7 @@ sidebar_label: Update By Id
 
 The `updateById` method allows you to update one (or multiple) new record(s) into a table.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `updateById(T entity)`: Receives an entity that will allow you update a record into a table.
 - `updateById(String jdbc, T entity)`: Receives the name of datasource connection to which you need to connect and an entity that will allow you update a record into a table.

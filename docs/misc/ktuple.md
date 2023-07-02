@@ -15,7 +15,7 @@ The syntax of a tuple is as follows:
   (value 1, value 2, ... , value n)
 </p>
 
-The methods available to use this functionality are:
+## Available methods
 
 - `tuple(KBaseColumnCastable... KBaseColumnCastables)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`Values`](/docs/misc/select-list-values#3-values) which will be added to the tuple.
 - `tuple(List<Object> list, KTupleFunction kTupleFunction)`: Receives a list which will be iterate through `kTupleFunction` function to get the list of values which will be added to the tuple.

@@ -7,7 +7,7 @@ sidebar_label: Or Not
 
 The `orNot` methods allows you to add the `OR NOT` operator to a `WHERE` clause.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `orNot(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `WHERE` clause with an `OR NOT` operator.
 - `orNot(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `WHERE` clause with an `OR NOT` operator.

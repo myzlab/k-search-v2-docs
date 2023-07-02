@@ -7,7 +7,7 @@ sidebar_label: Array Remove
 
 The `arrayRemove` method allows you to add the `ARRAY_REMOVE` function to the query. The `ARRAY_REMOVE` function is used to remove all elements equal to the given value from the array (array must be one-dimensional).
 
-The methods available to use this functionality are:
+## Available methods
 
 - `arrayRemove(KColumn kColumnArray, KColumn kColumnElement)`: Receives two [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ARRAY_REMOVE` function.
 - `arrayRemove(KColumn kColumnArray, Object element)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an `Object` value which will be supplied to the `ARRAY_REMOVE` function.

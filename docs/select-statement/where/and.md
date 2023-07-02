@@ -7,7 +7,7 @@ sidebar_label: And
 
 The `and` methods allows you to add the `AND` operator to a `WHERE` clause.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `and(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `WHERE` clause with an `AND` operator.
 - `and(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `WHERE` clause with an `AND` operator.

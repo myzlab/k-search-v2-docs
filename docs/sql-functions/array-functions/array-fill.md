@@ -7,7 +7,7 @@ sidebar_label: Array Fill
 
 The `arrayFill` method allows you to add the `ARRAY_FILL` function to the query. The `ARRAY_FILL` function is used to return an array initialized with supplied value and dimensions, optionally with lower bounds other than 1.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `arrayFill(KColumn kColumn, int upper)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and the upper bound which will be supplied to the `ARRAY_FILL` function.
 - `arrayFill(KColumn kColumn, int upper, Integer lower)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), the upper bound and the lower bound which will be supplied to the `ARRAY_FILL` function.

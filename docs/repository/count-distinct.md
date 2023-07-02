@@ -7,7 +7,7 @@ sidebar_label: Count Distinct
 
 The `countDistinct` method allows you to count the number of unique values in the column or expression of a table.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `countDistinct(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `count` method.
 - `countDistinct(String jdbc, KColumn kColumn)`: Receives the name of datasource connection to which you need to connect and a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `count` method.

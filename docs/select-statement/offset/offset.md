@@ -7,7 +7,7 @@ sidebar_label: Offset
 
 The `offset` method allows you to add the `OFFSET` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `offset(int count)`: Receives an int value which will be added to `OFFSET` clause.
 - `offset(long count)`: Receives a long value which will be added to `OFFSET` clause.

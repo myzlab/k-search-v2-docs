@@ -7,7 +7,7 @@ sidebar_label: Array Positions
 
 The `arrayPositions` method allows you to add the `ARRAY_POSITIONS` function to the query. The `ARRAY_POSITIONS` function is used to returns an array of subscripts of all occurrences of the second argument in the array given as first argument (array must be one-dimensional).
 
-The methods available to use this functionality are:
+## Available methods
 
 - `arrayPositions(KColumn kColumnArray, KColumn kColumnElement)`: Receives two [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ARRAY_POSITIONS` function.
 - `arrayPositions(KColumn kColumnArray, Object element)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an `Object` value which will be supplied to the `ARRAY_POSITIONS` function.

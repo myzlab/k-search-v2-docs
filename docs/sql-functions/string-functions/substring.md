@@ -7,7 +7,7 @@ sidebar_label: Substring
 
 The `substring` method allows you to add the `SUBSTRING` function to the query. The `SUBSTRING` function  extracts a substring from a specified string according to a specified starting position and length, or extract a substring according to regular expressions.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `substring(KColumn kColumn, int from)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an int which will be supplied to the `SUBSTRING` function.
 - `substring(KColumn kColumn, Integer from, Integer for_)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and two Integer which will be supplied to the `SUBSTRING` function.

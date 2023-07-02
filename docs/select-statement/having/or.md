@@ -7,7 +7,7 @@ sidebar_label: Or
 
 The `or` methods allows you to add the `OR` operator to a `HAVING` clause.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `or(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `HAVING` clause with an `OR` operator.
 - `or(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `HAVING` clause with an `OR` operator.

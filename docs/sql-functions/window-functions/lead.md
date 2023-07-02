@@ -7,7 +7,7 @@ sidebar_label: Lead
 
 The `lead` method allows you to add the `LEAD` function to the query. The `LEAD` function provides access to a row that follows the current row at a specified physical offset. It means that from the current row, the `LEAD` function can access data of the next row, the row after the next row, and so on.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `lead(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `LEAD` function.
 - `lead(KColumn kColumn, int offset)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an offset which will be supplied to the `LEAD` function.

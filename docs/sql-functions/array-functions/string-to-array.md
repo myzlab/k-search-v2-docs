@@ -7,7 +7,7 @@ sidebar_label: String To Array
 
 The `stringToArray` method allows you to add the `STRING_TO_ARRAY` function to the query. The `STRING_TO_ARRAY` function is used to splits string into array elements using supplied delimiter and optional null string.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `stringToArray(KBaseColumnCastable kBaseColumnCastable, String delimiter)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) or a [`Values`](/docs/misc/select-list-values#3-values) and a `String` value which will be supplied to the `STRING_TO_ARRAY` function.
 - `stringToArray(KBaseColumnCastable kBaseColumnCastable, String delimiter, String nullString)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) or a [`Values`](/docs/misc/select-list-values#3-values) and two `String` values which will be supplied to the `STRING_TO_ARRAY` function.

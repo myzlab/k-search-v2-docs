@@ -7,7 +7,7 @@ sidebar_label: Insert
 
 The `insert` method allows you to insert one (or multiple) new record(s) into a table.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `insert(T entity)`: Receives an entity that will be inserted as a record into a table.
 - `insert(String jdbc, T entity)`: Receives the name of datasource connection to which you need to connect and an entity that will be inserted as a record into a table.

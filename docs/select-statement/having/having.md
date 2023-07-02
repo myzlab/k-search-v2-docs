@@ -7,7 +7,7 @@ sidebar_label: Having
 
 The `having` methods allows you to add the `HAVING` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `having(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `HAVING` clause.
 - `having(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `HAVING` clause.

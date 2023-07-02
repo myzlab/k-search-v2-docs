@@ -7,7 +7,7 @@ sidebar_label: Exists By Id
 
 The `existsById` method allows you to get a boolean value indicating whether a record in a table exists, filtered by its primary key.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `existsById(Y id)`: Receives a primary key value.
 - `existsById(String jdbc, Y id)`: Receives the name of datasource connection to which you need to connect and a primary key value.

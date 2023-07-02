@@ -7,7 +7,7 @@ sidebar_label: Limit
 
 The `limit` method allows you to add the `LIMIT` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `limit(int count)`: Receives an int value which will be added to `LIMIT` clause.
 - `limit(long count)`: Receives a long value which will be added to `LIMIT` clause.

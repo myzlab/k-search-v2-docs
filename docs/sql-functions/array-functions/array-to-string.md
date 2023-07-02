@@ -7,7 +7,7 @@ sidebar_label: Array To String
 
 The `arrayToString` method allows you to add the `ARRAY_TO_STRING` function to the query. The `ARRAY_TO_STRING` function is used to concatenates array elements using supplied delimiter and optional null string.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `arrayToString(KColumn kColumnArray, String delimiter)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a `String` value which will be supplied to the `ARRAY_TO_STRING` function.
 - `arrayToString(KColumn kColumnArray, String delimiter, String nullString)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and two `String` values which will be supplied to the `ARRAY_TO_STRING` function.

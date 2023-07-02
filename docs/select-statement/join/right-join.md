@@ -7,10 +7,15 @@ sidebar_label: Right Join
 
 The `rightJoin` method allows you to add the `RIGHT JOIN` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
-- `rightJoin(KJoinDefinition kJoinDefinition)`: Receives a [`KJoinDefinition`](/docs/misc/kjoindefinition) which will be added to `RIGHT JOIN` clause.
-- `rightJoin(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `RIGHT JOIN` clause.
+### 1. `rightJoin(`[`KJoinDefinition`](/docs/misc/kjoindefinition) `kJoinDefinition)`
+
+- **kJoinDefinition:** which contains all necessary information to the `RIGHT JOIN` clause.
+
+### 2. `rightJoin(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `RIGHT JOIN` clause.
 
 ## Method hierarchy
 

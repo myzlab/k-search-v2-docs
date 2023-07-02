@@ -7,7 +7,7 @@ sidebar_label: Count
 
 The `count` method allows you to count all records of a table. It is possible to count by a specific column.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `count()`: It does not receive any parameters.
 - `count(String jdbc)`: Receives the name of datasource connection to which you need to connect.

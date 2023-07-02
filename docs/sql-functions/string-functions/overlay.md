@@ -7,7 +7,7 @@ sidebar_label: Overlay
 
 The `overlay` method allows you to add the `OVERLAY` function to the query. The `OVERLAY` function is used to replace the specified number of characters starting at the specified position with the specified text in a string.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `overlay(KColumn kColumn, String value, int from)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), a String and an int which will be supplied to the `OVERLAY` function.
 - `overlay(KColumn kColumn, String value, int from, Integer for_)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), a String, an int and an Integer which will be supplied to the `OVERLAY` function.

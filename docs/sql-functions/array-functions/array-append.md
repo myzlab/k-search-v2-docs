@@ -7,7 +7,7 @@ sidebar_label: Array Append
 
 The `arrayAppend` method allows you to add the `ARRAY_APPEND` function to the query. The `ARRAY_APPEND` function is used to append elements at the end of the array.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `arrayAppend(KColumn kColumnArray, KColumn kColumnElement)`: Receives two [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ARRAY_APPEND` function.
 - `arrayAppend(KColumn kColumnArray, Object element)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an `Object` value which will be supplied to the `ARRAY_APPEND` function.

@@ -7,10 +7,15 @@ sidebar_label: Cross Join
 
 The `crossJoin` method allows you to add the `CROSS JOIN` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
-- `crossJoin(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be added to `CROSS JOIN` clause.
-- `crossJoin(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `CROSS JOIN` clause.
+### 1. `crossJoin(`[`KTable`](/docs/misc/ktable) `kTable)`
+
+- **kTable:** is the table which will be added to `CROSS JOIN` clause
+
+### 2. `crossJoin(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `CROSS JOIN` clause.
 
 ## Method hierarchy
 

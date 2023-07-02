@@ -7,7 +7,7 @@ sidebar_label: Position
 
 The `position` method allows you to add the `POSITION` function to the query. The `POSITION` function returns the starting index of a specified substring within a specified string.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `position(KColumn kColumn, String valueToLocate)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a String which will be supplied to the `POSITION` function.
 - `position(KValTextField kValTextField, String valueToLocate)`: Receives a [`KValTextField`](/docs/misc/select-list-values#3-values) and an String which will be supplied to the `POSITION` function.

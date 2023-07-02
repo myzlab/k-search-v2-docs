@@ -7,7 +7,7 @@ sidebar_label: Delete By Id
 
 The `deleteById` method allows you to delete one record of a table filtered by its primary key.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `deleteById(Y id)`: Receives a primary key value.
 - `deleteById(String jdbc, Y id)`: Receives the name of datasource connection to which you need to connect and a primary key value.

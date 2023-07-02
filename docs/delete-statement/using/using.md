@@ -7,7 +7,7 @@ sidebar_label: Using
 
 The `using` methods allows you to add the `USING` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `using(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be added to `USING` clause. This clause accepts the 2 types of [`KTable`](/docs/misc/ktable).
 - `using(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `USING` clause.

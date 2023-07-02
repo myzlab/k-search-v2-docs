@@ -7,7 +7,7 @@ sidebar_label: Right
 
 The `right` method allows you to add the `RIGHT` function to the query. The `RIGHT` function return last *n* characters in the string. When *n* is negative, return all but first |n| characters.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `right(KColumn kColumn, int n)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an int which will be supplied to the `RIGHT` function.
 - `right(KValTextField kValTextField, int n)`: Receives a [`KValTextField`](/docs/misc/select-list-values#3-values) and an int which will be supplied to the `RIGHT` function.

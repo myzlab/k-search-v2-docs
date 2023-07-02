@@ -7,7 +7,7 @@ sidebar_label: Fetch
 
 The `fetch` method allows you to add the `FETCH` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `fetch(int count)`: Receives an int value which will be added to `FETCH` clause.
 - `fetch(long count)`: Receives a long value which will be added to `FETCH` clause.

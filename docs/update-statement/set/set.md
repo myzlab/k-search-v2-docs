@@ -7,7 +7,7 @@ sidebar_label: Set
 
 The `set` methods allows you to add the `USING` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
 - `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.

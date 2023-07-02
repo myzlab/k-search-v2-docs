@@ -7,7 +7,7 @@ sidebar_label: Delete All
 
 The `deleteAll` method allows you to delete all records of a table.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `deleteAll()`: It does not receive any parameters.
 - `deleteAll(String jdbc)`: Receives the name of datasource connection to which you need to connect.

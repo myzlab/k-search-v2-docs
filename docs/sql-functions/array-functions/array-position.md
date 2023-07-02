@@ -7,7 +7,7 @@ sidebar_label: Array Position
 
 The `arrayPosition` method allows you to add the `ARRAY_POSITION` function to the query. The `ARRAY_POSITION` function is used to returns the subscript of the first occurrence of the second argument in the array, starting at the element indicated by the third argument or at the first element (array must be one-dimensional).
 
-The methods available to use this functionality are:
+## Available methods
 
 - `arrayPosition(KColumn kColumnArray, Object element)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an `Object` value which will be supplied to the `ARRAY_POSITION` function.
 - `arrayPosition(KColumn kColumnArray, Object element, Integer n)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), an `Object` value and a `Integer` value which will be supplied to the `ARRAY_POSITION` function.

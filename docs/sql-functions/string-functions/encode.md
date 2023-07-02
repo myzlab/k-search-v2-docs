@@ -7,7 +7,7 @@ sidebar_label: Encode
 
 The `encode` method allows you to add the `ENCODE` function to the query. The `ENCODE` function encode binary data into a textual representation.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `encode(KColumn kColumn, KFormat kFormat)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a [`KFormat`](/docs/misc/kformat) which will be supplied to the `ENCODE` function.
 - `encode(KValTextField kValTextField, KFormat kFormat)`: Receives a [`KValTextField`](/docs/misc/select-list-values#3-values) and a [`KFormat`](/docs/misc/kformat) which will be supplied to the `ENCODE` function.

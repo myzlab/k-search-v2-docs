@@ -7,7 +7,7 @@ sidebar_label: Update
 
 The `update` methods allows you to add the `UPDATE` clause to the query.
 
-The methods available to use this functionality are:
+## Available methods
 
 - `update(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be supplied to the `UPDATE` clause. This clause just accepts the type of [`KTable`](/docs/misc/ktable) __Generated__.
 - `update(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `UPDATE` clause.
