@@ -9,15 +9,9 @@ The `with` method allows you to add the `WITH` clause to the query.
 
 ## Available methods
 
-### 1. `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`
+### 1. `with(`[`KCommonTableExpressionFilled...`](/docs/misc/cte) `kCommonTableExpressionsFilled)`
 
 - **kCommonTableExpressionsFilled:** are all _Common Table Expressions_ or _CTEs_ that will be added to the `WITH` clause.
-
-:::info
-
-For more information about `KCommonTableExpressionFilled`, we recommend that you consult the next [`page`](/docs/misc/cte).
-
-:::
 
 ## Method hierarchy
 
