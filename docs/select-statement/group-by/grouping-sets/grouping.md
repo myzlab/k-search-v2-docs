@@ -17,13 +17,17 @@ The use of this method is recommended in statements that involve the [`GROUPING 
 
 There are 2 ways to call this method:
 
-## Available methods calling from a `KColumn` or a `KTableColumn`
+## Available methods calling from a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn)
 
 ### 1. `grouping()`
 
 It does not receive any parameters.
 
+:::info
+
 The [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be the one supplied to the `GROUPING` function.
+
+:::
 
 ### Example
 
@@ -55,8 +59,6 @@ Parameters:
 - None
 
 ## Available methods calling from the `KFunction` class
-
-The only one method available to use this functionality calling from the `KFunction` class is:
 
 ## 1. `grouping(KColumn kColumn)`
 
