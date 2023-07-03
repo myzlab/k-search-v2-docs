@@ -9,13 +9,15 @@ The `withRecursive` method allows you to add the `WITH RECURSIVE` clause to the 
 
 ## Available methods
 
-- `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/misc/cte) that will be added to the `WITH RECURSIVE` clause.
+### 1. `with(`[`KCommonTableExpressionFilled...`](/docs/misc/cte) `kCommonTableExpressionsFilled)`
+
+- **kCommonTableExpressionsFilled:** are all _Common Table Expressions_ or _CTEs_ that will be added to the `WITH RECURSIVE` clause.
 
 ## Method hierarchy
 
 The `withRecursive` method can be used right after the following methods or objects:
 
-- k
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use)
 
 and the subsequent method that can be called is:
 
