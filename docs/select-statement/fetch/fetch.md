@@ -9,9 +9,17 @@ The `fetch` method allows you to add the `FETCH` clause to the query.
 
 ## Available methods
 
-- `fetch(int count)`: Receives an int value which will be added to `FETCH` clause.
-- `fetch(long count)`: Receives a long value which will be added to `FETCH` clause.
-- `fetch(KOptionalLong kOptionalLong)`: Receives a [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions) which will be added to `FETCH` clause.
+### 1. `fetch(int count)`
+
+- **count:** an int value which will be added to `FETCH` clause.
+
+### 2. `fetch(long count)`
+
+- **count:** a long value which will be added to `FETCH` clause.
+
+### 3. `fetch(`[`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions) `kOptionalLong)`
+
+- **kOptionalLong:** a long value which will be added to `FETCH` clause.
 
 ## Method hierarchy
 

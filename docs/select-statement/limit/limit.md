@@ -9,9 +9,17 @@ The `limit` method allows you to add the `LIMIT` clause to the query.
 
 ## Available methods
 
-- `limit(int count)`: Receives an int value which will be added to `LIMIT` clause.
-- `limit(long count)`: Receives a long value which will be added to `LIMIT` clause.
-- `limit(KOptionalLong kOptionalLong)`: Receives a [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions) which will be added to `LIMIT` clause.
+### 1. `limit(int count)`
+
+- **count:** an int value which will be added to `LIMIT` clause.
+
+### 2. `limit(long count)`
+
+- **count:** a long value which will be added to `LIMIT` clause.
+
+### 3. `limit(`[`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions) `kOptionalLong)`
+
+- **kOptionalLong:** a long value which will be added to `LIMIT` clause.
 
 ## Method hierarchy
 

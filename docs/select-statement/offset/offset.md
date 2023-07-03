@@ -9,9 +9,17 @@ The `offset` method allows you to add the `OFFSET` clause to the query.
 
 ## Available methods
 
-- `offset(int count)`: Receives an int value which will be added to `OFFSET` clause.
-- `offset(long count)`: Receives a long value which will be added to `OFFSET` clause.
-- `offset(KOptionalLong kOptionalLong)`: Receives a [`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions) which will be added to `OFFSET` clause.
+### 1. `offset(int count)`
+
+- **count:** an int value which will be added to `OFFSET` clause.
+
+### 2. `offset(long count)`
+
+- **count:** a long value which will be added to `OFFSET` clause.
+
+### 3. `offset(`[`KOptionalLong`](/docs/misc/kcondition/introduction#2-optional-conditions) `kOptionalLong)`
+
+- **kOptionalLong:** a long value which will be added to `OFFSET` clause.
 
 ## Method hierarchy
 
