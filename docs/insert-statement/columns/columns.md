@@ -9,7 +9,9 @@ The `columns` methods allows you to add the `COLUMNS` section to the query.
 
 ## Available methods
 
-- `columns(KTableColumn... kTableColumns)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `COLUMNS` section.
+### 1. `columns(`[`KTableColumn...`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumns)`
+
+- **kTableColumns:** are all the expresions that will be added to the `COLUMNS` list.
 
 ## Method hierarchy
 

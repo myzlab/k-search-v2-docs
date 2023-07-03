@@ -9,7 +9,9 @@ The `select` methods allows you to add a `SELECT` statement to the query.
 
 ## Available methods
 
-- `select(KQuery kQuery)`: Receives a KQuery which will be supplied to the `INSERT INTO` clause.
+### 1. `select(KQuery kQuery)`
+
+- **kQuery:** is a subquery which will be added to the `INSERT INTO` clause.
 
 ## Method hierarchy
 

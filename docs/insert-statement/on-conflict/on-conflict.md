@@ -9,7 +9,9 @@ The `onConflict` methods allows you to add the `ON CONFLICT` clause to the query
 
 ## Available methods
 
-- `onConflict()`: It does not receive parameters.
+### 1. `onConflict()`
+
+- It does not receive parameters.
 
 ## Method hierarchy
 
@@ -24,6 +26,8 @@ and the subsequent methods that can be called are:
 and once the action for the conflict is defined, the next available methods that can be called are:
 
 - [`returning`](/docs/insert-statement/returning/), [`execute`](/docs/select-statement/select/)
+
+## Possible actions to take
 
 There are 5 possible actions to take when the `ON CONFLICT` clause is invoked.
 
@@ -250,12 +254,12 @@ When you are resolving a conflict, if you need to pass a column as the new value
 
 There are 2 ways to call these methods:
 
-### 4.1. Calling from a `KTableColumn`
+### 5.1. Calling from a `KTableColumn`
 
 - `excluded()`: It does not receive any parameters. The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be the affected.
 - `tableNameAlias()`: It does not receive any parameters. The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be affected.
 
-### 4.2. Calling from the `KFunction` class
+### 5.2. Calling from the `KFunction` class
 
 - `excluded(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be the affected.
 - `tableNameAlias(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be the affected.

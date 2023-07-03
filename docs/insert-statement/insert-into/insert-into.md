@@ -9,13 +9,15 @@ The `insertInto` methods allows you to add the `INSERT INTO` clause to the query
 
 ## Available methods
 
-- `insertInto(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be supplied to the `INSERT INTO` clause. This clause just accepts the type of [`KTable`](/docs/misc/ktable) __Generated__.
+### 1. `insertInto(`[`KTable`](/docs/misc/ktable) `kTable)`
+
+- **kTable:** is the table which will be added to `INSERT INTO` clause.
 
 ## Method hierarchy
 
 The `insertInto` method can be used right after the following methods or objects:
 
-- k, [`with`](/docs/insert-statement/with), [`withRecursive`](/docs/insert-statement/with)
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use), [`with`](/docs/insert-statement/with), [`withRecursive`](/docs/insert-statement/with)
 
 and the subsequent methods that can be called are:
 
