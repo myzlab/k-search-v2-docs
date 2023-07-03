@@ -7,7 +7,7 @@ sidebar_label: Dense Rank
 
 The `denseRank` method allows you to add the `DENSE_RANK` function to the query. The `DENSE_RANK` function assigns a rank to every row in each partition of a result set.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `denseRank()`: It does not receive any parameters.
 

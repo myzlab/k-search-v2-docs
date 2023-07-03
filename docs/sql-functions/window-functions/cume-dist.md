@@ -7,7 +7,7 @@ sidebar_label: Cume Dist
 
 The `cumeDist` method allows you to add the `CUME_DIST` function to the query. The `CUME_DIST` function returns the cumulative distribution of a value within a set of values. In other words, it returns the relative position of a value in a set of values.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `cumeDist()`: It does not receive any parameters.
 

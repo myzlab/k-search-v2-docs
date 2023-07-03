@@ -7,7 +7,7 @@ sidebar_label: Array Cat
 
 The `arrayCat` method allows you to add the `ARRAY_CAT` function to the query. The `ARRAY_CAT` function is used to concatenate two arrays.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `arrayCat(KColumn kColumnArray1, KColumn kColumnArray2)`: Receives two [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ARRAY_CAT` function.
 

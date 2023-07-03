@@ -98,7 +98,7 @@ Parameters:
 
 The `STRING_AGG` function supports being used with an `ORDER BY` clause.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `orderBy(KColumnAllowedToOrderBy... kColumnsAllowedToOrderBy)`: Receives a variable quantity of columns that will be added to the [`ORDER BY`](/docs/select-statement/select/) clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KRaw`](/docs/misc/select-list-values#7-kraw).
 

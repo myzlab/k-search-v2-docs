@@ -5,7 +5,9 @@ sidebar_label: Rollup
 
 ## Definition
 
-The `rollup` method allows you to add the `ROLLUP` subclause to the query. The `ROLLUP` subclause is a short way to define multiple grouping sets so the following are equivalent:
+The `rollup` method allows you to add the `ROLLUP` subclause to the query.
+
+The `ROLLUP` subclause is a short way to define multiple grouping sets so the following are equivalent:
 
 ```sql
 ROLLUP(k1, k2, k3) 
@@ -18,11 +20,18 @@ GROUPING SETS (
  ) 
 ```
 
-The only one method available to use this functionality is:
+## Available methods
 
-- `rollup(KColumn... kColumns)`: Receives a variable quantity of [`KColumn`](/docs/misc/select-list-values#2-kcolumn) and [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ROLLUP` subclause.
+### 1. `rollup(KColumn... kColumns)`
+
+- **kColumns:** are all the expresions that will be added to the `ROLLUP` subclause.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn).
+
+:::tip
 
 The use of this method is recommended in statements that involve the `GROUP BY` clause.
+
+:::
 
 To use this method, you need to import the static functions as follows:
 

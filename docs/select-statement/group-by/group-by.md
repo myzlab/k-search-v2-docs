@@ -7,9 +7,12 @@ sidebar_label: Group By
 
 The `groupBy` method allows you to add the `GROUP BY` clause to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
-- `groupBy(KColumnAllowedToGroupBy... kColumnsAllowedToGroupBy)`: Receives a variable quantity of columns that will be added to the `GROUP BY` clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KRaw`](/docs/misc/select-list-values#7-kraw).
+### 1. `groupBy(KColumnAllowedToGroupBy... kColumnsAllowedToGroupBy)`
+
+- **kColumnsAllowedToGroupBy:** are all the expresions that will be added to the `GROUP BY` list.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KRaw`](/docs/misc/select-list-values#7-kraw).
 
 ## Method hierarchy
 

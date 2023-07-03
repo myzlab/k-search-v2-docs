@@ -7,7 +7,7 @@ sidebar_label: Count (*)
 
 The `count` method allows you to add the `COUNT(*)` function to the query. The `COUNT(*)` function returns the number of rows returned by a `SELECT` statement, including NULL and duplicates.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `count()`: It does not receive any parameters.
 

@@ -7,7 +7,7 @@ sidebar_label: Format
 
 The `format` method allows you to add the `FORMAT` function to the query. The `FORMAT` function returns a formatted string according to the specified format string and arguments.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `format(String formatString, KColumn... kColumns)`: Receives a String and a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) or [`KColumn`](/docs/misc/select-list-values#2-kcolumn) which will be supplied to the `FORMAT` function.
 

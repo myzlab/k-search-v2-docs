@@ -7,7 +7,7 @@ sidebar_label: Last Value
 
 The `lastValue` method allows you to add the `LAST_VALUE` function to the query. The `LAST_VALUE` function returns the last value in an ordered partition of a result set.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `lastValue(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `LAST_VALUE` function.
 .

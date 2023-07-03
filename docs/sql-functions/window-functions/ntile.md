@@ -7,7 +7,7 @@ sidebar_label: Ntile
 
 The `ntile` method allows you to add the `NTILE` function to the query. The `NTILE` function allows you to divide ordered rows in the partition into a specified number of ranked groups as equal size as possible. These ranked groups are called buckets.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `ntile(int buckets)`: Receives buckets value which will be supplied to the `NTILE` function.
 

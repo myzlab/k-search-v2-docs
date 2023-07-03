@@ -5,7 +5,9 @@ sidebar_label: Cube
 
 ## Definition
 
-The `cube` method allows you to add the `CUBE` subclause to the query. The `CUBE` subclause is a short way to define multiple grouping sets so the following are equivalent:
+The `cube` method allows you to add the `CUBE` subclause to the query.
+
+The `CUBE` subclause is a short way to define multiple grouping sets so the following are equivalent:
 
 ```sql
 CUBE(k1, k2, k3) 
@@ -22,11 +24,18 @@ GROUPING SETS (
  ) 
 ```
 
-The only one method available to use this functionality is:
+## Available methods
 
-- `cube(KColumn... kColumns)`: Receives a variable quantity of [`KColumn`](/docs/misc/select-list-values#2-kcolumn) and [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `CUBE` subclause.
+### 1. `cube(KColumn... kColumns)`
+
+- **kColumns:** are all the expresions that will be added to the `CUBE` subclause.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn).
+
+:::tip
 
 The use of this method is recommended in statements that involve the `GROUP BY` clause.
+
+:::
 
 To use this method, you need to import the static functions as follows:
 

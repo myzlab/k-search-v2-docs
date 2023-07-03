@@ -7,7 +7,7 @@ sidebar_label: Columns
 
 The `columns` methods allows you to add the `COLUMNS` section to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `columns(KTableColumn... kTableColumns)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `COLUMNS` section.
 

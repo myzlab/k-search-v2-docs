@@ -7,7 +7,7 @@ sidebar_label: First Value
 
 The `firstValue` method allows you to add the `FIRST_VALUE` function to the query. The `FIRST_VALUE` function returns a value evaluated against the first row in a sorted partition of a result set.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `firstValue(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `FIRST_VALUE` function.
 .

@@ -7,7 +7,7 @@ sidebar_label: Intersect All
 
 The `intersectAll` method allows you to add the `INSERSECT ALL` operator to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `intersectAll(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `INSERSECT ALL` operator.
 

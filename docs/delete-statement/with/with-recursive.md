@@ -7,7 +7,7 @@ sidebar_label: With Recursive
 
 The `withRecursive` method allows you to add the `WITH RECURSIVE` clause to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/misc/cte) that will be added to the `WITH RECURSIVE` clause.
 

@@ -7,7 +7,7 @@ sidebar_label: Union All
 
 The `unionAll` method allows you to add the `UNION ALL` operator to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `unionAll(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `UNION ALL` operator.
 

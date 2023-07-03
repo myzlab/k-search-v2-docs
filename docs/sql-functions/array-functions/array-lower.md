@@ -7,7 +7,7 @@ sidebar_label: Array Lower
 
 The `arrayLower` method allows you to add the `ARRAY_LOWER` function to the query. The `ARRAY_LOWER` function is used returns lower bound of the requested array dimension.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `arrayLower(KColumn kColumnArray, int n)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a int value which will be supplied to the `ARRAY_LOWER` function.
 

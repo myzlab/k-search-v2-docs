@@ -7,7 +7,7 @@ sidebar_label: With
 
 The `with` method allows you to add the `WITH` clause to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `with(KCommonTableExpressionFilled... kCommonTableExpressionsFilled)`: Receives a variable quantity of [`KCommonTableExpressionFilled`](/docs/misc/cte) that will be added to the `WITH` clause.
 

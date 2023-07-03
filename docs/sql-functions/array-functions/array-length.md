@@ -7,7 +7,7 @@ sidebar_label: Array Length
 
 The `arrayLength` method allows you to add the `ARRAY_LENGTH` function to the query. The `ARRAY_LENGTH` function is used to return the length of the requested array dimension.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `arrayLength(KColumn kColumnArray, int n)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a int value which will be supplied to the `ARRAY_LENGTH` function.
 

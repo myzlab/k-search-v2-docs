@@ -7,7 +7,7 @@ sidebar_label: Intersect
 
 The `intersect` method allows you to add the `INSERSECT` operator to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `intersect(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `INSERSECT` operator.
 

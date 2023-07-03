@@ -7,7 +7,7 @@ sidebar_label: Convert To
 
 The `convertTo` method allows you to add the `CONVERT_TO` function to the query. The `CONVERT_TO` function convert a string to the encoding specified.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `convertTo(KColumn kColumn, KEncoding destEncoding)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a [`KEncoding`](/docs/misc/kencoding) which will be supplied to the `CONVERT_TO` function.
 

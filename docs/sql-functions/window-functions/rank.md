@@ -7,7 +7,7 @@ sidebar_label: Rank
 
 The `rank` method allows you to add the `RANK` function to the query. The `RANK` function assigns a rank to every row within a partition of a result set.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `rank()`: It does not receive any parameters.
 

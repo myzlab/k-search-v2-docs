@@ -7,7 +7,7 @@ sidebar_label: Window
 
 The `window` method allows you to add the `WINDOW` clause to the query. The `WINDOW` clause allows you to define multiples [window definition](/docs/misc/window-definition) that can be referenced in `OVER` clause.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `window(KWindowDefinitionAllowedToWindow... KWindowDefinitionsAllowedToWindow)`: Receives a variable quantity of [named window definitions](/docs/misc/window-definition) that will be added to the [`WINDOW`](/docs/select-statement/window/) clause.
 

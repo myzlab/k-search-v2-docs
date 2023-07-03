@@ -7,7 +7,7 @@ sidebar_label: Union
 
 The `union` method allows you to add the `UNION` operator to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `union(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `UNION` operator.
 

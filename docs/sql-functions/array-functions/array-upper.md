@@ -7,7 +7,7 @@ sidebar_label: Array Upper
 
 The `arrayUpper` method allows you to add the `ARRAY_UPPER` function to the query. The `ARRAY_UPPER` function is used returns upper bound of the requested array dimension.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `arrayUpper(KColumn kColumnArray, int n)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a int value which will be supplied to the `ARRAY_UPPER` function.
 

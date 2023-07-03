@@ -7,7 +7,7 @@ sidebar_label: Except All
 
 The `exceptAll` method allows you to add the `EXCEPT ALL` operator to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `exceptAll(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `EXCEPT ALL` operator.
 

@@ -7,7 +7,7 @@ sidebar_label: Insert Into
 
 The `insertInto` methods allows you to add the `INSERT INTO` clause to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `insertInto(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be supplied to the `INSERT INTO` clause. This clause just accepts the type of [`KTable`](/docs/misc/ktable) __Generated__.
 

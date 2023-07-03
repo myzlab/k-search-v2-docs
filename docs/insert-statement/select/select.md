@@ -7,7 +7,7 @@ sidebar_label: Select
 
 The `select` methods allows you to add a `SELECT` statement to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `select(KQuery kQuery)`: Receives a KQuery which will be supplied to the `INSERT INTO` clause.
 

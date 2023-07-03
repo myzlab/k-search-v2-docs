@@ -7,7 +7,7 @@ sidebar_label: Json Object Agg
 
 The `jsonObjectAgg` method allows you to add the `JSON_OBJECT_AGG` function to the query. The `JSON_OBJECT_AGG` is a function that accepts a set of name/value pairs values and returns a JSON object consisting of a set of key-value pairs.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `jsonObjectAgg(KColumn kColumnName, KColumn kColumnValue)`: Receives two [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `JSON_OBJECT_AGG` function.
 

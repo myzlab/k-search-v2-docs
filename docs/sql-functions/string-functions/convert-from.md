@@ -7,7 +7,7 @@ sidebar_label: Convert From
 
 The `convertFrom` method allows you to add the `CONVERT_FROM` function to the query. The `CONVERT_FROM` function convert a string to the current database encoding.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `convertFrom(KColumn kColumn, KEncoding srcEncoding)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and a [`KEncoding`](/docs/misc/kencoding) which will be supplied to the `CONVERT_FROM` function.
 

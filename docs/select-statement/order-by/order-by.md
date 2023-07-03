@@ -7,7 +7,7 @@ sidebar_label: Order By
 
 The `orderBy` method allows you to add the `ORDER BY` clause to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `orderBy(KColumnAllowedToOrderBy... kColumnsAllowedToOrderBy)`: Receives a variable quantity of columns and values that will be added to the `ORDER BY` clause. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`KRaw`](/docs/misc/select-list-values#7-kraw).
 

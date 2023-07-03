@@ -7,7 +7,7 @@ sidebar_label: Concat Ws
 
 The `concatWs` method allows you to add the `CONCAT_WS` function to the query. The `CONCAT_WS` function concatenate the arguments as a string using a delimiter and return the result.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `concatWs(String separator, KBaseColumnCastable... kBaseColumnCastables)`: Receives a String and a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`Values`](/docs/misc/select-list-values#3-values) which will be supplied to the `CONCAT_WS` function.
 

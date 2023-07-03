@@ -7,7 +7,7 @@ sidebar_label: On Conflict
 
 The `onConflict` methods allows you to add the `ON CONFLICT` clause to the query.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `onConflict()`: It does not receive parameters.
 

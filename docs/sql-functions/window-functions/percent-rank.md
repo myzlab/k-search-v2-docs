@@ -7,7 +7,7 @@ sidebar_label: Percent Rank
 
 The `percentRank` method allows you to add the `PERCENT_RANK` function to the query. The `PERCENT_RANK` function evaluates the relative standing of a value within a set of values.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `percentRank()`: It does not receive any parameters.
 

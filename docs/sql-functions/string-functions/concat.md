@@ -7,7 +7,7 @@ sidebar_label: Concat
 
 The `concat` method allows you to add the `CONCAT` function to the query. The `CONCAT` function concatenates all arguments as a string and returns the result.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `concat(KBaseColumnCastable... kBaseColumnCastables)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`Values`](/docs/misc/select-list-values#3-values) which will be supplied to the `CONCAT` function.
 

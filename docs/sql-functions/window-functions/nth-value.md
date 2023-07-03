@@ -7,7 +7,7 @@ sidebar_label: Nth Value
 
 The `nthValue` method allows you to add the `NTH_VALUE` function to the query. The `NTH_VALUE` function returns a value from the nth row in an ordered partition of a result set.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `nthValue(KColumn kColumn, int offset)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) and an offset which will be supplied to the `NTH_VALUE` function.
 .

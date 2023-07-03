@@ -7,7 +7,7 @@ sidebar_label: Row Number
 
 The `rowNumber` method allows you to add the `ROW_NUMBER` function to the query. The `ROW_NUMBER` function assigns a sequential integer to each row in a result set.
 
-The only one method available to use this functionality is:
+## Available methods
 
 - `rowNumber()`: It does not receive any parameters.
 
