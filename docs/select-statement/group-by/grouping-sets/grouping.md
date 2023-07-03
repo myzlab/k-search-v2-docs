@@ -62,7 +62,7 @@ Parameters:
 
 ## 1. `grouping(KColumn kColumn)`
 
-- **kColumns:** is the expresion that will be supplied to the `GROUPING` function. 
+- **kColumns:** is the expresion that will be supplied to the `GROUPING` function.  
 Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn).
 
 To use this way, you need to import the static functions as follows:

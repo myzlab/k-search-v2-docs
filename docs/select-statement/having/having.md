@@ -9,8 +9,13 @@ The `having` methods allows you to add the `HAVING` clause to the query.
 
 ## Available methods
 
-- `having(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `HAVING` clause.
-- `having(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `HAVING` clause.
+### 1. `having(`[`KCondition`](/docs/misc/kcondition/introduction) `kCondition)`
+
+- **kCondition:** which contains all the information about the condition that will be added to the `HAVING` clause.
+
+### 2. `having(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `HAVING` clause.
 
 ## Method hierarchy
 
