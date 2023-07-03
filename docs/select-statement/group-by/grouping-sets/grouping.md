@@ -15,8 +15,6 @@ The use of this method is recommended in statements that involve the [`GROUPING 
 
 :::
 
-There are 2 ways to call this method:
-
 ## Available methods calling from a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn)
 
 ### 1. `grouping()`

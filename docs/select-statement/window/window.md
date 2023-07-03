@@ -5,11 +5,15 @@ sidebar_label: Window
 
 ## Definition
 
-The `window` method allows you to add the `WINDOW` clause to the query. The `WINDOW` clause allows you to define multiples [window definition](/docs/misc/window-definition) that can be referenced in `OVER` clause.
+The `window` method allows you to add the `WINDOW` clause to the query.
+
+The `WINDOW` clause allows you to define multiples [window definition](/docs/misc/window-definition) that can be referenced in `OVER` clause.
 
 ## Available methods
 
-- `window(KWindowDefinitionAllowedToWindow... KWindowDefinitionsAllowedToWindow)`: Receives a variable quantity of [named window definitions](/docs/misc/window-definition) that will be added to the [`WINDOW`](/docs/select-statement/window/) clause.
+### 1. `window(KWindowDefinitionAllowedToWindow... KWindowDefinitionsAllowedToWindow)`
+
+- **KWindowDefinitionsAllowedToWindow:** are all the [window definitions](/docs/misc/window-definition) which will be supplied to the `WINDOW` clause.
 
 ## Method hierarchy
 

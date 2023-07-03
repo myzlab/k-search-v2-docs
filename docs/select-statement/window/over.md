@@ -5,11 +5,15 @@ sidebar_label: Over
 
 ## Definition
 
-The `over` method allows you to add the `OVER` clause to the query. The `OVER` clause allows you to specify a set of rows (through a [window definition](/docs/misc/window-definition)) on which a window function or an aggregate function will operate.
+The `over` method allows you to add the `OVER` clause to the query.
 
-The only one method available to use this functionality is in the `KWindowFunctionColumn` object and in the `KAggregateFunctionColumn` object and it is:
+The `OVER` clause allows you to specify a set of rows (through a [window definition](/docs/misc/window-definition)) on which a window function or an aggregate function will operate.
 
-- `over(KWindowDefinitionAllowedToOver kWindowDefinitionAllowedToOver)`: Receives a [window definition](/docs/misc/window-definition) which will be supplied to the [`OVER`](/docs/select-statement/window/over) clause.
+## Available methods calling from a `KWindowFunctionColumn` or a `KAggregateFunctionColumn`
+
+### 1. `over(KWindowDefinitionAllowedToOver kWindowDefinitionAllowedToOver)`
+
+- **kColumnsAllowedToSelect:** is the [window definition](/docs/misc/window-definition) which will be supplied to the `OVER` clause.
 
 :::tip
 
@@ -19,7 +23,9 @@ If the supplied window definition has a name, it needs to be defined in the `WIN
 
 :::tip
 
-The `KWindowFunctionColumn` object and the `KAggregateFunctionColumn` object are the result of call a window function or an aggregate function. To see the full list of available aggregation functions and window functions, please visit the [`Aggregate Functions`](/docs/sql-functions/aggregate-functions/introduction) section and the [`Window Functions`](/docs/sql-functions/window-functions/introduction) section.
+The `KWindowFunctionColumn` object and the `KAggregateFunctionColumn` object are the result of call a window function or an aggregate function.
+
+To see the full list of available aggregation functions and window functions, please visit the [`Aggregate Functions`](/docs/sql-functions/aggregate-functions/introduction) section and the [`Window Functions`](/docs/sql-functions/window-functions/introduction) section.
 
 :::
 
