@@ -9,7 +9,9 @@ The `union` method allows you to add the `UNION` operator to the query.
 
 ## Available methods
 
-- `union(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `UNION` operator.
+### 1. `union(KQueryAllowedToCombining kQueryAllowedToCombining)`
+
+- **kQueryAllowedToCombining:** is a subquery which will be supplied to the `UNION` operator.
 
 ## Method hierarchy
 

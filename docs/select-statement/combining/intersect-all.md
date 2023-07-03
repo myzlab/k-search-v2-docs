@@ -9,7 +9,9 @@ The `intersectAll` method allows you to add the `INSERSECT ALL` operator to the 
 
 ## Available methods
 
-- `intersectAll(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `INSERSECT ALL` operator.
+### 1. `intersectAll(KQueryAllowedToCombining kQueryAllowedToCombining)`
+
+- **kQueryAllowedToCombining:** is a subquery which will be supplied to the `INSERSECT ALL` operator.
 
 ## Method hierarchy
 

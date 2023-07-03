@@ -9,7 +9,9 @@ The `exceptAll` method allows you to add the `EXCEPT ALL` operator to the query.
 
 ## Available methods
 
-- `exceptAll(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `EXCEPT ALL` operator.
+### 1. `exceptAll(KQueryAllowedToCombining kQueryAllowedToCombining)`
+
+- **kQueryAllowedToCombining:** is a subquery which will be supplied to the `EXCEPT ALL` operator.
 
 ## Method hierarchy
 

@@ -9,7 +9,9 @@ The `except` method allows you to add the `EXCEPT` operator to the query.
 
 ## Available methods
 
-- `except(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `EXCEPT` operator.
+### 1. `except(KQueryAllowedToCombining kQueryAllowedToCombining)`
+
+- **kQueryAllowedToCombining:** is a subquery which will be supplied to the `EXCEPT` operator.
 
 ## Method hierarchy
 

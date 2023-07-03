@@ -9,7 +9,9 @@ The `intersect` method allows you to add the `INSERSECT` operator to the query.
 
 ## Available methods
 
-- `intersect(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `INSERSECT` operator.
+### 1. `intersect(KQueryAllowedToCombining kQueryAllowedToCombining)`
+
+- **kQueryAllowedToCombining:** is a subquery which will be supplied to the `INSERSECT` operator.
 
 ## Method hierarchy
 

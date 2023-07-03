@@ -9,7 +9,9 @@ The `unionAll` method allows you to add the `UNION ALL` operator to the query.
 
 ## Available methods
 
-- `unionAll(KQueryAllowedToCombining kQueryAllowedToCombining)`: Receives a`KQueryAllowedToCombining` which will be supplied to the `UNION ALL` operator.
+### 1. `unionAll(KQueryAllowedToCombining kQueryAllowedToCombining)`
+
+- **kQueryAllowedToCombining:** is a subquery which will be supplied to the `UNION ALL` operator.
 
 ## Method hierarchy
 
