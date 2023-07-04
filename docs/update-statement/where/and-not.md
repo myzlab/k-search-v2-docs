@@ -9,8 +9,13 @@ The `andNot` methods allows you to add the `AND NOT` operator to a `WHERE` claus
 
 ## Available methods
 
-- `andNot(KCondition kCondition)`: Receives a [`KCondition`](/docs/misc/kcondition/introduction) which will be added to `WHERE` clause with an `AND NOT` operator.
-- `andNot(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `WHERE` clause with an `AND NOT` operator.
+### 1. `andNot(`[`KCondition`](/docs/misc/kcondition/introduction) `kCondition)`
+
+- **kCondition:** which contains all the information about the condition that will be added to the `WHERE` clause with an `AND NOT` operator.
+
+### 2. `andNot(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `WHERE` clause with an `AND NOT` operator.
 
 ## Method hierarchy
 
