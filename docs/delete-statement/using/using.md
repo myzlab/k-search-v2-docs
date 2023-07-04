@@ -9,9 +9,17 @@ The `using` methods allows you to add the `USING` clause to the query.
 
 ## Available methods
 
-- `using(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be added to `USING` clause. This clause accepts the 2 types of [`KTable`](/docs/misc/ktable).
-- `using(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `USING` clause.
-- `using(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/misc/cte) which will be added to `USING` clause.
+### 1. `using(`[`KTable`](/docs/misc/ktable) `kTable)`
+
+- **kTable:** is the table which will be added to `USING` clause.
+
+### 2. `using(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `USING` clause.
+
+### 3. `using(`[`KCommonTableExpressionFilled`](/docs/misc/cte) `kCommonTableExpressionFilled)`
+
+- **kCommonTableExpressionFilled:** is a _Common Table Expressions_ or _CTE_ that will be added to the `USING` clause.
 
 ## Method hierarchy
 
