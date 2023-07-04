@@ -29,30 +29,36 @@ and the subsequent methods that can be called are:
 Java code:
 
 ```java
-final KValues languages = values()
-    .append("Language 1", "File 1")
-    .append("Language 2", "File 2");
+final KValues user = values()
+    .append("contacto@myzlab.com", crypt("my-password"))
+    .append("no-pass@yopmail.com", null);
 
 k
-.insertInto(LANGUAGE)
-.columns(LANGUAGE.NAME, LANGUAGE.FILE)
-.values(languages)
+.insertInto(APP_USER)
+.columns(
+    APP_USER.EMAIL,
+    APP_USER.PASSWORD
+)
+.values(user)
 .execute();
+
 ```
 
 SQL generated:
 
 ```sql
-INSERT INTO language (name, file)
-VALUES (?1, ?2), (?3, ?4)
+INSERT INTO app_user (email, password)
+VALUES 
+(?1, CRYPT(?2, GEN_SALT(?3))), 
+(?4, NULL)
 ```
 
 Parameters:
 
-- **?1:** "Language 1"
-- **?2:** "File 1"
-- **?3:** "Language 2"
-- **?4:** "File 2"
+- **?1:** "contacto@myzlab.com"
+- **?2:** "my-password"
+- **?3:** "bf"
+- **?4:** "no-pass@yopmail.com"
 
 ## Example: Variable records
 
