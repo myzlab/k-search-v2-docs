@@ -5,13 +5,21 @@ sidebar_label: From
 
 ## Definition
 
-The `from` methods allows you to add the `USING` clause to the query.
+The `from` methods allows you to add the `FROM` clause to the query.
 
 ## Available methods
 
-- `from(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be added to `USING` clause. This clause accepts the 2 types of [`KTable`](/docs/misc/ktable).
-- `from(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `USING` clause.
-- `from(KCommonTableExpressionFilled kCommonTableExpressionFilled)`: Receives a [`KCommonTableExpressionFilled`](/docs/misc/cte) which will be added to `USING` clause.
+### 1. `from(`[`KTable`](/docs/misc/ktable) `kTable)`
+
+- **kTable:** is the table which will be added to `FROM` clause.
+
+### 2. `from(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `FROM` clause.
+
+### 3. `from(`[`KCommonTableExpressionFilled`](/docs/misc/cte) `kCommonTableExpressionFilled)`
+
+- **kCommonTableExpressionFilled:** is a _Common Table Expressions_ or _CTE_ that will be added to the `FROM` clause.
 
 ## Method hierarchy
 

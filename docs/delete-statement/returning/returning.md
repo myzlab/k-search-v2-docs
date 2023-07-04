@@ -36,6 +36,7 @@ k
     caseConditional()
         .when(APP_USER.CREATED_AT.gt(LocalDateTime.now().minusDays(7))).then(APP_USER.EMAIL)
         .elseResult(val("No email available"))
+        .end()
         .as("email")
 )
 .execute(AppUser.class);

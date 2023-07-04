@@ -9,8 +9,13 @@ The `update` methods allows you to add the `UPDATE` clause to the query.
 
 ## Available methods
 
-- `update(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be supplied to the `UPDATE` clause. This clause just accepts the type of [`KTable`](/docs/misc/ktable) __Generated__.
-- `update(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `UPDATE` clause.
+### 1. `update(`[`KTable`](/docs/misc/ktable) `kTable)`
+
+- **kTable:** is the table which will be added to `UPDATE` clause.
+
+### 2. `update(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `UPDATE` clause.
 
 ## Method hierarchy
 

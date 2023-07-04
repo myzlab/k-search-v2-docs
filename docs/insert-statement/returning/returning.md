@@ -64,6 +64,7 @@ final KCollection<Language> languagesInserted =
         caseConditional()
             .when(LANGUAGE.CREATED_AT.noAlias().gt(LocalDateTime.now().minusDays(7))).then(LANGUAGE.FILE.noAlias())
             .elseResult(val("No file available"))
+            .end()
             .as("file")
     )
     .execute(Language.class);
