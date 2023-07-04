@@ -9,8 +9,13 @@ The `deleteFrom` methods allows you to add the `DELETE FROM` clause to the query
 
 ## Available methods
 
-- `deleteFrom(KTable kTable)`: Receives a [`KTable`](/docs/misc/ktable) which will be supplied to the `DELETE FROM` clause. This clause just accepts the type of [`KTable`](/docs/misc/ktable) __Generated__.
-- `deleteFrom(KRaw kRaw)`: Receives a [`KRaw`](/docs/misc/select-list-values#7-kraw) which will be added to `DELETE FROM` clause.
+### 1. `deleteFrom(`[`KTable`](/docs/misc/ktable) `kTable)`
+
+- **kTable:** is the table which will be added to `FROM` clause.
+
+### 2. `deleteFrom(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+- **kRaw:** is a raw content which will be added in the `DELETE FROM` clause.
 
 ## Method hierarchy
 
