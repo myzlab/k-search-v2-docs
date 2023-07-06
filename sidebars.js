@@ -395,6 +395,7 @@ const sidebars = {
           label: "KCondition",
           items: [
             "misc/kcondition/introduction",
+            "misc/kcondition/bt",
             "misc/kcondition/eq",
             "misc/kcondition/gt",
             "misc/kcondition/gte",
@@ -408,7 +409,6 @@ const sidebars = {
             "misc/kcondition/lka",
             "misc/kcondition/lksw",
             "misc/kcondition/lkew",
-            "misc/kcondition/bt",
             "misc/kcondition/in",
             "misc/kcondition/null",
             "misc/kcondition/true",

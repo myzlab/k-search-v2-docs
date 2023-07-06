@@ -33,9 +33,13 @@ There are 5 possible actions to take when the `ON CONFLICT` clause is invoked.
 
 ## 1. Do Nothing
 
+This action indicates that no operation was should be performed when a conflict occurs.
+
 To take this action you have available the `doNothing` method:
 
-- `doNothing()`: It does not receive parameters.
+### 1.1 `doNothing()`
+
+- It does not receive parameters.
 
 ### Example
 
@@ -77,10 +81,17 @@ Parameters:
 
 ## 2. Target Columns - Do Nothing
 
-To take this action you have available the `targetColumn` and `doNothing` method:
+This action indicates that no operation should be performed when a conflict occurs on a specific column.
 
-- `targetColumn(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ON CONFLICT` clause.
-- `doNothing()`: It does not receive parameters.
+To take this action you have available the `targetColumn` and `doNothing` methods (All methods must be executed in the same order that they are presented in this documentation):
+
+### 2.1 `targetColumn(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
+
+- **KTableColumn:** the specific column where the conflict must occur.
+
+### 2.2 `doNothing()`
+
+- It does not receive parameters.
 
 ### Example
 
@@ -123,10 +134,17 @@ Parameters:
 
 ## 3. Target Constraint - Do Nothing
 
-To take this action you have available the `targetConstraint` and `doNothing` method:
+This action indicates that no operation should be performed when a conflict occurs on a specific constraint.
 
-- `targetConstraint(String constraint)`: Receives a constraint name which will be supplied to the `ON CONFLICT` clause.
-- `doNothing()`: It does not receive parameters.
+To take this action you have available the `targetConstraint` and `doNothing` methods (All methods must be executed in the same order that they are presented in this documentation):
+
+### 3.1 `targetConstraint(String constraint)`
+
+- **constraint:** the name of constraint where the conflict must occur.
+
+### 3.2 `doNothing()`
+
+- It does not receive parameters.
 
 ### Example
 
@@ -169,13 +187,34 @@ Parameters:
 
 ## 4. Target Columns - Do Update
 
-To take this action you have available the `targetColumn`, `doUpdate` and `set` method:
+This action indicates that an update should be performed when a conflict occurs on a specific column.
 
-- `targetColumn(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ON CONFLICT` clause.
-- `doUpdate()`: It does not receive parameters.
-- `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
-- `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
-- `set(KTableColumn kTableColumn, Object object)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives any object which will be assigned to the column.
+To take this action you have available the `targetColumn`, `doUpdate` and `set` method (All methods must be executed in the same order that they are presented in this documentation):
+
+### 4.1 `targetColumn`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
+
+- **KTableColumn:** the specific column where the conflict must occur.
+
+### 4.2 `doUpdate()`
+
+- It does not receive parameters.
+
+### 4.3 `set(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`
+
+- **kTableColumn:** is the column that will be updated.
+- **kColumnAllowedToSetUpdate:** is the expression whose result will be assigned to the column.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
+
+### 4.4 `set(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn, KQuery kQuery)`
+
+- **kTableColumn:** is the column that will be updated.
+- **kQuery:** is a subquery whose result will be assigned to the column.
+
+### 4.5 `set(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn, Object object)`
+
+- **kTableColumn:** is the column that will be updated.
+- **object:** is the value that will be assigned to the column.  
+Among the possible values are: `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`.
 
 When you are resolving a conflict, if you need to pass a column as the new value in the set clause, the current record column can be referenced throug the `tableNameAlias` method or the excluded record column throug the `excluded` method.
 
@@ -242,13 +281,34 @@ Parameters:
 
 ## 5. Target Constraint - Do Update
 
-To take this action you have available the `targetConstraint`, `doUpdate` and `set` method:
+This action indicates that an update should be performed when a conflict occurs on a specific column.
 
-- `targetConstraint(String constraint)`: Receives a constraint name which will be supplied to the `ON CONFLICT` clause.
-- `doUpdate()`: It does not receive parameters.
-- `set(KTableColumn kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a column or value which will be assigned to the column. Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
-- `set(KTableColumn kTableColumn, KQuery kQuery)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives a KQuery which will be assigned to the column.
-- `set(KTableColumn kTableColumn, Object object)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which is the column to modify and receives any object which will be assigned to the column.
+To take this action you have available the `targetConstraint`, `doUpdate` and `set` method (All methods must be executed in the same order that they are presented in this documentation):
+
+### 5.1 `targetConstraint(String constraint)`
+
+- **constraint:** the name of constraint where the conflict must occur.
+
+### 5.2 `doUpdate()`
+
+- It does not receive parameters.
+
+### 45.3 `set(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn, KColumnAllowedToSetUpdate kColumnAllowedToSetUpdate)`
+
+- **kTableColumn:** is the column that will be updated.
+- **kColumnAllowedToSetUpdate:** is the expression whose result will be assigned to the column.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values), [`KCondition`](/docs/misc/select-list-values#4-kcondition), [`KRaw`](/docs/misc/select-list-values#7-kraw), [`Case conditional expression`](/docs/misc/select-list-values#8-case-conditional-expression).
+
+### 5.4 `set(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn, KQuery kQuery)`
+
+- **kTableColumn:** is the column that will be updated.
+- **kQuery:** is a subquery whose result will be assigned to the column.
+
+### 5.5 `set(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn, Object object)`
+
+- **kTableColumn:** is the column that will be updated.
+- **object:** is the value that will be assigned to the column.  
+Among the possible values are: `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`.
 
 When you are resolving a conflict, if you need to pass a column as the new value in the set clause, the current record column can be referenced throug the `tableNameAlias` method or the excluded record column throug the `excluded` method.
 

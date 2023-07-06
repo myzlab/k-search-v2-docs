@@ -17,7 +17,7 @@ Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-
 ### 2. `selectDistinct(KQuery kQuery, String alias)`
 
 - **kQuery:** is a subquery which will be added to the `SELECT DISTINCT` list and treated as a column.  
-- **alias:** It is the alias of the previously mentioned column.
+- **alias:** which is the alias of the previously mentioned column.
 
 ## Method hierarchy
 

@@ -24,7 +24,7 @@ Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-
 
 - **kTableColumn:** is the column that will be updated.
 - **object:** is the value that will be assigned to the column.  
-Among the possible values are: Numeric values, boolean values, date values, string values, char values, uuid values.
+Among the possible values are: `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`.
 
 ## Method hierarchy
 

@@ -43,7 +43,6 @@ final KCommonTableExpressionFilled userIdsCte =
     .as(userIdsValues, "uic");
 
 k
-// highlight-next-line
 .with(userIdsCte)
 .select(
     boolAnd(

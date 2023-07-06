@@ -12,7 +12,7 @@ The `values` methods allows you to add the `VALUES` clause to the query.
 ### 1. `values(`[`KValues`](/docs/misc/kvalues) `kValues)`
 
 - **kValues:** are all the values that will be supplied to the `VALUES` clause.  
-Among the possible values are: Numeric values, boolean values, date values, string values, char values, uuid values, [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn) [`KRaw`](/docs/misc/select-list-values#7-kraw).
+Among the possible values are: `Number`, `String`, `LocalDate`, `LocalDateTime`, `UUID`, [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn) [`KRaw`](/docs/misc/select-list-values#7-kraw).
 
 ## Method hierarchy
 
