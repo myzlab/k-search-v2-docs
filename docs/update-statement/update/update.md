@@ -21,7 +21,7 @@ The `update` methods allows you to add the `UPDATE` clause to the query.
 
 The `update` method can be used right after the following methods or objects:
 
-- k, [`with`](/docs/update-statement/with), [`withRecursive`](/docs/update-statement/with)
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use), [`with`](/docs/update-statement/with), [`withRecursive`](/docs/update-statement/with)
 
 and the subsequent methods that can be called are:
 

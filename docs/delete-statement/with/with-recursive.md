@@ -17,7 +17,7 @@ The `withRecursive` method allows you to add the `WITH RECURSIVE` clause to the 
 
 The `withRecursive` method can be used right after the following methods or objects:
 
-- k
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use)
 
 and the subsequent method that can be called is:
 

@@ -21,7 +21,7 @@ The `deleteFrom` methods allows you to add the `DELETE FROM` clause to the query
 
 The `deleteFrom` method can be used right after the following methods or objects:
 
-- k, [`with`](/docs/delete-statement/with), [`withRecursive`](/docs/delete-statement/with)
+- [`KBuilder`](/docs/get-started/installation/springboot-jdbc#ready-to-use), [`with`](/docs/delete-statement/with), [`withRecursive`](/docs/delete-statement/with)
 
 and the subsequent methods that can be called are:
 - [`using`](/docs/delete-statement/using/), [`where`](/docs/delete-statement/where/), [`returning`](/docs/delete-statement/returning), [`execute`](/docs/select-statement/select/)
