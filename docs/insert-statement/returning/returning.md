@@ -26,11 +26,11 @@ and the subsequent methods that can be called are:
 
 ## How to reference a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) correctly?
 
-The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) referenced in the `RETURNING` clause cannot contain aliases, for this the `noUseAlias` method must be executed on all [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn).
+The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) referenced in the `RETURNING` clause cannot contain aliases, for this the `useNoAlias` method must be executed on all [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn).
 
-## Calling `noUseAlias` from a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn)
+## Calling `useNoAlias` from a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn)
 
-### 1. `noUseAlias()`
+### 1. `useNoAlias()`
 
 It does not receive any parameters.
 
@@ -40,9 +40,9 @@ The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes 
 
 :::
 
-## Calling `noUseAlias` from the `KFunction` class
+## Calling `useNoAlias` from the `KFunction` class
 
-### 1. `noUseAlias(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
+### 1. `useNoAlias(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
 
 - **kTableColumn:** is the column that will be the affected.
 
@@ -67,12 +67,12 @@ final KCollection<Language> languagesInserted =
     .columns(LANGUAGE.NAME, LANGUAGE.PLATFORM_CODE)
     .values(valuesInsert)
     .returning(
-        LANGUAGE.ID.noUseAlias(),
-        concat(LANGUAGE.NAME.noUseAlias(), val("-"), LANGUAGE.PLATFORM_CODE.noUseAlias()).as("nameDetail"),
-        coalesce(LANGUAGE.NAME.noUseAlias(), LANGUAGE.PLATFORM_CODE.noUseAlias()),
+        LANGUAGE.ID.useNoAlias(),
+        concat(LANGUAGE.NAME.useNoAlias(), val("-"), LANGUAGE.PLATFORM_CODE.useNoAlias()).as("nameDetail"),
+        coalesce(LANGUAGE.NAME.useNoAlias(), LANGUAGE.PLATFORM_CODE.useNoAlias()),
         raw("i18n_key"),
         caseConditional()
-            .when(LANGUAGE.CREATED_AT.noUseAlias().gt(LocalDateTime.now().minusDays(7))).then(LANGUAGE.FILE.noUseAlias())
+            .when(LANGUAGE.CREATED_AT.useNoAlias().gt(LocalDateTime.now().minusDays(7))).then(LANGUAGE.FILE.useNoAlias())
             .elseResult(val("No file available"))
             .end()
             .as("file")
