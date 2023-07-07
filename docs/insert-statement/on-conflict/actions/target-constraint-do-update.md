@@ -68,11 +68,11 @@ In both methods, the [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolu
 
 ## Calling `useTableNameAsAlias` and `excluded` from the `KFunction` class
 
-### 1. `excluded(KTableColumn kTableColumn)`
+### 1. `excluded(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
 
 - **kTableColumn:** is the column that will be the affected.
 
-### 2. `useTableNameAsAlias(KTableColumn kTableColumn)`
+### 2. `useTableNameAsAlias(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
 
 - **kTableColumn:** is the column that will be the affected.
 

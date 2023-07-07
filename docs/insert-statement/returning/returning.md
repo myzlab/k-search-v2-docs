@@ -24,17 +24,27 @@ and the subsequent methods that can be called are:
 
 - [`execute`](/docs/select-statement/select/)
 
-The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) referenced in the `RETURNING` clause cannot contain aliases, for this the `noAlias` method must be executed on all [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn).
+## How to reference a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn)?
 
-There are 2 ways to call this method:
+The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) referenced in the `RETURNING` clause cannot contain aliases, for this the `noUseAlias` method must be executed on all [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn).
 
-## 1. Calling from a `KTableColumn`
+## Calling `noUseAlias` from a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn)
 
-- `noAlias()`: It does not receive any parameters. The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be the affected.
+### 1. `noUseAlias()`
 
-## 2. Calling from the `KFunction` class
+It does not receive any parameters.
 
-- `noAlias(KTableColumn kTableColumn)`: Receives a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be the affected.
+:::info
+
+The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) that invokes the method will be the affected.
+
+:::
+
+## Calling `noUseAlias` from the `KFunction` class
+
+### 1. `noUseAlias(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
+
+- **kTableColumn:** is the column that will be the affected.
 
 To use this way, you need to import the static functions as follows:
 
@@ -57,12 +67,12 @@ final KCollection<Language> languagesInserted =
     .columns(LANGUAGE.NAME, LANGUAGE.PLATFORM_CODE)
     .values(valuesInsert)
     .returning(
-        LANGUAGE.ID.noAlias(),
-        concat(LANGUAGE.NAME.noAlias(), val("-"), LANGUAGE.PLATFORM_CODE.noAlias()).as("nameDetail"),
-        coalesce(LANGUAGE.NAME.noAlias(), LANGUAGE.PLATFORM_CODE.noAlias()),
+        LANGUAGE.ID.noUseAlias(),
+        concat(LANGUAGE.NAME.noUseAlias(), val("-"), LANGUAGE.PLATFORM_CODE.noUseAlias()).as("nameDetail"),
+        coalesce(LANGUAGE.NAME.noUseAlias(), LANGUAGE.PLATFORM_CODE.noUseAlias()),
         raw("i18n_key"),
         caseConditional()
-            .when(LANGUAGE.CREATED_AT.noAlias().gt(LocalDateTime.now().minusDays(7))).then(LANGUAGE.FILE.noAlias())
+            .when(LANGUAGE.CREATED_AT.noUseAlias().gt(LocalDateTime.now().minusDays(7))).then(LANGUAGE.FILE.noUseAlias())
             .elseResult(val("No file available"))
             .end()
             .as("file")
