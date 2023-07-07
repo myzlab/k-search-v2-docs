@@ -24,7 +24,7 @@ and the subsequent methods that can be called are:
 
 - [`execute`](/docs/select-statement/select/)
 
-## How to reference a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn)?
+## How to reference a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) correctly?
 
 The [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) referenced in the `RETURNING` clause cannot contain aliases, for this the `noUseAlias` method must be executed on all [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn).
 
