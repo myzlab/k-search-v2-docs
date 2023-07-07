@@ -323,7 +323,25 @@ const sidebars = {
         "insert-statement/columns/columns",
         "insert-statement/values/values",
         "insert-statement/select/select",
-        "insert-statement/on-conflict/on-conflict",
+        {
+          type: "category",
+          label: "On Conflict",
+          items: [
+            "insert-statement/on-conflict/on-conflict",
+            {
+              type: "category",
+              label: "Actions",
+              items: [
+                "insert-statement/on-conflict/actions/do-nothing",
+                "insert-statement/on-conflict/actions/target-column-do-nothing",
+                "insert-statement/on-conflict/actions/target-constraint-do-nothing",
+                "insert-statement/on-conflict/actions/target-column-do-update",
+                "insert-statement/on-conflict/actions/target-constraint-do-update"
+              ],
+            }
+            // "insert-statement/with/with-recursive",
+          ],
+        },
         "insert-statement/returning/returning",
       ],
     },
