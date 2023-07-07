@@ -142,13 +142,13 @@ It is very likely that you will need to use a CTE and its columns in other claus
 
 Allow you to generate a column from your CTE.
 
-- **name:** is the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the CTE alias.
+- **name:** is the name of the column to generate and returns a new [`KColumn`](/docs/misc/select-list-values#2-kcolumn) that can be used in any other clause. This [`KColumn`](/docs/misc/select-list-values#2-kcolumn) has the peculiarity that it already includes the CTE alias.
 
 ### 2. `c(String name)`
 
 Allow you to generate a column from your CTE.
 
-- **name:** is the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the CTE alias.
+- **name:** is the name of the column to generate and returns a new [`KColumn`](/docs/misc/select-list-values#2-kcolumn) that can be used in any other clause. This [`KColumn`](/docs/misc/select-list-values#2-kcolumn) has the peculiarity that it already includes the CTE alias.
 
 ### 3. `on(`[`KCondition`](/docs/misc/kcondition/introduction) `kCondition)`
 
