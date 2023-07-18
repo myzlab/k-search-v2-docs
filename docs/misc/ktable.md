@@ -30,12 +30,27 @@ final KTable kTable =
 
 ## Methods available in a `KTable`
 
-A [`KTable`](/docs/misc/ktable) has the following methods available:
+### 1. `column(String name)`
 
-- `column(String name)`: Allow you to generate a column from your [`KTable`](/docs/misc/ktable). Receives the name of the column to generate and returns a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the [`KTable`](/docs/misc/ktable) alias.
-- `c(String name)`: This method does the same as method `column` but with a shorter name.
-- `on(KCondition kCondition)`: This method allows the [`KTable`](/docs/misc/ktable) to be added to a join through the [`KCondition`](/docs/misc/kcondition/introduction) that is received by parameter.
-- `on(KRaw kRaw)`: This method allows the [`KTable`](/docs/misc/ktable) to be added to a join through the [`KRaw`](/docs/misc/select-list-values#7-kraw) that is received by parameter.
+Allow you to generate a new `KColumn` that can be used in any other clause. This `KColumn` has the peculiarity that it already includes the [`KTable`](/docs/misc/ktable) alias.
+
+- **name:** is the name of the column to generate.
+
+### 2. `c(String name)`
+
+This method does the same as method [`column`](/docs/misc/ktable#1-columnstring-name) but with a shorter name.
+
+### 3. `on(`[`KCondition`](/docs/misc/kcondition/introduction) `kCondition)`
+
+This method allows the [`KTable`](/docs/misc/ktable) to be added to a `JOIN` clause.
+
+- **kCondition:** which contains all the information about the condition that will be supplied to the `JOIN` clause.
+
+### 4. `on(`[`KRaw`](/docs/misc/select-list-values#7-kraw) `kRaw)`
+
+This method allows the [`KTable`](/docs/misc/ktable) to be added to `JOIN` clause.
+
+- **kRaw:** is a raw content which will be supplied in the `JOIN` clause.
 
 :::tip
 
