@@ -7,6 +7,10 @@ import K from '@site/src/components/K';
 
 ## Definition
 
+Contains all the information needed to add a window function to the query.
+
+## Build the window definition
+
 A window definition is made up of the name, a `PARTITION BY` clause, a `ORDER BY` clause and a frame clause. 
 
 :::tip
@@ -17,43 +21,40 @@ If a window definition has a name, it is required to be used in both the `SELECT
 
 :::
 
- To start building a window definition and define its possible values you have available the following methods which must be called one after the other in the same order that will be presented below:
+To start building a window definition and define its possible values you have available the following methods which must be called one after the other in the same order that will be presented below:
 
-- `wd()`: Allows you to initialize a window definition without a name. It does not receive parameters. (The name can be assigned later through the `name` method).
-- `wd(String name)`: Allows you to initialize a window definition with a name. (The name is optional and can be omitted calling the `wd` method without parameters).
-- `name(String name)`: Allows you to assign a name to an unnamed window definition. (Call this method is optional).
-- `partitionBy(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `PARTITION BY` clause. (Call this method is optional).
-- `orderBy(KColumn kColumn)`: Receives a [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or a [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) which will be supplied to the `ORDER BY` clause. (Call this method is optional).
-- `orderBy(KColumnOrdered kColumnOrdered)`: Receives a [`KColumnOrdered`](/docs/misc/select-list-values#2-kcolumn) which will be supplied to the `ORDER BY` clause. (Call this method is optional).
+### 1. `wd()`
 
-Up to this point, we have defined the name, the `PARTITION BY` clause, and the `ORDER BY` clause. The next step is defined the frame clause (It is optional).
+Allows you to initialize a window definition without a name. (The name can be assigned later through the `name` method).
 
-In this sense, initially we have to choose between `RANGE`, `ROWS` or `GROUPS` options, through one following methods:
+- It does not receive any parameters.
 
-- `range()`: Allows you to add the RANGE clause to the frame definition. It does not receive parameters.
-- `rows()`: Allows you to add the ROWS clause to the frame definition. It does not receive parameters.
-- `groups()`: Allows you to add the GROUPS clause to the frame definition. It does not receive parameters. (This clause can be used only when the `ORDER BY` clause is present).
+### 2. `wd(String name)`
 
-Next step is choice the _frame start_ between `UNBOUNDED PRECEDING`, `offset PRECEDING`, `CURRENT ROW` or `offset FOLLOWING` options, through one following methods:
+Allows you to initialize a window definition with a name. (The name is optional and can be omitted calling the `wd` method without parameters)
 
-- `unboundedPreceding()`: Allows you to add the `UNBOUNDED PRECEDING` clause to the frame definition. It does not receive parameters.
-- `preceding(int offset)`: Allows you to add the `PRECEDING` clause to the frame definition. Receives the offset which will be supplied to the `PRECEDING` clause.
-- `currentRow()`: Allows you to add the `CURRENT ROW` clause to the frame definition. It does not receive parameters.
-- `following(int offset)`: Allows you to add the `FOLLOWING` clause to the frame definition. Receives the offset which will be supplied to the `FOLLOWING` clause.
+- **name:** is the name of the window definition.
 
-Then, we have to choice the _frame end_ between `UNBOUNDED FOLLOWING`, `offset PRECEDING`, `CURRENT ROW` or `offset FOLLOWING` options, through one following methods (The _frame end_ is optional):
+### 3. `name(String name)`
 
-- `unboundedFollowing()`: Allows you to add the `UNBOUNDED FOLLOWING` clause to the frame definition. It does not receive parameters.
-- `preceding(int offset)`: Allows you to add the `PRECEDING` clause to the frame definition. Receives the offset which will be supplied to the `PRECEDING` clause.
-- `currentRow()`: Allows you to add the `CURRENT ROW` clause to the frame definition. It does not receive parameters.
-- `following(int offset)`: Allows you to add the `FOLLOWING` clause to the frame definition. Receives the offset which will be supplied to the `FOLLOWING` clause.
+Allows you to assign a name to an unnamed window definition. (Call this method is optional).
 
-And the last step is choose the _frame_exclusion_ between `EXCLUDE CURRENT ROW`, `EXCLUDE GROUP`, `EXCLUDE TIES` or `EXCLUDE NO OTHERS` options, through one following methods (The _frame_exclusion_ is optional):
+- **name:** is the name of the window definition.
 
-- `excludeCurrentRow()`: Allows you to add the `EXCLUDE CURRENT ROW` clause to the frame definition. It does not receive parameters.
-- `excludeGroup()`: Allows you to add the `EXCLUDE GROUP` clause to the frame definition. It does not receive parameters.
-- `excludeTies()`: Allows you to add the `EXCLUDE TIES` clause to the frame definition. It does not receive parameters.
-- `excludeNoOthers()`: Allows you to add the `EXCLUDE NO OTHERS` clause to the frame definition. It does not receive parameters.
+### 4. `partitionBy(KColumn kColumn)`
+
+- **KColumn:** are all the expresions that will be supplied to the `PARTITION BY` clause. (Call this method is optional).  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn)
+
+### 5. `orderBy(KColumn kColumn)`
+
+- **KColumn:** are all the expresions that will be supplied to the `ORDER BY` clause. (Call this method is optional).  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn)
+
+### 6. `orderBy(KColumnOrdered kColumnOrdered)`
+
+- **KColumnOrdered:** are all the expresions that will besupplied to the `ORDER BY` clause. (Call this method is optional).  
+Among the possible values are: [`KColumnOrdered`](/docs/misc/select-list-values#2-kcolumn)
 
 To use `wd` methods, you need to import the static functions as follows:
 
@@ -61,7 +62,116 @@ To use `wd` methods, you need to import the static functions as follows:
 import static com.myzlab.k.KFunction.*;
 ```
 
-### Example: Unnamed, no extra clause added and no frame clause added
+## Build the frame clause
+
+Up to this point, we have defined the name, the `PARTITION BY` clause, and the `ORDER BY` clause.  
+The next step is defined the frame clause (It is optional).
+
+In this sense, initially we have to choose between `RANGE`, `ROWS` or `GROUPS` options, through one following methods:
+
+### 1. `range()`
+
+Allows you to add the RANGE clause to the frame definition.
+
+- It does not receive parameters.
+
+### 2. `rows()`
+
+Allows you to add the ROWS clause to the frame definition.
+
+- It does not receive parameters.
+
+### 3. `groups()`
+
+Allows you to add the GROUPS clause to the frame definition. (This clause can be used only when the `ORDER BY` clause is present).
+
+- It does not receive parameters.
+
+##  Frame start
+
+Next step is choice the frame start between `UNBOUNDED PRECEDING`, `offset PRECEDING`, `CURRENT ROW` or `offset FOLLOWING` options, through one following methods:
+
+### 1. `unboundedPreceding()`
+
+Allows you to add the `UNBOUNDED PRECEDING` clause to the frame definition.
+
+- It does not receive parameters.
+
+### 2. `preceding(int offset)`
+
+Allows you to add the `PRECEDING` clause to the frame definition.
+
+- **offset:** which will be supplied to the `PRECEDING` clause.
+
+### 3. `currentRow()`
+
+Allows you to add the `CURRENT ROW` clause to the frame definition.
+
+- It does not receive parameters.
+
+### 4. `following(int offset)`
+
+Allows you to add the `FOLLOWING` clause to the frame definition.
+
+- **offset:** which will be supplied to the `FOLLOWING` clause.
+
+##  Frame end
+
+Then, we have to choice the frame end between `UNBOUNDED FOLLOWING`, `offset PRECEDING`, `CURRENT ROW` or `offset FOLLOWING` options, through one following methods (The frame end is optional):
+
+### 1. `unboundedFollowing()`
+
+Allows you to add the `UNBOUNDED FOLLOWING` clause to the frame definition.
+
+- It does not receive parameters.
+
+### 2. `preceding(int offset)`
+
+Allows you to add the `PRECEDING` clause to the frame definition.
+
+- **offset:** which will be supplied to the `PRECEDING` clause.
+
+### 3. `currentRow()`
+
+Allows you to add the `CURRENT ROW` clause to the frame definition.
+
+- It does not receive parameters.
+
+### 4. `following(int offset)`
+
+Allows you to add the `FOLLOWING` clause to the frame definition.
+
+- **offset:** which will be supplied to the `FOLLOWING` clause.
+
+##  Frame exclusion
+
+And the last step is choose the frame_excl sion_ beteen `EXCLUDE CURRENT ROW`, `EXCLUDE GROUP`, `EXCLUDE TIES` or `EXCLUDE NO OTHERS` options, through one following methods (The frame exclusion is optional):
+
+### 1. `excludeCurrentRow()`
+
+Allows you to add the `EXCLUDE CURRENT ROW` clause to the frame definition.
+
+- It does not receive parameters.
+
+### 2. `excludeGroup()`
+
+Allows you to add the `EXCLUDE GROUP` clause to the frame definition.
+
+- It does not receive parameters.
+
+### 3. `excludeTies()`
+
+Allows you to add the `EXCLUDE TIES` clause to the frame definition.
+
+- It does not receive parameters.
+
+### 4. `excludeNoOthers()`
+
+Allows you to add the `EXCLUDE NO OTHERS` clause to the frame definition.
+
+- It does not receive parameters.
+
+## Example: Unnamed
 
 - Name: 𐄂
 - Partition by: 𐄂
@@ -77,7 +187,7 @@ Java code:
 final KWindowDefinitionUnnamed wdu1 = wd();
 ```
 
-### Example: Named, no extra clause added and no frame clause added
+## Example: Named
 
 - Name: 🗸
 - Partition by: 𐄂
@@ -93,7 +203,7 @@ Java code:
 final KWindowDefinitionNamed wdn1 = wd("the_name");
 ```
 
-### Example: Unnamed, partitioned and no frame clause added
+## Example: Unnamed and partitioned
 
 - Name: 𐄂
 - Partition by: 🗸
@@ -111,7 +221,7 @@ final KWindowDefinitionUnnamedPartitioned wdu2 =
     .partitionBy(toChar(APP_USER.CREATED_AT, "YYYY"));
 ```
 
-### Example: Named, partitioned, ordered and no frame clause added
+## Example: Named, partitioned and ordered
 
 - Name: 🗸
 - Partition by: 🗸
@@ -130,7 +240,7 @@ final KWindowDefinitionNamedOrdered wdn2 =
     .orderBy(APP_USER.CREATED_AT.desc());
 ```
 
-### Example: Unnamed, ordered and no frame clause added
+## Example: Unnamed and ordered
 
 - Name: 🗸
 - Partition by: 𐄂
@@ -148,7 +258,7 @@ final KWindowDefinitionUnnamedOrdered wdu3 =
     .orderBy(APP_USER.CREATED_AT.desc());
 ```
 
-### Example: Named, partitioned, ordered and rows frame with current row start.
+## Example: Named, partitioned, ordered and rows frame with current row start.
 
 - Name: 🗸
 - Partition by: 🗸
@@ -170,7 +280,7 @@ final KWindowDefinitionNamedFrameStarted wdn3 =
     .currentRow();
 ```
 
-### Example: Named, no extra clause added and range frame with unbounded preceding start and current row end.
+## Example: Named and range frame with unbounded preceding start and current row end.
 
 - Name: 🗸
 - Partition by: 𐄂
@@ -191,7 +301,7 @@ final KWindowDefinitionNamedFrameEnded wdn4 =
     .currentRow();
 ```
 
-### Example: Unnamed, ordered and groups frame with current row start and excluding current row.
+## Example: Unnamed, ordered and groups frame with current row start and excluding current row.
 
 - Name: 𐄂
 - Partition by: 𐄂
@@ -212,7 +322,7 @@ final KWindowDefinitionUnnamedFrameExcluded wdu4 =
     .excludeCurrentRow();
 ```
 
-### Example: Named, partitioned, ordered and rows frame with preceding start, following end and excluding current row.
+## Example: Named, partitioned, ordered and rows frame with preceding start, following end and excluding current row.
 
 - Name: 🗸
 - Partition by: 🗸
