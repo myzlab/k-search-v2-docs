@@ -17,8 +17,15 @@ The syntax of a tuple is as follows:
 
 ## Available methods
 
-- `tuple(KBaseColumnCastable... KBaseColumnCastables)`: Receives a variable quantity of [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn) or [`Values`](/docs/misc/select-list-values#3-values) which will be added to the tuple.
-- `tuple(List<Object> list, KTupleFunction kTupleFunction)`: Receives a list which will be iterate through `kTupleFunction` function to get the list of values which will be added to the tuple.
+### 1. `tuple(KBaseColumnCastable... KBaseColumnCastables)`
+
+- **KBaseColumnCastables:** are all the expresions that will be added to the tuple.  
+Among the possible values are: [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn), [`KColumn`](/docs/misc/select-list-values#2-kcolumn), [`Values`](/docs/misc/select-list-values#3-values).
+
+### 2. `tuple(List<Object> list, KTupleFunction kTupleFunction)`
+
+- **list:** which is the list of objects which will be iterate through `kTupleFunction` function to get the list of values which will be added to the tuple.
+- **kTupleFunction:** which is a function that will process the `list` of objects received in the previous parameter to obtain the list of values that will be added to the tuple.
 
 To use `tuple` method, you need to import the static functions as follows:
 
@@ -31,15 +38,48 @@ import static com.myzlab.k.KFunction.*;
 Java code:
 
 ```java
-tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+k
+.select(
+    APP_USER.ID
+)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .notIn(
+            tuple(
+                tuple(val("Jesus"), val("jesus@gmail.com")),
+                tuple(val("kecon"), val("contacto@myzlab.com"))
+            )
+        )
+)
+.multiple();
 ```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM app_user au
+WHERE (au.first_name, au.email) 
+NOT IN (
+    (?1, ?2),
+    (?3, ?4)
+)
+```
+
+Parameters:
+
+- **?1:** "Jesus"
+- **?2:** "jesus@gmail.com"
+- **?3:** "kecon"
+- **?4:** "contacto@myzlab.com"
 
 ### Example: (List, KTupleFunction)
 
 Java code:
 
 ```java
-final List<Map<String, Object>> list = new ArrayList<>() {{
+final List<Object> list = new ArrayList<>() {{
     add(
         new HashMap<>() {{
             put("firstName", "Jesus");
@@ -49,15 +89,45 @@ final List<Map<String, Object>> list = new ArrayList<>() {{
     add(
         new HashMap<>(){{
             put("firstName", "kecon");
-            put("email", "kecon80105@kembung.com");
+            put("email", "contacto@myzlab.com");
         }}
     );
 }};
 
-tuple(list,
-    (KTupleFunction<Map>) (final Map m) -> new ArrayList() {{
-        add(m.get("firstName"));
-        add(m.get("email"));
-    }}
+k
+.select(
+    APP_USER.ID
+)
+.from(APP_USER)
+.where(
+    tuple(APP_USER.FIRST_NAME, APP_USER.EMAIL)
+        .notIn(
+            tuple(list,
+                (KTupleFunction<Map>) (final Map m) -> new ArrayList() {{
+                    add(m.get("firstName"));
+                    add(m.get("email"));
+                }}
+            )
+        )
+)
+.multiple();
+```
+
+SQL generated:
+
+```sql
+SELECT au.id
+FROM app_user au
+WHERE (au.first_name, au.email) 
+NOT IN (
+    (?1, ?2),
+    (?3, ?4)
 )
 ```
+
+Parameters:
+
+- **?1:** "Jesus"
+- **?2:** "jesus@gmail.com"
+- **?3:** "kecon"
+- **?4:** "contacto@myzlab.com"

@@ -27,8 +27,8 @@ Allows you append one single record.
 
 Allows you append multiple records at the same time.
 
-- **list:** which is the list of objects which will correspond to the values of multiple records. This list will be iterate through `kAppendValuesFunction` function to get the list of objects which will be stored into the `KValues` object.
-- **kAppendValuesFunction:** which is a function that will process the list of objects received in the previous parameter to obtain the list of objects that will be stored in the `KValues` object.
+- **list:** which is the list of objects which will correspond to the values of multiple records. This list will be iterate through `kAppendValuesFunction` function to get the list of values which will be stored into the `KValues` object.
+- **kAppendValuesFunction:** which is a function that will process the `list` of objects received in the previous parameter to obtain the list of values that will be stored in the `KValues` object.
 
 To use `values` method, you need to import the static functions as follows:
 
