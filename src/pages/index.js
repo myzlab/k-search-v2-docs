@@ -19,7 +19,7 @@ function HomepageHeader() {
         <h1 className={clsx(styles.heroTitle, "ksearch-font-family")}>KSearch</h1>
         <p className={styles.heroSubtitle}>
           A new way to write dynamic SQL statements<br/>
-          Exclusively for Spring Boot
+          Currently only for Java + Spring Boot
         </p>
       </div>
     </header>
