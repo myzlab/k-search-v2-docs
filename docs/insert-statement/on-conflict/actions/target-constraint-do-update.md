@@ -103,7 +103,7 @@ k
     concat(
         excluded(LANGUAGE.NAME),
         val(" "),
-        tableNameAlias(LANGUAGE.NAME)
+        useTableNameAsAlias(LANGUAGE.NAME)
     )
 )
 .execute();
