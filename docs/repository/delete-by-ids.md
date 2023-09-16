@@ -1,6 +1,6 @@
 ---
-title: Delete BList<Y> idss
-sidebar_label: Delete BList<Y> idss
+title: Delete By Ids
+sidebar_label: Delete By Ids
 ---
 
 ## Definition
