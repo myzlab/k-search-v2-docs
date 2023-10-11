@@ -97,7 +97,7 @@ const config = {
           },
           { 
             to: '/docs/get-started/installation/springboot-jdbc',
-            label: 'v2.4.10-alpha',
+            label: 'v2.4.11-alpha',
             position: 'right'
           },
           // { 
