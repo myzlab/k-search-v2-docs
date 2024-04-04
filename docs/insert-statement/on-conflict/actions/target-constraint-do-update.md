@@ -66,6 +66,48 @@ In both methods, the [`KTableColumn`](/docs/misc/select-list-values#1-ktablecolu
 
 :::
 
+## Example
+
+Java code:
+
+```java
+final KValues valuesInsert = values()
+    .append("English")
+    .append("Spanish");
+
+k
+.insertInto(LANGUAGE)
+.columns(LANGUAGE.NAME)
+.values(valuesInsert)
+.onConflict()
+.targetConstraint("pk_language")
+.doUpdate()
+.set(
+    LANGUAGE.NAME, 
+    concat(
+        LANGUAGE.NAME.excluded(),
+        val(" "),
+        LANGUAGE.NAME.useTableNameAsAlias()
+    )
+)
+.execute();
+```
+
+SQL generated:
+
+```sql
+INSERT INTO language (name)
+VALUES (?1), (?2)
+ON CONFLICT ON CONSTRAINT "pk_language"
+DO UPDATE
+SET name = CONCAT(EXCLUDED.name || ?3 || language.name)
+```
+Parameters:
+
+- **?1:** "English"
+- **?2:** "Spanish"
+- **?3:** " "
+
 ## Calling `useTableNameAsAlias` and `excluded` from the `KFunction` class
 
 ### 1. `excluded(`[`KTableColumn`](/docs/misc/select-list-values#1-ktablecolumn) `kTableColumn)`
