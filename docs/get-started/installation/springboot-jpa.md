@@ -182,7 +182,7 @@ Add **K** dependency in your pom.xml file and then force to your project to down
 <dependency>
     <groupId>com.myzlab.ksearch.springboot.jpa</groupId>
     <artifactId>k</artifactId>
-    <version>2.4.11-alpha</version>
+    <version>2.5.1-alpha</version>
 </dependency>
 ```
 

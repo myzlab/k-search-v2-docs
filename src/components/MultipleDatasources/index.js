@@ -8,7 +8,7 @@ export default function MultipleDatasources() {
     <div className={styles.bgDark}>
       <div className={clsx(styles.featureInverse, styles.feature)}>
         <div className={styles.col1R}>
-          <img src="img/multiple-databases.png" className={styles.codeImage} />
+          <img src="img/multiple-databases-2.jpeg" className={styles.codeImage} />
         </div>
         <div className={styles.col2R}>
           <h2>Supports multiple datasources simultaneously</h2>

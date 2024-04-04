@@ -10,7 +10,8 @@ The `assertExistsById` method allows you to confirm that a record exists in a ta
 ## Available methods
 
 - `assertExistsById(Y id, HttpStatus httpStatus, String message)`: Receives a primary key value and the HttpStatus and message to throw.
-- `assertExistsById(String jdbc, Y id, HttpStatus httpStatus, String message)`: Receives the name of datasource connection to which you need to connect, a primary key value and the HttpStatus and message to throw.
+- `assertExistsById(Y id, KAssertExistsFunction<KWhere, KQuery> kAssertExistsFunction, HttpStatus httpStatus, String message)`: Receives a primary key value, a `KAssertExistsFunction` that allows adding new conditions to the base query and the HttpStatus and message to throw.
+- `assertExistsById(String jdbc, Y id, KAssertExistsFunction<KWhere, KQuery> kAssertExistsFunction, HttpStatus httpStatus, String message)`: Receives the name of datasource connection to which you need to connect, a primary key value, a `KAssertExistsFunction` that allows adding new conditions to the base query and the HttpStatus and message to throw.
 
 ## Example: Y, HttpStatus, String
 
@@ -31,7 +32,7 @@ SELECT EXISTS (
     SELECT ?1
     FROM language la
     WHERE la.id = ?2
-) AS "GOD_BLESS_YOU"
+) AS "_🕆_GOD_BLESS_YOU_🕆_"
 ```
 
 Parameters:
@@ -39,16 +40,18 @@ Parameters:
 - **?1:** 1
 - **?2:** 151
 
-## Example: String, Y, HttpStatus, String
+## Example: Y, KAssertExistsFunction, HttpStatus, String
 
 Java code:
 
 ```java
 languageRepository.assertExistsById(
-    K.JDBC_LEGACY,
     151L,
+    (KWhere kWhere) ->
+        kWhere
+            .and(LANGUAGE.ACTIVE.isTrue()),
     HttpStatus.NOT_FOUND,
-    "Language not found!"
+    "Language does not exists!"
 );
 ```
 
@@ -59,7 +62,40 @@ SELECT EXISTS (
     SELECT ?1
     FROM language la
     WHERE la.id = ?2
-) AS "GOD_BLESS_YOU"
+    AND la.active IS TRUE
+) AS "_🕆_GOD_BLESS_YOU_🕆_"
+```
+
+Parameters:
+
+- **?1:** 1
+- **?2:** 151
+
+## Example: String, Y, KAssertExistsFunction, HttpStatus, String
+
+Java code:
+
+```java
+languageRepository.assertExistsById(
+    K.JDBC_LEGACY,
+    151L,
+    (KWhere kWhere) ->
+        kWhere
+            .and(LANGUAGE.ACTIVE.isTrue()),
+    HttpStatus.NOT_FOUND,
+    "Language does not exists!"
+);
+```
+
+SQL generated:
+
+```sql
+SELECT EXISTS (
+    SELECT ?1
+    FROM language la
+    WHERE la.id = ?2
+    AND la.active IS TRUE
+) AS "_🕆_GOD_BLESS_YOU_🕆_"
 ```
 
 Parameters:
