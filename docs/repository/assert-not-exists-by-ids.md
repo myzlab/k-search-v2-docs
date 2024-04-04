@@ -40,7 +40,7 @@ SELECT
     BOOL_AND(
         NOT EXISTS (
             SELECT ?3
-            FROM auth.language_ la
+            FROM auth.language la
             WHERE la.id = _🕆_JESUS_SAVES_🕆_.id
         )
     )
@@ -83,7 +83,7 @@ SELECT
     BOOL_AND(
         NOT EXISTS (
             SELECT ?3
-            FROM auth.language_ la
+            FROM auth.language la
             WHERE la.id = _🕆_JESUS_SAVES_🕆_.id
             AND la.active IS TRUE
         )
@@ -128,7 +128,7 @@ SELECT
     BOOL_AND(
         NOT EXISTS (
             SELECT ?3
-            FROM auth.language_ la
+            FROM auth.language la
             WHERE la.id = _🕆_JESUS_SAVES_🕆_.id
             AND la.active IS TRUE
         )

@@ -31,7 +31,7 @@ SQL generated:
 ```sql
 SELECT EXISTS (
     SELECT ?1
-    FROM auth.language_ la
+    FROM auth.language la
     WHERE la.id = ?2
     AND la.name ILIKE ?3
 ) AS "_🕆_GOD_BLESS_YOU_🕆_"
@@ -63,7 +63,7 @@ SQL generated:
 ```sql
 SELECT EXISTS (
     SELECT ?1
-    FROM auth.language_ la
+    FROM auth.language la
     WHERE la.id = ?2
     AND la.name ILIKE ?3
 ) AS "_🕆_GOD_BLESS_YOU_🕆_"

@@ -186,6 +186,7 @@ const sidebars = {
         "repository/assert-not-exists-by-id",
         "repository/assert-not-exists-by-ids",
         "repository/count",
+        "repository/count-by",
         "repository/count-distinct",
         "repository/delete-all",
         "repository/delete-by",

@@ -34,7 +34,7 @@ SQL generated:
 SELECT NOT (
     EXISTS (
         SELECT ?1
-        FROM auth.language_ la
+        FROM auth.language la
         WHERE la.name ILIKE ?2
     )
 ) AS "GOD_BLESS_YOU"
@@ -68,7 +68,7 @@ SQL generated:
 SELECT NOT (
     EXISTS (
         SELECT ?1
-        FROM auth.language_ la
+        FROM auth.language la
         WHERE la.name ILIKE ?2
     )
 ) AS "GOD_BLESS_YOU"
