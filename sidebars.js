@@ -190,6 +190,7 @@ const sidebars = {
         "repository/delete-all",
         "repository/delete-by-id",
         "repository/delete-by-ids",
+        "repository/exists-by",
         "repository/exists-by-id",
         "repository/find-all",
         "repository/find-by-id",
