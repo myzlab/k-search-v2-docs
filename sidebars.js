@@ -188,6 +188,7 @@ const sidebars = {
         "repository/count",
         "repository/count-by",
         "repository/count-distinct",
+        "repository/count-distinct-by",
         "repository/delete-all",
         "repository/delete-by",
         "repository/delete-by-id",

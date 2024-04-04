@@ -32,7 +32,7 @@ SQL generated:
 ```sql
 SELECT COUNT(*)
 FROM auth.language la
-WHERE la.id > ?
+WHERE la.id > ?1
 ```
 
 Parameters:
