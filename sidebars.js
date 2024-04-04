@@ -198,6 +198,7 @@ const sidebars = {
         "repository/find-all",
         "repository/find-by-id",
         "repository/find-by-ids",
+        "repository/find-multiple-by",
         "repository/find-one-by",
         "repository/insert",
         "repository/update-by-id"
